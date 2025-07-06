@@ -7,18 +7,22 @@ import { Button } from "@/components/ui/button";
 import Logo from "./logo";
 
 const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#team", label: "Team" },
-  { href: "#contact", label: "Contact" },
+  { href: "#home", label: "Home" },
+  { href: "#about-us", label: "The Firm" },
+  { href: "#expertise", label: "Expertise" },
+  { href: "#our-people", label: "Our People" },
+  { href: "#", label: "Careers" },
+  { href: "#publications", label: "Media" },
 ];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    }
     setIsMenuOpen(false);
   };
 
@@ -41,8 +45,8 @@ export default function Header() {
           ))}
         </nav>
         <div className="hidden md:block">
-            <Button asChild variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-                <Link href="#contact" onClick={(e) => handleLinkClick(e, "#contact")}>Get in Touch</Link>
+            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Link href="#contact" onClick={(e) => handleLinkClick(e, "#contact")}>Contact Us</Link>
             </Button>
         </div>
         <div className="md:hidden">
@@ -59,7 +63,7 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-background border-t border-border/40">
           <nav className="flex flex-col items-center gap-4 p-4">
-            {navLinks.map((link) => (
+            {[...navLinks, { href: "#contact", label: "Contact Us" }].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -69,9 +73,6 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-             <Button className="w-full" asChild>
-              <Link href="#contact" onClick={(e) => handleLinkClick(e, "#contact")}>Get in Touch</Link>
-            </Button>
           </nav>
         </div>
       )}

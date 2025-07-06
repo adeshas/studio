@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Catalyst Creative',
-  description: 'A digital marketing agency that helps businesses grow.',
+  title: 'Oyewole & Adesina',
+  description: 'Oyewole & Adesina is a law firm in Nigeria with proficiency in dispute resolution, corporate and commercial law, real estate, finance, energy, labour and employment, shipping, admiralty and intellectual property law.',
 };
 
 export default function RootLayout({

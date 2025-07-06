@@ -41,12 +41,12 @@ export default function Contact() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
           <div className="space-y-4">
-            <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Get In Touch</h2>
+            <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Contact Us</h2>
             <p className="text-muted-foreground md:text-xl">
-              Have a project in mind? We'd love to hear from you. Fill out the form and we'll get back to you as soon as possible.
+              We're here to help. Reach out to us with your legal questions or to schedule a consultation.
             </p>
             <p className="text-muted-foreground md:text-lg">
-              You can also reach us at: <a href="mailto:hello@catalystcreative.com" className="text-accent underline">hello@catalystcreative.com</a>
+              You can also reach us at: <a href="mailto:hello@oyewoleadesina.com" className="text-accent underline">hello@oyewoleadesina.com</a>
             </p>
           </div>
           <Card className="p-6 sm:p-8 border-none shadow-xl rounded-xl bg-card">
@@ -85,7 +85,7 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Message</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="Tell us about your project..." {...field} className="min-h-[120px]" />
+                        <Textarea placeholder="Tell us about your legal needs..." {...field} className="min-h-[120px]" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

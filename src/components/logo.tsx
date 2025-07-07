@@ -1,13 +1,14 @@
 import React from 'react';
-import { Scale } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Logo() {
   return (
-    <div className="flex items-center gap-2">
-      <Scale className="h-6 w-6 text-accent" />
-      <span className="text-lg font-semibold text-foreground">
-        Oyewole &amp; Adesina
-      </span>
-    </div>
+    <Image
+      src="https://oyewoleadesina.com/wp-content/uploads/2019/08/logo_v3.png"
+      alt="Oyewole & Adesina Logo"
+      width={160}
+      height={42}
+      priority
+    />
   );
 }

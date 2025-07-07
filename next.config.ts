@@ -22,6 +22,12 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'ddb73aed.sitepreview.org',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };

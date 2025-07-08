@@ -12,6 +12,7 @@
     --popover-foreground: 24 10% 15%;
     --primary: 30 54% 45%;
     --primary-foreground: 0 0% 98%;
+    --primary-dark: 30 54% 35%;
     --secondary: 30 5% 92%;
     --secondary-foreground: 24 10% 20%;
     --muted: 30 5% 92%;
@@ -40,6 +41,7 @@
     --popover-foreground: 0 0% 98%;
     --primary: 30 40% 30%;
     --primary-foreground: 0 0% 98%;
+    --primary-dark: 30 40% 20%;
     --secondary: 24 5% 15%;
     --secondary-foreground: 0 0% 98%;
     --muted: 24 5% 15%;
@@ -56,6 +58,35 @@
     --chart-3: 30 80% 55%;
     --chart-4: 30 65% 60%;
     --chart-5: 30 75% 55%;
+  }
+
+  .purple {
+    --background: 0 0% 100%;
+    --foreground: 24 10% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 10% 15%;
+    --primary: 0 0% 40%;
+    --primary-foreground: 0 0% 98%;
+    --primary-dark: 0 0% 30%;
+    --secondary: 30 5% 92%;
+    --secondary-foreground: 24 10% 20%;
+    --muted: 30 5% 92%;
+    --muted-foreground: 24 5% 45%;
+    --accent: 253 67% 26%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 30 5% 88%;
+    --input: 30 5% 88%;
+    --ring: 253 67% 26%;
+    --radius: 0.5rem;
+    --chart-1: 253 70% 50%;
+    --chart-2: 253 60% 45%;
+    --chart-3: 253 80% 55%;
+    --chart-4: 253 65% 60%;
+    --chart-5: 253 75% 55%;
   }
 }
 

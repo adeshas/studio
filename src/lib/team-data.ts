@@ -4,7 +4,7 @@ export const teamMembers = [
     role: "Co-founder & Head of Dispute Resolution and Energy",
     description: "Adedayo is a Co-founder and the Head of both the Dispute Resolution and Energy Practice Groups. In addition to a deep-seated knowledge of the law, Adedayo possesses outstanding analytical, writing and advocacy skills, which he brings to bear on clients’ work. Prior to the establishment of the firm, Adedayo practiced with a leading commercial law firm in Lagos where he was engaged in advising several Nigerian and International companies in the oil, gas and power sector. He has vast experience advising on concessions, acquisitions, licensing and strategic alliances in the oil and gas sector. In the power sector, he advised both local and foreign based companies on the privatisation of the PHCN successor companies, reviewing and negotiating industry standard agreements ranging from the Bulk Power Purchase Agreement, Vesting Contract, Gas Transportation Agreement, Gas Sales and Purchase Agreement and related agreements. Diversifying and expanding his scope of expertise, Adedayo joined a renowned litigation law firm where he was actively involved in core and complex commercial, environmental, labour, property, constitutional, criminal and election petition litigation at various levels of court starting from the High Court to the Supreme Court.",
     email: "dayo@oyewoleadesina.com",
-    image: "https://oyewoleadesina.com/wp-content/uploads/2019/04/MR-DAYO.jpeg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/MR-DAYO.jpeg",
     hint: "man portrait executive"
   },
   {
@@ -20,7 +20,7 @@ export const teamMembers = [
     role: "Associate",
     description: "Tochukwu Itumo is a seasoned lawyer with over 10 years of practice experience in corporate/commercial law and litigation. He advises companies in the banking, fintech, energy, and real estate sectors on issues bordering on debt recovery, corporate governance, regulatory compliance, mergers and acquisitions, corporate insolvency and liquidation. He has helped corporate clients to develop an effective compliance manual in line with sector regulations. He also provides secretarial services to public, private and listed companies, ensuring regulatory compliance in their general, board and committee meetings, statutory filings, and internal policies. He has also provided legal services to the investment committee of a Real Estate Investment Trust (REIT) in Nigeria. He is a member of the Business Recovery and Insolvency Practitioners Association of Nigeria, and has acquired practical boardroom and litigation experiences in corporate debt recovery, corporate re-organisation and winding-up proceedings. He has represented the Asset Management Corporation of Nigeria on matters bordering on debt recovery, assets tracing and seizure, company liquidation, debt compromise and settlements. With substantial experience in corporate/commercial practice and litigation, Tochukwu is equipped with the resources and skillset to address clients’ interests using business-oriented methods and strategies.",
     email: "Tochukwu@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/YMA_0024.jpga_.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2020/01/YMA_0024.jpga_.jpg",
     hint: "man portrait lawyer"
   },
   {

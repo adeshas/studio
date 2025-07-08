@@ -25,18 +25,23 @@ export default function OurPeoplePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((member, index) => (
                 <Card key={index} className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
-                   <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={400}
-                      height={400}
-                      className="w-full h-auto object-cover"
-                      data-ai-hint={member.hint}
-                    />
+                   <div className="relative w-full h-[400px]">
+                        <Image
+                            src={member.image}
+                            alt={member.name}
+                            fill
+                            className="w-full h-full object-cover object-center"
+                            data-ai-hint={member.hint}
+                        />
+                   </div>
                   <CardContent className="p-6 flex flex-col flex-grow">
                     <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
                     <p className="text-md font-semibold text-accent mb-4">{member.role}</p>
-                    <p className="text-muted-foreground text-sm flex-grow">{member.description}</p>
+                    <div className="text-muted-foreground text-sm flex-grow space-y-4">
+                        {member.description.split('\n\n').map((paragraph, i) => (
+                            <p key={i}>{paragraph}</p>
+                        ))}
+                    </div>
                     <div className="flex gap-4 mt-4 items-center">
                         {member.email && (
                             <a href={`mailto:${member.email}`} className="text-muted-foreground hover:text-accent">

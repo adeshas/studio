@@ -32,19 +32,20 @@ export default function Team() {
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1 h-full">
                     <Card className="text-center border-none shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        width={400}
-                        height={400}
-                        className="w-full h-auto object-cover"
-                        data-ai-hint={member.hint}
-                      />
+                      <div className="relative w-full h-[400px]">
+                        <Image
+                            src={member.image}
+                            alt={member.name}
+                            fill
+                            className="w-full h-full object-cover object-center"
+                            data-ai-hint={member.hint}
+                        />
+                      </div>
                       <CardContent className="p-6 flex flex-col flex-grow">
                         <h3 className="text-xl font-bold font-headline">{member.name}</h3>
                         <p className="text-sm font-semibold text-accent mb-2">{member.role}</p>
                         <p className="text-muted-foreground mt-2 text-sm flex-grow">
-                          {member.description.substring(0, 150)}...
+                          {member.description.replace(/\\n\\n/g, ' ').substring(0, 150)}...
                         </p>
                       </CardContent>
                     </Card>

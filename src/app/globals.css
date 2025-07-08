@@ -103,6 +103,7 @@
   .purple-footer {
     --foreground: hsl(var(--primary-foreground));
     --muted-foreground: hsl(var(--primary-foreground) / 0.8);
-    --border: hsl(var(--primary-foreground));
+    --border: hsl(var(--primary-foreground) / 0.4);
+    --accent: hsl(var(--primary-foreground));
   }
 }

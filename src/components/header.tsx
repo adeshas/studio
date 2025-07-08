@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/our-people", label: "Our People" },
   { href: "#", label: "Careers" },
   { href: "/#publications", label: "Media" },
+  { href: "/#contact", label: "Contact Us" },
 ];
 
 export default function Header() {
@@ -48,11 +49,6 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <div className="hidden md:block">
-            <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link href="/#contact" onClick={(e) => handleLinkClick(e, "/#contact")}>Contact Us</Link>
-            </Button>
-        </div>
         <div className="md:hidden">
           <Button
             variant="ghost"
@@ -67,7 +63,7 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-background border-t border-border/40">
           <nav className="flex flex-col items-center gap-4 p-4">
-            {[...navLinks, { href: "/#contact", label: "Contact Us" }].map((link) => (
+            {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

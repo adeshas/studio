@@ -25,15 +25,14 @@ export default function OurPeoplePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((member, index) => (
                 <Card key={index} className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
-                   <div className="relative w-full aspect-square">
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          fill
-                          className="object-cover"
-                          data-ai-hint={member.hint}
-                        />
-                    </div>
+                   <Image
+                      src={member.image}
+                      alt={member.name}
+                      width={400}
+                      height={400}
+                      className="w-full h-auto object-cover"
+                      data-ai-hint={member.hint}
+                    />
                   <CardContent className="p-6 flex flex-col flex-grow">
                     <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
                     <p className="text-md font-semibold text-accent mb-4">{member.role}</p>

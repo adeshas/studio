@@ -22,10 +22,11 @@ export default function Footer() {
   }, []);
 
   const footerBgClass = mounted && theme === 'purple' ? 'bg-primary' : 'bg-primary/20';
+  const footerThemeClass = mounted && theme === 'purple' ? 'purple-footer' : '';
 
 
   return (
-    <footer className={cn(footerBgClass, "transition-colors duration-300")}>
+    <footer className={cn(footerBgClass, footerThemeClass, "transition-colors duration-300")}>
       <div className="container mx-auto py-12 px-4 md:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">

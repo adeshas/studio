@@ -10,7 +10,7 @@ import Logo from "./logo";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/#about-us", label: "The Firm" },
-  { href: "/#expertise", label: "Our Expertise" },
+  { href: "/our-expertise", label: "Our Expertise" },
   { href: "/our-people", label: "Our People" },
   { href: "#", label: "Careers" },
   { href: "/#publications", label: "Media" },

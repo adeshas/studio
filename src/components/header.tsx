@@ -7,21 +7,25 @@ import { Button } from "@/components/ui/button";
 import Logo from "./logo";
 
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about-us", label: "The Firm" },
-  { href: "#expertise", label: "Expertise" },
-  { href: "#our-people", label: "Our People" },
+  { href: "/", label: "Home" },
+  { href: "/#about-us", label: "The Firm" },
+  { href: "/#expertise", label: "Expertise" },
+  { href: "/our-people", label: "Our People" },
   { href: "#", label: "Careers" },
-  { href: "#publications", label: "Media" },
+  { href: "/#publications", label: "Media" },
 ];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
+    if (href.startsWith('/#')) {
       e.preventDefault();
-      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+      const targetId = href.substring(2);
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
     }
     setIsMenuOpen(false);
   };
@@ -46,7 +50,7 @@ export default function Header() {
         </nav>
         <div className="hidden md:block">
             <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-                <Link href="#contact" onClick={(e) => handleLinkClick(e, "#contact")}>Contact Us</Link>
+                <Link href="/#contact" onClick={(e) => handleLinkClick(e, "/#contact")}>Contact Us</Link>
             </Button>
         </div>
         <div className="md:hidden">
@@ -63,7 +67,7 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-background border-t border-border/40">
           <nav className="flex flex-col items-center gap-4 p-4">
-            {[...navLinks, { href: "#contact", label: "Contact Us" }].map((link) => (
+            {[...navLinks, { href: "/#contact", label: "Contact Us" }].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

@@ -1,33 +1,12 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { teamMembers } from "@/lib/team-data";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
-const teamMembers = [
-  {
-    name: "Victor O. Akpeji",
-    description: "Victor Akpeji is a Senior Associate in the firm with specialization in Dispute Resolution, corporate and commercial practice and …",
-    image: "https://placehold.co/400x400.png",
-    hint: "man portrait lawyer"
-  },
-  {
-    name: "Moromoke Adegbosin",
-    description: "Moromoke Adegbosin is an Associate in Oyewole & Adesina. She is actively involved in the Corporate and Commercial …",
-    image: "https://placehold.co/400x400.png",
-    hint: "woman portrait lawyer"
-  },
-  {
-    name: "Chima Daniel Amako",
-    description: "Chima Daniel Amako is an Associate with the firm’s Corporate and Commercial and Dispute Resolution Practice Group. Chima is a connoisseur …",
-    image: "https://placehold.co/400x400.png",
-    hint: "man portrait lawyer"
-  },
-  {
-    name: "Sarah Chen",
-    description: "Sarah is a specialist in intellectual property law, helping clients protect their valuable assets in the digital age.",
-    image: "https://placehold.co/400x400.png",
-    hint: "woman portrait professional"
-  },
-];
+// Show a subset of team members on the homepage
+const featuredTeamMembers = teamMembers.slice(0, 6);
 
 export default function Team() {
   return (
@@ -49,10 +28,10 @@ export default function Team() {
             className="w-full"
           >
             <CarouselContent>
-              {teamMembers.map((member, index) => (
+              {featuredTeamMembers.map((member, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1 h-full">
-                    <Card className="text-center border-none shadow-lg rounded-xl overflow-hidden h-full">
+                    <Card className="text-center border-none shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
                       <div className="relative w-full aspect-square">
                         <Image
                           src={member.image}
@@ -62,9 +41,12 @@ export default function Team() {
                           data-ai-hint={member.hint}
                         />
                       </div>
-                      <CardContent className="p-6">
+                      <CardContent className="p-6 flex flex-col flex-grow">
                         <h3 className="text-xl font-bold font-headline">{member.name}</h3>
-                        <p className="text-muted-foreground mt-2 text-sm">{member.description}</p>
+                        <p className="text-sm font-semibold text-accent mb-2">{member.role}</p>
+                        <p className="text-muted-foreground mt-2 text-sm flex-grow">
+                          {member.description.substring(0, 150)}...
+                        </p>
                       </CardContent>
                     </Card>
                   </div>
@@ -74,6 +56,11 @@ export default function Team() {
             <CarouselPrevious />
             <CarouselNext />
           </Carousel>
+        </div>
+        <div className="text-center mt-12">
+          <Button asChild>
+            <Link href="/our-people">Meet The Entire Team</Link>
+          </Button>
         </div>
       </div>
     </section>

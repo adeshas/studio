@@ -32,7 +32,7 @@ export default function Publications() {
                         <p className="text-card-foreground/80 mb-4">{item.description}</p>
                       </div>
                       <Button asChild variant="link" className="p-0 self-start mt-4">
-                        <a href={item.link} target="_blank" rel="noopener noreferrer">Read More &raquo;</a>
+                        <a href={item.link} target="_blank" rel="noopener noreferrer" download>Read More &raquo;</a>
                       </Button>
                     </Card>
                   </div>

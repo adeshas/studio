@@ -9,6 +9,11 @@ import React from "react";
 
 const heroSlides = [
   {
+    title: "Better Solutions",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/maarten-van-den-heuvel-_pc8aMbI9UQ-unsplash.jpg",
+    hint: "abstract art solutions"
+  },
+  {
     title: "Innovation",
     image: "https://www.oyewoleadesina.com/wp-content/uploads/2019/05/analysis-blackboard-bubble-355952.jpg",
     hint: "innovation blackboard lightbulb"
@@ -17,11 +22,6 @@ const heroSlides = [
     title: "Deeper Understanding",
     image: "https://www.oyewoleadesina.com/wp-content/uploads/2019/06/blur-book-stack-books-590493_1.jpg",
     hint: "books stack library"
-  },
-  {
-    title: "Better Solutions",
-    image: "https://www.oyewoleadesina.com/wp-content/uploads/2019/06/art-artist-artistic-316465_1.jpg",
-    hint: "abstract art solutions"
   },
   {
     title: "Legal Insight",

@@ -101,9 +101,17 @@
 
 @layer components {
   .purple-footer {
-    --foreground: hsl(var(--primary-foreground));
-    --muted-foreground: hsl(var(--primary-foreground) / 0.8);
+    /* Redefine variables used by child components/classes */
     --border: hsl(var(--primary-foreground) / 0.4);
     --accent: hsl(var(--primary-foreground));
   }
+
+  /* Override the text color utilities specifically within the footer */
+  .purple-footer .text-muted-foreground {
+     @apply text-primary-foreground/80;
+  }
+
+   .purple-footer .text-foreground {
+     @apply text-primary-foreground;
+   }
 }

@@ -25,7 +25,7 @@ export default function OurPeoplePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((member, index) => (
                 <Card key={index} className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
-                   <div className="relative w-full h-[400px]">
+                   <div className="relative w-full aspect-[600/1024]">
                         <Image
                             src={member.image}
                             alt={member.name}

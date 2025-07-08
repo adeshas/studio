@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import Link from "next/link";
 import Logo from "./logo";
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -27,12 +28,12 @@ export default function Footer() {
           <div className="space-y-4">
             <h4 className="font-semibold font-headline text-foreground">Useful Links</h4>
             <ul className="space-y-2">
-              <li><Link href="#home" className="text-muted-foreground hover:text-accent">Home</Link></li>
-              <li><Link href="#about-us" className="text-muted-foreground hover:text-accent">Who We Are</Link></li>
+              <li><Link href="/" className="text-muted-foreground hover:text-accent">Home</Link></li>
+              <li><Link href="/#about-us" className="text-muted-foreground hover:text-accent">Who We Are</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-accent">Contact Us</Link></li>
               <li><Link href="#" className="text-muted-foreground hover:text-accent">Terms of Use</Link></li>
               <li><Link href="#" className="text-muted-foreground hover:text-accent">Careers</Link></li>
-              <li><Link href="#publications" className="text-muted-foreground hover:text-accent">News and Publications</Link></li>
+              <li><Link href="/#publications" className="text-muted-foreground hover:text-accent">News and Publications</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -49,12 +50,20 @@ export default function Footer() {
             </ul>
           </div>
           <div className="space-y-4">
-            <h4 className="font-semibold font-headline text-foreground">Latest News</h4>
-            <ul className="space-y-2">
-              <li className="text-sm"><a href="#publications" className="text-muted-foreground hover:text-accent">The Finance Act, 2020: A veritable tool for effective amendment...</a></li>
-              <li className="text-sm"><a href="#publications" className="text-muted-foreground hover:text-accent">COVID-19: Implication on the enforcement of contracts in Nigeria</a></li>
-              <li className="text-sm"><a href="#publications" className="text-muted-foreground hover:text-accent">Enforcement of the Penalty Provisions in the DPR Guidelines...</a></li>
-            </ul>
+            <h4 className="font-semibold font-headline text-foreground">Contact Us</h4>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <h5 className="font-semibold text-foreground/90 mb-1">Lagos Office</h5>
+                <p>19A, Udi Street<br/>Osborne Foreshore Estate Phase 1, Ikoyi, Lagos</p>
+                <p>M: +234 706 210 3941</p>
+              </div>
+              <div>
+                <h5 className="font-semibold text-foreground/90 mb-1">Abuja Office</h5>
+                <p>Block 33b, 24 Cairo Street,<br/>Off Ademola Adetokunbo Crescent, Wuse II, Abuja</p>
+                <p>M: +234 803 657 8169</p>
+              </div>
+              <a href="mailto:info@oyewoleadesina.com" className="hover:text-accent inline-flex items-center gap-2"><Mail className="h-4 w-4" />info@oyewoleadesina.com</a>
+            </div>
           </div>
         </div>
         <div className="mt-8 border-t border-border/40 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">

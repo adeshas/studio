@@ -37,7 +37,7 @@ export const teamMembers = [
     role: "Lawyer",
     description: "Vitalis I. Jimeh is a lawyer duly called to the Nigerian Bar, who has over a decade of practice experience mainly in litigation, especially in matters bothering on Land Law, Business Law, Banking Law, Tax Law, Contract, Commercial and Transactions Law, Human Rights Law, Intellectual Property, Labour and Industrial Law, Family Law as well as the prosecution and defence of diverse crimes. He is a versatile professional who despite his keen interest in and bias for litigation has demonstrated profound understanding and easy navigation of regulatory agencies and procedures, other areas of legal practice including Business, Company, NGO, Copyright and Trademark Registration and other allied services as well as the investigation and/or perfection of title documents across various States of Nigeria. He attended the University of Jos, Nigeria and the Nigerian Law School, Lagos, Nigeria. He is an active member of the Nigerian Bar Association, an avid reader, a lover of politics, a public and government affairs analyst and a passionate speaker of several Nigerian Languages including Hausa, Igbo and Tiv.",
     email: "vitalis@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2020/08/IMG_2028.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/IMG_2028.jpg",
     hint: "man portrait lawyer"
   },
   {

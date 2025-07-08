@@ -4,17 +4,28 @@
 import { useState, useEffect } from 'react';
 import Link from "next/link";
 import Logo from "./logo";
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { cn } from '@/lib/utils';
 
 export default function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     setYear(new Date().getFullYear());
   }, []);
 
+  const footerBgClass = mounted && theme === 'purple' ? 'bg-primary' : 'bg-primary/20';
+
+
   return (
-    <footer className="bg-primary/20">
+    <footer className={cn(footerBgClass, "transition-colors duration-300")}>
       <div className="container mx-auto py-12 px-4 md:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">

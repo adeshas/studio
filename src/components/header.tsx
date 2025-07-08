@@ -13,6 +13,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { ThemeSwitcher } from "./theme-switcher";
+import { usePathname } from 'next/navigation';
+import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -20,17 +22,13 @@ const navLinks = [
   { href: "/our-expertise", label: "Our Expertise" },
   { href: "/our-people", label: "Our People" },
   { href: "/careers", label: "Careers" },
-  { 
-    label: "Media",
-    items: [
-      { href: "/publications", label: "Publications" },
-    ],
-  },
+  { href: "/publications", label: "Publications" },
   { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('/#')) {
@@ -54,7 +52,7 @@ export default function Header() {
           {navLinks.map((link) =>
             link.items ? (
               <DropdownMenu key={link.label}>
-                <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm">
+                <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-accent focus:outline-none">
                   {link.label}
                   <ChevronDown className="h-4 w-4" />
                 </DropdownMenuTrigger>
@@ -71,7 +69,10 @@ export default function Header() {
                 key={link.href}
                 href={link.href!}
                 onClick={(e) => handleLinkClick(e, link.href!)}
-                className="transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm"
+                className={cn(
+                  "transition-colors hover:text-accent focus:outline-none",
+                  pathname === link.href && "text-accent font-semibold"
+                )}
               >
                 {link.label}
               </Link>
@@ -105,7 +106,10 @@ export default function Header() {
                         key={item.href}
                         href={item.href}
                         onClick={(e) => handleLinkClick(e, item.href)}
-                        className="w-full text-center py-2 text-muted-foreground transition-colors hover:text-accent"
+                        className={cn(
+                          "w-full text-center py-2 text-muted-foreground transition-colors hover:text-accent",
+                          pathname === item.href && "text-accent font-semibold"
+                        )}
                       >
                         {item.label}
                       </Link>
@@ -117,7 +121,10 @@ export default function Header() {
                   key={link.href}
                   href={link.href!}
                   onClick={(e) => handleLinkClick(e, link.href!)}
-                  className="w-full text-center py-2 transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm"
+                  className={cn(
+                    "w-full text-center py-2 transition-colors hover:text-accent focus:outline-none",
+                    pathname === link.href && "text-accent font-semibold"
+                  )}
                 >
                   {link.label}
                 </Link>

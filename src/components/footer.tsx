@@ -32,8 +32,8 @@ export default function Footer() {
               <li><Link href="/#about-us" className="text-muted-foreground hover:text-accent">Who We Are</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-accent">Contact Us</Link></li>
               <li><Link href="#" className="text-muted-foreground hover:text-accent">Terms of Use</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-accent">Careers</Link></li>
-              <li><Link href="/#publications" className="text-muted-foreground hover:text-accent">News and Publications</Link></li>
+              <li><Link href="/careers" className="text-muted-foreground hover:text-accent">Careers</Link></li>
+              <li><Link href="/publications" className="text-muted-foreground hover:text-accent">News and Publications</Link></li>
             </ul>
           </div>
           <div className="space-y-4">

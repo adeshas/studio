@@ -16,11 +16,11 @@ export default function About() {
           </div>
           <div className="relative w-full h-80 lg:h-96 rounded-xl overflow-hidden shadow-xl">
             <Image
-              src="https://placehold.co/600x400.png"
-              alt="Team meeting in a modern office"
+              src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2021/01/ABOUT-US.jpeg"
+              alt="Modern office building interior"
               fill
               className="object-cover"
-              data-ai-hint="team meeting office"
+              data-ai-hint="office interior"
             />
           </div>
         </div>

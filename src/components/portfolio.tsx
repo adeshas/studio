@@ -1,25 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-
-const publications = [
-  {
-    title: "COVID-19: Implication on the enforcement of contracts in Nigeria",
-    description: "Disclaimer: This article is only intended to provide general information on the subject matter and does not by itself …",
-  },
-  {
-    title: "Enforcement of the Penalty Provisions in the Department of Petroleum Resources (DPR) Guidelines...",
-    description: "The Guidelines issued on 7th October 2019 by the DPR established procedures for releasing Nigerian workers in the o …",
-  },
-  {
-    title: "HURILAW Condemns Piecemeal Constitution Amendment",
-    description: "The Human Rights Law Services (HURILAW), on 28 March 2016, called on the National Assembly to shun the piecemeal approach in …",
-  },
-  {
-    title: "The Finance Act, 2020: A veritable tool for effective amendment of existing fiscal legislations",
-    description: "A deep dive into the implications and applications of the Finance Act 2020 for modern businesses in Nigeria.",
-  },
-];
+import { publicationsData } from "@/lib/publications-data";
 
 export default function Publications() {
   return (
@@ -41,7 +23,7 @@ export default function Publications() {
             className="w-full"
           >
             <CarouselContent>
-              {publications.map((item, index) => (
+              {publicationsData.map((item, index) => (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                   <div className="p-1 h-full">
                     <Card className="flex flex-col justify-between h-full p-6 bg-card border shadow-lg rounded-xl">
@@ -50,7 +32,7 @@ export default function Publications() {
                         <p className="text-card-foreground/80 mb-4">{item.description}</p>
                       </div>
                       <Button asChild variant="link" className="p-0 self-start mt-4">
-                        <a href="#">Read More &raquo;</a>
+                        <a href={item.link} target="_blank" rel="noopener noreferrer">Read More &raquo;</a>
                       </Button>
                     </Card>
                   </div>

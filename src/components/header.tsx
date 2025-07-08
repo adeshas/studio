@@ -3,17 +3,28 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "./logo";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/#about-us", label: "The Firm" },
   { href: "/our-expertise", label: "Our Expertise" },
   { href: "/our-people", label: "Our People" },
-  { href: "#", label: "Careers" },
-  { href: "/#publications", label: "Media" },
+  { href: "/careers", label: "Careers" },
+  { 
+    label: "Media",
+    items: [
+      { href: "/publications", label: "Publications" },
+    ],
+  },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -39,16 +50,32 @@ export default function Header() {
           <Logo />
         </Link>
         <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:flex md:items-center md:gap-6 text-sm font-medium">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleLinkClick(e, link.href)}
-              className="transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.items ? (
+              <DropdownMenu key={link.label}>
+                <DropdownMenuTrigger className="flex items-center gap-1 transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm">
+                  {link.label}
+                  <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  {link.items.map((item) => (
+                    <DropdownMenuItem key={item.href} asChild>
+                      <Link href={item.href}>{item.label}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href!}
+                onClick={(e) => handleLinkClick(e, link.href!)}
+                className="transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
         <div className="flex items-center md:hidden">
           <Button
@@ -64,16 +91,34 @@ export default function Header() {
       {isMenuOpen && (
         <div className="md:hidden bg-background border-t border-border/40">
           <nav className="flex flex-col items-center gap-4 p-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className="w-full text-center py-2 transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.items ? (
+                <div key={link.label} className="text-center w-full">
+                  <span className="font-semibold text-foreground py-2">{link.label}</span>
+                  <div className="flex flex-col items-center gap-2 mt-2">
+                    {link.items.map(item => (
+                       <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={(e) => handleLinkClick(e, item.href)}
+                        className="w-full text-center py-2 text-muted-foreground transition-colors hover:text-accent"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href!}
+                  onClick={(e) => handleLinkClick(e, link.href!)}
+                  className="w-full text-center py-2 transition-colors hover:text-accent focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 rounded-sm"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </nav>
         </div>
       )}

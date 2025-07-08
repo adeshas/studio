@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -13,7 +14,7 @@ const navLinks = [
   { href: "/our-people", label: "Our People" },
   { href: "#", label: "Careers" },
   { href: "/#publications", label: "Media" },
-  { href: "/#contact", label: "Contact Us" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Header() {

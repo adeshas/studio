@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -28,7 +29,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><Link href="#home" className="text-muted-foreground hover:text-accent">Home</Link></li>
               <li><Link href="#about-us" className="text-muted-foreground hover:text-accent">Who We Are</Link></li>
-              <li><Link href="#contact" className="text-muted-foreground hover:text-accent">Contact Us</Link></li>
+              <li><Link href="/contact" className="text-muted-foreground hover:text-accent">Contact Us</Link></li>
               <li><Link href="#" className="text-muted-foreground hover:text-accent">Terms of Use</Link></li>
               <li><Link href="#" className="text-muted-foreground hover:text-accent">Careers</Link></li>
               <li><Link href="#publications" className="text-muted-foreground hover:text-accent">News and Publications</Link></li>

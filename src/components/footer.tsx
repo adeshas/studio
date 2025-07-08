@@ -21,8 +21,9 @@ export default function Footer() {
     setYear(new Date().getFullYear());
   }, []);
 
-  const footerBgClass = mounted && theme === 'purple' ? 'bg-primary' : 'bg-primary/20';
+  const footerBgClass = mounted && theme === 'purple' ? 'bg-[#1d2024]' : (theme === 'dark' ? 'bg-primary' : 'bg-primary/20');
   const footerThemeClass = mounted && theme === 'purple' ? 'purple-footer' : '';
+  const logoVariant = mounted && (theme === 'purple' || theme === 'dark') ? 'white' : 'color';
 
 
   return (
@@ -31,7 +32,7 @@ export default function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <Link href="/" className="inline-block">
-              <Logo />
+              <Logo variant={logoVariant} />
             </Link>
             <p className="max-w-xs text-muted-foreground">
               A premier Nigerian law firm providing expert legal services.

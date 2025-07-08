@@ -67,9 +67,9 @@
     --card-foreground: 24 10% 15%;
     --popover: 0 0% 100%;
     --popover-foreground: 24 10% 15%;
-    --primary: 214 11% 13%;
+    --primary: 259 67% 26%;
     --primary-foreground: 0 0% 98%;
-    --primary-dark: 214 11% 5%;
+    --primary-dark: 259 67% 16%;
     --secondary: 30 5% 92%;
     --secondary-foreground: 24 10% 20%;
     --muted: 30 5% 92%;
@@ -101,17 +101,9 @@
 
 @layer components {
   .purple-footer {
-    /* Redefine variables used by child components/classes */
-    --border: hsl(var(--primary-foreground) / 0.4);
-    --accent: hsl(var(--primary-foreground));
+    --foreground: hsl(0 0% 98%);
+    --muted-foreground: hsl(0 0% 98% / 0.8);
+    --border: hsl(0 0% 98% / 0.4);
+    --accent: hsl(0 0% 98%);
   }
-
-  /* Override the text color utilities specifically within the footer */
-  .purple-footer .text-muted-foreground {
-     @apply text-primary-foreground/80;
-  }
-
-   .purple-footer .text-foreground {
-     @apply text-primary-foreground;
-   }
 }

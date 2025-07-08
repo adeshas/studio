@@ -5,6 +5,8 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from 'next/navigation';
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 export async function generateStaticParams() {
   return expertiseData.map((expertise) => ({
@@ -61,6 +63,15 @@ export default function ExpertiseDetailPage({ params }: { params: { slug: string
                         }
                         return <p key={index}>{paragraph}</p>;
                     })}
+                </div>
+
+                <div className="mt-12">
+                  <Button asChild variant="outline">
+                      <Link href="/our-expertise">
+                          <ArrowLeft className="h-4 w-4" />
+                          Back to Our Expertise
+                      </Link>
+                  </Button>
                 </div>
             </div>
           </div>

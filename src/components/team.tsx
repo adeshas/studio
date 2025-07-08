@@ -37,7 +37,8 @@ export default function Team() {
                             src={member.image}
                             alt={member.name}
                             fill
-                            className="w-full h-full object-cover object-center"
+                            className="w-full h-full object-cover"
+                            style={member.imageStyle}
                             data-ai-hint={member.hint}
                         />
                       </div>

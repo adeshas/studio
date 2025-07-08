@@ -14,7 +14,8 @@ export const teamMembers = [
     description: "Victor Akpeji is a Senior Associate in the firm with vast knowledge in Dispute Resolution, corporate and commercial practice and real estate practice.\n\nHe has an LLB from Ahmadu Bello University and has been called to the Nigerian Bar. Victor is also a member of the Nigerian Institute of Management (Chartered) as well as the Nigerian Bar Association.\n\nPrior to joining Oyewole & Adesina, he had garnered considerable professional experience working in the litigation and corporate and commercial department of various law firms and also advised on several legal issues including regulatory compliance, negotiating and reviewing partnerships and Joint Development Agreements. Victor has made appearances at superior courts in Nigeria and also made strides in the corporate and commercial sector where his experience spans through company/business entity formation to procurement of operational licenses, company secretarial work etc.\n\nVictor applies the skills he has garnered across various spheres in providing practical resolution of legal issues.",
     email: "victor@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/VICTOR.jpeg",
-    hint: "man portrait lawyer"
+    hint: "man portrait lawyer",
+    imageStyle: { objectPosition: '30% center' }
   },
   {
     name: "Tochukwu Itumo",

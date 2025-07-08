@@ -13,7 +13,7 @@ export default function PublicationsPage() {
       <main className="flex-1">
          <section className="relative w-full h-64 md:h-80 bg-primary/20">
              <Image
-                src="https://placehold.co/1920x400.png"
+                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/absolutvision-WYd_PkCa1BY-unsplash.jpg"
                 alt="Publications background"
                 fill
                 className="object-cover"

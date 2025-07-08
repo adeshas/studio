@@ -61,26 +61,26 @@
   }
 
   .purple {
-    --background: 0 0% 100%;
-    --foreground: 24 10% 15%;
-    --card: 0 0% 100%;
-    --card-foreground: 24 10% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 24 10% 15%;
+    --background: 214 11% 13%;
+    --foreground: 0 0% 98%;
+    --card: 214 11% 13%;
+    --card-foreground: 0 0% 98%;
+    --popover: 214 11% 13%;
+    --popover-foreground: 0 0% 98%;
     --primary: 0 0% 40%;
     --primary-foreground: 0 0% 98%;
     --primary-dark: 0 0% 30%;
-    --secondary: 30 5% 92%;
-    --secondary-foreground: 24 10% 20%;
-    --muted: 30 5% 92%;
-    --muted-foreground: 24 5% 45%;
-    --accent: 253 67% 26%;
+    --secondary: 214 11% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 214 11% 18%;
+    --muted-foreground: 214 10% 65%;
+    --accent: 253 60% 55%;
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 84% 60%;
+    --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
-    --border: 30 5% 88%;
-    --input: 30 5% 88%;
-    --ring: 253 67% 26%;
+    --border: 214 11% 23%;
+    --input: 214 11% 23%;
+    --ring: 253 60% 55%;
     --radius: 0.5rem;
     --chart-1: 253 70% 50%;
     --chart-2: 253 60% 45%;

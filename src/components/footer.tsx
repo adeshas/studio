@@ -21,13 +21,17 @@ export default function Footer() {
     setYear(new Date().getFullYear());
   }, []);
 
-  const footerBgClass = mounted && theme === 'purple' ? 'bg-[#1d2024]' : (theme === 'dark' ? 'bg-primary' : 'bg-primary/20');
-  const footerThemeClass = mounted && theme === 'purple' ? 'purple-footer' : '';
+  const footerClasses = cn(
+    "transition-colors duration-300",
+    mounted && theme === 'dark' && 'bg-primary',
+    mounted && (theme === 'light' || !theme) && 'bg-primary/20'
+  );
+  
   const logoVariant = mounted && (theme === 'purple' || theme === 'dark') ? 'white' : 'color';
 
 
   return (
-    <footer className={cn(footerBgClass, footerThemeClass, "transition-colors duration-300")}>
+    <footer className={footerClasses}>
       <div className="container mx-auto py-12 px-4 md:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">

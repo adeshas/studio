@@ -102,9 +102,17 @@
 @layer components {
   html.purple footer {
     background-color: rgb(29, 32, 36);
-    --foreground: hsl(0 0% 98%);
-    --muted-foreground: hsl(0 0% 98% / 0.8);
-    --border: hsl(0 0% 98% / 0.4);
-    --accent: hsl(0 0% 98%);
+    color: #FFFFFF;
+  }
+  html.purple footer .text-foreground,
+  html.purple footer .text-muted-foreground,
+  html.purple footer .text-foreground\/90 {
+    color: #FFFFFF;
+  }
+  html.purple footer a:hover {
+    color: #d1d5db;
+  }
+  html.purple footer .border-border\/40 {
+    border-color: rgba(255, 255, 255, 0.4);
   }
 }

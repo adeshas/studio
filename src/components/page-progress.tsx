@@ -10,15 +10,38 @@ export default function PageProgress() {
 
   useEffect(() => {
     NProgress.configure({ showSpinner: false });
-    NProgress.start();
 
-    const handleStart = () => NProgress.start();
-    const handleStop = () => NProgress.done();
+    const handleAnchorClick = (event: MouseEvent) => {
+      const targetUrl = (event.currentTarget as HTMLAnchorElement).href;
+      const currentUrl = window.location.href;
+      if (targetUrl !== currentUrl) {
+        NProgress.start();
+      }
+    };
 
-    handleStop(); // Stop progress on initial load
+    const handleMutation: MutationCallback = () => {
+      const anchorElements = document.querySelectorAll('a[href]');
+      anchorElements.forEach(anchor => {
+          const hasClickListener = (anchor as any).hasClickListener;
+          if (!hasClickListener) {
+              anchor.addEventListener('click', handleAnchorClick);
+              (anchor as any).hasClickListener = true;
+          }
+      });
+    };
+
+    const mutationObserver = new MutationObserver(handleMutation);
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    // Initial run
+    handleMutation([]);
 
     return () => {
-      handleStop();
+      mutationObserver.disconnect();
+      document.querySelectorAll('a[href]').forEach(anchor => {
+        anchor.removeEventListener('click', handleAnchorClick);
+        delete (anchor as any).hasClickListener;
+      });
     };
   }, []);
 

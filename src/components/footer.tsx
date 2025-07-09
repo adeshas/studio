@@ -85,7 +85,7 @@ export default function Footer() {
         </div>
         <div className="mt-8 border-t border-border/40 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>Copyright &copy; {year} Oyewole &amp; Adesina. All Rights Reserved.</p>
-          <p>Powered by eloquence Systems Ltd</p>
+          {/* <p>Powered by eloquence Systems Ltd</p> */}
         </div>
       </div>
     </footer>

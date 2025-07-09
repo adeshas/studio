@@ -4,7 +4,9 @@ import Footer from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
-import { ShieldCheck, Target, Handshake, BrainCircuit, Users, Award, Briefcase, Landmark, Scale, PiggyBank, Factory, Anchor, Lightbulb } from "lucide-react";
+import { ShieldCheck, Target, Handshake, BrainCircuit, Users, Award, Briefcase, Landmark, Scale, PiggyBank, Factory, Anchor, Lightbulb, CheckCircle } from "lucide-react";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+
 
 const practiceAreas = [
   { title: "Dispute Resolution", icon: <Scale className="h-8 w-8 text-accent mb-4" />, description: "Expert representation in domestic and international arbitration and litigation" },
@@ -105,19 +107,24 @@ export default function TheFirmPage() {
                  <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Why Choose Us</h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {whyChooseUs.slice(0,5).map((item, index) => (
-                    <Card key={index} className="p-6 shadow-lg rounded-xl border-l-4 border-accent">
-                        <h3 className="text-xl font-bold font-headline mb-2">{item.title}</h3>
-                        <p className="text-muted-foreground">{item.description}</p>
+                <div className="max-w-4xl mx-auto">
+                    <Card className="shadow-lg rounded-xl">
+                        <Table>
+                            <TableBody>
+                                {whyChooseUs.map((item, index) => (
+                                    <TableRow key={index} className={index === whyChooseUs.length - 1 ? 'border-b-0' : ''}>
+                                        <TableCell className="font-bold font-headline text-lg w-1/3 align-top p-6">
+                                            <div className="flex items-center gap-2">
+                                                <CheckCircle className="h-6 w-6 text-accent shrink-0" />
+                                                {item.title}
+                                            </div>
+                                        </TableCell>
+                                        <TableCell className="text-muted-foreground p-6 align-middle">{item.description}</TableCell>
+                                    </TableRow>
+                                ))}
+                            </TableBody>
+                        </Table>
                     </Card>
-                  ))}
-                  <div className="lg:col-span-3 flex justify-center">
-                     <Card className="p-6 shadow-lg rounded-xl border-l-4 border-accent max-w-md">
-                        <h3 className="text-xl font-bold font-headline mb-2">{whyChooseUs[5]?.title || "Our Values"}</h3>
-                        <p className="text-muted-foreground">{whyChooseUs[5]?.description || "Our core principles guide every action we take."}</p>
-                    </Card>
-                  </div>
                 </div>
             </div>
         </section>

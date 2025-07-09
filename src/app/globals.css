@@ -100,7 +100,7 @@
 }
 
 @layer components {
-  .purple-footer {
+  html.purple .purple-footer {
     --foreground: hsl(0 0% 98%);
     --muted-foreground: hsl(0 0% 98% / 0.8);
     --border: hsl(0 0% 98% / 0.4);

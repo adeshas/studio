@@ -4,17 +4,14 @@
 import { useState, useEffect } from 'react';
 import Link from "next/link";
 import Logo from "./logo";
-import { Mail, Linkedin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
-import { teamMembers } from '@/lib/team-data';
 
 export default function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
-
-  const adedayo = teamMembers.find(m => m.name === 'Adedayo Adesina');
 
   useEffect(() => {
     setMounted(true);
@@ -84,12 +81,6 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-4">
                 <a href="mailto:info@oyewoleadesina.com" className="hover:text-accent inline-flex items-center gap-2"><Mail className="h-4 w-4" />info@oyewoleadesina.com</a>
-                {adedayo?.linkedin && (
-                  <a href={adedayo.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent">
-                    <Linkedin className="h-5 w-5" />
-                    <span className="sr-only">LinkedIn</span>
-                  </a>
-                )}
               </div>
             </div>
           </div>

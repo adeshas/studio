@@ -28,11 +28,11 @@ const whyChooseUs = [
 ];
 
 const values = [
-    { icon: <ShieldCheck className="h-8 w-8 text-accent" />, title: "Integrity", description: "in every engagement" },
-    { icon: <Award className="h-8 w-8 text-accent" />, title: "Excellence", description: "in legal analysis and advocacy" },
-    { icon: <Handshake className="h-8 w-8 text-accent" />, title: "Collaboration", description: "across disciplines and with our clients" },
-    { icon: <BrainCircuit className="h-8 w-8 text-accent" />, title: "Innovation", description: "in anticipating and addressing emerging challenges" },
-    { icon: <Users className="h-8 w-8 text-accent" />, title: "Professionalism", description: "in service delivery and ethical standards" },
+    { icon: <ShieldCheck className="h-10 w-10 text-accent" />, title: "Integrity", description: "in every engagement" },
+    { icon: <Award className="h-10 w-10 text-accent" />, title: "Excellence", description: "in legal analysis and advocacy" },
+    { icon: <Handshake className="h-10 w-10 text-accent" />, title: "Collaboration", description: "across disciplines and with our clients" },
+    { icon: <BrainCircuit className="h-10 w-10 text-accent" />, title: "Innovation", description: "in anticipating and addressing emerging challenges" },
+    { icon: <Users className="h-10 w-10 text-accent" />, title: "Professionalism", description: "in service delivery and ethical standards" },
 ];
 
 export default function TheFirmPage() {
@@ -134,13 +134,26 @@ export default function TheFirmPage() {
                  <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Our Values</h2>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 text-center">
-                    {values.map((value) => (
-                        <div key={value.title} className="flex flex-col items-center">
-                            {value.icon}
-                            <h4 className="text-lg font-bold font-headline mt-4">{value.title}</h4>
-                            <p className="text-muted-foreground text-sm">{value.description}</p>
-                        </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    {values.slice(0, 3).map((value) => (
+                        <Card key={value.title} className="bg-card p-6 shadow-lg rounded-xl flex items-center gap-6">
+                            <div className="shrink-0">{value.icon}</div>
+                            <div>
+                                <h4 className="text-xl font-bold font-headline">{value.title}</h4>
+                                <p className="text-muted-foreground">{value.description}</p>
+                            </div>
+                        </Card>
+                    ))}
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mt-8">
+                     {values.slice(3).map((value) => (
+                        <Card key={value.title} className="bg-card p-6 shadow-lg rounded-xl flex items-center gap-6">
+                            <div className="shrink-0">{value.icon}</div>
+                            <div>
+                                <h4 className="text-xl font-bold font-headline">{value.title}</h4>
+                                <p className="text-muted-foreground">{value.description}</p>
+                            </div>
+                        </Card>
                     ))}
                 </div>
             </div>

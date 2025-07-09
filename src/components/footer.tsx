@@ -38,9 +38,11 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               <Logo variant={logoVariant} />
             </Link>
-            <p className="max-w-xs text-muted-foreground">
-              A premier Nigerian law firm providing expert legal services.
-            </p>
+            <div className="max-w-xs text-muted-foreground">
+              <h4 className="font-semibold font-headline text-foreground">Oyewole & Adesina</h4>
+              <h5 className="font-semibold text-foreground/90 mb-1">Legal Practitioners, Consultants and Notary Public</h5>
+              <p>A premier Nigerian law firm delivering meticulous, client-focused legal solutions grounded in commercial insight and unwavering integrity.</p>
+            </div>
           </div>
           <div className="space-y-4">
             <h4 className="font-semibold font-headline text-foreground">Useful Links</h4>

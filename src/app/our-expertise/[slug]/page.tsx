@@ -31,7 +31,6 @@ export default function ExpertiseDetailPage({ params }: { params: { slug: string
             alt={expertise.title}
             fill
             className="object-cover"
-            priority
             data-ai-hint={expertise.hint}
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>

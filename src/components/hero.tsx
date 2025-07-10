@@ -76,7 +76,7 @@ export default function Hero() {
                   <h1 className="text-4xl md:text-6xl font-headline font-bold mb-4 animate-fade-in-down">
                     {slide.title}
                   </h1>
-                  <p className="text-lg md:text-xl mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                  <p className="bg-black/30 p-4 rounded-md text-lg md:text-xl mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                     {slide.subtitle}
                   </p>
                    <div className="flex gap-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>

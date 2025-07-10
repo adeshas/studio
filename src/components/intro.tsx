@@ -29,7 +29,7 @@ export default function Intro() {
             ))}
           </div>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            At Oyewole & Adesina, we combine deep legal expertise with a strategic, business-focused mindset to guide clients through every challenge. As a full-service firm headquartered in Lagos, we pride ourselves on delivering tailored, end-to-end solutions—backed by rigorous analysis, clear communication, and an unwavering commitment to integrity.
+            At <span className="font-semibold text-foreground">Oyewole &amp; Adesina</span>, we combine deep legal expertise with a strategic, business-focused mindset to guide clients through every challenge. As a full-service firm headquartered in Lagos, we pride ourselves on delivering tailored, end-to-end solutions—backed by rigorous analysis, clear communication, and an unwavering commitment to integrity.
           </p>
         </div>
       </div>

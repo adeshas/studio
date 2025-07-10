@@ -9,27 +9,27 @@ import React from "react";
 
 const heroSlides = [
   {
-    title: "Better Solutions",
+    title: "Integrity & Excellence",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/maarten-van-den-heuvel-_pc8aMbI9UQ-unsplash.jpg",
     hint: "abstract art solutions"
   },
   {
-    title: "Innovation",
+    title: "Forward-Thinking Innovation",
     image: "https://www.oyewoleadesina.com/wp-content/uploads/2019/05/analysis-blackboard-bubble-355952.jpg",
     hint: "innovation blackboard lightbulb"
   },
   {
-    title: "Deeper Understanding",
+    title: "Trusted Legal Partners",
     image: "https://www.oyewoleadesina.com/wp-content/uploads/2019/06/blur-book-stack-books-590493_1.jpg",
     hint: "books stack library"
   },
   {
-    title: "Legal Insight",
+    title: "Comprehensive Expertise",
     image: "https://www.oyewoleadesina.com/wp-content/uploads/2019/06/legal_insights_1.jpg",
     hint: "law books justice"
   },
   {
-    title: "Business Instinct",
+    title: "Client-Centric Solutions",
     image: "https://www.oyewoleadesina.com/wp-content/uploads/2019/06/businessinstinct_v2_1.jpg",
     hint: "business cityscape"
   }

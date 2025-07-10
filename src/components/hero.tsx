@@ -74,7 +74,7 @@ export default function Hero() {
                   </h1>
                    <div className="flex gap-4 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
                         <Button size="lg" asChild variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary-dark">
-                            <Link href="#about-us" onClick={(e) => handleLinkClick(e, "#about-us")}>Learn More</Link>
+                            <Link href="/contact">Contact Us</Link>
                         </Button>
                         <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
                             <Link href="#expertise" onClick={(e) => handleLinkClick(e, "#expertise")}>More About Our Expertise</Link>

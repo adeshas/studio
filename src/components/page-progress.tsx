@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import NProgress from 'nprogress';
 
-export default function PageProgress() {
+function PageProgressContent() {
+
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -50,4 +51,12 @@ export default function PageProgress() {
   }, [pathname, searchParams]);
 
   return null;
+}
+
+export default function PageProgress() {
+  return (
+    <Suspense fallback={null}>
+      <PageProgressContent />
+    </Suspense>
+  );
 }

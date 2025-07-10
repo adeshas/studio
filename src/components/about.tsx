@@ -8,7 +8,7 @@ export default function About() {
           <div className="space-y-4">
             <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">About Us</h2>
             <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              Oyewole &amp; Adesina is a law firm in Nigeria with proficiency in dispute resolution, corporate and commercial law, real estate, finance, energy, labour and employment, shipping, admiralty and intellectual property law. Oyewole &amp; Adesina is strategically placed to offer quality and first-class cost-efficient legal services to clients across the major economic hubs and sectors of Nigeria.
+              <span className="font-semibold text-foreground">Oyewole &amp; Adesina</span> is a law firm in Nigeria with proficiency in dispute resolution, corporate and commercial law, real estate, finance, energy, labour and employment, shipping, admiralty and intellectual property law. <span className="font-semibold text-foreground">Oyewole &amp; Adesina</span> is strategically placed to offer quality and first-class cost-efficient legal services to clients across the major economic hubs and sectors of Nigeria.
             </p>
             <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               We have built a reputation for understanding our clients’ peculiar business issues and challenges, and then proffering a legal and business-savvy solution.

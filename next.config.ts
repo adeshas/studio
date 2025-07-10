@@ -27,7 +27,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'ddb73aed.sitepreview.org',
+        hostname: 'rmh.jsl.mybluehost.me',
         port: '',
         pathname: '/**',
       },

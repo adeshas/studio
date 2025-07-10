@@ -4,7 +4,7 @@ export const expertiseData = [
         slug: "notary-public-services",
         title: "Notary Public Services",
         shortDescription: "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of...",
-        image: "https://ddb73aed.sitepreview.org/wp-content/uploads/2019/08/notary_public_service_featured.jpg",
+        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/08/notary_public_service_featured.jpg",
         hint: "notary seal stamp",
         longDescription: [
             "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of Nigeria, and is an officer of the Supreme Court of Nigeria. He is licensed to witness signatures to documents and to authenticate the execution of certain classes of documents, take affidavits, declarations and depositions. A Notary Public can also protest bills of exchange and promissory notes and prepare marine or ship’s protest in cases of damage.",
@@ -26,7 +26,7 @@ export const expertiseData = [
         slug: "finance-and-insurance",
         title: "Finance & Insurance",
         shortDescription: "Oyewole & Adesina provides a comprehensive range of legal services for financial institutions, local and foreign...",
-        image: "https://ddb73aed.sitepreview.org/wp-content/uploads/2019/04/finance_insurance_featured.jpg",
+        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/finance_insurance_featured.jpg",
         hint: "finance money coins",
         longDescription: [
             "Oyewole & Adesina provides a comprehensive range of legal services for financial institutions, local and foreign investors, and corporate and commercial entities. Our expertise spans corporate finance, project finance, asset-based finance, structured finance, and debt recovery. Our team of lawyers are well-versed in navigating complex financial transactions, ensuring our clients’ interests are protected at every stage.",
@@ -50,7 +50,7 @@ export const expertiseData = [
         slug: "corporate-and-commercial-practice",
         title: "Corporate and Commercial Practice",
         shortDescription: "Oyewole & Adesina’s corporate and commercial experience spans through company/business entity formation to procurement of...",
-        image: "https://ddb73aed.sitepreview.org/wp-content/uploads/2019/04/corporate_commercial_featured.jpg",
+        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/corporate_commercial_featured.jpg",
         hint: "corporate building office",
         longDescription: [
             "Oyewole & Adesina’s corporate and commercial experience spans through company/business entity formation to procurement of operational licenses, company secretarial work, regulatory compliance, corporate restructuring, insolvency, mergers and acquisitions.",
@@ -70,7 +70,7 @@ export const expertiseData = [
         slug: "dispute-resolution",
         title: "Dispute Resolution",
         shortDescription: "Oyewole & Adesina’s dispute resolution practice handles issues relating to litigation, arbitration and alternative dispute resolution, the...",
-        image: "https://ddb73aed.sitepreview.org/wp-content/uploads/2019/04/dispute_resolution_featured.jpg",
+        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/dispute_resolution_featured.jpg",
         hint: "gavel judge court",
         longDescription: [
             "Oyewole & Adesina’s dispute resolution practice handles issues relating to litigation, arbitration and alternative dispute resolution, the practice has a broad range of experience in all facets of commercial litigation, such as banking, contracts, corporate issues and shareholder disputes, debt recovery, energy, environmental issues, insolvency, intellectual property, labour and employment, product liability, real estate, shipping and maritime and telecommunications.",
@@ -83,7 +83,7 @@ export const expertiseData = [
         slug: "labour-and-employment",
         title: "Labour and Employment",
         shortDescription: "Oyewole & Adesina offers both litigation based and solicitor’s services in employment related matters. We are...",
-        image: "https://ddb73aed.sitepreview.org/wp-content/uploads/2019/04/labour_employment_featured.jpg",
+        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/labour_employment_featured.jpg",
         hint: "people meeting office",
         longDescription: [
             "Oyewole & Adesina offers both litigation based and solicitor’s services in employment related matters. We are well-equipped to advise on the legal and practical issues arising from employment relationships.",
@@ -100,7 +100,7 @@ export const expertiseData = [
         slug: "shipping-admiralty-and-maritime",
         title: "Shipping, Admiralty and Maritime",
         shortDescription: "Oyewole & Adesina’s shipping, admiralty and maritime practice covers advisory services, admiralty litigation, processing of...",
-        image: "https://ddb73aed.sitepreview.org/wp-content/uploads/2019/04/shipping_maritime_featured.jpg",
+        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/shipping_maritime_featured.jpg",
         hint: "cargo ship sea",
         longDescription: [
             "Oyewole & Adesina’s shipping, admiralty and maritime practice covers advisory services, admiralty litigation, processing of cabotage registration for vessels. Our team of lawyers has extensive experience in handling a wide range of shipping and maritime matters.",
@@ -118,7 +118,7 @@ export const expertiseData = [
         slug: "intellectual-property",
         title: "Intellectual Property",
         shortDescription: "Oyewole & Adesina has extensive experience in patent, trademark, copyright and industrial designs registration, assignment, renewal and...",
-        image: "https://ddb73aed.sitepreview.org/wp-content/uploads/2019/04/intellectual_property_featured.jpg",
+        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/intellectual_property_featured.jpg",
         hint: "lightbulb idea",
         longDescription: [
             "Oyewole & Adesina has extensive experience in patent, trademark, copyright and industrial designs registration, assignment, renewal and general advisory. We provide comprehensive legal services to help our clients protect and enforce their intellectual property rights.",

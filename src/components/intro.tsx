@@ -20,6 +20,9 @@ export default function Intro() {
     <section id="intro" className="w-full py-12 md:py-24 lg:py-32 bg-primary/10">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl mb-12">
+            Oyewole &amp; Adesina
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {features.map((feature) => (
               <div key={feature.name} className="flex flex-col items-center space-y-3">

@@ -1,7 +1,7 @@
 
 export default function Intro() {
   return (
-    <section id="intro" className="w-full py-12 md:py-24 lg:py-32 bg-primary/10">
+    <section id="intro" className="w-full py-12 md:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl mb-8">

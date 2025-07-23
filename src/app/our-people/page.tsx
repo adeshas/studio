@@ -16,8 +16,27 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import React from "react";
 
 type TeamMember = (typeof teamMembers)[0];
+
+const formatDescription = (text: string) => {
+  const paragraphs = text.split('\n\n');
+  return paragraphs.map((paragraph, pIndex) => {
+    const parts = paragraph.split(/(\*\*.*?\*\*)/g).filter(part => part);
+    return (
+      <p key={pIndex}>
+        {parts.map((part, partIndex) => {
+          if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
+          }
+          return part;
+        })}
+      </p>
+    );
+  });
+};
+
 
 export default function OurPeoplePage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
@@ -90,9 +109,7 @@ export default function OurPeoplePage() {
                 </DialogHeader>
                 <ScrollArea className="flex-1 pr-4 -mr-4">
                   <div className="text-muted-foreground space-y-4">
-                      {selectedMember.description.split('\n\n').map((paragraph, i) => (
-                          <p key={i}>{paragraph}</p>
-                      ))}
+                      {formatDescription(selectedMember.description)}
                   </div>
                 </ScrollArea>
                  <div className="flex gap-4 mt-6 items-center border-t pt-4">

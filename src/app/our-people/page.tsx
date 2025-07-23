@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -62,7 +61,7 @@ export default function OurPeoplePage() {
                      <div className="relative w-full aspect-[600/1024]">
                           <Image
                               src={member.image}
-                              alt={member.name}
+                              alt={`Portrait of ${member.name}, ${member.role}`}
                               fill
                               className="w-full h-full object-cover"
                               style={member.imageStyle || {}}
@@ -95,7 +94,7 @@ export default function OurPeoplePage() {
               <div className="relative h-full hidden md:block">
                 <Image
                     src={selectedMember.image}
-                    alt={selectedMember.name}
+                    alt={`Portrait of ${selectedMember.name}, ${selectedMember.role}`}
                     fill
                     className="object-cover rounded-l-lg"
                     style={selectedMember.imageStyle || {}}

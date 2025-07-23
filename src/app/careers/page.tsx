@@ -5,6 +5,12 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Award, Users, BrainCircuit, Mail } from "lucide-react";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Careers',
+  description: 'Join the Oyewole & Adesina team. We are looking for talented and driven legal professionals to grow with our firm. Explore career opportunities with us.',
+}
 
 const whyJoinUs = [
     {
@@ -32,10 +38,11 @@ export default function CareersPage() {
         <section className="relative w-full h-64 md:h-80 bg-primary/20">
              <Image
                 src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/hunters-race-MYbhN8KaaEc-unsplash.jpg"
-                alt="Careers background"
+                alt="Modern office interior for career opportunities"
                 fill
                 className="object-cover"
                 data-ai-hint="recruitment office"
+                priority
              />
              <div className="absolute inset-0 bg-black/60 z-10"></div>
             <div className="relative container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white z-20">

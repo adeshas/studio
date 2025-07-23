@@ -1,4 +1,3 @@
-
 import { expertiseData } from "@/lib/expertise-data";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -7,6 +6,33 @@ import Link from "next/link";
 import { notFound } from 'next/navigation';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import type { Metadata, ResolvingMetadata } from 'next';
+
+type Props = {
+  params: { slug: string }
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const expertise = expertiseData.find((item) => item.slug === params.slug);
+
+  if (!expertise) {
+    return {
+      title: 'Expertise Not Found',
+      description: 'The requested practice area could not be found.',
+    }
+  }
+
+  return {
+    title: expertise.title,
+    description: expertise.shortDescription,
+    openGraph: {
+      images: [expertise.image],
+    },
+  }
+}
 
 export async function generateStaticParams() {
   return expertiseData.map((expertise) => ({
@@ -32,6 +58,7 @@ export default function ExpertiseDetailPage({ params }: { params: { slug: string
             fill
             className="object-cover"
             data-ai-hint={expertise.hint}
+            priority
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
           <div className="relative container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white z-20">
@@ -67,7 +94,7 @@ export default function ExpertiseDetailPage({ params }: { params: { slug: string
                 <div className="mt-12">
                   <Button asChild variant="outline">
                       <Link href="/our-expertise">
-                          <ArrowLeft className="h-4 w-4" />
+                          <ArrowLeft className="h-4 w-4 mr-2" />
                           Back to Our Expertise
                       </Link>
                   </Button>

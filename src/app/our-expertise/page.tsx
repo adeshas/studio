@@ -1,4 +1,3 @@
-
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Image from "next/image";
@@ -6,6 +5,12 @@ import Link from "next/link";
 import { expertiseData } from "@/lib/expertise-data";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Our Expertise',
+  description: 'Explore the diverse practice areas at Oyewole & Adesina, including dispute resolution, corporate law, energy, real estate, and intellectual property.',
+}
 
 export default function OurExpertisePage() {
   return (

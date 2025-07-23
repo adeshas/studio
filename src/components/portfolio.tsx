@@ -5,11 +5,11 @@ import { publicationsData } from "@/lib/publications-data";
 
 export default function Publications() {
   return (
-    <section id="publications" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+    <section id="publications" className="w-full py-12 md:py-24 lg:py-32 bg-background" aria-labelledby="publications-heading">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Latest Publications</h2>
+            <h2 id="publications-heading" className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Latest Publications</h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Stay informed with our latest legal insights and analysis.
             </p>

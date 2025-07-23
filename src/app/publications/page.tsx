@@ -5,6 +5,12 @@ import { Button } from "@/components/ui/button";
 import { publicationsData } from "@/lib/publications-data";
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Publications',
+  description: 'Stay informed with the latest legal insights, articles, and publications from the experts at Oyewole & Adesina law firm.',
+}
 
 export default function PublicationsPage() {
   return (
@@ -14,10 +20,11 @@ export default function PublicationsPage() {
          <section className="relative w-full h-64 md:h-80 bg-primary/20">
              <Image
                 src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/absolutvision-WYd_PkCa1BY-unsplash.jpg"
-                alt="Publications background"
+                alt="A library of legal books and publications"
                 fill
                 className="object-cover"
                 data-ai-hint="books library documents"
+                priority
              />
              <div className="absolute inset-0 bg-black/60 z-10"></div>
             <div className="relative container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white z-20">

@@ -1,4 +1,3 @@
-
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Image from "next/image";
@@ -6,7 +5,12 @@ import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShieldCheck, Target, Handshake, BrainCircuit, Users, Award, Briefcase, Landmark, Scale, PiggyBank, Factory, Anchor, Lightbulb, CheckCircle } from "lucide-react";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: 'About The Firm',
+  description: 'Learn about Oyewole & Adesina, our mission, vision, and core values. We are a leading law firm in Lagos, Nigeria, dedicated to excellence and client success.',
+}
 
 const practiceAreas = [
   { title: "Dispute Resolution", icon: <Scale className="h-8 w-8 text-accent mb-4" />, description: "Expert representation in domestic and international arbitration and litigation" },
@@ -43,10 +47,11 @@ export default function TheFirmPage() {
         <section className="relative w-full h-64 md:h-80 bg-primary/20">
           <Image
             src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/07/patrick-fore-H5Lf0nGyetk-unsplash.jpg"
-            alt="Modern office building"
+            alt="An abstract image representing the law firm's solid foundation"
             fill
             className="object-cover"
             data-ai-hint="law books gavel"
+            priority
           />
           <div className="absolute inset-0 bg-black/60 z-10"></div>
           <div className="relative container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white z-20">

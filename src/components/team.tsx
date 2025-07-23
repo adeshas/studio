@@ -10,11 +10,11 @@ const featuredTeamMembers = teamMembers.slice(0, 6);
 
 export default function Team() {
   return (
-    <section id="our-people" className="w-full py-12 md:py-24 lg:py-32 bg-primary/20">
+    <section id="our-people" className="w-full py-12 md:py-24 lg:py-32 bg-primary/20" aria-labelledby="our-team-heading">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Our Team</h2>
+            <h2 id="our-team-heading" className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Our Team</h2>
             <p className="max-w-[900px] text-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Meet our team of experienced and competent lawyers
             </p>
@@ -35,7 +35,7 @@ export default function Team() {
                       <div className="relative w-full aspect-[600/1024]">
                         <Image
                             src={member.image}
-                            alt={member.name}
+                            alt={`Portrait of ${member.name}, ${member.role}`}
                             fill
                             className="w-full h-full object-cover"
                             style={member.imageStyle}
@@ -46,7 +46,7 @@ export default function Team() {
                         <h3 className="text-xl font-bold font-headline">{member.name}</h3>
                         <p className="text-sm font-semibold text-accent mb-2">{member.role}</p>
                         <p className="text-muted-foreground mt-2 text-sm flex-grow">
-                          {member.description.replace(/\\n\\n/g, ' ').substring(0, 150)}...
+                          {member.description.replace(/\\n\\n/g, ' ').replace(/\*\*/g, "").substring(0, 150)}...
                         </p>
                       </CardContent>
                     </Card>

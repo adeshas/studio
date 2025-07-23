@@ -1,4 +1,3 @@
-
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { MapPin, Phone, Mail } from "lucide-react";
@@ -6,21 +5,27 @@ import Link from "next/link";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with Oyewole & Adesina. Find our office address in Lagos, phone number, and email. We look forward to hearing from you.',
+}
 
 const officeImages = [
     {
         src: "https://oyewoleadesina.com/wp-content/uploads/2025/07/office1.webp",
-        alt: "Office reception area",
+        alt: "Reception area of Oyewole & Adesina law office",
         hint: "office reception"
     },
     {
         src: "https://oyewoleadesina.com/wp-content/uploads/2025/07/office2.webp",
-        alt: "Office workspace",
+        alt: "Collaborative workspace at Oyewole & Adesina",
         hint: "office workspace"
     },
     {
         src: "https://oyewoleadesina.com/wp-content/uploads/2025/07/office3.webp",
-        alt: "Office meeting room",
+        alt: "Professional meeting room at Oyewole & Adesina",
         hint: "office meeting room"
     }
 ];
@@ -33,10 +38,11 @@ export default function ContactPage() {
         <section className="relative w-full h-64 md:h-80 bg-primary/20">
              <Image
                 src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/nastuh-abootalebi-yWwob8kwOCk-unsplash.jpg"
-                alt="Contact us background"
+                alt="Abstract architectural lines of a modern building"
                 fill
                 className="object-cover"
                 data-ai-hint="abstract building lines"
+                priority
              />
              <div className="absolute inset-0 bg-black/60 z-10"></div>
             <div className="relative container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white z-20">
@@ -108,6 +114,7 @@ export default function ContactPage() {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                title="Google Map of Oyewole & Adesina Office Location"
             ></iframe>
         </section>
 

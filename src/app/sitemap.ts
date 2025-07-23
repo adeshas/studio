@@ -1,6 +1,5 @@
 import { MetadataRoute } from 'next'
 import { expertiseData } from '@/lib/expertise-data';
-import { teamMembers } from '@/lib/team-data';
 
 const BASE_URL = 'https://www.oyewoleadesina.com';
 

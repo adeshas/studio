@@ -9,7 +9,7 @@ export default function Intro() {
           </h2>
           <div className="mb-12">
             <h3 className="text-xl font-headline text-foreground/80 tracking-widest">
-              Legal Practitioners &middot; Consultants &middot; Notary Public
+              Legal Practitioners &middot; Consultants &middot; Notaries
             </h3>
           </div>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">

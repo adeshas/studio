@@ -75,11 +75,7 @@ export default function Footer() {
                 <h5 className="font-semibold text-foreground/90 mb-1">Lagos Office</h5>
                 <p>19A, Udi Street<br/>Osborne Foreshore Estate Phase 1, Ikoyi, Lagos</p>
                 <p>M: +234 706 210 3941</p>
-              </div>
-              <div>
-                <h5 className="font-semibold text-foreground/90 mb-1">Abuja Office</h5>
-                <p>Block 33b, 24 Cairo Street,<br/>Off Ademola Adetokunbo Crescent, Wuse II, Abuja</p>
-                <p>M: +234 803 657 8169</p>
+                <p>O: 01 2932 390</p>
               </div>
               <div className="flex items-center gap-4">
                 <a href="mailto:info@oyewoleadesina.com" className="hover:text-accent inline-flex items-center gap-2"><Mail className="h-4 w-4" />info@oyewoleadesina.com</a>

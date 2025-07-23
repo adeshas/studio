@@ -31,7 +31,7 @@ export default function ContactPage() {
 
         <section id="contact-details" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-16 md:grid-cols-2 max-w-6xl mx-auto">
+            <div className="grid gap-16 md:grid-cols-1 max-w-3xl mx-auto">
               <div>
                   <h2 className="text-3xl font-bold font-headline mb-6">Lagos Office</h2>
                   <div className="space-y-4 text-lg text-muted-foreground">
@@ -47,26 +47,6 @@ export default function ContactPage() {
                           </div>
                       </div>
                       <div className="flex items-start gap-4">
-                          <Mail className="h-6 w-6 text-accent mt-1 shrink-0" />
-                          <a href="mailto:info@oyewoleadesina.com" className="hover:text-accent">info@oyewoleadesina.com</a>
-                      </div>
-                  </div>
-              </div>
-              <div>
-                  <h2 className="text-3xl font-bold font-headline mb-6">Abuja Office</h2>
-                  <div className="space-y-4 text-lg text-muted-foreground">
-                      <div className="flex items-start gap-4">
-                          <MapPin className="h-6 w-6 text-accent mt-1 shrink-0" />
-                          <span>Block 33b, 24 Cairo Street,<br/>Off Ademola Adetokunbo Crescent, Wuse II, Abuja</span>
-                      </div>
-                        <div className="flex items-start gap-4">
-                          <Phone className="h-6 w-6 text-accent mt-1 shrink-0" />
-                          <div>
-                              <p>Mobile: +234 803 657 8169</p>
-                              <p>Office: 01 2932 390</p>
-                          </div>
-                      </div>
-                        <div className="flex items-start gap-4">
                           <Mail className="h-6 w-6 text-accent mt-1 shrink-0" />
                           <a href="mailto:info@oyewoleadesina.com" className="hover:text-accent">info@oyewoleadesina.com</a>
                       </div>

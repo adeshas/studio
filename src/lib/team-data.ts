@@ -112,5 +112,23 @@ export const teamMembers = [
     description: "Ademola Shasanya is a seasoned IT professional with over two decades of experience in the Information Technology and Computer Technology industry. He holds a B.Sc. in Computer Engineering from Richmond, The American International University in London. His passion is rooted in utilizing technology and innovation to drive business growth and operational efficiency. He is the IT Consultant for the Firm, overseeing and managing the IT-driven innovations, services and needs of the Firm.",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2020/01/NEW_AdemolaShasanya.jpg",
     hint: "man portrait professional"
+  },
+  {
+    name: "Beatrice Kikelomo Kehinde",
+    role: "Librarian",
+    description: "Beatrice Kikelomo Kehinde is a Certified Librarian and an alumnus of the University of Ilorin, where she earned a Bachelor of Science degree in Library and Information Science. She is also a fellow of the Young African Library Leaders Fellowship (YALLF). With many years of experience in the library and information profession, Beatrice has worked in all departments of both academic and law libraries. Remarkably, her expertise spans heading a university library in an acting capacity, during which she successfully developed and curated a university law library collection that achieved accreditation from both the National Universities Commission (NUC) and the Council of Legal Education (CLE).\n\nShe is currently the librarian at Oyewole and Adesina, overseeing administration, collection development, and the provision of relevant library services within the law firm. There, Beatrice plays a key role in curating an extensive collection of legal materials and supports the firm’s attorneys with in-depth legal research and library services.\n\nIn addition to her excellent skills in the use of the Moys Classification Scheme, cataloguing resources, and Koha administration, Beatrice is passionate about legal librarianship. She is committed to expanding her expertise in information literacy and knowledge management within legal practice, as well as improving access to legal resources by offering personalized research assistance and conducting training sessions to help patrons effectively utilize both physical and electronic resources.\n\nBeatrice is an active member of the Nigerian Library Association (Lagos Branch) and the Nigerian Association of Law Libraries (Lagos Branch). She has a research publication in an international journal.",
+    email: "librarian@oyewoleadesina.com",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2024/10/YMA_0077.jpga_-768x1037.jpg",
+    hint: "woman portrait professional",
+    linkedin: ""
+  },
+  {
+    name: "Bankole Oyewole",
+    role: "Of Counsel",
+    description: "Bankole Oyewole is a seasoned legal practitioner with expertise in litigation, drafting, reviewing and negotiating contracts, consultancy and advisory in corporate and commercial matters. He is an alumnus of the University of Jos and the Nigerian Law School Bwari Abuja. Bankole had a brief training at the University of Manchester and is considered an alumnus of the University of Manchester. Bankole’s early training in litigation expounded his knowledge and interest in impact litigation.\n\nBankole’s more specific expertise include corporate and commercial law, Property and taxation.\n\nSome of Bankole’s achievements include: An active member of the team that brought pharmaceutical giants, Pfizer to book resulting in a settlement of over 40 Million dollars to the Federal Government of Nigeria; Some of Bankole’s achievements include active participation in the team that issued the Ekiti State Bond of 2011; Advising major multinationals on entrance strategies into the Nigerian economy; Acting as a Consultant to major multinationals on Tax matters.\n\nLitigated an action for the reduction of tax assessments for a multi national to the tune of 20 million naira.",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2024/10/YMA_0035.jpga_-778x1024.jpg",
+    hint: "man portrait lawyer",
+    email: "",
+    linkedin: ""
   }
 ];

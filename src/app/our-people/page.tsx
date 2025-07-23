@@ -108,7 +108,7 @@ export default function OurPeoplePage() {
                   <p className="text-lg text-accent font-semibold">{selectedMember.role}</p>
                 </DialogHeader>
                 <ScrollArea className="flex-1 pr-4 -mr-4">
-                  <div className="text-muted-foreground space-y-4">
+                  <div className="text-foreground space-y-4">
                       {formatDescription(selectedMember.description)}
                   </div>
                 </ScrollArea>

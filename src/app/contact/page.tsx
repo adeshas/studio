@@ -4,6 +4,26 @@ import Footer from "@/components/footer";
 import { MapPin, Phone, Mail } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Card } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
+const officeImages = [
+    {
+        src: "https://oyewoleadesina.com/wp-content/uploads/2025/07/office1.webp",
+        alt: "Office reception area",
+        hint: "office reception"
+    },
+    {
+        src: "https://oyewoleadesina.com/wp-content/uploads/2025/07/office2.webp",
+        alt: "Office workspace",
+        hint: "office workspace"
+    },
+    {
+        src: "https://oyewoleadesina.com/wp-content/uploads/2025/07/office3.webp",
+        alt: "Office meeting room",
+        hint: "office meeting room"
+    }
+];
 
 export default function ContactPage() {
   return (
@@ -31,7 +51,7 @@ export default function ContactPage() {
 
         <section id="contact-details" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-16 md:grid-cols-1 max-w-3xl mx-auto">
+            <div className="grid gap-16 md:grid-cols-2 max-w-5xl mx-auto items-start">
               <div>
                   <h2 className="text-3xl font-bold font-headline mb-6">Lagos Office</h2>
                   <div className="space-y-4 text-lg text-muted-foreground">
@@ -51,6 +71,29 @@ export default function ContactPage() {
                           <a href="mailto:info@oyewoleadesina.com" className="hover:text-accent">info@oyewoleadesina.com</a>
                       </div>
                   </div>
+              </div>
+              <div>
+                <Carousel className="w-full max-w-md mx-auto" opts={{ loop: true }}>
+                  <CarouselContent>
+                    {officeImages.map((image, index) => (
+                      <CarouselItem key={index}>
+                        <Card className="overflow-hidden rounded-xl shadow-lg">
+                          <div className="relative aspect-video">
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              fill
+                              className="object-cover"
+                              data-ai-hint={image.hint}
+                            />
+                          </div>
+                        </Card>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-10" />
+                  <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-10" />
+                </Carousel>
               </div>
             </div>
           </div>

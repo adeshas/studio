@@ -73,7 +73,7 @@ export default function OurPeoplePage() {
                       <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
                       <p className="text-md font-semibold text-accent mb-4">{member.role}</p>
                       <p className="text-muted-foreground text-sm flex-grow">
-                        {member.description.substring(0, 150)}...
+                        {member.description.replace(/\*\*/g, "").substring(0, 150)}...
                       </p>
                        <Button onClick={() => setSelectedMember(member)} className="mt-4 self-start">
                         Read Full Profile

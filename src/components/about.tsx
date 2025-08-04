@@ -16,11 +16,11 @@ export default function About() {
           </div>
           <div className="relative w-full h-80 lg:h-96 rounded-xl overflow-hidden shadow-xl">
             <Image
-              src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2021/01/ABOUT-US.jpeg"
+              src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/CONFERENCE.jpg"
               alt="The modern and professional interior of the Oyewole & Adesina law office"
               fill
               className="object-cover"
-              data-ai-hint="office interior"
+              data-ai-hint="office conference"
             />
           </div>
         </div>

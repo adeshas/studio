@@ -35,14 +35,6 @@ export const teamMembers = [
     hint: "woman portrait lawyer"
   },
   {
-    name: "Vitalis I. Jimeh",
-    role: "Lawyer",
-    description: "Vitalis I. Jimeh is a lawyer duly called to the **Nigerian Bar**, who has over a decade of practice experience mainly in litigation, especially in matters bothering on **Land Law, Business Law, Banking Law, Tax Law, Contract, Commercial and Transactions Law, Human Rights Law, Intellectual Property, Labour and Industrial Law, Family Law** as well as the prosecution and defence of diverse crimes.\n\nHe is a versatile professional who despite his keen interest in and bias for litigation has demonstrated profound understanding and easy navigation of regulatory agencies and procedures, other areas of legal practice including Business, Company, NGO, Copyright and Trademark Registration and other allied services as well as the investigation and/or perfection of title documents across various States of Nigeria.\n\nHe attended the **University of Jos, Nigeria** and the **Nigerian Law School, Lagos, Nigeria**. He is an active member of the **Nigerian Bar Association**, an avid reader, a lover of politics, a public and government affairs analyst and a passionate speaker of several Nigerian Languages including Hausa, Igbo and Tiv.",
-    email: "vitalis@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/IMG_2028.jpg",
-    hint: "man portrait lawyer"
-  },
-  {
     name: "Dele Kashim",
     role: "Associate",
     description: "Dele Kashim is an **Associate** in the firm’s **Dispute Resolution Practice Group**. His legal expertise spans a broad spectrum, encompassing both **commercial and criminal law practice**. Dele has garnered substantial experience in handling contentious legal matters and has been actively involved in representing clients before the Superior Courts of record in Nigeria.\n\nDele’s professional qualities are characterized by his unwavering work ethic, diligence, and industriousness. He is known for his commitment to his work and his ability to contribute effectively as a team player.\n\nDele’s educational background includes a Bachelor’s Degree in Law, which he obtained from **Benue State University**. Following his academic pursuits, he successfully completed the necessary legal training and was subsequently called to the **Nigerian Bar**. His legal qualifications and experience make him a valuable asset to the Firm’s Dispute Resolution Practice Group.",

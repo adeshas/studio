@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -101,7 +102,7 @@ export default function OurPeoplePage() {
                     data-ai-hint={selectedMember.hint}
                 />
               </div>
-              <div className="flex flex-col p-6 sm:p-8">
+              <div className="flex flex-col p-6 sm:p-8 overflow-hidden">
                 <DialogHeader className="mb-4 text-left">
                   <DialogTitle className="text-3xl lg:text-4xl font-bold font-headline">{selectedMember.name}</DialogTitle>
                   <p className="text-lg text-accent font-semibold">{selectedMember.role}</p>

@@ -27,7 +27,7 @@ export const teamMembers = [
   },
   {
     name: "Hilda Kayode",
-    role: "Legal Associate",
+    role: "Associate",
     description: "Hilda Kayode is a highly skilled and results-oriented **Legal Associate** at **Oyewole & Adesina**, with over seven years of comprehensive experience in **corporate and commercial law, property law, and general legal practice**. She holds a Bachelor of Laws (LL.B.) degree from **Adekunle Ajasin University, Akungba Akoko, Ondo State**, and was called to the **Nigerian Bar** in 2017.\n\nMs. Kayode advises both businesses and individuals on regulatory compliance, risk mitigation, and the protection of clients’ legal interests. Her expertise encompasses a wide array of areas, including property management, contractual negotiations, and regulatory advisory, enabling clients to effectively navigate complex legal environments. She combines profound industry knowledge with a client-focused approach, fostering strong, professional relationships and consistently delivering exceptional outcomes.\n\nA dedicated advocate for continuous professional development and legal excellence, Ms. Kayode remains at the cutting edge of industry trends, equipping her clients with innovative and forward-thinking legal solutions. She is an active member of the **Nigerian Bar Association** and participates in the **Alternative Dispute Resolution Committee of the Nigerian Bar Association Section on Business Law**.",
     linkedin: "https://www.linkedin.com/in/hildaibukun506",
     email: "hilda@oyewoleadesina.com",
@@ -69,7 +69,7 @@ export const teamMembers = [
   },
   {
     name: "Bankole Oyewole",
-    role: "Of Counsel",
+    role: "Senior Associate",
     description: "Bankole Oyewole is a seasoned legal practitioner with expertise in **litigation, drafting, reviewing and negotiating contracts, consultancy and advisory in corporate and commercial matters**. He is an alumnus of the **University of Jos** and the **Nigerian Law School Bwari Abuja**. Bankole had a brief training at the **University of Manchester** and is considered an alumnus of the **University of Manchester**. Bankole’s early training in litigation expounded his knowledge and interest in impact litigation.\n\nBankole’s more specific expertise include **corporate and commercial law, Property and taxation**.\n\nSome of Bankole’s achievements include: An active member of the team that brought pharmaceutical giants, **Pfizer** to book resulting in a settlement of over 40 Million dollars to the **Federal Government of Nigeria**; Some of Bankole’s achievements include active participation in the team that issued the **Ekiti State Bond of 2011**; Advising major multinationals on entrance strategies into the Nigerian economy; Acting as a Consultant to major multinationals on Tax matters.\n\nLitigated an action for the reduction of tax assessments for a multi national to the tune of 20 million naira.",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2024/10/YMA_0035.jpga_-778x1024.jpg",
     hint: "man portrait lawyer",

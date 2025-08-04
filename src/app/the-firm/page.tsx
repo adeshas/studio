@@ -66,11 +66,22 @@ export default function TheFirmPage() {
 
         <section id="who-we-are" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="max-w-4xl mx-auto text-center space-y-4">
+            <div className="max-w-4xl mx-auto text-center space-y-6">
               <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Who We Are</h2>
-              <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Founded in 2014, Oyewole & Adesina is a partnership law firm headquartered in Lagos, Nigeria, with deep roots in the country’s major commercial centres. We combine a lean, highly experienced team of legal practitioners to deliver first-class, cost-efficient services tailored to our clients’ needs.
-              </p>
+                <div className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-left space-y-4">
+                    <p>
+                        Oyewole &amp; Adesina is a law firm based in Nigeria, renowned for its proficiency in a wide spectrum of legal domains. Our practice areas encompass dispute resolution (including arbitration, litigation, and mediation), corporate and commercial law, criminal litigation, real estate, projects, finance, energy, labor and employment, maritime, and intellectual property law. At Oyewole &amp; Adesina, we are strategically positioned to deliver top-notch, cost-efficient legal services to clients operating across Nigeria's major economic centers and sectors. Our unwavering commitment to excellence is a cornerstone of our practice.
+                    </p>
+                    <p>
+                        We have built an exceptional reputation for our deep understanding of our clients' unique business challenges and issues. Our strength lies in providing legal and business-savvy solutions tailored to individual client needs. Anchored in a commercial approach, we consistently endeavor to employ cost-efficient and effective strategies to achieve desired outcomes.
+                    </p>
+                    <p>
+                        One of our core strengths is our multifaceted expertise across various areas of the law. Our carefully curated team of lawyers boasts excellent academic backgrounds and specialized experience in diverse legal facets. This collective proficiency enables us to offer a comprehensive suite of legal services that seamlessly support our clients' businesses.
+                    </p>
+                    <p>
+                        At Oyewole &amp; Adesina, we take pride in our solution-oriented approach. Our legal professionals bring a diverse range of skills and experience to the table, assisting clients in efficiently realizing their objectives. We are dedicated to delivering streamlined and effective legal services across all matters, consistently applying a practical and commercial perspective to resolve our clients' challenges.
+                    </p>
+                </div>
             </div>
           </div>
         </section>
@@ -97,11 +108,11 @@ export default function TheFirmPage() {
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-4 text-center md:text-left">
                         <h3 className="text-3xl font-bold font-headline">Our Mission</h3>
-                        <p className="text-muted-foreground md:text-lg">To provide integrity-driven, solution-oriented legal services through a practical, client-focused approach—delivering results that protect and advance your interests.</p>
+                        <p className="text-muted-foreground md:text-lg">Our mission is to provide professional, highest quality, solution and integrity-driven legal services to our clients using a practical and client-focused approach.</p>
                     </div>
                     <div className="space-y-4 text-center md:text-left">
                         <h3 className="text-3xl font-bold font-headline">Our Vision</h3>
-                        <p className="text-muted-foreground md:text-lg">To be the premier Nigerian law firm renowned for excellence, innovation, and unwavering commitment to client success.</p>
+                        <p className="text-muted-foreground md:text-lg">Our vision is to be the leading law firm providing comprehensive and skilled legal advice in a timely and efficient manner to international and domestic businesses, institutions and organizations.</p>
                     </div>
                 </div>
             </div>

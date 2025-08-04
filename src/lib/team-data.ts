@@ -2,8 +2,8 @@
 export const teamMembers = [
   {
     name: "Adedayo Adesina",
-    role: "Co-founder & Head of Dispute Resolution and Energy Practice Groups",
-    description: "Adedayo is a **Co-founder** and the Head of both the **Dispute Resolution** and **Energy Practice Groups**. In addition to a deep-seated knowledge of the law, Adedayo possesses outstanding analytical, writing and advocacy skills, which he brings to bear on clients’ work. Prior to the establishment of the firm, Adedayo practiced with a leading commercial law firm in Lagos where he was engaged in advising several Nigerian and International companies in the oil, gas and power sector.\n\nHe has vast experience advising on **concessions, acquisitions, licensing and strategic alliances** in the oil and gas sector. In the power sector, he advised both local and foreign based companies on the privatisation of the **PHCN** successor companies, reviewing and negotiating industry standard agreements ranging from the **Bulk Power Purchase Agreement**, **Vesting Contract**, **Gas Transportation Agreement**, **Gas Sales and Purchase Agreement** and related agreements.\n\nDiversifying and expanding his scope of expertise, Adedayo joined a renowned litigation law firm where he was actively involved in core and complex **commercial, environmental, labour, property, constitutional, criminal and election petition litigation** at various levels of court starting from the High Court to the Supreme Court.",
+    role: "Co-Founder & Head of Dispute Resolution and Energy Practice Groups",
+    description: "Adedayo is a **Co-Founder** and the Head of both the **Dispute Resolution** and **Energy Practice Groups**. In addition to a deep-seated knowledge of the law, Adedayo possesses outstanding analytical, writing and advocacy skills, which he brings to bear on clients’ work. Prior to the establishment of the firm, Adedayo practiced with a leading commercial law firm in Lagos where he was engaged in advising several Nigerian and International companies in the oil, gas and power sector.\n\nHe has vast experience advising on **concessions, acquisitions, licensing and strategic alliances** in the oil and gas sector. In the power sector, he advised both local and foreign based companies on the privatisation of the **PHCN** successor companies, reviewing and negotiating industry standard agreements ranging from the **Bulk Power Purchase Agreement**, **Vesting Contract**, **Gas Transportation Agreement**, **Gas Sales and Purchase Agreement** and related agreements.\n\nDiversifying and expanding his scope of expertise, Adedayo joined a renowned litigation law firm where he was actively involved in core and complex **commercial, environmental, labour, property, constitutional, criminal and election petition litigation** at various levels of court starting from the High Court to the Supreme Court.",
     email: "dayo@oyewoleadesina.com",
     linkedin: "https://www.linkedin.com/in/adedayo-adesina-1743233b/",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/MR-DAYO.jpeg",
@@ -124,3 +124,5 @@ export const teamMembers = [
     hint: "man portrait professional"
   },
 ];
+
+    

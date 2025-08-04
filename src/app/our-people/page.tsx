@@ -41,6 +41,9 @@ const formatDescription = (text: string) => {
 export default function OurPeoplePage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
+  const coFounder = teamMembers.find(member => member.name === "Adedayo Adesina");
+  const otherTeamMembers = teamMembers.filter(member => member.name !== "Adedayo Adesina");
+
   return (
     <>
       <div className="flex flex-col min-h-screen bg-background font-body">
@@ -56,8 +59,38 @@ export default function OurPeoplePage() {
                   </p>
                 </div>
               </div>
+
+              {coFounder && (
+                <div className="mb-12 flex justify-center">
+                    <div className="w-full max-w-sm">
+                        <Card key={coFounder.name} className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
+                            <div className="relative w-full aspect-[600/1024]">
+                                <Image
+                                    src={coFounder.image}
+                                    alt={`Portrait of ${coFounder.name}, ${coFounder.role}`}
+                                    fill
+                                    className="w-full h-full object-cover"
+                                    style={coFounder.imageStyle || {}}
+                                    data-ai-hint={coFounder.hint}
+                                />
+                            </div>
+                            <CardContent className="p-6 flex flex-col flex-grow">
+                            <h3 className="text-2xl font-bold font-headline">{coFounder.name}</h3>
+                            <p className="text-md font-semibold text-accent mb-4">{coFounder.role}</p>
+                            <p className="text-muted-foreground text-sm flex-grow">
+                                {coFounder.description.replace(/\*\*/g, "").substring(0, 150)}...
+                            </p>
+                            <Button onClick={() => setSelectedMember(coFounder)} className="mt-4 self-start">
+                                Read Full Profile
+                            </Button>
+                            </CardContent>
+                        </Card>
+                    </div>
+                </div>
+              )}
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {teamMembers.map((member) => (
+                {otherTeamMembers.map((member) => (
                   <Card key={member.name} className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
                      <div className="relative w-full aspect-[600/1024]">
                           <Image

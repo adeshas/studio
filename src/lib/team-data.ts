@@ -40,7 +40,7 @@ export const teamMembers = [
     description: "Hilda Kayode is a highly skilled and results-oriented **Legal Associate** at **Oyewole & Adesina**, with over seven years of comprehensive experience in **corporate and commercial law, property law, and general legal practice**. She holds a Bachelor of Laws (LL.B.) degree from **Adekunle Ajasin University, Akungba Akoko, Ondo State**, and was called to the **Nigerian Bar** in 2017.\n\nMs. Kayode advises both businesses and individuals on regulatory compliance, risk mitigation, and the protection of clients’ legal interests. Her expertise encompasses a wide array of areas, including property management, contractual negotiations, and regulatory advisory, enabling clients to effectively navigate complex legal environments. She combines profound industry knowledge with a client-focused approach, fostering strong, professional relationships and consistently delivering exceptional outcomes.\n\nA dedicated advocate for continuous professional development and legal excellence, Ms. Kayode remains at the cutting edge of industry trends, equipping her clients with innovative and forward-thinking legal solutions. She is an active member of the **Nigerian Bar Association** and participates in the **Alternative Dispute Resolution Committee of the Nigerian Bar Association Section on Business Law**.",
     linkedin: "https://www.linkedin.com/in/hildaibukun506",
     email: "hilda@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2020/01/KW7_1511.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/Hilda.jpeg",
     hint: "woman portrait lawyer"
   },
   {

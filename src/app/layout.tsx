@@ -3,12 +3,12 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 import PageProgress from '@/components/page-progress';
-import { EB_Garamond, Playfair_Display } from 'next/font/google';
+import { Inter, Playfair_Display } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
-const garamond = EB_Garamond({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-garamond',
+  variable: '--font-inter',
   display: 'swap',
 });
 
@@ -80,7 +80,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("!scroll-smooth", garamond.variable, playfairDisplay.variable)} suppressHydrationWarning>
+    <html lang="en" className={cn("!scroll-smooth", inter.variable, playfairDisplay.variable)} suppressHydrationWarning>
       <body className="font-body antialiased">
         <ThemeProvider
           attribute="class"

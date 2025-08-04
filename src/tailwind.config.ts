@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['var(--font-garamond)', 'serif'],
+        body: ['var(--font-inter)', 'sans-serif'],
         headline: ['var(--font-playfair-display)', 'serif'],
         code: ['monospace'],
       },

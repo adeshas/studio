@@ -144,6 +144,15 @@ export const teamMembers = [
     linkedin: ""
   },
   {
+    name: "Omolola Ojo",
+    role: "Operations Lead",
+    description: "Omolola Ojo is a seasoned operations leader with over 7 years of experience in driving strategic excellence and optimizing organizational performance. With expertise in operations management, team leadership, and strategic planning. Omolola has a proven track record of delivering results-driven solutions that align with the firms goals. \n\nHer extensive experience in matrix management environments has equipped her with the skills to oversee operations, human resources, and compliance, ensuring seamless execution and adherence to regulatory requirements. Omolola has successfully supported initiatives to enhance employee engagement, foster diversity and inclusion, and drive performance management excellence.\n\n Certified in Human Resources Management, Customer Relationship Management, and Law Firm Administration. Omolola holds a degree in Business Administration from the University of Ilorin. Her strong analytical skills, combined with a creative mindset, enables her to develop innovative solutions that drive business growth and excellence.\n\n As a dedicated professional, Omolola is committed to delivering exceptional service and support to clients and stakeholders, upholding the highest standards of integrity, professionalism, and expertise in the legal industry.",
+    email: "Ojo@oyewoleadesina.com",
+    linkedin: "",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/OJO.jpg",
+    hint: "woman portrait professional"
+  },
+  {
     name: "Ademola Shasanya",
     role: "IT Consultant",
     description: "Ademola Shasanya is a seasoned IT professional with over two decades of experience in the Information Technology and Computer Technology industry. He holds a B.Sc. in Computer Engineering from **Richmond, The American International University in London**. His passion is rooted in utilizing technology and innovation to drive business growth and operational efficiency. He is the **IT Consultant for the Firm**, overseeing and managing the IT-driven innovations, services and needs of the Firm.",
@@ -157,3 +166,4 @@ export const teamMembers = [
     
 
     
+

@@ -14,7 +14,7 @@ export const teamMembers = [
     role: "Senior Associate",
     description: "Victor Akpeji is a **Senior Associate** in the firm with vast knowledge in **Dispute Resolution, corporate and commercial practice and real estate practice**.\n\nHe has an LLB from **Ahmadu Bello University** and has been called to the **Nigerian Bar**. Victor is also a member of the **Nigerian Institute of Management (Chartered)** as well as the **Nigerian Bar Association**.\n\nPrior to joining **Oyewole & Adesina**, he had garnered considerable professional experience working in the litigation and corporate and commercial department of various law firms and also advised on several legal issues including regulatory compliance, negotiating and reviewing partnerships and Joint Development Agreements. Victor has made appearances at superior courts in Nigeria and also made strides in the corporate and commercial sector where his experience spans through company/business entity formation to procurement of operational licenses, company secretarial work etc.\n\nVictor applies the skills he has garnered across various spheres in providing practical resolution of legal issues.",
     email: "victor@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/VICTOR.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/VICTOR%201%20(2).jpg",
     hint: "man portrait lawyer"
   },
   {
@@ -22,7 +22,7 @@ export const teamMembers = [
     role: "Senior Associate",
     description: "Tochukwu Itumo is a **Senior Associate** at **Oyewole & Adesina**. He holds a Bachelor of Laws degree from **Ebonyi State University, Abakaliki** and was called to the **Nigerian Bar** in 2014. He is a candidate for the award of a Master of Laws degree from the **University of Lagos, Akoka**.\n\nTochukwu is a seasoned lawyer with over 10 years of practice experience in **corporate/commercial law and litigation**. He advises companies in the banking, fintech, energy, and real estate sectors on issues bordering on debt recovery, corporate governance, regulatory compliance, mergers and acquisitions, corporate insolvency and liquidation. He has helped corporate clients to develop an effective compliance manual in line with sector regulations. He also provides secretarial services to public, private and listed companies, ensuring regulatory compliance in their general, board and committee meetings, statutory filings, and internal policies. He has also provided legal services to the investment committee of a **Real Estate Investment Trust (REIT)** in Nigeria.\n\nHe is a member of the **Business Recovery and Insolvency Practitioners Association of Nigeria**, and has acquired practical boardroom and litigation experiences in corporate debt recovery, corporate re-organisation and winding-up proceedings. He has represented the **Asset Management Corporation of Nigeria** on matters bordering on debt recovery, assets tracing and seizure, company liquidation, debt compromise and settlements.\n\nWith substantial experience in corporate/commercial practice and litigation, Tochukwu is equipped with the resources and skillset to address clients’ interests using business-oriented methods and strategies.",
     email: "Tochukwu@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/TOCHUKWU.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/TOCHUKWU%201.jpg",
     hint: "man portrait lawyer"
   },
   {
@@ -65,7 +65,7 @@ export const teamMembers = [
     description: "Abisola Ayodele is a committed **Associate** at **Oyewole & Adesina**, delivering exceptional legal services supported by her LLB (Hons) degree from **Obafemi Awolowo University** and her qualification from the **Nigerian Law School**. With substantial experience in representing prominent financial institutions in **debt recovery and negotiations**, she demonstrates a robust understanding of complex financial and commercial issues, positioning her as a valuable asset in her field.\n\nAbisola brings a wealth of experience in drafting legal documents, conducting comprehensive research, and effectively advocating for clients in court.\n\nFueled by a deep curiosity and a passion for innovation, Abisola is dedicated to exploring the field of **intellectual property**. With a focus on helping clients safeguard and maximize their creative and business assets, she aims to provide valuable insights and support in this vital area.\n\nShe is an active member of the **Institute of Chartered Mediators and Conciliators (ICMC)** and the **Nigerian Bar Association (NBA)**. She remains well-informed about the latest legal trends, positioning herself to provide the best possible service to clients.",
     linkedin: "https://www.linkedin.com/in/ayodeleabisola",
     email: "Abisola@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/ABISOLA.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/ABISOLA%201.jpg",
     hint: "woman portrait lawyer"
   },
   {
@@ -73,7 +73,7 @@ export const teamMembers = [
     role: "Associate",
     description: "Damilola Olaniyan is an **Associate** in the firm’s **Corporate Department**. She provides legal support on a broad range of corporate and commercial matters, including regulatory compliance, corporate governance, and contract advisory. With a meticulous approach and strong analytical skills, she contributes to the structuring and execution of corporate transactions, ensuring clients meet their legal and commercial objectives.\n\nShe holds a Bachelor of Laws (LL.B) from **Afe Babalola University** and was called to the **Nigerian Bar**. Damilola has gained experience across various legal sectors, having worked with law firms and government institutions, where she developed a strong research, drafting, and analytical skills. She is also an Associate of the **Nigerian Institute of Chartered Arbitrators**.\n\nWith a keen eye for detail and a strategic approach to problem-solving, Damilola contributes to the successful execution of corporate transactions.",
     email: "dami@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/DAMILOLA.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/DAMILOLA%201.jpg",
     hint: "woman portrait lawyer"
   },
    {
@@ -82,7 +82,7 @@ export const teamMembers = [
     description: "Akinsanmi Iyanuoluwa Celestina is a legal professional with a comprehensive educational background. She earned her LLB(Hons)degree from **Adeleke University, Osun State** and a Barrister-at-Law (BL)degree from the **Nigerian Law School**.\n\nHer commitment to the field of conflict resolution is evident through her association with the **Institute of Chartered Mediators and Conciliators of Nigeria (ICMC)**. Iyanuoluwa is dedicated to advancing **Alternative Dispute Resolution** practices.\n\nIyanuoluwa has committed interest in **corporate practice, Dispute Resolution, Real Estate and commercial law**.\n\nIyanuoluwa is passionate about continuous learning and providing strategic legal solutions that drive meaningful contributions to the legal profession.",
     email: "",
     linkedin: "",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/IYANU.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/IYANU%201.jpg",
     hint: "woman portrait lawyer"
   },
   {
@@ -91,7 +91,7 @@ export const teamMembers = [
     description: "Ibukun Yomi Ogunbiyi is a dedicated **Associate** at **Oyewole & Adesina** with an LL.B (Hons) from **Elizade University, Ondo State**, and earned her Legal qualification from the **Nigerian Law School**, she holds a certificate from the **Institute of Chartered Mediators and Conciliators (ICMC)**. Her legal education and early practice experience have shaped her into a meticulous and forward-thinking legal professional.\n\nIbukun plays an active role in **Legal Drafting, and Research**, contributing to the Firm’s civil and commercial disputes. she continues to refine her skills, Legal Reasoning, and client service skills under the guidance of experienced practitioners.\n\nIn addition to her core Litigation responsibilities, Ibukun has a growing interest in **regulatory compliance in the oil and gas sector**.",
     email: "",
     linkedin: "",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/IBUKUN.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/IBUKUN%201.jpg",
     hint: "woman portrait lawyer"
   },
   {
@@ -99,7 +99,7 @@ export const teamMembers = [
     role: "Librarian",
     description: "Beatrice Kikelomo Kehinde is a **Certified Librarian** and an alumnus of the **University of Ilorin**, where she earned a Bachelor of Science degree in Library and Information Science. She is also a fellow of the **Young African Library Leaders Fellowship (YALLF)**. With many years of experience in the library and information profession, Beatrice has worked in all departments of both academic and law libraries. Remarkably, her expertise spans heading a university library in an acting capacity, during which she successfully developed and curated a university law library collection that achieved accreditation from both the **National Universities Commission (NUC)** and the **Council of Legal Education (CLE)**.\n\nShe is currently the **librarian at Oyewole and Adesina**, overseeing administration, collection development, and the provision of relevant library services within the law firm. There, Beatrice plays a key role in curating an extensive collection of legal materials and supports the firm’s attorneys with in-depth legal research and library services.\n\nIn addition to her excellent skills in the use of the **Moys Classification Scheme, cataloguing resources, and Koha administration**, Beatrice is passionate about legal librarianship. She is committed to expanding her expertise in information literacy and knowledge management within legal practice, as well as improving access to legal resources by offering personalized research assistance and conducting training sessions to help patrons effectively utilize both physical and electronic resources.\n\nBeatrice is an active member of the **Nigerian Library Association (Lagos Branch)** and the **Nigerian Association of Law Libraries (Lagos Branch)**. She has a research publication in an international journal.",
     email: "librarian@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2024/10/YMA_0077.jpga_-768x1037.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/BEATRICE%201.jpg",
     hint: "woman portrait professional",
     linkedin: ""
   },
@@ -108,7 +108,7 @@ export const teamMembers = [
     role: "Front Office Manager",
     description: "Eniye Seibri manages the **Front Office** at **Oyewole & Adesina**. She obtained her Bachelor’s degree in Business Administration from **Caleb University**. Eniye brings a strong educational foundation and a passion for providing excellent client service to her role.\n\nHer educational background has equipped her with valuable knowledge and skills related to business management and administration.\n\nShe has strong communication skills and good interpersonal relationship. Her ability to interact with clients in a friendly and professional manner enhances the firm’s reputation and client satisfaction. She possesses a welcoming and professional demeanor which sets a positive tone for client interactions in the firm.",
     email: "Info@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/ENIYE.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/ENIYE%201.jpg",
     hint: "woman portrait professional"
   },
   {
@@ -123,7 +123,7 @@ export const teamMembers = [
     name: "Omotosho Olatubosun Samuel",
     role: "Litigation Clerk",
     description: "Olatubosun is a dedicated **Litigation Clerk** who possesses a strong passion for supporting legal professionals in various aspects of their work. His commitment to this role is evident in his diligence and enthusiasm for assisting with tasks related to legal cases.\n\nAs a Litigation Clerk, Olatubosun is responsible for a range of essential functions within the legal team. These include the filing of court processes, ensuring that all documents are organized and well-maintained, and handling the service of court documents. These tasks are crucial in the smooth progression of legal cases and the adherence to legal procedures.\n\nOne of Olatubosun’s standout qualities is his ability to interact seamlessly and professionally with attorneys, clients, and other members of the support staff. This skill not only fosters effective communication within the legal team but also enhances the overall efficiency and effectiveness of legal proceedings. Olatubosun’s dedication and aptitude for his role as a Litigation Clerk make him a valuable asset to the legal professionals he assists and contribute to the successful management of legal cases.",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/OLATOBOSUN.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/OLATOBOSUN%201.jpg",
     hint: "man portrait professional"
   },
   {
@@ -131,14 +131,14 @@ export const teamMembers = [
     role: "Accountant",
     description: "Zainab Salaudeen is an experienced **accountant** with over three (3) years experience in the field of accounting.\n\nZainab is highly proactive, innovative and a self – driven individual who is passionate about identifying opportunities. She is endowed with excellent organizational and decision-making skill and she has a proven track record of consistently meeting and regularly surpassing demanding performance goals.\n\nZainab has proven abilities in managing business obstacles, troubleshooting, cost control, financial reporting, business analysis and creating positive impact.",
     email: "zainab@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/ZAINAB.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/ZAINAB%201.jpg",
     hint: "woman portrait professional"
   },
   {
     name: "Adepitan Inioluwa Michael",
     role: "In-House IT Solutions Specialist",
     description: "Adepitan Inioluwa Michael is the **in-house IT Solutions Specialist** at **Oyewole & Adesina**, where he manages and maintains the firm’s entire technology infrastructure. His responsibilities span across the management of the email systems, cloud storage, internet connectivity, and the firm’s website, ensuring all digital operations run smoothly and securely.\n\nHe is a graduate of **Trinity University** with a Bachelor of Science degree and is certified by **New Horizons**, with practical knowledge in IT systems, cloud technologies, and foundational cybersecurity. He is also skilled in graphic design and proficient in **Microsoft Excel**, which he leverages to support internal reporting, digital content, and administrative efficiency.\n\nIn addition to his core IT duties, he oversees the firm’s LinkedIn presence and contributes to its visual identity and branding.\n\nWidely respected for his professionalism, reliability, and solution-oriented mindset, Inioluwa plays a vital role in aligning the firm’s technology with its operational goals—delivering stability, clarity, and value every step of the way.",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/INIOLUWA.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/INIOLUWA%201.jpg",
     hint: "man portrait professional",
     email: "",
     linkedin: ""
@@ -149,7 +149,7 @@ export const teamMembers = [
     description: "Omolola Ojo is a seasoned operations leader with over 7 years of experience in driving strategic excellence and optimizing organizational performance. With expertise in operations management, team leadership, and strategic planning. Omolola has a proven track record of delivering results-driven solutions that align with the firms goals. \n\nHer extensive experience in matrix management environments has equipped her with the skills to oversee operations, human resources, and compliance, ensuring seamless execution and adherence to regulatory requirements. Omolola has successfully supported initiatives to enhance employee engagement, foster diversity and inclusion, and drive performance management excellence.\n\n Certified in Human Resources Management, Customer Relationship Management, and Law Firm Administration. Omolola holds a degree in Business Administration from the University of Ilorin. Her strong analytical skills, combined with a creative mindset, enables her to develop innovative solutions that drive business growth and excellence.\n\n As a dedicated professional, Omolola is committed to delivering exceptional service and support to clients and stakeholders, upholding the highest standards of integrity, professionalism, and expertise in the legal industry.",
     email: "Ojo@oyewoleadesina.com",
     linkedin: "",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/OJO.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/OJO%201.jpg",
     hint: "woman portrait professional"
   },
   {
@@ -167,3 +167,4 @@ export const teamMembers = [
 
     
 
+    

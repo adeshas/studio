@@ -3,12 +3,12 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 import PageProgress from '@/components/page-progress';
-import { Inter } from 'next/font/google';
+import { Encode_Sans } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
-const inter = Inter({
+const encodeSans = Encode_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-encode-sans',
   display: 'swap',
 });
 
@@ -74,12 +74,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("!scroll-smooth", inter.variable)} suppressHydrationWarning>
+    <html lang="en" className={cn("!scroll-smooth", encodeSans.variable)} suppressHydrationWarning>
       <body className="font-body antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          themes={['dark', 'light']}
+          themes={['dark', 'light', 'purple']}
           enableSystem={false}
         >
           <PageProgress />

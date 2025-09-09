@@ -10,6 +10,7 @@ const cairoPlay = Cairo_Play({
   subsets: ['latin'],
   variable: '--font-cairo-play',
   display: 'swap',
+  weight: '200',
 });
 
 export const metadata: Metadata = {

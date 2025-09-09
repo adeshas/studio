@@ -20,18 +20,12 @@ export default function Footer() {
   useEffect(() => {
     setYear(new Date().getFullYear());
   }, []);
-
-  const footerClasses = cn(
-    "transition-colors duration-300",
-    mounted && theme === 'dark' && 'bg-primary',
-    mounted && (theme === 'light' || !theme) && 'bg-primary/20'
-  );
   
-  const logoVariant = mounted && (theme === 'purple' || theme === 'dark') ? 'white' : 'color';
+  const logoVariant = 'white';
 
 
   return (
-    <footer className={footerClasses}>
+    <footer className="bg-background border-t border-border/40">
       <div className="container mx-auto py-12 px-4 md:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">

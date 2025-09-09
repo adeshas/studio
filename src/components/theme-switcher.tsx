@@ -24,14 +24,11 @@ export function ThemeSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("purple")}>
-          Purple
+        <DropdownMenuItem onClick={() => setTheme("dark")}>
+          Dark
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("light")}>
           Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

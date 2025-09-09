@@ -3,18 +3,12 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 import PageProgress from '@/components/page-progress';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  display: 'swap',
-});
-
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-playfair-display',
   display: 'swap',
 });
 
@@ -80,12 +74,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn("!scroll-smooth", inter.variable, playfairDisplay.variable)} suppressHydrationWarning>
+    <html lang="en" className={cn("!scroll-smooth", inter.variable)} suppressHydrationWarning>
       <body className="font-body antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="purple"
-          themes={['purple', 'light', 'dark']}
+          defaultTheme="dark"
+          themes={['dark', 'light']}
           enableSystem={false}
         >
           <PageProgress />

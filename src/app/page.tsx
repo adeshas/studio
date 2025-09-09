@@ -1,12 +1,9 @@
 import Header from '@/components/header';
 import Hero from '@/components/hero';
-import Intro from '@/components/intro';
 import Expertise from '@/components/services';
-import About from '@/components/about';
-import Team from '@/components/team';
-import Publications from '@/components/portfolio';
 import Footer from '@/components/footer';
 import type { Metadata } from 'next';
+import Contact from '@/components/contact';
 
 export const metadata: Metadata = {
   title: 'Oyewole & Adesina - Premier Nigerian Law Firm',
@@ -19,11 +16,8 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <Intro />
         <Expertise />
-        <About />
-        <Team />
-        <Publications />
+        <Contact />
       </main>
       <Footer />
     </div>

@@ -103,10 +103,22 @@
   animation: marquee 30s linear infinite;
 }
 
-.expertise-list-item:hover .arrow-icon {
-  opacity: 1;
-  transform: translateX(0);
+.highlight-swoop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(var(--primary) / 0.1);
+    transform: translateX(101%);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 0;
+}
+
+.group:hover .highlight-swoop {
+    transform: translateX(0);
 }
     
 
     
+

@@ -8,14 +8,6 @@ import { Button } from "@/components/ui/button";
 import { expertiseData } from "@/lib/expertise-data";
 import Link from "next/link";
 import Image from "next/image";
-import { Scale, Briefcase, Landmark, Factory } from "lucide-react";
-
-const expertiseIcons: { [key: string]: React.ReactNode } = {
-  "Dispute Resolution": <Scale className="h-8 w-8 text-primary" />,
-  "Corporate and Commercial Practice": <Briefcase className="h-8 w-8 text-primary" />,
-  "Real Estate": <Landmark className="h-8 w-8 text-primary" />,
-  "Energy": <Factory className="h-8 w-8 text-primary" />,
-};
 
 const MotionCard = ({ children, index }: { children: React.ReactNode, index: number }) => {
   const { ref, inView } = useInView({
@@ -70,9 +62,6 @@ export default function Expertise() {
                 <MotionCard key={item.slug} index={index}>
                     <Card className="flex flex-col h-full bg-neutral-900 border border-white/10 shadow-lg rounded-xl overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-primary/20 hover:-translate-y-2">
                         <CardContent className="p-8 flex flex-col flex-grow">
-                            <div className="mb-4">
-                                {expertiseIcons[item.title] || <Scale className="h-8 w-8 text-primary" />}
-                            </div>
                             <h3 className="text-2xl font-bold font-headline mb-4 text-white">{item.title}</h3>
                             <p className="text-white/60 text-sm flex-grow mb-6">{item.shortDescription}</p>
                             <Button asChild variant="link" className="p-0 self-start mt-auto text-primary hover:text-primary/80">

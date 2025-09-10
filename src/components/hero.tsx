@@ -2,8 +2,6 @@
 "use client";
 
 import { motion, useMotionValue, useTransform, animate, useScroll } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
@@ -118,28 +116,14 @@ export default function Hero() {
         animate="visible"
       >
         <motion.div className="space-y-6 text-center max-w-4xl mx-auto" variants={stagger}>
+          <motion.div variants={fadeUp}>
+            <p className="text-lg md:text-xl text-white/80 mb-4">Oyewole & Adesina</p>
+          </motion.div>
           <motion.div
-            className="text-4xl md:text-7xl font-light font-headline leading-tight h-40 md:h-56"
+            className="text-4xl md:text-7xl font-light font-headline leading-tight h-24 md:h-28"
             variants={fadeUp}
           >
              <motion.span>{displayText}</motion.span>
-          </motion.div>
-          <motion.p 
-            className="text-lg md:text-xl text-white/80"
-            variants={fadeUp}
-          >
-            Delivering expert legal solutions with integrity and a client-focused approach. Your trusted partner in navigating complex legal landscapes.
-          </motion.p>
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            variants={fadeUp}
-          >
-            <Button size="lg" asChild>
-              <Link href="/contact">Schedule a Consultation</Link>
-            </Button>
-            <Button size="lg" variant="outline" asChild>
-                <Link href="/our-expertise">Explore Our Expertise</Link>
-            </Button>
           </motion.div>
         </motion.div>
 

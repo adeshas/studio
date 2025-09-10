@@ -1,13 +1,14 @@
 
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { expertiseData } from "@/lib/expertise-data";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ExpertiseListItem from "./expertise-list-item";
+import { useRef } from "react";
 
 export default function Expertise() {
 
@@ -15,6 +16,15 @@ export default function Expertise() {
     triggerOnce: true,
     threshold: 0.2,
   });
+
+  const targetRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+
 
   const headingVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -34,14 +44,14 @@ export default function Expertise() {
 
   return (
     <motion.section
-      ref={ref}
+      ref={targetRef}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       id="expertise"
-      className="relative w-full py-20 md:py-32 lg:py-40 text-white"
+      className="relative w-full py-20 md:py-32 lg:py-40 text-white overflow-hidden"
       aria-labelledby="expertise-heading"
     >
-        <div className="absolute inset-0 z-0">
+        <motion.div style={{ y }} className="absolute inset-0 z-0">
             <Image
                 src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1163_v1.JPEG"
                 alt="Professional legal services"
@@ -50,9 +60,9 @@ export default function Expertise() {
                 data-ai-hint="lawyer office business"
             />
             <div className="absolute inset-0 bg-black/80"></div>
-        </div>
+        </motion.div>
 
-      <div className="relative z-10 container mx-auto px-4 md:px-6">
+      <div ref={ref} className="relative z-10 container mx-auto px-4 md:px-6">
         <motion.div 
           className="mb-12 max-w-4xl"
           variants={headingVariants}

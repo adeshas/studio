@@ -30,7 +30,7 @@ export default function Testimonials() {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       id="testimonials"
-      className="w-full py-20 md:py-32 bg-neutral-900 text-white"
+      className="w-full py-20 md:py-32 lg:py-40 bg-neutral-900 text-white"
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center">

@@ -32,7 +32,7 @@ export default function Clients() {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       id="clients"
-      className="w-full py-12 bg-black"
+      className="w-full py-20 bg-black"
     >
       <div className="container mx-auto text-center">
         <h3 className="text-sm font-light uppercase tracking-widest text-white/50 mb-8">

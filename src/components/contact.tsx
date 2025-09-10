@@ -32,7 +32,7 @@ export default function Contact() {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       id="contact" 
-      className="w-full py-20 md:py-32 bg-primary"
+      className="w-full py-20 md:py-32 lg:py-40 bg-primary"
     >
       <div className="container mx-auto px-4 md:px-6 text-center text-primary-foreground">
         <h2 className="text-3xl md:text-5xl font-light font-headline">Ready to move forward?</h2>

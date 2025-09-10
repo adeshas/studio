@@ -36,7 +36,7 @@ export default function About() {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       id="about-us"
-      className="w-full py-12 md:py-24 lg:py-32 bg-background"
+      className="w-full py-20 md:py-32 lg:py-40 bg-background"
       aria-labelledby="about-us-heading"
     >
       <div className="container mx-auto px-4 md:px-6">

@@ -41,39 +41,45 @@ export default function Expertise() {
     ["Dispute Resolution", "Corporate and Commercial Practice", "Energy"].includes(item.title)
   );
 
-   const headingRef = useInView({
+  const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.2,
   });
 
   const headingVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
 
   return (
-    <section id="expertise" className="w-full py-20 md:py-32 bg-black text-white" aria-labelledby="expertise-heading">
+    <motion.section
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      id="expertise"
+      className="w-full py-20 md:py-32 bg-background text-foreground"
+      aria-labelledby="expertise-heading"
+    >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <motion.div
-             ref={headingRef.ref}
-             initial="hidden"
-             animate={headingRef.inView ? "visible" : "hidden"}
-             variants={headingVariants}
-          >
-            <h2 id="expertise-heading" className="text-3xl font-light tracking-tighter sm:text-5xl">Our Expertise</h2>
-            <p className="max-w-[900px] text-white/70 md:text-xl/relaxed mt-4">
-              We provide expert legal counsel across a wide range of practice areas.
-            </p>
-          </motion.div>
-        </div>
+        <motion.div 
+          className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+          variants={headingVariants}
+        >
+          <h2 id="expertise-heading" className="text-3xl font-light tracking-tighter sm:text-5xl">Our Expertise</h2>
+          <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed mt-4">
+            We provide expert legal counsel across a wide range of practice areas.
+          </p>
+        </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredExpertise.map((item, index) => (
                 <MotionCard key={item.slug} index={index}>
-                    <Card className="flex flex-col h-full bg-neutral-900 border border-white/10 shadow-lg rounded-xl overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-primary/20 hover:-translate-y-2">
-                        <CardContent className="p-8 flex flex-col flex-grow">
-                            <h3 className="text-2xl font-bold font-headline mb-4 text-white">{item.title}</h3>
-                            <p className="text-white/60 text-sm flex-grow mb-6">{item.shortDescription}</p>
+                    <Card className="flex flex-col h-full bg-card border shadow-lg rounded-xl overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-primary/20 hover:-translate-y-2">
+                        <div className="relative w-full h-48">
+                           <Image src={item.image} alt={item.title} fill className="object-cover" data-ai-hint={item.hint} />
+                        </div>
+                        <CardContent className="p-6 flex flex-col flex-grow">
+                            <h3 className="text-2xl font-bold font-headline mb-4">{item.title}</h3>
+                            <p className="text-muted-foreground text-sm flex-grow mb-6">{item.shortDescription}</p>
                             <Button asChild variant="link" className="p-0 self-start mt-auto text-primary hover:text-primary/80">
                                 <Link href={`/our-expertise/${item.slug}`}>Read More &raquo;</Link>
                             </Button>
@@ -88,6 +94,6 @@ export default function Expertise() {
            </Button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

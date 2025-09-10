@@ -41,15 +41,25 @@ export default function Expertise() {
     ["Dispute Resolution", "Corporate and Commercial Practice", "Energy"].includes(item.title)
   );
 
+   const headingRef = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const headingVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
   return (
     <section id="expertise" className="w-full py-20 md:py-32 bg-black text-white" aria-labelledby="expertise-heading">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
           <motion.div
-             initial={{ opacity: 0, y: 20 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             transition={{ duration: 0.6, ease: "easeOut" }}
-             viewport={{ once: true }}
+             ref={headingRef.ref}
+             initial="hidden"
+             animate={headingRef.inView ? "visible" : "hidden"}
+             variants={headingVariants}
           >
             <h2 id="expertise-heading" className="text-3xl font-light tracking-tighter sm:text-5xl">Our Expertise</h2>
             <p className="max-w-[900px] text-white/70 md:text-xl/relaxed mt-4">

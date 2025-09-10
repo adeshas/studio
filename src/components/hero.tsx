@@ -34,8 +34,8 @@ const texts = [
     "Integrity and Excellence",
 ];
 
-const typingSpeed = 0.05;
-const deleteSpeed = 0.04;
+const typingSpeed = 0.1;
+const deleteSpeed = 0.08;
 const delayBeforeDelete = 1.75;
 
 

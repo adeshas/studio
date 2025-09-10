@@ -1,12 +1,11 @@
 
 "use client";
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate, useScroll } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { cursor } from "sisterhood";
+import { useEffect, useState, useRef } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -35,8 +34,8 @@ const texts = [
     "Integrity and Excellence",
 ];
 
-const typingSpeed = 0.1;
-const deleteSpeed = 0.08;
+const typingSpeed = 0.12;
+const deleteSpeed = 0.1;
 const delayBeforeDelete = 1.75;
 
 
@@ -45,6 +44,14 @@ export default function Hero() {
     const baseText = useMotionValue("");
     const displayText = useTransform(baseText, (latest) => latest);
     const [isDeleting, setIsDeleting] = useState(false);
+
+    const targetRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+      target: targetRef,
+      offset: ["start start", "end start"],
+    });
+
+    const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
     useEffect(() => {
         const fullText = texts[textIndex];
@@ -91,18 +98,18 @@ export default function Hero() {
 
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <section ref={targetRef} className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden">
+      <motion.div style={{ y }} className="absolute inset-0 z-0">
         <Image
-          src="https://www.oyewoleadesina.com/wp-content/uploads/2019/06/legal_insights_1.jpg"
+          src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1162_v1.JPEG"
           alt="A premier law firm"
           fill
           className="object-cover"
           priority
-          data-ai-hint="law books justice"
+          data-ai-hint="office building modern"
         />
         <div className="absolute inset-0 bg-black/70"></div>
-      </div>
+      </motion.div>
       
       <motion.div 
         className="relative z-10 grid md:grid-cols-2 gap-8 items-center container mx-auto px-4 py-24"
@@ -161,4 +168,3 @@ export default function Hero() {
     </section>
   );
 }
-

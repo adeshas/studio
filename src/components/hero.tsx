@@ -112,12 +112,12 @@ export default function Hero() {
       </motion.div>
       
       <motion.div 
-        className="relative z-10 grid md:grid-cols-2 gap-8 items-center container mx-auto px-4 py-24"
+        className="relative z-10 container mx-auto px-4 py-24"
         variants={stagger}
         initial="hidden"
         animate="visible"
       >
-        <motion.div className="space-y-6 text-center md:text-left" variants={stagger}>
+        <motion.div className="space-y-6 text-center max-w-4xl mx-auto" variants={stagger}>
           <motion.div
             className="text-4xl md:text-7xl font-light font-headline leading-tight h-40 md:h-56"
             variants={fadeUp}
@@ -131,7 +131,7 @@ export default function Hero() {
             Delivering expert legal solutions with integrity and a client-focused approach. Your trusted partner in navigating complex legal landscapes.
           </motion.p>
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            className="flex flex-col sm:flex-row gap-4 justify-center"
             variants={fadeUp}
           >
             <Button size="lg" asChild>
@@ -143,27 +143,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div 
-          className="relative w-full h-80 md:h-[500px] group"
-          variants={fadeUp}
-        >
-          <motion.div
-             whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.5)",
-             }}
-             transition={{ type: "spring", stiffness: 300 }}
-             className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl"
-          >
-             <Image
-                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/CONFERENCE.jpg"
-                alt="The modern and professional interior of the Oyewole & Adesina law office"
-                fill
-                className="object-cover"
-                data-ai-hint="office conference"
-             />
-          </motion.div>
-        </motion.div>
       </motion.div>
     </section>
   );

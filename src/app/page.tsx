@@ -9,6 +9,7 @@ import Testimonials from '@/components/testimonials';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import About from '@/components/about';
 
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <About />
         <Clients />
         <Expertise />
         <Testimonials />

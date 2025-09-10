@@ -35,7 +35,7 @@ export default function Clients() {
       className="w-full py-12 bg-black"
     >
       <div className="container mx-auto text-center">
-        <h3 className="text-sm font-bold uppercase tracking-widest text-white/50 mb-8">
+        <h3 className="text-sm font-light uppercase tracking-widest text-white/50 mb-8">
           Trusted by leading organizations
         </h3>
         <div className="relative w-full overflow-hidden">

@@ -39,13 +39,13 @@ export default function Footer() {
               <Logo variant="white" />
             </Link>
             <div className="max-w-xs text-muted-foreground">
-              <h4 className="font-semibold font-headline text-foreground">Oyewole & Adesina</h4>
+              <h4 className="font-light font-headline text-foreground">Oyewole & Adesina</h4>
               <h5 className="font-semibold text-foreground/90 mb-1 text-sm">Legal Practitioners, Consultants and Notaries</h5>
               <p>A premier law firm delivering meticulous, client-focused legal solutions grounded in commercial insight and unwavering integrity.</p>
             </div>
           </div>
           <div className="space-y-4">
-            <h4 className="font-semibold font-headline text-foreground">Useful Links</h4>
+            <h4 className="font-light font-headline text-foreground">Useful Links</h4>
             <ul className="space-y-2">
               <li><Link href="/" className="text-muted-foreground hover:text-accent">Home</Link></li>
               <li><Link href="/the-firm" className="text-muted-foreground hover:text-accent">The Firm</Link></li>
@@ -55,7 +55,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="space-y-4">
-            <h4 className="font-semibold font-headline text-foreground">Expertise</h4>
+            <h4 className="font-light font-headline text-foreground">Expertise</h4>
             <ul className="space-y-2">
               <li><Link href="/our-expertise/dispute-resolution" className="text-muted-foreground hover:text-accent">Dispute Resolution</Link></li>
               <li><Link href="/our-expertise/energy" className="text-muted-foreground hover:text-accent">Energy</Link></li>
@@ -64,7 +64,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="space-y-4">
-            <h4 className="font-semibold font-headline text-foreground">Contact Us</h4>
+            <h4 className="font-light font-headline text-foreground">Contact Us</h4>
             <div className="space-y-4 text-sm text-muted-foreground">
               <div>
                 <h5 className="font-semibold text-foreground/90 mb-1">Lagos Office</h5>

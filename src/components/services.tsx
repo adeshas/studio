@@ -59,7 +59,7 @@ export default function Expertise() {
              transition={{ duration: 0.6, ease: "easeOut" }}
              viewport={{ once: true }}
           >
-            <h2 id="expertise-heading" className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Expertise</h2>
+            <h2 id="expertise-heading" className="text-3xl font-light tracking-tighter sm:text-5xl">Our Expertise</h2>
             <p className="max-w-[900px] text-white/70 md:text-xl/relaxed mt-4">
               We provide expert legal counsel across a wide range of practice areas.
             </p>

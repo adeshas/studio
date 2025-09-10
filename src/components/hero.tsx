@@ -115,12 +115,6 @@ export default function Hero() {
             variants={fadeUp}
           >
              <motion.span>{displayText}</motion.span>
-             <motion.span
-                className="inline-block"
-                initial={{ opacity: 0.5 }}
-                animate={{ opacity: [0, 1, 1, 0, 1, 1, 0] }}
-                transition={{ repeat: Infinity, duration: 1.0, ease: "linear" }}
-             >|</motion.span>
           </motion.div>
           <motion.p 
             className="text-lg md:text-xl text-white/80"

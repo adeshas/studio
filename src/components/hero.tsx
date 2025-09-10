@@ -4,7 +4,8 @@ import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { cursor } from "sisterhood";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -33,21 +34,60 @@ const texts = [
     "Integrity and Excellence",
 ];
 
-export default function Hero() {
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (latest) => Math.round(latest));
-  const displayText = useTransform(rounded, (latest) => texts[latest % texts.length]);
+const typingSpeed = 0.05;
+const deleteSpeed = 0.04;
+const delayBeforeDelete = 1.75;
 
-  useEffect(() => {
-    const controls = animate(count, texts.length, {
-      type: "tween",
-      duration: texts.length * 2,
-      ease: "linear",
-      repeat: Infinity,
-      repeatType: "loop",
-    });
-    return controls.stop;
-  }, [count]);
+
+export default function Hero() {
+    const [textIndex, setTextIndex] = useState(0);
+    const baseText = useMotionValue("");
+    const displayText = useTransform(baseText, (latest) => latest);
+    const [isDeleting, setIsDeleting] = useState(false);
+
+    useEffect(() => {
+        const fullText = texts[textIndex];
+
+        const typingAnimation = animate(0, fullText.length, {
+            type: "tween",
+            duration: fullText.length * typingSpeed,
+            ease: "linear",
+            onUpdate: (latest) => {
+                baseText.set(fullText.substring(0, Math.round(latest)));
+            },
+            onComplete: () => {
+                setTimeout(() => {
+                    setIsDeleting(true);
+                }, delayBeforeDelete * 1000);
+            }
+        });
+
+        return () => typingAnimation.stop();
+
+    }, [textIndex, baseText]);
+    
+    useEffect(() => {
+        if (!isDeleting) return;
+
+        const fullText = texts[textIndex];
+
+        const deletingAnimation = animate(fullText.length, 0, {
+             type: "tween",
+             duration: fullText.length * deleteSpeed,
+             ease: "linear",
+             onUpdate: (latest) => {
+                baseText.set(fullText.substring(0, Math.round(latest)));
+             },
+             onComplete: () => {
+                setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+                setIsDeleting(false);
+             }
+        });
+
+        return () => deletingAnimation.stop();
+
+    }, [isDeleting, textIndex, baseText]);
+
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden">
@@ -71,15 +111,15 @@ export default function Hero() {
       >
         <motion.div className="space-y-6 text-center md:text-left" variants={stagger}>
           <motion.div
-            className="text-4xl md:text-7xl font-bold font-headline leading-tight"
+            className="text-4xl md:text-7xl font-bold font-headline leading-tight h-40 md:h-56"
             variants={fadeUp}
           >
              <motion.span>{displayText}</motion.span>
              <motion.span
                 className="inline-block"
-                initial={{ opacity: 0 }}
+                initial={{ opacity: 0.5 }}
                 animate={{ opacity: [0, 1, 1, 0, 1, 1, 0] }}
-                transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }}
+                transition={{ repeat: Infinity, duration: 1.0, ease: "linear" }}
              >|</motion.span>
           </motion.div>
           <motion.p 

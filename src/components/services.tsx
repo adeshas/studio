@@ -3,43 +3,13 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { expertiseData } from "@/lib/expertise-data";
 import Link from "next/link";
 import Image from "next/image";
-
-const MotionCard = ({ children, index }: { children: React.ReactNode, index: number }) => {
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        delay: index * 0.15,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  return (
-    <motion.div ref={ref} variants={variants} initial="hidden" animate={inView ? "visible" : "hidden"}>
-      {children}
-    </motion.div>
-  );
-};
-
+import { ArrowRight } from "lucide-react";
+import ExpertiseListItem from "./expertise-list-item";
 
 export default function Expertise() {
-  const featuredExpertise = expertiseData.filter(item => 
-    ["Dispute Resolution", "Corporate and Commercial Practice", "Energy"].includes(item.title)
-  );
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -47,8 +17,19 @@ export default function Expertise() {
   });
 
   const headingVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+
+  const listVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3,
+      },
+    },
   };
 
   return (
@@ -57,41 +38,48 @@ export default function Expertise() {
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       id="expertise"
-      className="w-full py-20 md:py-32 lg:py-40 bg-background text-foreground"
+      className="relative w-full py-20 md:py-32 lg:py-40 text-white"
       aria-labelledby="expertise-heading"
     >
-      <div className="container mx-auto px-4 md:px-6">
+        <div className="absolute inset-0 z-0">
+            <Image
+                src="https://picsum.photos/seed/lawyer/1920/1080"
+                alt="Professional legal services"
+                fill
+                className="object-cover"
+                data-ai-hint="lawyer office business"
+            />
+            <div className="absolute inset-0 bg-black/80"></div>
+        </div>
+
+      <div className="relative z-10 container mx-auto px-4 md:px-6">
         <motion.div 
-          className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+          className="mb-16 max-w-4xl"
           variants={headingVariants}
         >
-          <h2 id="expertise-heading" className="text-3xl font-light tracking-tighter sm:text-5xl">Our Expertise</h2>
-          <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed mt-4">
-            We provide expert legal counsel across a wide range of practice areas.
-          </p>
+          <div className="flex items-center gap-4 mb-4">
+             <span className="text-sm uppercase tracking-widest text-primary-foreground/60">Our Expertise</span>
+             <div className="w-16 h-px bg-primary"></div>
+          </div>
+          <h2 id="expertise-heading" className="text-4xl font-light tracking-tighter sm:text-6xl text-primary-foreground">
+            Solutions across the spectrum of legal services
+          </h2>
         </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredExpertise.map((item, index) => (
-                <MotionCard key={item.slug} index={index}>
-                    <Card className="flex flex-col h-full bg-card border shadow-lg rounded-xl overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-primary/20 hover:-translate-y-2">
-                        <div className="relative w-full h-48">
-                           <Image src={item.image} alt={item.title} fill className="object-cover" data-ai-hint={item.hint} />
-                        </div>
-                        <CardContent className="p-6 flex flex-col flex-grow">
-                            <h3 className="text-2xl font-bold font-headline mb-4">{item.title}</h3>
-                            <p className="text-muted-foreground text-sm flex-grow mb-6">{item.shortDescription}</p>
-                            <Button asChild variant="link" className="p-0 self-start mt-auto text-primary hover:text-primary/80">
-                                <Link href={`/our-expertise/${item.slug}`}>Read More &raquo;</Link>
-                            </Button>
-                        </CardContent>
-                    </Card>
-                </MotionCard>
+        
+        <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl"
+            variants={listVariants}
+        >
+            {expertiseData.slice(0, 8).map((item) => (
+                <ExpertiseListItem key={item.slug} href={`/our-expertise/${item.slug}`} title={item.title} />
             ))}
-        </div>
-        <div className="text-center mt-16">
-           <Button asChild size="lg">
-                <Link href="/our-expertise">View All Practice Areas</Link>
-           </Button>
+        </motion.div>
+        
+        <div className="text-left mt-16">
+           <Link href="/our-expertise" className="inline-flex items-center text-lg text-primary-foreground hover:text-accent transition-colors duration-300 group">
+                View All Practice Areas
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
+           </Link>
         </div>
       </div>
     </motion.section>

@@ -1,10 +1,10 @@
-
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, animate } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -26,7 +26,29 @@ const stagger = {
   },
 };
 
+const texts = [
+    "A Premier Law Firm",
+    "Expert Legal Solutions",
+    "Client-Focused Approach",
+    "Integrity and Excellence",
+];
+
 export default function Hero() {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+  const displayText = useTransform(rounded, (latest) => texts[latest % texts.length]);
+
+  useEffect(() => {
+    const controls = animate(count, texts.length, {
+      type: "tween",
+      duration: texts.length * 2,
+      ease: "linear",
+      repeat: Infinity,
+      repeatType: "loop",
+    });
+    return controls.stop;
+  }, [count]);
+
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -48,12 +70,18 @@ export default function Hero() {
         animate="visible"
       >
         <motion.div className="space-y-6 text-center md:text-left" variants={stagger}>
-          <motion.h1 
+          <motion.div
             className="text-4xl md:text-7xl font-bold font-headline leading-tight"
             variants={fadeUp}
           >
-            A Premier Law Firm
-          </motion.h1>
+             <motion.span>{displayText}</motion.span>
+             <motion.span
+                className="inline-block"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 1, 1, 0, 1, 1, 0] }}
+                transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }}
+             >|</motion.span>
+          </motion.div>
           <motion.p 
             className="text-lg md:text-xl text-white/80"
             variants={fadeUp}

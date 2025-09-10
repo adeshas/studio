@@ -4,14 +4,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const clients = [
-  "Microsoft",
-  "Google",
-  "Amazon",
-  "Netflix",
-  "Facebook",
-  "Apple",
-  "Tesla",
+const values = [
+  "Client-Focused Solutions",
+  "Integrity & Excellence",
+  "Commercial Insight",
+  "Strategic Advocacy",
+  "Innovative & Efficient",
+  "Unwavering Commitment",
 ];
 
 export default function Clients() {
@@ -36,13 +35,13 @@ export default function Clients() {
     >
       <div className="container mx-auto text-center">
         <h3 className="text-sm font-light uppercase tracking-widest text-white/50 mb-8">
-          Trusted by leading organizations
+          Our Commitment to Excellence
         </h3>
         <div className="relative w-full overflow-hidden">
           <div className="flex animate-marquee">
-            {[...clients, ...clients].map((client, index) => (
+            {[...values, ...values].map((value, index) => (
               <div key={index} className="flex-shrink-0 mx-8">
-                <span className="text-2xl font-semibold text-white/70">{client}</span>
+                <span className="text-2xl font-semibold text-white/70">{value}</span>
               </div>
             ))}
           </div>

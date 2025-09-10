@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
-import PageProgress from '@/components/page-progress';
 import { Encode_Sans } from 'next/font/google';
 import { cn } from '@/lib/utils';
+import PageProgress from '@/components/page-progress';
 
 const encodeSans = Encode_Sans({
   subsets: ['latin'],
@@ -75,14 +75,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn("!scroll-smooth", encodeSans.variable)} suppressHydrationWarning>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased bg-black">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          themes={['dark', 'light', 'purple']}
+          themes={['dark']}
           enableSystem={false}
         >
-          <PageProgress />
           {children}
           <Toaster />
         </ThemeProvider>

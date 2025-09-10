@@ -17,9 +17,10 @@ export default function Logo({ variant = 'color' }: LogoProps) {
     <Image
       src={src}
       alt="Oyewole & Adesina Logo"
-      width={variant === 'color' ? 1024 : 1024}
+      width={1024}
       height={variant === 'color' ? 332 : 221}
       className="w-full h-auto"
+      priority
     />
   );
 }

@@ -1,36 +1,42 @@
 
 "use client";
 
-import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Link from "next/link";
 import Logo from "./logo";
 import { Mail } from 'lucide-react';
-import { useTheme } from 'next-themes';
-import { cn } from '@/lib/utils';
+import { useInView } from 'react-intersection-observer';
+import { useEffect, useState } from 'react';
 
 export default function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
 
   useEffect(() => {
     setYear(new Date().getFullYear());
   }, []);
-  
-  const logoVariant = 'white';
-
 
   return (
-    <footer className="bg-background border-t border-border/40">
+    <motion.footer
+      ref={ref}
+      variants={variants}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      className="bg-black border-t border-white/10 text-white"
+    >
       <div className="container mx-auto py-12 px-4 md:px-6">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <Link href="/" className="inline-block">
-              <Logo variant={logoVariant} />
+              <Logo variant="white" />
             </Link>
             <div className="max-w-xs text-muted-foreground">
               <h4 className="font-semibold font-headline text-foreground">Oyewole & Adesina</h4>
@@ -42,24 +48,19 @@ export default function Footer() {
             <h4 className="font-semibold font-headline text-foreground">Useful Links</h4>
             <ul className="space-y-2">
               <li><Link href="/" className="text-muted-foreground hover:text-accent">Home</Link></li>
-              <li><Link href="/#about-us" className="text-muted-foreground hover:text-accent">Who We Are</Link></li>
+              <li><Link href="/the-firm" className="text-muted-foreground hover:text-accent">The Firm</Link></li>
               <li><Link href="/contact" className="text-muted-foreground hover:text-accent">Contact Us</Link></li>
-              <li><Link href="#" className="text-muted-foreground hover:text-accent">Terms of Use</Link></li>
               <li><Link href="/careers" className="text-muted-foreground hover:text-accent">Careers</Link></li>
-              <li><Link href="/publications" className="text-muted-foreground hover:text-accent">News and Publications</Link></li>
+              <li><Link href="/publications" className="text-muted-foreground hover:text-accent">Publications</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
             <h4 className="font-semibold font-headline text-foreground">Expertise</h4>
             <ul className="space-y-2">
-              <li><a href="#expertise" className="text-muted-foreground hover:text-accent">Dispute Resolution</a></li>
-              <li><a href="#expertise" className="text-muted-foreground hover:text-accent">Energy</a></li>
-              <li><a href="#expertise" className="text-muted-foreground hover:text-accent">Real Estate</a></li>
-              <li><a href="#expertise" className="text-muted-foreground hover:text-accent">Labour and Employment</a></li>
-              <li><a href="#expertise" className="text-muted-foreground hover:text-accent">Finance &amp; Insurance</a></li>
-              <li><a href="#expertise" className="text-muted-foreground hover:text-accent">Corporate and Commercial Practice</a></li>
-              <li><a href="#expertise" className="text-muted-foreground hover:text-accent">Shipping, Admiralty and Maritime</a></li>
-              <li><a href="#expertise" className="text-muted-foreground hover:text-accent">Intellectual Property</a></li>
+              <li><Link href="/our-expertise/dispute-resolution" className="text-muted-foreground hover:text-accent">Dispute Resolution</Link></li>
+              <li><Link href="/our-expertise/energy" className="text-muted-foreground hover:text-accent">Energy</Link></li>
+              <li><Link href="/our-expertise/real-estate" className="text-muted-foreground hover:text-accent">Real Estate</Link></li>
+              <li><Link href="/our-expertise/corporate-and-commercial-practice" className="text-muted-foreground hover:text-accent">Corporate & Commercial</Link></li>
             </ul>
           </div>
           <div className="space-y-4">
@@ -77,11 +78,10 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-border/40 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
+        <div className="mt-8 border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>Copyright &copy; {year} Oyewole &amp; Adesina. All Rights Reserved.</p>
-          {/* <p>Powered by eloquence Systems Ltd</p> */}
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

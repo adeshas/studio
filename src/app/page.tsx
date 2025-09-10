@@ -1,22 +1,33 @@
+
+"use client";
+
 import Header from '@/components/header';
 import Hero from '@/components/hero';
+import Clients from '@/components/clients';
 import Expertise from '@/components/services';
-import Footer from '@/components/footer';
-import type { Metadata } from 'next';
+import Testimonials from '@/components/testimonials';
 import Contact from '@/components/contact';
+import Footer from '@/components/footer';
+import { motion, useScroll, useSpring } from 'framer-motion';
 
-export const metadata: Metadata = {
-  title: 'Oyewole & Adesina - Premier Nigerian Law Firm',
-  description: 'Welcome to Oyewole & Adesina, a leading Nigerian law firm specializing in dispute resolution, corporate law, energy, and real estate. Discover our expertise and meet our team.',
-}
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
-    <div className="flex flex-col min-h-screen bg-background font-body">
+    <div className="flex flex-col min-h-screen bg-background font-body text-foreground">
+      <motion.div className="progress-bar" style={{ scaleX }} />
       <Header />
       <main className="flex-1">
         <Hero />
+        <Clients />
         <Expertise />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />

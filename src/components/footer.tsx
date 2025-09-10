@@ -16,8 +16,8 @@ export default function Footer() {
   });
 
   const variants = {
-    hidden: { opacity: 0, y: 70 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1.0, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 90 },
+    visible: { opacity: 1, y: 0, transition: { duration: 2.0, ease: "easeOut" } },
   };
 
   useEffect(() => {

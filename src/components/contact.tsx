@@ -14,12 +14,12 @@ export default function Contact() {
   });
 
   const variants = {
-    hidden: { opacity: 0, y: 70 },
+    hidden: { opacity: 0, y: 90 },
     visible: { 
       opacity: 1, 
       y: 0, 
       transition: { 
-        duration: 1.0, 
+        duration: 2.0, 
         ease: "easeOut" 
       } 
     },

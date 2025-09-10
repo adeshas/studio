@@ -6,21 +6,21 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const variants = {
-  hidden: { opacity: 0, y: 70 },
+  hidden: { opacity: 0, y: 90 },
   visible: { 
     opacity: 1, 
     y: 0, 
     transition: { 
-      duration: 1.0, 
+      duration: 2.0, 
       ease: "easeOut",
-      staggerChildren: 0.4
+      staggerChildren: 0.8
     } 
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 60 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1.5, ease: "easeOut" } },
 };
 
 export default function About() {

@@ -27,8 +27,8 @@ export default function Expertise() {
 
 
   const headingVariants = {
-    hidden: { opacity: 0, y: 70 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1.0, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 90 },
+    visible: { opacity: 1, y: 0, transition: { duration: 2.0, ease: "easeOut" } },
   };
 
   const listVariants = {
@@ -36,8 +36,8 @@ export default function Expertise() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.5,
+        staggerChildren: 0.4,
+        delayChildren: 1.0,
       },
     },
   };

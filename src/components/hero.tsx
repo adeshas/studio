@@ -6,12 +6,12 @@ import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 50 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 1.0,
       ease: "easeInOut",
     },
   },
@@ -20,7 +20,7 @@ const fadeUp = {
 const stagger = {
   visible: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.3,
     },
   },
 };

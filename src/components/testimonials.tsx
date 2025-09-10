@@ -12,12 +12,12 @@ export default function Testimonials() {
   });
 
   const variants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 70 },
     visible: { 
       opacity: 1, 
       y: 0, 
       transition: { 
-        duration: 0.8, 
+        duration: 1.0, 
         ease: "easeOut" 
       } 
     },

@@ -6,27 +6,27 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const variants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 70 },
   visible: { 
     opacity: 1, 
     y: 0, 
     transition: { 
-      duration: 0.8, 
+      duration: 1.0, 
       ease: "easeOut",
-      staggerChildren: 0.2
+      staggerChildren: 0.4
     } 
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
 };
 
 export default function About() {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 0.2,
   });
 
   return (

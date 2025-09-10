@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
@@ -111,7 +112,7 @@ export default function Hero() {
       >
         <motion.div className="space-y-6 text-center md:text-left" variants={stagger}>
           <motion.div
-            className="text-4xl md:text-7xl font-bold font-headline leading-tight h-40 md:h-56"
+            className="text-4xl md:text-7xl font-light font-headline leading-tight h-40 md:h-56"
             variants={fadeUp}
           >
              <motion.span>{displayText}</motion.span>
@@ -160,3 +161,4 @@ export default function Hero() {
     </section>
   );
 }
+

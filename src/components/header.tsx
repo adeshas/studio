@@ -50,7 +50,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="absolute top-0 z-40 w-full bg-black/20 backdrop-blur-sm">
+      <header className="absolute top-0 z-40 w-full bg-white/10 backdrop-blur-sm">
         <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-40 lg:w-48">

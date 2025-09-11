@@ -72,7 +72,7 @@ export default function Expertise() {
              <div className="w-16 h-px bg-primary"></div>
           </div>
            <h2 className="text-sm uppercase tracking-widest text-primary-foreground/60 mt-4">
-            Comprehensive solutions across the legal spectrum
+            Navigating complexity with clarity and precision
           </h2>
         </motion.div>
         

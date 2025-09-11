@@ -17,6 +17,10 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import React from "react";
+import type { Metadata } from 'next';
+
+// This is a client component, so metadata should be exported from a server component or page file if needed.
+// However, since this page is interactive, we will keep it as a client component.
 
 type TeamMember = (typeof teamMembers)[0];
 
@@ -41,9 +45,6 @@ const formatDescription = (text: string) => {
 export default function OurPeoplePage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
-  const coFounder = teamMembers.find(member => member.name === "Adedayo Adesina");
-  const otherTeamMembers = teamMembers.filter(member => member.name !== "Adedayo Adesina");
-
   return (
     <>
       <div className="flex flex-col min-h-screen bg-background font-body">
@@ -60,37 +61,8 @@ export default function OurPeoplePage() {
                 </div>
               </div>
 
-              {coFounder && (
-                <div className="mb-12 flex justify-center">
-                    <div className="w-full max-w-sm">
-                        <Card key={coFounder.name} className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
-                            <div className="relative w-full aspect-[600/1024]">
-                                <Image
-                                    src={coFounder.image}
-                                    alt={`Portrait of ${coFounder.name}, ${coFounder.role}`}
-                                    fill
-                                    className="w-full h-full object-cover"
-                                    style={coFounder.imageStyle || {}}
-                                    data-ai-hint={coFounder.hint}
-                                />
-                            </div>
-                            <CardContent className="p-6 flex flex-col flex-grow">
-                            <h3 className="text-2xl font-bold font-headline">{coFounder.name}</h3>
-                            <p className="text-md font-semibold text-accent mb-4">{coFounder.role}</p>
-                            <p className="text-muted-foreground text-sm flex-grow">
-                                {coFounder.description.replace(/\*\*/g, "").substring(0, 150)}...
-                            </p>
-                            <Button onClick={() => setSelectedMember(coFounder)} className="mt-4 self-start">
-                                Read Full Profile
-                            </Button>
-                            </CardContent>
-                        </Card>
-                    </div>
-                </div>
-              )}
-
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {otherTeamMembers.map((member) => (
+                {teamMembers.map((member) => (
                   <Card key={member.name} className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
                      <div className="relative w-full aspect-[600/1024]">
                           <Image

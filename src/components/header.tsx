@@ -1,9 +1,9 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "./logo";
@@ -21,6 +21,18 @@ const navLinks = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const { scrollY } = useScroll();
+  const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious();
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+  });
+
 
   const menuVariants = {
     closed: {
@@ -50,7 +62,15 @@ export default function Header() {
 
   return (
     <>
-      <header className="absolute top-0 z-40 w-full bg-white/10 backdrop-blur-sm">
+      <motion.header
+        variants={{
+          visible: { y: 0 },
+          hidden: { y: "-100%" },
+        }}
+        animate={hidden ? "hidden" : "visible"}
+        transition={{ duration: 0.35, ease: "easeInOut" }}
+        className="sticky top-0 z-40 w-full bg-white/10 backdrop-blur-sm"
+      >
         <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-40 lg:w-48">
@@ -67,7 +87,7 @@ export default function Header() {
             <Menu className="h-6 w-6 text-white" />
           </Button>
         </div>
-      </header>
+      </motion.header>
       
       <AnimatePresence>
         {isOpen && (

@@ -67,11 +67,11 @@ export default function Expertise() {
           className="mb-12 max-w-4xl"
           variants={headingVariants}
         >
-          <h2 id="expertise-heading" className="text-4xl font-light tracking-tighter sm:text-6xl text-primary-foreground">
+          <h2 id="expertise-heading" className="text-sm uppercase tracking-widest text-primary-foreground/60">
             Comprehensive solutions across the legal spectrum
           </h2>
           <div className="flex items-center gap-4 mt-4">
-             <span className="text-sm uppercase tracking-widest text-primary-foreground/60">Our Expertise</span>
+             <span className="text-4xl font-light tracking-tighter sm:text-6xl text-primary-foreground">Our Expertise</span>
              <div className="w-16 h-px bg-primary"></div>
           </div>
         </motion.div>

@@ -96,7 +96,7 @@ export default function Hero() {
 
 
   return (
-    <section ref={targetRef} className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden">
+    <section ref={targetRef} className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden -mt-20">
       <motion.div style={{ y }} className="absolute inset-0 z-0">
         <Image
           src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1162_v1.JPEG"
@@ -106,7 +106,7 @@ export default function Hero() {
           priority
           data-ai-hint="office building modern"
         />
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-black/80"></div>
       </motion.div>
       
       <motion.div 

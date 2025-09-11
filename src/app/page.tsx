@@ -10,10 +10,17 @@ import Contact from '@/components/contact';
 import Footer from '@/components/footer';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import About from '@/components/about';
+import { useRef } from 'react';
 
 
 export default function Home() {
+  const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
+  const { scrollYProgress: heroScrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -23,9 +30,11 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background font-body text-foreground">
       <motion.div className="progress-bar" style={{ scaleX }} />
-      <Header />
+      <Header scrollYProgress={heroScrollYProgress} />
       <main className="flex-1">
-        <Hero />
+        <div ref={heroRef}>
+          <Hero />
+        </div>
         <Clients />
         <About />
         <Expertise />

@@ -3,11 +3,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, MotionValue, useTransform } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "./logo";
-import { cn } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -19,8 +18,15 @@ const navLinks = [
   { href: "/contact", label: "Contact Us" },
 ];
 
-export default function Header() {
+type HeaderProps = {
+  scrollYProgress: MotionValue<number>;
+}
+
+export default function Header({ scrollYProgress }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const opacity = useTransform(scrollYProgress, [0.9, 1], [1, 0]);
+  const pointerEvents = useTransform(scrollYProgress, [0.9, 1], ["auto", "none"]);
 
   const menuVariants = {
     closed: {
@@ -50,7 +56,8 @@ export default function Header() {
 
   return (
     <>
-      <header
+      <motion.header
+        style={{ opacity, pointerEvents }}
         className="sticky top-0 z-40 w-full bg-white/10 backdrop-blur-sm"
       >
         <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -69,7 +76,7 @@ export default function Header() {
             <Menu className="h-6 w-6 text-white" />
           </Button>
         </div>
-      </header>
+      </motion.header>
       
       <AnimatePresence>
         {isOpen && (

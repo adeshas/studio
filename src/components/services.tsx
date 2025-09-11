@@ -53,7 +53,7 @@ export default function Expertise() {
     >
         <motion.div style={{ y }} className="absolute inset-0 z-0">
             <Image
-                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1163_v1.JPEG"
+                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1166_v1.JPEG"
                 alt="Professional legal services"
                 fill
                 className="object-cover"

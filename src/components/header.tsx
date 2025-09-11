@@ -58,7 +58,7 @@ export default function Header({ scrollYProgress }: HeaderProps) {
     <>
       <motion.header
         style={{ opacity, pointerEvents }}
-        className="sticky top-0 z-40 w-full bg-white/10 backdrop-blur-sm"
+        className="sticky top-0 z-40 w-full bg-white/20 backdrop-blur-sm"
       >
         <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2">

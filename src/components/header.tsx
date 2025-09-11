@@ -50,7 +50,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="absolute top-0 z-40 w-full">
+      <header className="absolute top-0 z-40 w-full bg-black/20 backdrop-blur-sm">
         <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-40 lg:w-48">
@@ -76,7 +76,7 @@ export default function Header() {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 z-50 bg-black/95"
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm"
           >
             <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
               <Link href="/" onClick={() => setIsOpen(false)}>

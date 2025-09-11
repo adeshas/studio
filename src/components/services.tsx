@@ -67,13 +67,13 @@ export default function Expertise() {
           className="mb-12 max-w-4xl"
           variants={headingVariants}
         >
-          <div className="flex items-center gap-4 mb-4">
-             <span className="text-sm uppercase tracking-widest text-primary-foreground/60">Our Expertise</span>
-             <div className="w-16 h-px bg-primary"></div>
-          </div>
           <h2 id="expertise-heading" className="text-4xl font-light tracking-tighter sm:text-6xl text-primary-foreground">
             Comprehensive solutions across the legal spectrum
           </h2>
+          <div className="flex items-center gap-4 mt-4">
+             <span className="text-sm uppercase tracking-widest text-primary-foreground/60">Our Expertise</span>
+             <div className="w-16 h-px bg-primary"></div>
+          </div>
         </motion.div>
         
         <motion.div 
@@ -88,7 +88,7 @@ export default function Expertise() {
         <div className="text-left mt-12 max-w-4xl">
            <Link href="/our-expertise" className="group relative inline-block overflow-hidden">
                 <div className="highlight-swoop"></div>
-                <div className="relative inline-flex items-center text-lg text-primary-foreground transition-colors duration-300 py-2">
+                <div className="relative inline-flex items-center text-lg text-primary-foreground transition-colors duration-300 py-2 pr-8">
                     View All Practice Areas
                     <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
                 </div>

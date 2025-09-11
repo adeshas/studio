@@ -86,9 +86,12 @@ export default function Expertise() {
         </motion.div>
         
         <div className="text-left mt-12 max-w-4xl">
-           <Link href="/our-expertise" className="inline-flex items-center text-lg text-primary-foreground hover:text-accent transition-colors duration-300 group">
-                View All Practice Areas
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
+           <Link href="/our-expertise" className="group relative inline-block overflow-hidden">
+                <div className="highlight-swoop"></div>
+                <div className="relative inline-flex items-center text-lg text-primary-foreground transition-colors duration-300 py-2">
+                    View All Practice Areas
+                    <ArrowRight className="ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
+                </div>
            </Link>
         </div>
       </div>

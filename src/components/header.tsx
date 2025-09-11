@@ -19,14 +19,14 @@ const navLinks = [
 ];
 
 type HeaderProps = {
-  scrollYProgress: MotionValue<number>;
+  scrollYProgress?: MotionValue<number>;
 }
 
 export default function Header({ scrollYProgress }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const opacity = useTransform(scrollYProgress, [0.9, 1], [1, 0]);
-  const pointerEvents = useTransform(scrollYProgress, [0.9, 1], ["auto", "none"]);
+  const opacity = scrollYProgress ? useTransform(scrollYProgress, [0.9, 1], [1, 0]) : 1;
+  const pointerEvents = scrollYProgress ? useTransform(scrollYProgress, [0.9, 1], ["auto", "none"]) : "auto";
 
   const menuVariants = {
     closed: {

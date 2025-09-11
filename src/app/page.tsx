@@ -23,8 +23,8 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background font-body text-foreground">
       <motion.div className="progress-bar" style={{ scaleX }} />
-      <Header />
       <main className="flex-1">
+        <Header />
         <Hero />
         <Clients />
         <About />

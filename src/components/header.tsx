@@ -60,9 +60,9 @@ export default function Header({ scrollYProgress }: HeaderProps) {
         style={{ opacity, pointerEvents }}
         className="sticky top-0 z-40 w-full bg-black/20 backdrop-blur-sm"
       >
-        <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto flex h-28 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-40 lg:w-48">
+            <div className="w-64 lg:w-72">
               <Logo variant="white" />
             </div>
           </Link>
@@ -87,9 +87,9 @@ export default function Header({ scrollYProgress }: HeaderProps) {
             exit="closed"
             className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm"
           >
-            <div className="container mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto flex h-28 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
               <Link href="/" onClick={() => setIsOpen(false)}>
-                 <div className="w-40 lg:w-48">
+                 <div className="w-64 lg:w-72">
                     <Logo variant="white" />
                  </div>
               </Link>
@@ -102,7 +102,7 @@ export default function Header({ scrollYProgress }: HeaderProps) {
                 <X className="h-6 w-6 text-white" />
               </Button>
             </div>
-            <nav className="flex flex-col items-center justify-center h-[calc(100vh-80px)] space-y-6">
+            <nav className="flex flex-col items-center justify-center h-[calc(100vh-112px)] space-y-6">
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}

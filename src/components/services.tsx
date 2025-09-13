@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -72,7 +71,7 @@ export default function Expertise() {
              <div className="w-16 h-px bg-primary"></div>
           </div>
            <h2 className="text-sm uppercase tracking-widest text-primary-foreground/60 mt-4">
-            Navigating complexity with clarity and precision
+            Distinct expertise, seamlessly covering the legal spectrum
           </h2>
         </motion.div>
         

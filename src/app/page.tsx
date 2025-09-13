@@ -5,7 +5,6 @@ import Header from '@/components/header';
 import Hero from '@/components/hero';
 import Clients from '@/components/clients';
 import Expertise from '@/components/services';
-import Testimonials from '@/components/testimonials';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
 import { motion, useScroll, useSpring } from 'framer-motion';
@@ -44,7 +43,6 @@ export default function Home() {
         <About />
         <Expertise />
         <PeopleHighlight />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />

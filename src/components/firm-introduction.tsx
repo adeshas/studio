@@ -50,7 +50,7 @@ export default function FirmIntroduction() {
             />
           </motion.div>
           <motion.div className="space-y-4" variants={itemVariants}>
-            <blockquote className="text-xl md:text-2xl font-light text-muted-foreground border-l-4 border-primary pl-6 italic">
+            <blockquote className="text-xl md:text-2xl font-light text-muted-foreground italic text-center">
               At Oyewole & Adesina, we combine deep legal expertise with a strategic, business-focused mindset to guide clients through every challenge. As a full-service firm headquartered in Lagos, we pride ourselves on delivering tailored, end-to-end solutions—backed by rigorous analysis, clear communication, and an unwavering commitment to integrity.
             </blockquote>
           </motion.div>
@@ -59,3 +59,4 @@ export default function FirmIntroduction() {
     </motion.section>
   );
 }
+

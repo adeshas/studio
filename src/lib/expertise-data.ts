@@ -1,28 +1,6 @@
 
 export const expertiseData = [
     {
-        slug: "notary-public-services",
-        title: "Notary Public Services",
-        shortDescription: "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/08/notary_public_service_featured.jpg",
-        hint: "notary seal stamp",
-        longDescription: [
-            "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of Nigeria, and is an officer of the Supreme Court of Nigeria. He is licensed to witness signatures to documents and to authenticate the execution of certain classes of documents, take affidavits, declarations and depositions. A Notary Public can also protest bills of exchange and promissory notes and prepare marine or ship’s protest in cases of damage.",
-            "As Notaries Public we offer the following services:",
-            "- Authentication of documents for use locally and internationally.",
-            "- Administering oaths and affirmations.",
-            "- Taking affidavits and declarations (including the declaration of age).",
-            "- Witnessing the execution of local and international documents such as sale and purchase agreements, powers of attorney, etc.",
-            "- Verifying company and business documents.",
-            "- Verifying identity and/or signatures.",
-            "- Certifying true copies of documents.",
-            "- Preparing notarial certificates of all kinds.",
-            "- Noting and Protesting Bills of Exchange.",
-            "- Drawing up Powers of Attorney and other legal documents.",
-            "- Dealing with foreign adoptions."
-        ]
-    },
-    {
         slug: "finance-and-insurance",
         title: "Finance & Insurance",
         shortDescription: "Oyewole & Adesina provides a comprehensive range of legal services for financial institutions, local and foreign...",
@@ -129,6 +107,28 @@ export const expertiseData = [
             "- IP litigation and enforcement",
             "- Anti-counterfeiting and piracy actions",
             "We work with a diverse range of clients, from individual inventors and artists to multinational corporations, to develop and implement effective IP strategies. Our goal is to help our clients maximize the value of their intellectual assets while minimizing the risk of infringement."
+        ]
+    },
+    {
+        slug: "notary-public-services",
+        title: "Notary Public Services",
+        shortDescription: "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of...",
+        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/08/notary_public_service_featured.jpg",
+        hint: "notary seal stamp",
+        longDescription: [
+            "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of Nigeria, and is an officer of the Supreme Court of Nigeria. He is licensed to witness signatures to documents and to authenticate the execution of certain classes of documents, take affidavits, declarations and depositions. A Notary Public can also protest bills of exchange and promissory notes and prepare marine or ship’s protest in cases of damage.",
+            "As Notaries Public we offer the following services:",
+            "- Authentication of documents for use locally and internationally.",
+            "- Administering oaths and affirmations.",
+            "- Taking affidavits and declarations (including the declaration of age).",
+            "- Witnessing the execution of local and international documents such as sale and purchase agreements, powers of attorney, etc.",
+            "- Verifying company and business documents.",
+            "- Verifying identity and/or signatures.",
+            "- Certifying true copies of documents.",
+            "- Preparing notarial certificates of all kinds.",
+            "- Noting and Protesting Bills of Exchange.",
+            "- Drawing up Powers of Attorney and other legal documents.",
+            "- Dealing with foreign adoptions."
         ]
     }
 ];

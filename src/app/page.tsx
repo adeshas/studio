@@ -12,6 +12,7 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import About from '@/components/about';
 import { useRef } from 'react';
 import Intro from '@/components/intro';
+import FirmIntroduction from '@/components/firm-introduction';
 
 
 export default function Home() {
@@ -37,6 +38,7 @@ export default function Home() {
           <Hero />
         </div>
         <Intro />
+        <FirmIntroduction />
         <Clients />
         <About />
         <Expertise />

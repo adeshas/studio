@@ -42,7 +42,7 @@ export default function Contact() {
         <div className="mt-8">
           <Button size="lg" variant="secondary" asChild>
             <Link href="/contact">
-              Schedule a Consultation <ArrowRight className="ml-2 h-5 w-5" />
+              Book a consultation <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
         </div>

@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, MotionValue, useTransform } from "framer-motion";
-import { Linkedin, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "./logo";
 
@@ -71,11 +71,18 @@ export default function Header({ scrollYProgress }: HeaderProps) {
             <Button
               asChild
               variant="ghost"
-              size="icon"
+              className="h-auto p-1"
               aria-label="LinkedIn"
             >
               <a href="https://www.linkedin.com/company/oyewole-adesina" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-5 w-5 text-white" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-auto"
+                  viewBox="0 0 24 24"
+                  fill="white"
+                >
+                  <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.59-11.018-3.714v-2.155z" />
+                </svg>
               </a>
             </Button>
             <Button

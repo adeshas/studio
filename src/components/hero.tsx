@@ -26,14 +26,14 @@ const stagger = {
 };
 
 const texts = [
-    "Premier.",
-    "Impactful.",
-    "Client-Focused.",
-    "Excellent.",
+    "YOUR CLIENT CENTRIC SOLUTION",
+    "BUILT ON INTEGRITY & EXCELLENCE",
+    "YOUR TRUSTED LEGAL PARTNER",
+    "COMPREHENSIVE IN EXPERTISE"
 ];
 
-const typingSpeed = 0.12;
-const deleteSpeed = 0.1;
+const typingSpeed = 0.08;
+const deleteSpeed = 0.05;
 const delayBeforeDelete = 1.75;
 
 
@@ -117,10 +117,10 @@ export default function Hero() {
       >
         <motion.div className="space-y-6 text-center max-w-4xl mx-auto" variants={stagger}>
           <motion.div variants={fadeUp}>
-            <p className="text-lg md:text-xl text-white/80 mb-4">Crafted to be</p>
+            <p className="text-lg md:text-xl text-white/80 mb-4 tracking-widest">CRAFTED TO BE</p>
           </motion.div>
           <motion.div
-            className="text-4xl md:text-7xl font-light font-headline leading-tight h-24 md:h-28"
+            className="text-2xl md:text-5xl font-light font-headline leading-tight h-24 md:h-28"
             variants={fadeUp}
           >
              <motion.span>{displayText}</motion.span>

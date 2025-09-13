@@ -11,6 +11,7 @@ import Footer from '@/components/footer';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import About from '@/components/about';
 import { useRef } from 'react';
+import Intro from '@/components/intro';
 
 
 export default function Home() {
@@ -35,6 +36,7 @@ export default function Home() {
         <div ref={heroRef} className="-mt-20">
           <Hero />
         </div>
+        <Intro />
         <Clients />
         <About />
         <Expertise />

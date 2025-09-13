@@ -26,10 +26,10 @@ const stagger = {
 };
 
 const texts = [
-    "A Premier Law Firm",
-    "Expert Legal Solutions",
-    "Client-Focused Approach",
-    "Integrity and Excellence",
+    "Premier.",
+    "Impactful.",
+    "Client-Focused.",
+    "Excellent.",
 ];
 
 const typingSpeed = 0.12;
@@ -117,7 +117,7 @@ export default function Hero() {
       >
         <motion.div className="space-y-6 text-center max-w-4xl mx-auto" variants={stagger}>
           <motion.div variants={fadeUp}>
-            <p className="text-lg md:text-xl text-white/80 mb-4">Oyewole & Adesina</p>
+            <p className="text-lg md:text-xl text-white/80 mb-4">Crafted to be</p>
           </motion.div>
           <motion.div
             className="text-4xl md:text-7xl font-light font-headline leading-tight h-24 md:h-28"

@@ -67,7 +67,7 @@ export default function Expertise() {
           variants={headingVariants}
         >
           <div className="flex items-center gap-4">
-             <span id="expertise-heading" className="text-4xl font-light tracking-tighter sm:text-6xl text-primary-foreground">Our Expertise</span>
+             <span id="expertise-heading" className="text-3xl font-light tracking-tighter sm:text-5xl text-primary-foreground">Our Expertise</span>
              <div className="w-16 h-px bg-primary"></div>
           </div>
            <h2 className="text-sm uppercase tracking-widest text-primary-foreground/60 mt-4">

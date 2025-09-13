@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, MotionValue, useTransform } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Linkedin, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Logo from "./logo";
 
@@ -67,14 +67,26 @@ export default function Header({ scrollYProgress }: HeaderProps) {
             </div>
           </Link>
           
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setIsOpen(true)}
-            aria-label="Open menu"
-          >
-            <Menu className="h-6 w-6 text-white" />
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              asChild
+              variant="ghost"
+              size="icon"
+              aria-label="LinkedIn"
+            >
+              <a href="https://www.linkedin.com/company/oyewole-adesina" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-5 w-5 text-white" />
+              </a>
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu className="h-6 w-6 text-white" />
+            </Button>
+          </div>
         </div>
       </motion.header>
       

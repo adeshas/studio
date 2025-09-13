@@ -52,11 +52,11 @@ export default function About() {
           </motion.div>
           <motion.div className="relative w-full h-80 lg:h-96 rounded-xl overflow-hidden shadow-xl" variants={itemVariants}>
             <Image
-              src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/08/CONFERENCE.jpg"
+              src="https://oyewoleadesina.com/wp-content/uploads/2025/07/office3.webp"
               alt="The modern and professional interior of the Oyewole & Adesina law office"
               fill
               className="object-cover"
-              data-ai-hint="office conference"
+              data-ai-hint="office meeting room"
             />
           </motion.div>
         </div>

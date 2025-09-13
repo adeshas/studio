@@ -42,11 +42,11 @@ export default function FirmIntroduction() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
           <motion.div className="relative w-full h-80 lg:h-96 rounded-xl overflow-hidden shadow-xl" variants={itemVariants}>
             <Image
-              src="https://oyewoleadesina.com/wp-content/uploads/2025/07/office3.webp"
+              src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1163_v1.JPEG"
               alt="Oyewole & Adesina office discussion"
               fill
               className="object-cover"
-              data-ai-hint="office meeting professional"
+              data-ai-hint="cityscape office"
             />
           </motion.div>
           <motion.div className="space-y-4" variants={itemVariants}>

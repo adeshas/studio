@@ -13,6 +13,7 @@ import About from '@/components/about';
 import { useRef } from 'react';
 import Intro from '@/components/intro';
 import FirmIntroduction from '@/components/firm-introduction';
+import PeopleHighlight from '@/components/people-highlight';
 
 
 export default function Home() {
@@ -42,6 +43,7 @@ export default function Home() {
         <Clients />
         <About />
         <Expertise />
+        <PeopleHighlight />
         <Testimonials />
         <Contact />
       </main>

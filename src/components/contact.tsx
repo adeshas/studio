@@ -35,7 +35,7 @@ export default function Contact() {
       className="w-full py-20 md:py-32 lg:py-40 bg-primary"
     >
       <div className="container mx-auto px-4 md:px-6 text-center text-primary-foreground">
-        <h2 className="text-3xl md:text-5xl font-light font-headline">NEED A LAWYER?</h2>
+        <h2 className="text-3xl md:text-5xl font-light font-headline">Need a Lawyer?</h2>
         <p className="max-w-2xl mx-auto mt-4 text-lg md:text-xl text-primary-foreground/80">
             Let's discuss how we can assist you. Our team is prepared to provide the guidance and representation you need to achieve your objectives.
         </p>

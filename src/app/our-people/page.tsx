@@ -17,10 +17,8 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import React from "react";
-import type { Metadata } from 'next';
-
-// This is a client component, so metadata should be exported from a server component or page file if needed.
-// However, since this page is interactive, we will keep it as a client component.
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 type TeamMember = (typeof teamMembers)[0];
 
@@ -41,9 +39,35 @@ const formatDescription = (text: string) => {
   });
 };
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
 
 export default function OurPeoplePage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   return (
     <>
@@ -61,32 +85,40 @@ export default function OurPeoplePage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <motion.div
+                ref={ref}
+                variants={containerVariants}
+                initial="hidden"
+                animate={inView ? "visible" : "hidden"}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              >
                 {teamMembers.map((member) => (
-                  <Card key={member.name} className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
-                     <div className="relative w-full aspect-[600/1024]">
-                          <Image
-                              src={member.image}
-                              alt={`Portrait of ${member.name}, ${member.role}`}
-                              fill
-                              className="w-full h-full object-cover"
-                              style={member.imageStyle || {}}
-                              data-ai-hint={member.hint}
-                          />
-                     </div>
-                    <CardContent className="p-6 flex flex-col flex-grow">
-                      <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
-                      <p className="text-md font-semibold text-accent mb-4">{member.role}</p>
-                      <p className="text-muted-foreground text-sm flex-grow">
-                        {member.description.replace(/\*\*/g, "").substring(0, 150)}...
-                      </p>
-                       <Button onClick={() => setSelectedMember(member)} className="mt-4 self-start">
-                        Read Full Profile
-                      </Button>
-                    </CardContent>
-                  </Card>
+                  <motion.div key={member.name} variants={itemVariants}>
+                    <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
+                      <div className="relative w-full aspect-[600/1024]">
+                            <Image
+                                src={member.image}
+                                alt={`Portrait of ${member.name}, ${member.role}`}
+                                fill
+                                className="w-full h-full object-cover"
+                                style={member.imageStyle || {}}
+                                data-ai-hint={member.hint}
+                            />
+                      </div>
+                      <CardContent className="p-6 flex flex-col flex-grow">
+                        <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
+                        <p className="text-md font-semibold text-accent mb-4">{member.role}</p>
+                        <p className="text-muted-foreground text-sm flex-grow">
+                          {member.description.replace(/\*\*/g, "").substring(0, 150)}...
+                        </p>
+                        <Button onClick={() => setSelectedMember(member)} className="mt-4 self-start">
+                          Read Full Profile
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </section>
         </main>

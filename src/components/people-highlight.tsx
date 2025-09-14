@@ -43,12 +43,12 @@ export default function PeopleHighlight() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
-            <motion.div className="relative w-full h-[480px] lg:h-[600px] rounded-xl overflow-hidden shadow-xl" variants={itemVariants}>
+            <motion.div className="relative w-full h-[480px] rounded-xl overflow-hidden shadow-xl" variants={itemVariants}>
                 <Image
                 src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/ABISOLA%201.jpg"
                 alt="Abisola Ayodele, Associate at Oyewole & Adesina"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 data-ai-hint="woman portrait lawyer"
                 />
             </motion.div>

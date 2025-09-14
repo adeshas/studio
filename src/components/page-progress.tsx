@@ -10,6 +10,10 @@ function PageProgressContent() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
     NProgress.configure({ showSpinner: false });
 
     const handleAnchorClick = (event: MouseEvent) => {

@@ -28,8 +28,8 @@ export const expertiseData = [
         slug: "corporate-and-commercial-practice",
         title: "Corporate and Commercial Practice",
         shortDescription: "Oyewole & Adesina’s corporate and commercial experience spans through company/business entity formation to procurement of...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/corporate_commercial_featured.jpg",
-        hint: "corporate building office",
+        image: "https://picsum.photos/seed/boardroom/600/400",
+        hint: "boardroom meeting office",
         longDescription: [
             "Oyewole & Adesina’s corporate and commercial experience spans through company/business entity formation to procurement of operational licenses, company secretarial work, regulatory compliance, corporate restructuring, insolvency, mergers and acquisitions.",
             "Our Corporate and Commercial practice offers a wide range of services designed to meet the diverse needs of our clients. We provide strategic legal advice on all aspects of corporate and commercial law, from initial business setup to ongoing operational matters.",

@@ -74,7 +74,7 @@ export default function Header({ scrollYProgress }: HeaderProps) {
               className="h-auto p-1"
               aria-label="LinkedIn"
             >
-              <a href="https://www.linkedin.com/company/oyewole-adesina" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/oyewoleadesina/" target="_blank" rel="noopener noreferrer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-auto"

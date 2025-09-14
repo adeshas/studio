@@ -20,11 +20,17 @@ const itemVariants = {
 type ExpertiseListItemProps = {
   href: string;
   title: string;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
 };
 
-export default function ExpertiseListItem({ href, title }: ExpertiseListItemProps) {
+export default function ExpertiseListItem({ href, title, onMouseEnter, onMouseLeave }: ExpertiseListItemProps) {
   return (
-    <motion.div variants={itemVariants}>
+    <motion.div 
+      variants={itemVariants}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
       <Link href={href} className="group block relative overflow-hidden">
         <div className="highlight-swoop"></div>
         <div className="relative flex items-center justify-between border-b border-white/20 py-4">

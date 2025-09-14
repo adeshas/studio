@@ -1,16 +1,16 @@
+
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { expertiseData } from "@/lib/expertise-data";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import ExpertiseListItem from "./expertise-list-item";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 export default function Expertise() {
-
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -24,6 +24,7 @@ export default function Expertise() {
 
   const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
 
+  const [hoveredImage, setHoveredImage] = useState<string | null>(null);
 
   const headingVariants = {
     hidden: { opacity: 0, y: 90 },
@@ -41,6 +42,15 @@ export default function Expertise() {
     },
   };
 
+  const imageVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.5, ease: 'easeInOut' } },
+    exit: { opacity: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
+  };
+
+  const defaultImage = "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1166_v1.JPEG";
+  const defaultHint = "lawyer office business";
+
   return (
     <motion.section
       ref={targetRef}
@@ -50,16 +60,27 @@ export default function Expertise() {
       className="relative w-full py-20 md:py-32 lg:py-40 text-white overflow-hidden"
       aria-labelledby="expertise-heading"
     >
-        <motion.div style={{ y }} className="absolute inset-0 z-0">
-            <Image
-                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1166_v1.JPEG"
+      <motion.div style={{ y }} className="absolute inset-0 z-0">
+        <AnimatePresence>
+            <motion.div
+              key={hoveredImage || defaultImage}
+              variants={imageVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="h-full w-full"
+            >
+              <Image
+                src={hoveredImage || defaultImage}
                 alt="Professional legal services"
                 fill
                 className="object-cover"
-                data-ai-hint="lawyer office business"
-            />
-            <div className="absolute inset-0 bg-black/80"></div>
-        </motion.div>
+                data-ai-hint={hoveredImage ? expertiseData.find(e => e.image === hoveredImage)?.hint : defaultHint}
+              />
+            </motion.div>
+        </AnimatePresence>
+        <div className="absolute inset-0 bg-black/80"></div>
+      </motion.div>
 
       <div ref={ref} className="relative z-10 container mx-auto px-4 md:px-6">
         <motion.div 
@@ -80,7 +101,13 @@ export default function Expertise() {
             variants={listVariants}
         >
             {expertiseData.slice(0, 8).map((item) => (
-                <ExpertiseListItem key={item.slug} href={`/our-expertise/${item.slug}`} title={item.title} />
+                <ExpertiseListItem 
+                  key={item.slug} 
+                  href={`/our-expertise/${item.slug}`} 
+                  title={item.title}
+                  onMouseEnter={() => setHoveredImage(item.image)}
+                  onMouseLeave={() => setHoveredImage(null)}
+                />
             ))}
         </motion.div>
         

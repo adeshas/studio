@@ -28,7 +28,7 @@ export const expertiseData = [
         slug: "corporate-and-commercial-practice",
         title: "Corporate and Commercial Practice",
         shortDescription: "Oyewole & Adesina’s corporate and commercial experience spans through company/business entity formation to procurement of...",
-        image: "https://picsum.photos/seed/empty-boardroom/600/400",
+        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/boardroom1.jpeg",
         hint: "boardroom empty office",
         longDescription: [
             "Oyewole & Adesina’s corporate and commercial experience spans through company/business entity formation to procurement of operational licenses, company secretarial work, regulatory compliance, corporate restructuring, insolvency, mergers and acquisitions.",

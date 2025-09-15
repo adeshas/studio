@@ -17,8 +17,6 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import React from "react";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 type TeamMember = (typeof teamMembers)[0];
 
@@ -39,36 +37,9 @@ const formatDescription = (text: string) => {
   });
 };
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
-
 
 export default function OurPeoplePage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-    delay: 100,
-  });
 
   return (
     <>
@@ -86,15 +57,11 @@ export default function OurPeoplePage() {
                 </div>
               </div>
 
-              <motion.div
-                ref={ref}
-                variants={containerVariants}
-                initial="hidden"
-                animate={inView ? "visible" : "hidden"}
+              <div
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
                 {teamMembers.map((member) => (
-                  <motion.div key={member.name} variants={itemVariants}>
+                  <div key={member.name}>
                     <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
                       <div className="relative w-full aspect-[600/1024]">
                             <Image
@@ -117,9 +84,9 @@ export default function OurPeoplePage() {
                         </Button>
                       </CardContent>
                     </Card>
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
           </section>
         </main>

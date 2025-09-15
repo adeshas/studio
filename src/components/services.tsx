@@ -97,7 +97,7 @@ export default function Expertise() {
         </motion.div>
         
         <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-4xl"
+            className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-8xl"
             variants={listVariants}
         >
             {expertiseData.slice(0, 8).map((item) => (
@@ -111,7 +111,7 @@ export default function Expertise() {
             ))}
         </motion.div>
         
-        <div className="text-left mt-12 max-w-4xl">
+        <div className="text-left mt-12 max-w-8xl">
            <Link href="/our-expertise" className="group relative inline-block overflow-hidden">
                 <div className="highlight-swoop"></div>
                 <div className="relative inline-flex items-center text-lg text-primary-foreground transition-colors duration-300 py-2 pr-8">

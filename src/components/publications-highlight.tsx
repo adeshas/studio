@@ -73,7 +73,7 @@ export default function PublicationsHighlight() {
                     <div className="flex flex-col flex-grow">
                         <h3 className="text-xl font-bold font-headline mb-2">{item.title}</h3>
                         <p className="text-muted-foreground text-sm flex-grow mb-4">{item.description}</p>
-                        <Button asChild variant="link" className="p-0 self-start mt-auto">
+                        <Button asChild variant="outline" className="self-start mt-auto">
                             <a href={item.link} target="_blank" rel="noopener noreferrer" download>Read More &raquo;</a>
                         </Button>
                     </div>
@@ -85,6 +85,7 @@ export default function PublicationsHighlight() {
     </motion.section>
   );
 }
+
 
 
 

@@ -66,7 +66,7 @@ export default function PublicationsHighlight() {
                             src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/folder-document-3.png" 
                             alt={item.title} 
                             fill 
-                            className="object-cover" 
+                            className="object-contain" 
                             style={{ filter: 'hue-rotate(213deg) saturate(0.7)' }}
                         />
                     </div>
@@ -85,5 +85,6 @@ export default function PublicationsHighlight() {
     </motion.section>
   );
 }
+
 
 

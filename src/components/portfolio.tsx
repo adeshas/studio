@@ -31,7 +31,7 @@ export default function Publications() {
                         <h3 className="text-xl font-bold font-headline mb-2">{item.title}</h3>
                         <p className="text-card-foreground/80 mb-4">{item.description}</p>
                       </div>
-                      <Button asChild variant="link" className="p-0 self-start mt-4">
+                      <Button asChild className="self-start mt-4">
                         <a href={item.link} target="_blank" rel="noopener noreferrer" download>Read More &raquo;</a>
                       </Button>
                     </Card>

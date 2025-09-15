@@ -69,7 +69,7 @@ export default function ContactPage() {
                           <Phone className="h-6 w-6 text-accent mt-1 shrink-0" />
                           <div>
                               <p>Mobile: +234 (706) 210-3941</p>
-                              <p>Office: (0201) 293-2390</p>
+                              <p>Office: +234 (201) 293-2390</p>
                           </div>
                       </div>
                       <div className="flex items-start gap-4">

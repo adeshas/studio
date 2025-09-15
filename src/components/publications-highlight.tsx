@@ -62,7 +62,7 @@ export default function PublicationsHighlight() {
             <motion.div key={index} variants={itemVariants}>
                 <Card className="flex flex-col h-full bg-transparent border-0 shadow-none rounded-none">
                     <div className="relative w-full h-64 mb-6">
-                        <Image src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/folder-document-1.png" alt={item.title} fill className="object-cover" />
+                        <Image src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/folder-document-2.png" alt={item.title} fill className="object-cover" />
                     </div>
                     <div className="flex flex-col flex-grow">
                         <h3 className="text-xl font-bold font-headline mb-2">{item.title}</h3>
@@ -79,3 +79,4 @@ export default function PublicationsHighlight() {
     </motion.section>
   );
 }
+

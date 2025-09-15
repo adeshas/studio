@@ -62,7 +62,7 @@ export default function PublicationsHighlight() {
             <motion.div key={index} variants={itemVariants}>
                 <Card className="flex flex-col h-full bg-transparent border-0 shadow-none rounded-none">
                     <div className="relative w-full h-64 mb-6">
-                        <Image src={`https://picsum.photos/seed/${index+10}/600/400`} alt={item.title} fill className="object-cover" data-ai-hint="publication document" />
+                        <Image src="/folder-document-1.png" alt={item.title} fill className="object-cover" />
                     </div>
                     <div className="flex flex-col flex-grow">
                         <h3 className="text-xl font-bold font-headline mb-2">{item.title}</h3>

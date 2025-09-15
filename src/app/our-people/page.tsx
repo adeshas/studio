@@ -67,6 +67,7 @@ export default function OurPeoplePage() {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
+    delay: 100,
   });
 
   return (

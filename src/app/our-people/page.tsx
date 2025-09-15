@@ -107,7 +107,7 @@ export default function OurPeoplePage() {
                       </div>
                       <CardContent className="p-6 flex flex-col flex-grow">
                         <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
-                        <p className="text-md font-semibold text-accent mb-4">{member.role}</p>
+                        <p className="text-md font-semibold text-muted-foreground mb-4">{member.role}</p>
                         <p className="text-muted-foreground text-sm flex-grow">
                           {member.description.replace(/\*\*/g, "").substring(0, 150)}...
                         </p>
@@ -142,7 +142,7 @@ export default function OurPeoplePage() {
               <div className="flex flex-col p-6 sm:p-8 overflow-hidden">
                 <DialogHeader className="mb-4 text-left">
                   <DialogTitle className="text-3xl lg:text-4xl font-bold font-headline">{selectedMember.name}</DialogTitle>
-                  <p className="text-lg text-accent font-semibold">{selectedMember.role}</p>
+                  <p className="text-lg text-muted-foreground font-semibold">{selectedMember.role}</p>
                 </DialogHeader>
                 <ScrollArea className="flex-1 pr-4 -mr-4">
                   <div className="text-foreground space-y-4">

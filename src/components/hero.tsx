@@ -42,6 +42,18 @@ const letterAnimation = {
   },
 };
 
+const subheadingAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.8,
+            ease: "easeOut",
+        }
+    }
+}
+
 
 export default function Hero() {
     const targetRef = useRef(null);
@@ -57,7 +69,7 @@ export default function Hero() {
     useEffect(() => {
         const interval = setInterval(() => {
           setIndex((prevIndex) => (prevIndex + 1) % slides.length);
-        }, 5000); // Change slide every 5 seconds
+        }, 10000); // Change slide every 10 seconds
         return () => clearInterval(interval);
     }, []);
 
@@ -97,17 +109,13 @@ export default function Hero() {
                         ))}
                     </motion.h1>
                      <motion.p 
-                        variants={{
-                            ...sentenceAnimation,
-                            visible: { ...sentenceAnimation.visible, transition: { ...sentenceAnimation.visible.transition, delayChildren: slides[index].heading.length * 0.04 } }
-                        }}
+                        variants={subheadingAnimation}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ delay: slides[index].heading.length * 0.04 + 0.5 }}
                         className="text-lg md:text-xl text-white/80 tracking-wide font-light max-w-2xl mx-auto"
                     >
-                        {slides[index].subheading.split("").map((char, i) => (
-                            <motion.span key={`${char}-${i}`} variants={letterAnimation}>
-                                {char}
-                            </motion.span>
-                        ))}
+                        {slides[index].subheading}
                     </motion.p>
                 </motion.div>
             </AnimatePresence>
@@ -117,3 +125,4 @@ export default function Hero() {
     </section>
   );
 }
+

@@ -1,27 +1,16 @@
 
 export const expertiseData = [
     {
-        slug: "finance-and-insurance",
-        title: "Banking, finance and insurance",
-        shortDescription: "Oyewole & Adesina provides a comprehensive range of legal services for financial institutions, local and foreign...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/finance_insurance_featured.jpg",
-        hint: "finance money coins",
+        slug: "dispute-resolution",
+        title: "Dispute Resolution",
+        shortDescription: "Oyewole & Adesina’s dispute resolution practice handles issues relating to litigation, arbitration and alternative dispute resolution, the...",
+        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/dispute_resolution_featured.jpg",
+        hint: "gavel judge court",
         longDescription: [
-            "Oyewole & Adesina provides a comprehensive range of legal services for financial institutions, local and foreign investors, and corporate and commercial entities. Our expertise spans corporate finance, project finance, asset-based finance, structured finance, and debt recovery. Our team of lawyers are well-versed in navigating complex financial transactions, ensuring our clients’ interests are protected at every stage.",
-            "In the insurance sector, we advise on a broad spectrum of matters, including regulatory compliance, claims handling, and policy drafting. Our clients range from insurance companies and brokers to policyholders and other stakeholders. We are committed to providing practical and commercially focused legal advice that helps our clients achieve their business objectives."
-        ]
-    },
-    {
-        slug: "energy",
-        title: "Energy and Natural Resources",
-        shortDescription: "Oyewole & Adesina’s energy practice covers oil and gas (downstream, mid-stream and upstream), power and natural resources, our...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/ben-wicks-Ej2FQy1W7z4-unsplash(1).jpg",
-        hint: "oil rig energy",
-        longDescription: [
-            "Oyewole & Adesina’s energy practice covers oil and gas (downstream, mid-stream and upstream), power and natural resources, our energy practice is an integral part of our corporate and commercial practice.",
-            "We advise on acquisitions, divestments, concessions, licensing, joint ventures and strategic alliances. We also provide advice on regulatory compliance.",
-            "Our team of lawyers has advised companies in the oil, gas and power sectors on various legal, commercial, and regulatory issues. We have assisted clients in negotiating and drafting various industry-specific agreements, including Production Sharing Contracts, Joint Operating Agreements, Power Purchase Agreements, and Gas Sale and Purchase Agreements.",
-            "We combine our legal expertise with an in-depth understanding of the energy industry to provide our clients with practical and innovative legal solutions."
+            "Oyewole & Adesina’s dispute resolution practice handles issues relating to litigation, arbitration and alternative dispute resolution, the practice has a broad range of experience in all facets of commercial litigation, such as banking, contracts, corporate issues and shareholder disputes, debt recovery, energy, environmental issues, insolvency, intellectual property, labour and employment, product liability, real estate, shipping and maritime and telecommunications.",
+            "We also represent clients in criminal matters and election petitions.",
+            "Our dispute resolution lawyers recognize that the primary objective of our clients is to resolve disputes in the most efficient and cost-effective manner, in furtherance of this we analyze the peculiar facts and circumstances of each dispute in line with our clients’ commercial objectives to determine the most suitable dispute resolution option, whether litigation or any of the forms of alternative dispute resolution.",
+            "We have represented a wide array of clients, including individuals, public and private companies, financial institutions, foreign corporations and multinational companies before the various courts and tribunals in Nigeria."
         ]
     },
     {
@@ -45,16 +34,38 @@ export const expertiseData = [
         ]
     },
     {
-        slug: "dispute-resolution",
-        title: "Dispute Resolution",
-        shortDescription: "Oyewole & Adesina’s dispute resolution practice handles issues relating to litigation, arbitration and alternative dispute resolution, the...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/dispute_resolution_featured.jpg",
-        hint: "gavel judge court",
+        slug: "real-estate-and-infrastructure-practice",
+        title: "Real estate and infrastructure practice",
+        shortDescription: "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing...",
+        image: "https://picsum.photos/seed/restate/600/400",
+        hint: "building city",
         longDescription: [
-            "Oyewole & Adesina’s dispute resolution practice handles issues relating to litigation, arbitration and alternative dispute resolution, the practice has a broad range of experience in all facets of commercial litigation, such as banking, contracts, corporate issues and shareholder disputes, debt recovery, energy, environmental issues, insolvency, intellectual property, labour and employment, product liability, real estate, shipping and maritime and telecommunications.",
-            "We also represent clients in criminal matters and election petitions.",
-            "Our dispute resolution lawyers recognize that the primary objective of our clients is to resolve disputes in the most efficient and cost-effective manner, in furtherance of this we analyze the peculiar facts and circumstances of each dispute in line with our clients’ commercial objectives to determine the most suitable dispute resolution option, whether litigation or any of the forms of alternative dispute resolution.",
-            "We have represented a wide array of clients, including individuals, public and private companies, financial institutions, foreign corporations and multinational companies before the various courts and tribunals in Nigeria."
+            "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing of real estate projects.",
+            "We represent a wide range of clients, including developers, investors, lenders, and governmental entities in all phases of real estate and infrastructure projects."
+        ]
+    },
+    {
+        slug: "energy",
+        title: "Energy and Natural Resources",
+        shortDescription: "Oyewole & Adesina’s energy practice covers oil and gas (downstream, mid-stream and upstream), power and natural resources, our...",
+        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/ben-wicks-Ej2FQy1W7z4-unsplash(1).jpg",
+        hint: "oil rig energy",
+        longDescription: [
+            "Oyewole & Adesina’s energy practice covers oil and gas (downstream, mid-stream and upstream), power and natural resources, our energy practice is an integral part of our corporate and commercial practice.",
+            "We advise on acquisitions, divestments, concessions, licensing, joint ventures and strategic alliances. We also provide advice on regulatory compliance.",
+            "Our team of lawyers has advised companies in the oil, gas and power sectors on various legal, commercial, and regulatory issues. We have assisted clients in negotiating and drafting various industry-specific agreements, including Production Sharing Contracts, Joint Operating Agreements, Power Purchase Agreements, and Gas Sale and Purchase Agreements.",
+            "We combine our legal expertise with an in-depth understanding of the energy industry to provide our clients with practical and innovative legal solutions."
+        ]
+    },
+    {
+        slug: "finance-and-insurance",
+        title: "Banking, finance and insurance",
+        shortDescription: "Oyewole & Adesina provides a comprehensive range of legal services for financial institutions, local and foreign...",
+        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/finance_insurance_featured.jpg",
+        hint: "finance money coins",
+        longDescription: [
+            "Oyewole & Adesina provides a comprehensive range of legal services for financial institutions, local and foreign investors, and corporate and commercial entities. Our expertise spans corporate finance, project finance, asset-based finance, structured finance, and debt recovery. Our team of lawyers are well-versed in navigating complex financial transactions, ensuring our clients’ interests are protected at every stage.",
+            "In the insurance sector, we advise on a broad spectrum of matters, including regulatory compliance, claims handling, and policy drafting. Our clients range from insurance companies and brokers to policyholders and other stakeholders. We are committed to providing practical and commercially focused legal advice that helps our clients achieve their business objectives."
         ]
     },
     {
@@ -110,6 +121,17 @@ export const expertiseData = [
         ]
     },
     {
+        slug: "telecommunications",
+        title: "Telecommunications",
+        shortDescription: "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria...",
+        image: "https://picsum.photos/seed/telecom/600/400",
+        hint: "phone tower",
+        longDescription: [
+            "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria.",
+            "Our services cover licensing, regulatory compliance, and representation before the Nigerian Communications Commission (NCC)."
+        ]
+    },
+    {
         slug: "notary-public-services",
         title: "Notary Public Services",
         shortDescription: "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of...",
@@ -129,28 +151,6 @@ export const expertiseData = [
             "- Noting and Protesting Bills of Exchange.",
             "- Drawing up Powers of Attorney and other legal documents.",
             "- Dealing with foreign adoptions."
-        ]
-    },
-    {
-        slug: "real-estate-and-infrastructure-practice",
-        title: "Real estate and infrastructure practice",
-        shortDescription: "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing...",
-        image: "https://picsum.photos/seed/restate/600/400",
-        hint: "building city",
-        longDescription: [
-            "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing of real estate projects.",
-            "We represent a wide range of clients, including developers, investors, lenders, and governmental entities in all phases of real estate and infrastructure projects."
-        ]
-    },
-    {
-        slug: "telecommunications",
-        title: "Telecommunications",
-        shortDescription: "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria...",
-        image: "https://picsum.photos/seed/telecom/600/400",
-        hint: "phone tower",
-        longDescription: [
-            "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria.",
-            "Our services cover licensing, regulatory compliance, and representation before the Nigerian Communications Commission (NCC)."
         ]
     }
 ];

@@ -13,7 +13,7 @@ export const expertiseData = [
     },
     {
         slug: "energy",
-        title: "Energy",
+        title: "Energy and Natural Resources",
         shortDescription: "Oyewole & Adesina’s energy practice covers oil and gas (downstream, mid-stream and upstream), power and natural resources, our...",
         image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/ben-wicks-Ej2FQy1W7z4-unsplash(1).jpg",
         hint: "oil rig energy",

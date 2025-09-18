@@ -24,32 +24,21 @@ const slides = [
     }
 ];
 
-const slideAnimation = {
-  initial: { opacity: 0 },
-  animate: { 
+const sentenceAnimation = {
+  hidden: { opacity: 1 },
+  visible: {
     opacity: 1,
-    transition: { 
-      staggerChildren: 0.3,
-      duration: 0.5,
-    }
-  },
-  exit: { 
-    opacity: 0,
     transition: {
-        duration: 0.5,
-    }
+      staggerChildren: 0.04,
+    },
   },
 };
 
-const textAnimation = {
-  initial: { opacity: 0, y: 30 },
-  animate: { 
-    opacity: 1, 
+const letterAnimation = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
     y: 0,
-    transition: {
-        duration: 0.8,
-        ease: "easeOut",
-    }
   },
 };
 
@@ -67,7 +56,7 @@ export default function Hero() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-        setIndex((prevIndex) => (prevIndex + 1) % slides.length);
+          setIndex((prevIndex) => (prevIndex + 1) % slides.length);
         }, 5000); // Change slide every 5 seconds
         return () => clearInterval(interval);
     }, []);
@@ -92,23 +81,33 @@ export default function Hero() {
             <AnimatePresence mode="wait">
                 <motion.div
                     key={index}
-                    variants={slideAnimation}
-                    initial="initial"
-                    animate="animate"
-                    exit="exit"
+                    initial="hidden"
+                    animate="visible"
+                    exit={{ opacity: 0, transition: { duration: 0.5 } }}
                     className="space-y-4"
                 >
                     <motion.h1 
-                        variants={textAnimation}
+                        variants={sentenceAnimation}
                         className="text-5xl md:text-7xl font-light font-headline leading-tight"
                     >
-                        {slides[index].heading}
+                        {slides[index].heading.split("").map((char, i) => (
+                            <motion.span key={`${char}-${i}`} variants={letterAnimation}>
+                                {char}
+                            </motion.span>
+                        ))}
                     </motion.h1>
                      <motion.p 
-                        variants={textAnimation}
+                        variants={{
+                            ...sentenceAnimation,
+                            visible: { ...sentenceAnimation.visible, transition: { ...sentenceAnimation.visible.transition, delayChildren: slides[index].heading.length * 0.04 } }
+                        }}
                         className="text-lg md:text-xl text-white/80 tracking-wide font-light max-w-2xl mx-auto"
                     >
-                        {slides[index].subheading}
+                        {slides[index].subheading.split("").map((char, i) => (
+                            <motion.span key={`${char}-${i}`} variants={letterAnimation}>
+                                {char}
+                            </motion.span>
+                        ))}
                     </motion.p>
                 </motion.div>
             </AnimatePresence>

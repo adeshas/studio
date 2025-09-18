@@ -25,7 +25,24 @@ const stagger = {
   },
 };
 
-const cyclingWords = ["Client-Focused", "Commercially-Minded", "Results-Driven"];
+const slides = [
+    {
+        heading: "Trusted Legal Partners",
+        subheading: "Decades of collective experience guiding clients through Nigeria’s most complex commercial and regulatory challenges."
+    },
+    {
+        heading: "Comprehensive Expertise",
+        subheading: "From dispute resolution to finance, real estate to IP—our full-service teams deliver tailored, sector-focused counsel."
+    },
+    {
+        heading: "Client-Centric Solutions",
+        subheading: "We dive deep into your business, crafting practical strategies that protect your interests and drive results."
+    },
+    {
+        heading: "Integrity & Excellence",
+        subheading: "Unwavering commitment to ethical standards, efficiency and clear communication at every step."
+    }
+];
 
 export default function Hero() {
     const targetRef = useRef(null);
@@ -40,8 +57,8 @@ export default function Hero() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-        setIndex((prevIndex) => (prevIndex + 1) % cyclingWords.length);
-        }, 3000); // Change word every 3 seconds
+        setIndex((prevIndex) => (prevIndex + 1) % slides.length);
+        }, 5000); // Change slide every 5 seconds
         return () => clearInterval(interval);
     }, []);
 
@@ -66,32 +83,27 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div className="space-y-6 text-center max-w-4xl mx-auto" variants={fadeUp}>
-            <p className="text-lg md:text-xl text-white/80 tracking-widest font-light">
-                CRAFTED TO BE
-            </p>
-            <div className="h-20 md:h-28 overflow-hidden">
-                <AnimatePresence mode="wait">
-                    <motion.h1
-                        key={cyclingWords[index]}
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -50 }}
-                        transition={{ duration: 0.7, ease: "easeInOut" }}
-                        className="text-5xl md:text-7xl font-light font-headline leading-tight"
-                    >
-                        {cyclingWords[index]}
-                    </motion.h1>
-                </AnimatePresence>
-            </div>
-            <h2 className="text-3xl md:text-5xl font-light font-headline leading-tight">
-                A premier law firm
-            </h2>
-        </motion.div>
+        <div className="text-center max-w-4xl mx-auto h-48 md:h-40 flex items-center justify-center">
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -50 }}
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    className="space-y-4"
+                >
+                    <h1 className="text-5xl md:text-7xl font-light font-headline leading-tight">
+                        {slides[index].heading}
+                    </h1>
+                     <p className="text-lg md:text-xl text-white/80 tracking-wide font-light max-w-2xl mx-auto">
+                        {slides[index].subheading}
+                    </p>
+                </motion.div>
+            </AnimatePresence>
+        </div>
 
       </motion.div>
     </section>
   );
 }
-
-

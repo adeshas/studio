@@ -36,7 +36,7 @@ export const expertiseData = [
     {
         slug: "real-estate-and-infrastructure-practice",
         title: "Real Estate and Infrastructure Practice",
-        shortDescription: "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing...",
+        shortDescription: "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing of real estate projects.",
         image: "https://picsum.photos/seed/property/600/400",
         hint: "property infrastructure",
         longDescription: [
@@ -59,7 +59,7 @@ export const expertiseData = [
     },
     {
         slug: "finance-and-insurance",
-        title: "Banking, finance and insurance",
+        title: "Banking, Finance and Insurance",
         shortDescription: "Oyewole & Adesina provides a comprehensive range of legal services for financial institutions, local and foreign...",
         image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/finance_insurance_featured.jpg",
         hint: "finance money coins",

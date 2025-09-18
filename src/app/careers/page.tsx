@@ -59,7 +59,7 @@ export default function CareersPage() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Why Join Oyewole & Adesina?</h2>
-                <p className="max-w-[900px] mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">We are looking for individuals with an appetite for challenging work and the ability to deliver under pressure.</p>
+                <p className="max-w-[900px] mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">We are looking for innovative and driven professionals ready to take on ambitious challenges and make an impact.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 {whyJoinUs.map((item, index) => (

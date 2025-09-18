@@ -5,26 +5,6 @@ import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion"
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 70 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 2.0,
-      ease: "easeOut",
-    },
-  },
-};
-
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.7,
-    },
-  },
-};
-
 const slides = [
     {
         heading: "Trusted Legal Partners",
@@ -43,6 +23,36 @@ const slides = [
         subheading: "Unwavering commitment to ethical standards, efficiency and clear communication at every step."
     }
 ];
+
+const slideAnimation = {
+  initial: { opacity: 0 },
+  animate: { 
+    opacity: 1,
+    transition: { 
+      staggerChildren: 0.3,
+      duration: 0.5,
+    }
+  },
+  exit: { 
+    opacity: 0,
+    transition: {
+        duration: 0.5,
+    }
+  },
+};
+
+const textAnimation = {
+  initial: { opacity: 0, y: 30 },
+  animate: { 
+    opacity: 1, 
+    y: 0,
+    transition: {
+        duration: 0.8,
+        ease: "easeOut",
+    }
+  },
+};
+
 
 export default function Hero() {
     const targetRef = useRef(null);
@@ -77,33 +87,34 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/80"></div>
       </motion.div>
       
-      <motion.div 
-        className="relative z-10 container mx-auto px-4 py-24"
-        variants={stagger}
-        initial="hidden"
-        animate="visible"
-      >
+      <div className="relative z-10 container mx-auto px-4 py-24">
         <div className="text-center max-w-4xl mx-auto h-48 md:h-40 flex items-center justify-center">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    variants={slideAnimation}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
                     className="space-y-4"
                 >
-                    <h1 className="text-5xl md:text-7xl font-light font-headline leading-tight">
+                    <motion.h1 
+                        variants={textAnimation}
+                        className="text-5xl md:text-7xl font-light font-headline leading-tight"
+                    >
                         {slides[index].heading}
-                    </h1>
-                     <p className="text-lg md:text-xl text-white/80 tracking-wide font-light max-w-2xl mx-auto">
+                    </motion.h1>
+                     <motion.p 
+                        variants={textAnimation}
+                        className="text-lg md:text-xl text-white/80 tracking-wide font-light max-w-2xl mx-auto"
+                    >
                         {slides[index].subheading}
-                    </p>
+                    </motion.p>
                 </motion.div>
             </AnimatePresence>
         </div>
 
-      </motion.div>
+      </div>
     </section>
   );
 }

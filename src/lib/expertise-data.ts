@@ -130,5 +130,27 @@ export const expertiseData = [
             "- Drawing up Powers of Attorney and other legal documents.",
             "- Dealing with foreign adoptions."
         ]
+    },
+    {
+        slug: "real-estate-and-infrastructure-practice",
+        title: "Real estate and infrastructure practice",
+        shortDescription: "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing...",
+        image: "https://picsum.photos/seed/restate/600/400",
+        hint: "building city",
+        longDescription: [
+            "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing of real estate projects.",
+            "We represent a wide range of clients, including developers, investors, lenders, and governmental entities in all phases of real estate and infrastructure projects."
+        ]
+    },
+    {
+        slug: "telecommunications",
+        title: "Telecommunications",
+        shortDescription: "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria...",
+        image: "https://picsum.photos/seed/telecom/600/400",
+        hint: "phone tower",
+        longDescription: [
+            "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria.",
+            "Our services cover licensing, regulatory compliance, and representation before the Nigerian Communications Commission (NCC)."
+        ]
     }
 ];

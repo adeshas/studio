@@ -68,7 +68,7 @@ export default function Footer() {
             <div className="space-y-4 text-sm text-muted-foreground">
               <div>
                 <h5 className="font-semibold text-foreground/90 mb-1">Lagos Office</h5>
-                <p>19A, Udi Street<br/>Osborne Foreshore Estate Phase 1, Ikoyi, Lagos</p>
+                <p>19A, Udi Street<br/>Osborne Foreshore Estate Phase 1,<br/>Ikoyi, Lagos</p>
                 <p>M: +234 706 210 3941</p>
                 <p>O: 02012932390</p>
               </div>

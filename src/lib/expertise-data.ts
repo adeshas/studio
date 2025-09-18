@@ -35,7 +35,7 @@ export const expertiseData = [
     },
     {
         slug: "real-estate-and-infrastructure-practice",
-        title: "Real estate and infrastructure practice",
+        title: "Real Estate and Infrastructure Practice",
         shortDescription: "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing...",
         image: "https://picsum.photos/seed/property/600/400",
         hint: "property infrastructure",

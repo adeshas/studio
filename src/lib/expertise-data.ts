@@ -2,7 +2,7 @@
 export const expertiseData = [
     {
         slug: "finance-and-insurance",
-        title: "Finance & Insurance",
+        title: "Banking, finance and insurance",
         shortDescription: "Oyewole & Adesina provides a comprehensive range of legal services for financial institutions, local and foreign...",
         image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/finance_insurance_featured.jpg",
         hint: "finance money coins",

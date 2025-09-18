@@ -1,9 +1,9 @@
 
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 70 },
@@ -25,6 +25,7 @@ const stagger = {
   },
 };
 
+const cyclingWords = ["Client-Focused", "Commercially-Minded", "Results-Driven"];
 
 export default function Hero() {
     const targetRef = useRef(null);
@@ -34,6 +35,16 @@ export default function Hero() {
     });
 
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+        setIndex((prevIndex) => (prevIndex + 1) % cyclingWords.length);
+        }, 3000); // Change word every 3 seconds
+        return () => clearInterval(interval);
+    }, []);
+
 
   return (
     <section ref={targetRef} className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden -mt-20">
@@ -56,15 +67,30 @@ export default function Hero() {
         animate="visible"
       >
         <motion.div className="space-y-6 text-center max-w-4xl mx-auto" variants={fadeUp}>
-            <h1 className="text-4xl md:text-6xl font-light font-headline leading-tight">
-                Trusted Legal Partners
-            </h1>
-            <p className="text-lg md:text-xl text-white/80 tracking-wide">
-                Decades of collective experience, dedicated to your success.
+            <p className="text-lg md:text-xl text-white/80 tracking-widest font-light">
+                CRAFTED TO BE
             </p>
+            <div className="h-20 md:h-28 overflow-hidden">
+                <AnimatePresence mode="wait">
+                    <motion.h1
+                        key={cyclingWords[index]}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -50 }}
+                        transition={{ duration: 0.7, ease: "easeInOut" }}
+                        className="text-5xl md:text-7xl font-light font-headline leading-tight"
+                    >
+                        {cyclingWords[index]}
+                    </motion.h1>
+                </AnimatePresence>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-light font-headline leading-tight">
+                A premier law firm
+            </h2>
         </motion.div>
 
       </motion.div>
     </section>
   );
 }
+

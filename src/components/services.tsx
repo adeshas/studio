@@ -100,7 +100,7 @@ export default function Expertise() {
             className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 max-w-8xl"
             variants={listVariants}
         >
-            {expertiseData.slice(0, 8).map((item) => (
+            {expertiseData.slice(0, 10).map((item) => (
                 <ExpertiseListItem 
                   key={item.slug} 
                   href={`/our-expertise/${item.slug}`} 

@@ -1,9 +1,9 @@
 
 "use client";
 
-import { motion, useMotionValue, useTransform, animate, useScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
+import { useRef } from "react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 70 },
@@ -25,24 +25,8 @@ const stagger = {
   },
 };
 
-const texts = [
-    "YOUR CLIENT CENTRIC SOLUTION",
-    "BUILT ON INTEGRITY & EXCELLENCE",
-    "YOUR TRUSTED LEGAL PARTNER",
-    "COMPREHENSIVE IN EXPERTISE"
-];
-
-const typingSpeed = 0.08;
-const deleteSpeed = 0.05;
-const delayBeforeDelete = 1.75;
-
 
 export default function Hero() {
-    const [textIndex, setTextIndex] = useState(0);
-    const baseText = useMotionValue("");
-    const displayText = useTransform(baseText, (latest) => latest);
-    const [isDeleting, setIsDeleting] = useState(false);
-
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
       target: targetRef,
@@ -50,50 +34,6 @@ export default function Hero() {
     });
 
     const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-
-    useEffect(() => {
-        const fullText = texts[textIndex];
-
-        const typingAnimation = animate(0, fullText.length, {
-            type: "tween",
-            duration: fullText.length * typingSpeed,
-            ease: "linear",
-            onUpdate: (latest) => {
-                baseText.set(fullText.substring(0, Math.round(latest)));
-            },
-            onComplete: () => {
-                setTimeout(() => {
-                    setIsDeleting(true);
-                }, delayBeforeDelete * 1000);
-            }
-        });
-
-        return () => typingAnimation.stop();
-
-    }, [textIndex, baseText]);
-    
-    useEffect(() => {
-        if (!isDeleting) return;
-
-        const fullText = texts[textIndex];
-
-        const deletingAnimation = animate(fullText.length, 0, {
-             type: "tween",
-             duration: fullText.length * deleteSpeed,
-             ease: "linear",
-             onUpdate: (latest) => {
-                baseText.set(fullText.substring(0, Math.round(latest)));
-             },
-             onComplete: () => {
-                setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-                setIsDeleting(false);
-             }
-        });
-
-        return () => deletingAnimation.stop();
-
-    }, [isDeleting, textIndex, baseText]);
-
 
   return (
     <section ref={targetRef} className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden -mt-20">
@@ -115,16 +55,13 @@ export default function Hero() {
         initial="hidden"
         animate="visible"
       >
-        <motion.div className="space-y-6 text-center max-w-4xl mx-auto" variants={stagger}>
-          <motion.div variants={fadeUp}>
-            <p className="text-lg md:text-xl text-white/80 mb-4 tracking-widest">CRAFTED TO BE</p>
-          </motion.div>
-          <motion.div
-            className="text-2xl md:text-5xl font-light font-headline leading-tight h-24 md:h-28"
-            variants={fadeUp}
-          >
-             <motion.span>{displayText}</motion.span>
-          </motion.div>
+        <motion.div className="space-y-6 text-center max-w-4xl mx-auto" variants={fadeUp}>
+            <h1 className="text-4xl md:text-6xl font-light font-headline leading-tight">
+                Trusted Legal Partners
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 tracking-wide">
+                Decades of collective experience, dedicated to your success.
+            </p>
         </motion.div>
 
       </motion.div>

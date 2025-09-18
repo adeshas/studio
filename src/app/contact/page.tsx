@@ -63,7 +63,7 @@ export default function ContactPage() {
                   <div className="space-y-4 text-lg text-muted-foreground">
                       <div className="flex items-start gap-4">
                           <MapPin className="h-6 w-6 text-accent mt-1 shrink-0" />
-                          <span>19A, Udi Street<br/>Osborne Foreshore Estate Phase 1,<br/>Ikoyi, Lagos</span>
+                          <span>19A, Udi Street,<br/>Osborne Foreshore Estate Phase 1,<br/>Ikoyi, Lagos</span>
                       </div>
                       <div className="flex items-start gap-4">
                           <Phone className="h-6 w-6 text-accent mt-1 shrink-0" />

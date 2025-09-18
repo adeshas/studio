@@ -94,7 +94,7 @@ export const expertiseData = [
     },
     {
         slug: "intellectual-property",
-        title: "Intellectual Property",
+        title: "Intellectual Property and Information Technology",
         shortDescription: "Oyewole & Adesina has extensive experience in patent, trademark, copyright and industrial designs registration, assignment, renewal and...",
         image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/intellectual_property_featured.jpg",
         hint: "lightbulb idea",

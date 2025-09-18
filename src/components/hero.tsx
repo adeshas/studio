@@ -4,6 +4,9 @@
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useRef, useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const slides = [
     {
@@ -89,14 +92,14 @@ export default function Hero() {
       </motion.div>
       
       <div className="relative z-10 container mx-auto px-4 py-24">
-        <div className="text-center max-w-4xl mx-auto h-48 md:h-40 flex items-center justify-center">
+        <div className="text-center max-w-4xl mx-auto min-h-[300px] md:min-h-[280px] flex flex-col items-center justify-center">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={index}
                     initial="hidden"
                     animate="visible"
                     exit={{ opacity: 0, transition: { duration: 0.5 } }}
-                    className="space-y-4"
+                    className="space-y-6 flex flex-col items-center"
                 >
                     <motion.h1 
                         variants={sentenceAnimation}
@@ -108,15 +111,30 @@ export default function Hero() {
                             </motion.span>
                         ))}
                     </motion.h1>
-                     <motion.p 
+                     <motion.div 
                         variants={subheadingAnimation}
                         initial="hidden"
                         animate="visible"
                         transition={{ delay: slides[index].heading.length * 0.04 + 0.5 }}
-                        className="text-lg md:text-xl text-white/80 tracking-wide font-light max-w-2xl mx-auto"
+                        className="bg-black/30 backdrop-blur-sm p-4 rounded-lg"
                     >
-                        {slides[index].subheading}
-                    </motion.p>
+                        <p className="text-lg md:text-xl text-white/80 tracking-wide font-light max-w-2xl mx-auto">
+                            {slides[index].subheading}
+                        </p>
+                    </motion.div>
+                    <motion.div
+                        variants={subheadingAnimation}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ delay: slides[index].heading.length * 0.04 + 0.8 }}
+                    >
+                        <Button asChild size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-black">
+                            <Link href="/our-expertise">
+                                View Our Expertise
+                                <ArrowRight className="ml-2 h-5 w-5" />
+                            </Link>
+                        </Button>
+                    </motion.div>
                 </motion.div>
             </AnimatePresence>
         </div>
@@ -125,4 +143,3 @@ export default function Hero() {
     </section>
   );
 }
-

@@ -35,8 +35,8 @@ export const expertiseData = [
         slug: "real-estate-and-infrastructure-practice",
         title: "Real Estate and Infrastructure Practice",
         shortDescription: "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing of real estate projects.",
-        image: "https://picsum.photos/seed/real-estate-infra/600/400",
-        hint: "property infrastructure",
+        image: "https://picsum.photos/seed/construction-site/600/400",
+        hint: "construction site",
         longDescription: [
             "The firm’s real estate and projects practice cover providing advisory and legal opinions with respect to development, construction, management and financing of real estate projects. We assist our clients in negotiation, review, and drafting of commercial, technical, financing, lease, joint venture, property development and property acquisition agreements. We prepare and perfect leases, transfers, mortgages, management contracts, trust/investment deeds, finance agreements, development lease agreements and all forms of contractual documents or arrangements relating to land.",
             "Our lawyers apply hands-on experience in conducting due diligence on real estate assets particularly title verification, validity, detecting encumbrances and advising on risks involved in the transactions. Our expertise in this regard also extends to land and real estate related litigation and dispute resolution."
@@ -70,8 +70,8 @@ export const expertiseData = [
         slug: "labour-and-employment",
         title: "Labour and Employment",
         shortDescription: "Oyewole & Adesina offers both litigation based and solicitor’s services in employment related matters. We are...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/labour_employment_featured.jpg",
-        hint: "people meeting office",
+        image: "https://picsum.photos/seed/workers-helmets/600/400",
+        hint: "workers helmets",
         longDescription: [
             "Oyewole & Adesina offers both litigation based and solicitor’s services in employment related matters. We are well-equipped to advise on the legal and practical issues arising from employment relationships.",
             "Our expertise covers a wide range of employment law issues, including:",
@@ -105,8 +105,8 @@ export const expertiseData = [
         slug: "telecommunications",
         title: "Telecommunications",
         shortDescription: "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria...",
-        image: "https://picsum.photos/seed/telecoms/600/400",
-        hint: "phone tower",
+        image: "https://picsum.photos/seed/signal-towers/600/400",
+        hint: "signal towers",
         longDescription: [
             "The Firm’s telecommunications practice provides comprehensive legal services to clients in the dynamic and rapidly evolving telecom sector in Nigeria. We advise on regulatory compliance, licensing and permits from the Nigerian Communications Commission (NCC), spectrum management and allocation, infrastructure development and sharing, data privacy and protection under the Nigeria Data Protection Regulation (NDPR), mergers and acquisitions in the telecom space, competition law issues, consumer protection, and technology-driven transactions.",
             "Our expertise extends to advising on mobile money services, fintech integrations with telecom, cybersecurity, and international interconnect agreements. We also handle telecommunications-related disputes, including arbitration, mediation, and litigation before relevant courts, tribunals, and regulatory bodies such as the NCC Dispute Resolution Forum.",
@@ -117,8 +117,8 @@ export const expertiseData = [
         slug: "notary-public-services",
         title: "Notary Public Services",
         shortDescription: "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/08/notary_public_service_featured.jpg",
-        hint: "notary seal stamp",
+        image: "https://picsum.photos/seed/signing-document/600/400",
+        hint: "signing document",
         longDescription: [
             "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of Nigeria, and is an officer of the Supreme Court of Nigeria. He is licensed to witness signatures to documents and to authenticate the execution of certain classes of documents, take affidavits, declarations and depositions. A Notary Public can also protest bills of exchange and promissory notes and prepare marine or ship’s protest in cases of damage.",
             "As Notaries Public we offer the following services:",
@@ -136,7 +136,3 @@ export const expertiseData = [
         ]
     }
 ];
-
-    
-
-    

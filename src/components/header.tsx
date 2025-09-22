@@ -15,7 +15,7 @@ const navLinks = [
   { href: "/our-people", label: "Our People" },
   { href: "/careers", label: "Careers" },
   { href: "/publications", label: "Publications" },
-  { href: "#", label: "GALLERY" },
+  { href: "#", label: "Gallery" },
   { href: "/contact", label: "Contact Us" },
 ];
 

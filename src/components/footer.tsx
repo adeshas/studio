@@ -33,7 +33,7 @@ export default function Footer() {
       className="bg-black border-t border-white/10 text-white"
     >
       <div className="container mx-auto py-12 px-4 md:px-6">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div className="space-y-4">
             <Link href="/" className="inline-block">
               <Logo variant="white" />
@@ -52,15 +52,6 @@ export default function Footer() {
               <li><Link href="/contact" className="text-muted-foreground hover:text-accent">Contact Us</Link></li>
               <li><Link href="/careers" className="text-muted-foreground hover:text-accent">Careers</Link></li>
               <li><Link href="/publications" className="text-muted-foreground hover:text-accent">Publications</Link></li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h4 className="font-light font-headline text-foreground">Expertise</h4>
-            <ul className="space-y-2">
-              <li><Link href="/our-expertise/dispute-resolution" className="text-muted-foreground hover:text-accent">Dispute Resolution</Link></li>
-              <li><Link href="/our-expertise/energy" className="text-muted-foreground hover:text-accent">Energy</Link></li>
-              <li><Link href="/our-expertise/real-estate" className="text-muted-foreground hover:text-accent">Real Estate</Link></li>
-              <li><Link href="/our-expertise/corporate-and-commercial-practice" className="text-muted-foreground hover:text-accent">Corporate & Commercial</Link></li>
             </ul>
           </div>
           <div className="space-y-4">

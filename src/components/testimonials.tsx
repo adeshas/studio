@@ -36,7 +36,7 @@ export default function Testimonials() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-4">
              <Image 
-                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/MR-DAYO.jpeg"
+                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/NEW_DAYO.JPG"
                 alt="Adedayo Adesina"
                 width={80}
                 height={80}

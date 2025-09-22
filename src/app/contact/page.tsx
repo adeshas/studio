@@ -15,19 +15,9 @@ export const metadata: Metadata = {
 
 const officeImages = [
     {
-        src: "https://oyewoleadesina.com/wp-content/uploads/2025/07/office1.webp",
-        alt: "Reception area of Oyewole & Adesina law office",
-        hint: "office reception"
-    },
-    {
         src: "https://oyewoleadesina.com/wp-content/uploads/2025/07/office2.webp",
         alt: "Collaborative workspace at Oyewole & Adesina",
         hint: "office workspace"
-    },
-    {
-        src: "https://oyewoleadesina.com/wp-content/uploads/2025/07/office3.webp",
-        alt: "Professional meeting room at Oyewole & Adesina",
-        hint: "office meeting room"
     }
 ];
 
@@ -80,7 +70,7 @@ export default function ContactPage() {
                   </div>
               </div>
               <div>
-                <Carousel className="w-full max-w-md mx-auto" opts={{ loop: true }}>
+                <Carousel className="w-full max-w-md mx-auto" opts={{ loop: false }}>
                   <CarouselContent>
                     {officeImages.map((image, index) => (
                       <CarouselItem key={index}>
@@ -98,8 +88,10 @@ export default function ContactPage() {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-10" />
-                  <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-10" />
+                  {officeImages.length > 1 && <>
+                    <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-10" />
+                    <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-10" />
+                  </>}
                 </Carousel>
               </div>
             </div>

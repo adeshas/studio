@@ -122,19 +122,6 @@ export default function Hero() {
                             {slides[index].subheading}
                         </p>
                     </motion.div>
-                    <motion.div
-                        variants={subheadingAnimation}
-                        initial="hidden"
-                        animate="visible"
-                        transition={{ delay: slides[index].heading.length * 0.04 + 0.8 }}
-                    >
-                        <Button asChild size="lg" variant="outline" className="bg-transparent text-white border-white hover:bg-white hover:text-black">
-                            <Link href="/our-expertise">
-                                View Our Expertise
-                                <ArrowRight className="ml-2 h-5 w-5" />
-                            </Link>
-                        </Button>
-                    </motion.div>
                 </motion.div>
             </AnimatePresence>
         </div>

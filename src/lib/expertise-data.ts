@@ -36,7 +36,7 @@ export const expertiseData = [
         slug: "real-estate-and-infrastructure-practice",
         title: "Real Estate and Infrastructure Practice",
         shortDescription: "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing of real estate projects.",
-        image: "https://picsum.photos/seed/property/600/400",
+        image: "https://picsum.photos/seed/real-estate-infra/600/400",
         hint: "property infrastructure",
         longDescription: [
             "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing of real estate projects.",
@@ -103,27 +103,10 @@ export const expertiseData = [
         ]
     },
     {
-        slug: "intellectual-property-and-information-technology",
-        title: "Intellectual Property and Information Technology",
-        shortDescription: "Oyewole & Adesina has extensive experience in patent, trademark, copyright and industrial designs registration, assignment, renewal and...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/intellectual_property_featured.jpg",
-        hint: "lightbulb idea",
-        longDescription: [
-            "Oyewole & Adesina has extensive experience in patent, trademark, copyright and industrial designs registration, assignment, renewal and general advisory. We provide comprehensive legal services to help our clients protect and enforce their intellectual property rights.",
-            "Our IP practice covers:",
-            "- Trademark, patent, and copyright registration",
-            "- IP portfolio management",
-            "- Licensing and franchising agreements",
-            "- IP litigation and enforcement",
-            "- Anti-counterfeiting and piracy actions",
-            "We work with a diverse range of clients, from individual inventors and artists to multinational corporations, to develop and implement effective IP strategies. Our goal is to help our clients maximize the value of their intellectual assets while minimizing the risk of infringement."
-        ]
-    },
-    {
         slug: "telecommunications",
         title: "Telecommunications",
         shortDescription: "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria...",
-        image: "https://picsum.photos/seed/telecommunications/600/400",
+        image: "https://picsum.photos/seed/telecom/600/400",
         hint: "phone tower",
         longDescription: [
             "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria.",

@@ -29,7 +29,6 @@ export const expertiseData = [
             "- Corporate Restructuring and Insolvency",
             "- Joint Ventures and Strategic Alliances",
             "- Commercial Contracts and Agreements",
-            "We are committed to helping our clients navigate the complexities of the Nigerian business environment and achieve their strategic objectives."
         ]
     },
     {
@@ -106,7 +105,7 @@ export const expertiseData = [
         slug: "telecommunications",
         title: "Telecommunications",
         shortDescription: "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria...",
-        image: "https://picsum.photos/seed/telecommunications/600/400",
+        image: "https://picsum.photos/seed/telecoms/600/400",
         hint: "phone tower",
         longDescription: [
             "The Firm’s telecommunications practice provides comprehensive legal services to clients in the dynamic and rapidly evolving telecom sector in Nigeria. We advise on regulatory compliance, licensing and permits from the Nigerian Communications Commission (NCC), spectrum management and allocation, infrastructure development and sharing, data privacy and protection under the Nigeria Data Protection Regulation (NDPR), mergers and acquisitions in the telecom space, competition law issues, consumer protection, and technology-driven transactions.",
@@ -137,5 +136,7 @@ export const expertiseData = [
         ]
     }
 ];
+
+    
 
     

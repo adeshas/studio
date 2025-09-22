@@ -39,8 +39,8 @@ export const expertiseData = [
         image: "https://picsum.photos/seed/real-estate-infra/600/400",
         hint: "property infrastructure",
         longDescription: [
-            "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing of real estate projects.",
-            "We represent a wide range of clients, including developers, investors, lenders, and governmental entities in all phases of real estate and infrastructure projects."
+            "The firm’s real estate and projects practice cover providing advisory and legal opinions with respect to development, construction, management and financing of real estate projects. We assist our clients in negotiation, review, and drafting of commercial, technical, financing, lease, joint venture, property development and property acquisition agreements. We prepare and perfect leases, transfers, mortgages, management contracts, trust/investment deeds, finance agreements, development lease agreements and all forms of contractual documents or arrangements relating to land.",
+            "Our lawyers apply hands-on experience in conducting due diligence on real estate assets particularly title verification, validity, detecting encumbrances and advising on risks involved in the transactions. Our expertise in this regard also extends to land and real estate related litigation and dispute resolution."
         ]
     },
     {
@@ -106,11 +106,12 @@ export const expertiseData = [
         slug: "telecommunications",
         title: "Telecommunications",
         shortDescription: "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria...",
-        image: "https://picsum.photos/seed/telecom-2/600/400",
+        image: "https://picsum.photos/seed/telecommunications/600/400",
         hint: "phone tower",
         longDescription: [
-            "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria.",
-            "Our services cover licensing, regulatory compliance, and representation before the Nigerian Communications Commission (NCC)."
+            "The Firm’s telecommunications practice provides comprehensive legal services to clients in the dynamic and rapidly evolving telecom sector in Nigeria. We advise on regulatory compliance, licensing and permits from the Nigerian Communications Commission (NCC), spectrum management and allocation, infrastructure development and sharing, data privacy and protection under the Nigeria Data Protection Regulation (NDPR), mergers and acquisitions in the telecom space, competition law issues, consumer protection, and technology-driven transactions.",
+            "Our expertise extends to advising on mobile money services, fintech integrations with telecom, cybersecurity, and international interconnect agreements. We also handle telecommunications-related disputes, including arbitration, mediation, and litigation before relevant courts, tribunals, and regulatory bodies such as the NCC Dispute Resolution Forum.",
+            "Drawing from our strong foundations in corporate, commercial, finance, intellectual property, and dispute resolution practices, we offer tailored solutions that address the unique challenges of the telecom industry, including navigating the complexities of the Nigerian Communications Act, broadband rollout initiatives, and emerging technologies like 5G and IoT. Our team ensures clients achieve compliance while optimizing business opportunities in a sector critical to Nigeria's digital economy."
         ]
     },
     {

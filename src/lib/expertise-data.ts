@@ -70,8 +70,8 @@ export const expertiseData = [
         slug: "labour-and-employment",
         title: "Labour and Employment",
         shortDescription: "Oyewole & Adesina offers both litigation based and solicitor’s services in employment related matters. We are...",
-        image: "https://picsum.photos/seed/workers-helmets/600/400",
-        hint: "workers helmets",
+        image: "https://picsum.photos/seed/team-workers/600/400",
+        hint: "team workers",
         longDescription: [
             "Oyewole & Adesina offers both litigation based and solicitor’s services in employment related matters. We are well-equipped to advise on the legal and practical issues arising from employment relationships.",
             "Our expertise covers a wide range of employment law issues, including:",
@@ -105,8 +105,8 @@ export const expertiseData = [
         slug: "telecommunications",
         title: "Telecommunications",
         shortDescription: "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria...",
-        image: "https://picsum.photos/seed/signal-towers/600/400",
-        hint: "signal towers",
+        image: "https://picsum.photos/seed/communication-towers/600/400",
+        hint: "communication towers",
         longDescription: [
             "The Firm’s telecommunications practice provides comprehensive legal services to clients in the dynamic and rapidly evolving telecom sector in Nigeria. We advise on regulatory compliance, licensing and permits from the Nigerian Communications Commission (NCC), spectrum management and allocation, infrastructure development and sharing, data privacy and protection under the Nigeria Data Protection Regulation (NDPR), mergers and acquisitions in the telecom space, competition law issues, consumer protection, and technology-driven transactions.",
             "Our expertise extends to advising on mobile money services, fintech integrations with telecom, cybersecurity, and international interconnect agreements. We also handle telecommunications-related disputes, including arbitration, mediation, and litigation before relevant courts, tribunals, and regulatory bodies such as the NCC Dispute Resolution Forum.",
@@ -117,8 +117,8 @@ export const expertiseData = [
         slug: "notary-public-services",
         title: "Notary Public Services",
         shortDescription: "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of...",
-        image: "https://picsum.photos/seed/signing-document/600/400",
-        hint: "signing document",
+        image: "https://picsum.photos/seed/notary-seal/600/400",
+        hint: "notary seal",
         longDescription: [
             "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of Nigeria, and is an officer of the Supreme Court of Nigeria. He is licensed to witness signatures to documents and to authenticate the execution of certain classes of documents, take affidavits, declarations and depositions. A Notary Public can also protest bills of exchange and promissory notes and prepare marine or ship’s protest in cases of damage.",
             "As Notaries Public we offer the following services:",

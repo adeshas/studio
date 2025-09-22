@@ -29,7 +29,6 @@ export const expertiseData = [
             "- Corporate Restructuring and Insolvency",
             "- Joint Ventures and Strategic Alliances",
             "- Commercial Contracts and Agreements",
-            "- Intellectual Property and Technology",
             "We are committed to helping our clients navigate the complexities of the Nigerian business environment and achieve their strategic objectives."
         ]
     },
@@ -45,7 +44,7 @@ export const expertiseData = [
         ]
     },
     {
-        slug: "energy",
+        slug: "energy-and-natural-resources",
         title: "Energy and Natural Resources",
         shortDescription: "Oyewole & Adesina’s energy practice covers oil and gas (downstream, mid-stream and upstream), power and natural resources, our...",
         image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/ben-wicks-Ej2FQy1W7z4-unsplash(1).jpg",
@@ -104,7 +103,7 @@ export const expertiseData = [
         ]
     },
     {
-        slug: "intellectual-property",
+        slug: "intellectual-property-and-information-technology",
         title: "Intellectual Property and Information Technology",
         shortDescription: "Oyewole & Adesina has extensive experience in patent, trademark, copyright and industrial designs registration, assignment, renewal and...",
         image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/intellectual_property_featured.jpg",
@@ -154,3 +153,5 @@ export const expertiseData = [
         ]
     }
 ];
+
+    

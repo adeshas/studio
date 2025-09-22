@@ -106,7 +106,7 @@ export const expertiseData = [
         slug: "telecommunications",
         title: "Telecommunications",
         shortDescription: "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria...",
-        image: "https://picsum.photos/seed/telecom/600/400",
+        image: "https://picsum.photos/seed/telecom-2/600/400",
         hint: "phone tower",
         longDescription: [
             "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria.",

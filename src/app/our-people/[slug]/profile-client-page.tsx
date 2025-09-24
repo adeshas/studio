@@ -57,24 +57,6 @@ const formatDescription = (text: string) => {
   return <>{content}</>;
 };
 
-const CustomAccordionTrigger = React.forwardRef<
-  React.ElementRef<typeof AccordionTrigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionTrigger> & { open: boolean }
->(({ children, open, className, ...props }, ref) => (
-  <AccordionTrigger
-    ref={ref}
-    className={cn(
-      "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:no-underline border-b border-white/20 text-lg",
-      className
-    )}
-    {...props}
-  >
-    {children}
-    {open ? <Minus className="h-5 w-5 shrink-0" /> : <Plus className="h-5 w-5 shrink-0" />}
-  </AccordionTrigger>
-));
-CustomAccordionTrigger.displayName = "CustomAccordionTrigger";
-
 export default function ProfileClientPage({ member }: { member: TeamMember }) {
   const { scrollYProgress: pageScrollYProgress } = useScroll();
   const scaleX = useSpring(pageScrollYProgress, {
@@ -83,12 +65,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
     restDelta: 0.001
   });
   const [openAccordion, setOpenAccordion] = useState<string[]>([]);
-
-  const toggleAccordion = (value: string) => {
-    setOpenAccordion(prev => 
-      prev.includes(value) ? prev.filter(item => item !== value) : [...prev, value]
-    );
-  };
 
   const sections = ['Expertise', 'Education', 'Certifications', 'Associations', 'Awards'];
   const memberData: { [key: string]: string | undefined } = {
@@ -175,13 +151,12 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
                       if (!content) return null;
                       
                       const value = section.toLowerCase();
-                      const isOpen = openAccordion.includes(value);
 
                       return (
-                        <AccordionItem value={value} key={value} className="border-none">
-                            <CustomAccordionTrigger open={isOpen} onClick={() => toggleAccordion(value)}>
+                        <AccordionItem value={value} key={value} className="border-b border-white/20">
+                            <AccordionTrigger className="text-lg hover:no-underline">
                                 {section}
-                            </CustomAccordionTrigger>
+                            </AccordionTrigger>
                             <AccordionContent>
                                 <div className="py-4 text-muted-foreground space-y-4">
                                     {content}

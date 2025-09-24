@@ -5,7 +5,7 @@ import Image from "next/image";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import React, { useState } from "react";
-import { Linkedin, Mail, ArrowDown, Plus, Minus } from "lucide-react";
+import { Linkedin, Mail, ArrowDown } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { teamMembers } from "@/lib/team-data";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -116,30 +116,22 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         <Header />
         <main className="flex-1">
 
-          <section className="relative w-full bg-black flex flex-col items-center justify-end min-h-screen pt-20 pb-16">
-            <div className="container mx-auto px-4 md:px-6 max-w-4xl h-full flex flex-col justify-end">
-              <div className="relative h-full w-full">
-                  <Image
-                      src={member.maskedImage || member.image}
-                      alt={`Portrait of ${member.name}, ${member.role}`}
-                      fill
-                      className="object-contain object-bottom"
-                      priority
-                      data-ai-hint={member.hint}
-                  />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-8 text-center text-white flex flex-col justify-end items-center">
-                    <h1 className="text-4xl md:text-6xl font-light font-headline tracking-widest">{member.name}</h1>
-                    <p className="mt-2 text-lg text-white/80 uppercase tracking-[0.2em]">{member.role}</p>
-                  </div>
+          <section 
+              className="relative w-full h-[50vh] bg-cover bg-center bg-no-repeat bg-fixed flex flex-col justify-end items-center text-white pt-20"
+              style={{ backgroundImage: `url(${member.maskedImage || member.image})` }}
+          >
+              <div className="absolute inset-0 bg-black/40"></div>
+              <div className="relative z-10 p-8 text-center flex flex-col justify-end items-center h-full">
+                  <h1 className="text-4xl md:text-6xl font-light font-headline tracking-widest uppercase">{member.name}</h1>
+                  <p className="mt-2 text-lg text-white/80 uppercase tracking-[0.2em]">{member.role}</p>
               </div>
-            </div>
-            <motion.div
-                className="absolute bottom-4 left-1/2 -translate-x-1/2"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
-            >
-                <ArrowDown className="h-8 w-8 text-white" />
-            </motion.div>
+              <motion.div
+                  className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10"
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
+              >
+                  <ArrowDown className="h-8 w-8 text-white" />
+              </motion.div>
           </section>
           
           <section id="member-details" className="w-full py-12 md:py-24 lg:py-32 bg-neutral-900 relative z-10">

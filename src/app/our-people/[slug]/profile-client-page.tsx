@@ -51,7 +51,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
 
           <section className="relative w-full bg-black pt-20 pb-16">
             <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-              <div className="relative aspect-[3/4] w-full">
+              <div className="relative aspect-[3/2] w-full">
                   <Image
                       src={member.maskedImage || member.image}
                       alt={`Portrait of ${member.name}, ${member.role}`}

@@ -93,7 +93,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
       const trimmedLine = line.trim();
       if (trimmedLine.startsWith('**') && trimmedLine.endsWith('**')) {
         const currentTitle = trimmedLine.slice(2,-2).toUpperCase();
-        if (sections.includes(currentTitle.charAt(0) + currentTitle.slice(1).toLowerCase())) {
+        if (sections.map(s => s.toUpperCase()).includes(currentTitle)) {
             if (currentTitle === sectionTitle.toUpperCase()) {
                 inSection = true;
             } else if (inSection) {
@@ -116,9 +116,9 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         <Header />
         <main className="flex-1">
 
-          <section className="relative w-full bg-black pt-20 pb-16">
-            <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-              <div className="relative h-[480px] w-full">
+          <section className="relative w-full bg-black flex flex-col items-center justify-end min-h-screen pt-20 pb-16">
+            <div className="container mx-auto px-4 md:px-6 max-w-4xl h-full flex flex-col justify-end">
+              <div className="relative h-full w-full">
                   <Image
                       src={member.maskedImage || member.image}
                       alt={`Portrait of ${member.name}, ${member.role}`}

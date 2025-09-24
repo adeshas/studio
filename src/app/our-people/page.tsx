@@ -97,12 +97,12 @@ export default function OurPeoplePage() {
         <Dialog open={!!selectedMember} onOpenChange={(isOpen) => !isOpen && setSelectedMember(null)}>
           <DialogContent className="max-w-4xl w-[95vw] sm:w-[90vw] h-[90vh] p-0 flex flex-col">
             <div className="grid md:grid-cols-2 h-full">
-              <div className="relative h-full hidden md:block">
+              <div className="relative h-full hidden md:block bg-[radial-gradient(ellipse_at_center,_#1a1a1a_0%,#000000_100%)]">
                 <Image
                     src={selectedMember.maskedImage || selectedMember.image}
                     alt={`Portrait of ${selectedMember.name}, ${selectedMember.role}`}
                     fill
-                    className="object-cover rounded-l-lg"
+                    className="object-contain object-bottom p-4 lg:p-8"
                     style={selectedMember.imageStyle || {}}
                     data-ai-hint={selectedMember.hint}
                 />

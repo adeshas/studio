@@ -120,7 +120,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
               className="relative w-full bg-contain bg-center bg-no-repeat bg-fixed flex flex-col justify-end items-center text-white -mt-28"
               style={{ 
                 height: '90vh',
-                backgroundImage: `radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(20,20,20,0.8) 100%), url(${member.maskedImage || member.image})` 
+                backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(50,50,50,0.7) 50%, rgba(0,0,0,0.9) 100%), url(${member.maskedImage || member.image})`
               }}
           >
               <div className="relative z-10 p-8 text-center flex flex-col justify-end items-center h-full">

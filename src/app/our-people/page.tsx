@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import React from "react";
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, ArrowDown } from "lucide-react";
 import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion";
 import Link from "next/link";
 
@@ -101,8 +101,6 @@ export default function OurPeoplePage() {
     damping: 30,
     restDelta: 0.001
   });
-  
-  const y = useTransform(heroScrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
     <>
@@ -112,7 +110,7 @@ export default function OurPeoplePage() {
         <main className="flex-1">
 
           <section ref={heroRef} className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden -mt-20">
-            <motion.div style={{ y }} className="absolute inset-0 z-0">
+            <div className="absolute inset-0 z-0">
                 <Image
                 src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1162_v2.jpeg"
                 alt="A premier law firm"
@@ -122,7 +120,7 @@ export default function OurPeoplePage() {
                 data-ai-hint="office building modern"
                 />
                 <div className="absolute inset-0 bg-black/80"></div>
-            </motion.div>
+            </div>
             <div className="relative z-10 container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white">
               <h1 className="text-4xl md:text-6xl font-bold font-headline">Our People</h1>
               <div className="mt-4 text-lg">
@@ -131,6 +129,13 @@ export default function OurPeoplePage() {
                   <span>Our People</span>
               </div>
             </div>
+             <motion.div
+                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            >
+                <ArrowDown className="h-8 w-8 text-white" />
+            </motion.div>
           </section>
 
           <section id="our-people-full" className="w-full py-12 md:py-24 lg:py-32 bg-background relative z-10">

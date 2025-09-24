@@ -51,31 +51,26 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         <Header />
         <main className="flex-1">
 
-          <section className="relative w-full min-h-screen flex flex-col justify-center items-center text-center text-white pt-20">
-            <div className="fixed inset-0 z-0">
-                <Image
-                    src={member.maskedImage || member.image}
-                    alt={`Portrait of ${member.name}, ${member.role}`}
-                    fill
-                    className="object-cover"
-                    priority
-                    data-ai-hint={member.hint}
-                />
-                <div className="absolute inset-0 bg-black/50"></div>
+          <section className="relative w-full bg-black pt-20">
+            <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+              <div className="relative aspect-[3/4] w-full">
+                  <Image
+                      src={member.maskedImage || member.image}
+                      alt={`Portrait of ${member.name}, ${member.role}`}
+                      fill
+                      className="object-cover object-top"
+                      priority
+                      data-ai-hint={member.hint}
+                  />
+              </div>
             </div>
-
-            <div className="relative z-10 mt-8">
-                <h1 className="text-4xl md:text-6xl font-light font-headline tracking-widest">{member.name}</h1>
-                <p className="mt-2 text-lg text-white/80 uppercase tracking-[0.2em]">{member.role}</p>
+          </section>
+          
+          <section id="member-intro" className="w-full py-8 bg-black text-white relative z-10">
+            <div className="container mx-auto px-4 md:px-6 max-w-4xl text-center">
+              <h1 className="text-4xl md:text-6xl font-light font-headline tracking-widest">{member.name}</h1>
+              <p className="mt-2 text-lg text-white/80 uppercase tracking-[0.2em]">{member.role}</p>
             </div>
-
-             <motion.div
-                className="absolute bottom-10 z-10"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
-            >
-                <ArrowDown className="h-8 w-8 text-white" />
-            </motion.div>
           </section>
 
           <section id="member-details" className="w-full py-12 md:py-24 lg:py-32 bg-neutral-900 relative z-10">

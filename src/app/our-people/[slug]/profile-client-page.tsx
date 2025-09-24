@@ -51,23 +51,26 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         <Header />
         <main className="flex-1">
 
-          <section className="relative w-full min-h-screen flex flex-col justify-center items-center text-center text-white bg-black pt-20">
-            <div className="relative w-full max-w-4xl h-[400px] md:h-[500px] flex-shrink-0">
+          <section className="relative w-full min-h-screen flex flex-col justify-center items-center text-center text-white pt-20">
+            <div className="fixed inset-0 z-0">
                 <Image
-                    src={member.image}
+                    src={member.maskedImage || member.image}
                     alt={`Portrait of ${member.name}, ${member.role}`}
                     fill
-                    className="object-contain object-bottom"
+                    className="object-cover"
                     priority
                     data-ai-hint={member.hint}
                 />
+                <div className="absolute inset-0 bg-black/50"></div>
             </div>
-            <div className="mt-8">
+
+            <div className="relative z-10 mt-8">
                 <h1 className="text-4xl md:text-6xl font-light font-headline tracking-widest">{member.name}</h1>
                 <p className="mt-2 text-lg text-white/80 uppercase tracking-[0.2em]">{member.role}</p>
             </div>
+
              <motion.div
-                className="absolute bottom-10"
+                className="absolute bottom-10 z-10"
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
             >

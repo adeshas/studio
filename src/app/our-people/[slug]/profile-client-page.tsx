@@ -117,10 +117,11 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         <main className="flex-1">
 
           <section 
-              className="relative w-full h-[50vh] bg-cover bg-center bg-no-repeat bg-fixed flex flex-col justify-end items-center text-white pt-20"
-              style={{ backgroundImage: `url(${member.maskedImage || member.image})` }}
+              className="relative w-full h-[50vh] bg-cover bg-center-top bg-no-repeat bg-fixed flex flex-col justify-end items-center text-white pt-20"
+              style={{ 
+                backgroundImage: `radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(20,20,20,0.8) 100%), url(${member.maskedImage || member.image})` 
+              }}
           >
-              <div className="absolute inset-0 bg-black/40"></div>
               <div className="relative z-10 p-8 text-center flex flex-col justify-end items-center h-full">
                   <h1 className="text-4xl md:text-6xl font-light font-headline tracking-widest uppercase">{member.name}</h1>
                   <p className="mt-2 text-lg text-white/80 uppercase tracking-[0.2em]">{member.role}</p>

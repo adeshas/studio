@@ -132,7 +132,7 @@ export default function OurPeoplePage() {
              <motion.div
                 className="absolute bottom-10 left-1/2 -translate-x-1/2"
                 animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
             >
                 <ArrowDown className="h-8 w-8 text-white" />
             </motion.div>

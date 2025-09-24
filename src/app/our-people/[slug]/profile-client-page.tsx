@@ -75,7 +75,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
             </motion.div>
           </section>
 
-          <section id="member-details" className="w-full py-12 md:py-24 lg:py-32 bg-background relative z-10">
+          <section id="member-details" className="w-full py-12 md:py-24 lg:py-32 bg-neutral-900 relative z-10">
             <div className="container mx-auto px-4 md:px-6 max-w-4xl">
               <div className="mb-8">
                   <h2 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground">Bio</h2>

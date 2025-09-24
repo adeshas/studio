@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Image from "next/image";
@@ -7,49 +8,19 @@ import { teamMembers } from "@/lib/team-data";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { useState, useRef, useEffect } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import React from "react";
-import { Linkedin, Mail, ArrowDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 import { motion, useInView, useScroll, useSpring, useTransform } from "framer-motion";
 import Link from "next/link";
 
 type TeamMember = (typeof teamMembers)[0];
-
-const formatDescription = (text: string) => {
-  const lines = text.split('\n');
-  return lines.map((line, lineIndex) => {
-    if (line.trim() === '') {
-      return <div key={lineIndex} className="h-4" />;
-    }
-    const parts = line.split(/(\*\*.*?\*\*)/g).filter(part => part);
-    return (
-      <p key={lineIndex} className="mb-2">
-        {parts.map((part, partIndex) => {
-          if (part.startsWith('**') && part.endsWith('**')) {
-            return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
-          }
-          if (part.startsWith('✓')) {
-            return <span key={partIndex}><span className="mr-2">✓</span>{part.substring(1)}</span>;
-          }
-          return part;
-        })}
-      </p>
-    );
-  });
-};
 
 const cardVariants = {
   initial: { opacity: 0, y: 270 },
   animate: { opacity: 1, y: 0, transition: { duration: 1.8, ease: "easeOut" } },
 };
 
-function TeamMemberCard({ member, index, onClick }: { member: TeamMember, index: number, onClick: () => void }) {
+function TeamMemberCard({ member, index }: { member: TeamMember, index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   
@@ -61,34 +32,33 @@ function TeamMemberCard({ member, index, onClick }: { member: TeamMember, index:
       variants={cardVariants}
       initial={isInitialLoad ? "animate" : "initial"}
       animate={isInView ? "animate" : "initial"}
-      onClick={onClick}
-      className="cursor-pointer"
     >
-      <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col group">
-        <div className="relative w-full aspect-[4/5]">
-          <Image
-            src={member.image}
-            alt={`Portrait of ${member.name}, ${member.role}`}
-            fill
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            style={member.imageStyle || {}}
-            data-ai-hint={member.hint}
-            priority={index < 3}
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 p-6 text-left text-white">
-            <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
-            <p className="text-md font-semibold text-white/80">{member.role}</p>
+      <Link href={`/our-people/${member.slug}`} className="cursor-pointer">
+        <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col group">
+          <div className="relative w-full aspect-[4/5]">
+            <Image
+              src={member.image}
+              alt={`Portrait of ${member.name}, ${member.role}`}
+              fill
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              style={member.imageStyle || {}}
+              data-ai-hint={member.hint}
+              priority={index < 3}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+            <div className="absolute bottom-0 left-0 p-6 text-left text-white">
+              <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
+              <p className="text-md font-semibold text-white/80">{member.role}</p>
+            </div>
           </div>
-        </div>
-      </Card>
+        </Card>
+      </Link>
     </motion.div>
   );
 }
 
 
 export default function OurPeoplePage() {
-  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
   
@@ -159,7 +129,6 @@ export default function OurPeoplePage() {
                     key={member.name}
                     member={member}
                     index={index}
-                    onClick={() => setSelectedMember(member)}
                   />
                 ))}
               </div>
@@ -168,48 +137,6 @@ export default function OurPeoplePage() {
         </main>
         <Footer />
       </div>
-
-      {selectedMember && (
-        <Dialog open={!!selectedMember} onOpenChange={(isOpen) => !isOpen && setSelectedMember(null)}>
-          <DialogContent className="max-w-4xl w-[95vw] sm:w-[90vw] h-[90vh] p-0 flex flex-col">
-            <div className="grid md:grid-cols-5 h-full">
-              <div className="relative md:col-span-2 h-full hidden md:block bg-muted/30">
-                <Image
-                    src={selectedMember.maskedImage || selectedMember.image}
-                    alt={`Portrait of ${selectedMember.name}, ${selectedMember.role}`}
-                    fill
-                    className="object-contain object-bottom p-4 lg:p-8"
-                    style={selectedMember.imageStyle || {}}
-                    data-ai-hint={selectedMember.hint}
-                />
-              </div>
-              <div className="md:col-span-3 flex flex-col p-6 sm:p-8 overflow-hidden">
-                <DialogHeader className="mb-4 text-left">
-                  <DialogTitle className="text-3xl lg:text-4xl font-bold font-headline">{selectedMember.name}</DialogTitle>
-                  <p className="text-lg text-muted-foreground font-semibold">{selectedMember.role}</p>
-                </DialogHeader>
-                <ScrollArea className="flex-1 pr-4 -mr-4">
-                  <div className="text-foreground space-y-4">
-                      {formatDescription(selectedMember.description)}
-                  </div>
-                </ScrollArea>
-                 <div className="flex flex-col sm:flex-row gap-4 mt-6 items-start sm:items-center border-t pt-4">
-                    {selectedMember.email && (
-                        <a href={`mailto:${selectedMember.email}`} className="text-muted-foreground hover:text-accent flex items-center gap-2 text-sm">
-                            <Mail className="h-5 w-5" /> <span>{selectedMember.email}</span>
-                        </a>
-                    )}
-                    {selectedMember.linkedin && (
-                        <a href={selectedMember.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent flex items-center gap-2 text-sm">
-                            <Linkedin className="h-5 w-5" /> <span>LinkedIn</span>
-                        </a>
-                    )}
-                </div>
-              </div>
-            </div>
-          </DialogContent>
-        </Dialog>
-      )}
     </>
   );
 }

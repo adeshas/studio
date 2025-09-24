@@ -4,35 +4,76 @@
 import Image from "next/image";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import React from "react";
-import { Linkedin, Mail, ArrowDown } from "lucide-react";
+import React, { useState } from "react";
+import { Linkedin, Mail, ArrowDown, Plus, Minus } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { teamMembers } from "@/lib/team-data";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
 
 type TeamMember = (typeof teamMembers)[0];
 
 const formatDescription = (text: string) => {
+  if (!text) return null;
   const lines = text.split('\n');
-  return lines.map((line, lineIndex) => {
-    if (line.trim() === '') {
-      return <div key={lineIndex} className="h-4" />;
+  
+  let listItems: string[] = [];
+  const content = lines.flatMap((line, lineIndex) => {
+    const trimmedLine = line.trim();
+    if (trimmedLine.startsWith('✓')) {
+      listItems.push(trimmedLine.substring(1).trim());
+      // If the next line is not a list item, render the list
+      if (!lines[lineIndex + 1]?.trim().startsWith('✓')) {
+        const list = (
+          <ul key={`list-${lineIndex}`} className="space-y-2 my-4 list-disc pl-6">
+            {listItems.map((item, itemIndex) => (
+              <li key={itemIndex}>{item}</li>
+            ))}
+          </ul>
+        );
+        listItems = []; // Reset for next potential list
+        return [list];
+      }
+      return []; // Don't render individual list items yet
     }
+
+    if (trimmedLine === '') {
+      return [<div key={lineIndex} className="h-4" />];
+    }
+    
     const parts = line.split(/(\*\*.*?\*\*)/g).filter(part => part);
     return (
-      <p key={lineIndex} className="mb-2">
+      <p key={lineIndex}>
         {parts.map((part, partIndex) => {
           if (part.startsWith('**') && part.endsWith('**')) {
             return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
-          }
-          if (part.startsWith('✓')) {
-            return <span key={partIndex}><span className="mr-2">✓</span>{part.substring(1)}</span>;
           }
           return part;
         })}
       </p>
     );
   });
+
+  return <>{content}</>;
 };
+
+const CustomAccordionTrigger = React.forwardRef<
+  React.ElementRef<typeof AccordionTrigger>,
+  React.ComponentPropsWithoutRef<typeof AccordionTrigger> & { open: boolean }
+>(({ children, open, className, ...props }, ref) => (
+  <AccordionTrigger
+    ref={ref}
+    className={cn(
+      "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:no-underline border-b border-white/20 text-lg",
+      className
+    )}
+    {...props}
+  >
+    {children}
+    {open ? <Minus className="h-5 w-5 shrink-0" /> : <Plus className="h-5 w-5 shrink-0" />}
+  </AccordionTrigger>
+));
+CustomAccordionTrigger.displayName = "CustomAccordionTrigger";
 
 export default function ProfileClientPage({ member }: { member: TeamMember }) {
   const { scrollYProgress: pageScrollYProgress } = useScroll();
@@ -41,6 +82,46 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
     damping: 30,
     restDelta: 0.001
   });
+  const [openAccordion, setOpenAccordion] = useState<string[]>([]);
+
+  const toggleAccordion = (value: string) => {
+    setOpenAccordion(prev => 
+      prev.includes(value) ? prev.filter(item => item !== value) : [...prev, value]
+    );
+  };
+
+  const sections = ['Expertise', 'Education', 'Certifications', 'Associations', 'Awards'];
+  const memberData: { [key: string]: string | undefined } = {
+    Expertise: member.description,
+    Education: member.description,
+    Certifications: member.description,
+    Associations: member.description,
+    Awards: member.description,
+  };
+
+  const extractSection = (text: string | undefined, sectionTitle: string) => {
+    if (!text) return null;
+  
+    const lines = text.split('\n');
+    let inSection = false;
+    let sectionContent = '';
+  
+    for (const line of lines) {
+      const trimmedLine = line.trim();
+      if (trimmedLine.startsWith('**') && trimmedLine.endsWith('**')) {
+        if (trimmedLine.slice(2,-2).toUpperCase() === sectionTitle.toUpperCase()) {
+          inSection = true;
+        } else if (inSection) {
+          // We've hit the next section title, so stop.
+          break;
+        }
+      } else if (inSection) {
+        sectionContent += line + '\n';
+      }
+    }
+    return sectionContent.trim() ? formatDescription(sectionContent.trim()) : null;
+  };
+
 
   return (
     <>
@@ -83,7 +164,33 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
               </div>
               
               <div className="text-lg text-muted-foreground space-y-6">
-                {formatDescription(member.description)}
+                {formatDescription(member.description?.split('**EDUCATION**')[0])}
+              </div>
+
+              <div className="mt-16">
+                <h2 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-4">Credentials</h2>
+                <Accordion type="multiple" value={openAccordion} onValueChange={setOpenAccordion} className="w-full">
+                  {sections.map(section => {
+                      const content = extractSection(member.description, section);
+                      if (!content) return null;
+                      
+                      const value = section.toLowerCase();
+                      const isOpen = openAccordion.includes(value);
+
+                      return (
+                        <AccordionItem value={value} key={value} className="border-none">
+                            <CustomAccordionTrigger open={isOpen} onClick={() => toggleAccordion(value)}>
+                                {section}
+                            </CustomAccordionTrigger>
+                            <AccordionContent>
+                                <div className="py-4 text-muted-foreground space-y-4">
+                                    {content}
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+                      );
+                  })}
+                </Accordion>
               </div>
 
                <div className="flex flex-col sm:flex-row gap-4 mt-12 items-start sm:items-center border-t border-border pt-8">

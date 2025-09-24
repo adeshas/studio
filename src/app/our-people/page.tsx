@@ -44,7 +44,7 @@ const formatDescription = (text: string) => {
 };
 
 const cardVariants = {
-  initial: { opacity: 0, y: 90 },
+  initial: { opacity: 0, y: 270 },
   animate: { opacity: 1, y: 0, transition: { duration: 1.8, ease: "easeOut" } },
 };
 

@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { teamMembers } from "@/lib/team-data";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -16,6 +16,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import React from "react";
 import { Linkedin, Mail } from "lucide-react";
+import { motion, useInView } from "framer-motion";
 
 type TeamMember = (typeof teamMembers)[0];
 
@@ -42,6 +43,49 @@ const formatDescription = (text: string) => {
   });
 };
 
+const cardVariants = {
+  initial: { opacity: 0, y: 50 },
+  animate: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } },
+};
+
+function TeamMemberCard({ member, index, onClick }: { member: TeamMember, index: number, onClick: () => void }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  
+  // For the first few items, don't animate. The number can be adjusted (e.g., 3 for desktop).
+  const isInitialLoad = index < 3;
+
+  return (
+    <motion.div
+      ref={ref}
+      variants={cardVariants}
+      initial={isInitialLoad ? "animate" : "initial"}
+      animate={isInView ? "animate" : "initial"}
+      onClick={onClick}
+      className="cursor-pointer"
+    >
+      <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col group">
+        <div className="relative w-full aspect-[4/5]">
+          <Image
+            src={member.image}
+            alt={`Portrait of ${member.name}, ${member.role}`}
+            fill
+            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            style={member.imageStyle || {}}
+            data-ai-hint={member.hint}
+            priority={index < 3} // Prioritize loading for above-the-fold images
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 p-6 text-left text-white">
+            <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
+            <p className="text-md font-semibold text-white/80">{member.role}</p>
+          </div>
+        </div>
+      </Card>
+    </motion.div>
+  );
+}
+
 
 export default function OurPeoplePage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
@@ -65,26 +109,13 @@ export default function OurPeoplePage() {
               <div
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
-                {teamMembers.map((member) => (
-                  <div key={member.name} onClick={() => setSelectedMember(member)} className="cursor-pointer">
-                    <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col group">
-                      <div className="relative w-full aspect-[4/5]">
-                            <Image
-                                src={member.image}
-                                alt={`Portrait of ${member.name}, ${member.role}`}
-                                fill
-                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                style={member.imageStyle || {}}
-                                data-ai-hint={member.hint}
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                            <div className="absolute bottom-0 left-0 p-6 text-left text-white">
-                                <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
-                                <p className="text-md font-semibold text-white/80">{member.role}</p>
-                            </div>
-                      </div>
-                    </Card>
-                  </div>
+                {teamMembers.map((member, index) => (
+                  <TeamMemberCard 
+                    key={member.name}
+                    member={member}
+                    index={index}
+                    onClick={() => setSelectedMember(member)}
+                  />
                 ))}
               </div>
             </div>

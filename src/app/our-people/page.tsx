@@ -21,14 +21,20 @@ import React from "react";
 type TeamMember = (typeof teamMembers)[0];
 
 const formatDescription = (text: string) => {
-  const paragraphs = text.split('\n\n');
-  return paragraphs.map((paragraph, pIndex) => {
-    const parts = paragraph.split(/(\*\*.*?\*\*)/g).filter(part => part);
+  const lines = text.split('\n');
+  return lines.map((line, lineIndex) => {
+    if (line.trim() === '') {
+      return <div key={lineIndex} className="h-4" />;
+    }
+    const parts = line.split(/(\*\*.*?\*\*)/g).filter(part => part);
     return (
-      <p key={pIndex}>
+      <p key={lineIndex} className="mb-2">
         {parts.map((part, partIndex) => {
           if (part.startsWith('**') && part.endsWith('**')) {
             return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
+          }
+          if (part.startsWith('✓')) {
+            return <span key={partIndex}><span className="mr-2">✓</span>{part.substring(1)}</span>;
           }
           return part;
         })}
@@ -137,3 +143,5 @@ export default function OurPeoplePage() {
     </>
   );
 }
+
+    

@@ -91,15 +91,17 @@ export default function OurPeoplePage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
-  const { scrollYProgress: heroScrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"]
-  });
-
-  const scaleX = useSpring(scrollYProgress, {
+  
+  const { scrollYProgress: pageScrollYProgress } = useScroll();
+  const scaleX = useSpring(pageScrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
+  });
+
+  const { scrollYProgress: heroScrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
   });
 
   return (
@@ -170,8 +172,8 @@ export default function OurPeoplePage() {
       {selectedMember && (
         <Dialog open={!!selectedMember} onOpenChange={(isOpen) => !isOpen && setSelectedMember(null)}>
           <DialogContent className="max-w-4xl w-[95vw] sm:w-[90vw] h-[90vh] p-0 flex flex-col">
-            <div className="grid md:grid-cols-2 h-full">
-              <div className="relative h-full hidden md:block bg-[radial-gradient(ellipse_at_center,_#1a1a1a_0%,#000000_100%)]">
+            <div className="grid md:grid-cols-5 h-full">
+              <div className="relative md:col-span-2 h-full hidden md:block bg-muted/30">
                 <Image
                     src={selectedMember.maskedImage || selectedMember.image}
                     alt={`Portrait of ${selectedMember.name}, ${selectedMember.role}`}
@@ -181,7 +183,7 @@ export default function OurPeoplePage() {
                     data-ai-hint={selectedMember.hint}
                 />
               </div>
-              <div className="flex flex-col p-6 sm:p-8 overflow-hidden">
+              <div className="md:col-span-3 flex flex-col p-6 sm:p-8 overflow-hidden">
                 <DialogHeader className="mb-4 text-left">
                   <DialogTitle className="text-3xl lg:text-4xl font-bold font-headline">{selectedMember.name}</DialogTitle>
                   <p className="text-lg text-muted-foreground font-semibold">{selectedMember.role}</p>
@@ -191,14 +193,14 @@ export default function OurPeoplePage() {
                       {formatDescription(selectedMember.description)}
                   </div>
                 </ScrollArea>
-                 <div className="flex gap-4 mt-6 items-center border-t pt-4">
+                 <div className="flex flex-col sm:flex-row gap-4 mt-6 items-start sm:items-center border-t pt-4">
                     {selectedMember.email && (
-                        <a href={`mailto:${selectedMember.email}`} className="text-muted-foreground hover:text-accent flex items-center gap-2">
-                            <Mail className="h-5 w-5" /> <span>Email</span>
+                        <a href={`mailto:${selectedMember.email}`} className="text-muted-foreground hover:text-accent flex items-center gap-2 text-sm">
+                            <Mail className="h-5 w-5" /> <span>{selectedMember.email}</span>
                         </a>
                     )}
                     {selectedMember.linkedin && (
-                        <a href={selectedMember.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent flex items-center gap-2">
+                        <a href={selectedMember.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent flex items-center gap-2 text-sm">
                             <Linkedin className="h-5 w-5" /> <span>LinkedIn</span>
                         </a>
                     )}

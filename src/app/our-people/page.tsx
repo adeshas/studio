@@ -101,6 +101,8 @@ export default function OurPeoplePage() {
     damping: 30,
     restDelta: 0.001
   });
+  
+  const y = useTransform(heroScrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
     <>
@@ -110,7 +112,7 @@ export default function OurPeoplePage() {
         <main className="flex-1">
 
           <section ref={heroRef} className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden -mt-20">
-            <motion.div style={{ y: useTransform(useScroll({ target: heroRef, offset: ["start start", "end start"] }), [0, 1], ["0%", "50%"]) }} className="absolute inset-0 z-0">
+            <motion.div style={{ y }} className="absolute inset-0 z-0">
                 <Image
                 src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1162_v2.jpeg"
                 alt="A premier law firm"

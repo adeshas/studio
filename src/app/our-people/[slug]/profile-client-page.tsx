@@ -117,8 +117,9 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         <main className="flex-1">
 
           <section 
-              className="relative w-full h-[50vh] bg-contain bg-center bg-no-repeat bg-fixed flex flex-col justify-end items-center text-white -mt-28"
+              className="relative w-full bg-contain bg-center bg-no-repeat bg-fixed flex flex-col justify-end items-center text-white -mt-28"
               style={{ 
+                height: '75vh',
                 backgroundImage: `radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(20,20,20,0.8) 100%), url(${member.maskedImage || member.image})` 
               }}
           >
@@ -135,8 +136,8 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
               </motion.div>
           </section>
           
-          <section id="member-details" className="w-full py-12 md:py-24 lg:py-32 bg-neutral-900 relative z-10">
-            <div className="container mx-auto px-4 md:px-6 max-w-4xl">
+          <section id="member-details" className="w-full py-12 md:py-24 lg:py-32 bg-neutral-900 relative z-10 -mt-32">
+            <div className="container mx-auto px-4 md:px-6 max-w-4xl pt-16">
               <div className="mb-8">
                   <h2 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground">Bio</h2>
                   <div className="w-16 h-px bg-primary mt-2"></div>

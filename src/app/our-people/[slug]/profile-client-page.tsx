@@ -123,7 +123,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
                       src={member.maskedImage || member.image}
                       alt={`Portrait of ${member.name}, ${member.role}`}
                       fill
-                      className="object-cover object-top"
+                      className="object-contain object-bottom"
                       priority
                       data-ai-hint={member.hint}
                   />

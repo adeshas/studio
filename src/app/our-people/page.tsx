@@ -6,8 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { teamMembers } from "@/lib/team-data";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { Button } from "@/components/ui/button";
-import { Linkedin, Mail } from "lucide-react";
 import { useState } from "react";
 import {
   Dialog,
@@ -17,6 +15,7 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import React from "react";
+import { Linkedin, Mail } from "lucide-react";
 
 type TeamMember = (typeof teamMembers)[0];
 
@@ -67,28 +66,23 @@ export default function OurPeoplePage() {
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
                 {teamMembers.map((member) => (
-                  <div key={member.name}>
-                    <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
-                      <div className="relative w-full aspect-[600/1024]">
+                  <div key={member.name} onClick={() => setSelectedMember(member)} className="cursor-pointer">
+                    <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col group">
+                      <div className="relative w-full aspect-[4/5]">
                             <Image
                                 src={member.image}
                                 alt={`Portrait of ${member.name}, ${member.role}`}
                                 fill
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                 style={member.imageStyle || {}}
                                 data-ai-hint={member.hint}
                             />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                            <div className="absolute bottom-0 right-0 p-6 text-right text-white">
+                                <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
+                                <p className="text-md font-semibold text-white/80">{member.role}</p>
+                            </div>
                       </div>
-                      <CardContent className="p-6 flex flex-col flex-grow">
-                        <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
-                        <p className="text-md font-semibold text-muted-foreground mb-4">{member.role}</p>
-                        <p className="text-muted-foreground text-sm flex-grow">
-                          {member.description.replace(/\*\*/g, "").substring(0, 150)}...
-                        </p>
-                        <Button onClick={() => setSelectedMember(member)} className="mt-4 self-start">
-                          Read Full Profile
-                        </Button>
-                      </CardContent>
                     </Card>
                   </div>
                 ))}
@@ -105,7 +99,7 @@ export default function OurPeoplePage() {
             <div className="grid md:grid-cols-2 h-full">
               <div className="relative h-full hidden md:block">
                 <Image
-                    src={selectedMember.image}
+                    src={selectedMember.maskedImage || selectedMember.image}
                     alt={`Portrait of ${selectedMember.name}, ${selectedMember.role}`}
                     fill
                     className="object-cover rounded-l-lg"
@@ -143,5 +137,3 @@ export default function OurPeoplePage() {
     </>
   );
 }
-
-    

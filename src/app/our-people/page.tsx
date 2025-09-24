@@ -110,7 +110,7 @@ export default function OurPeoplePage() {
         <main className="flex-1">
 
           <section ref={heroRef} className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden -mt-20">
-            <div className="absolute inset-0 z-0">
+            <motion.div style={{ y: useTransform(useScroll({ target: heroRef, offset: ["start start", "end start"] }), [0, 1], ["0%", "50%"]) }} className="absolute inset-0 z-0">
                 <Image
                 src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1162_v2.jpeg"
                 alt="A premier law firm"
@@ -120,7 +120,7 @@ export default function OurPeoplePage() {
                 data-ai-hint="office building modern"
                 />
                 <div className="absolute inset-0 bg-black/80"></div>
-            </div>
+            </motion.div>
             <div className="relative z-10 container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white">
               <h1 className="text-4xl md:text-6xl font-bold font-headline">Our People</h1>
               <div className="mt-4 text-lg">
@@ -142,6 +142,7 @@ export default function OurPeoplePage() {
             <div className="container mx-auto px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                 <div className="space-y-2">
+                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Meet our Team</h2>
                   <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     Meet our dedicated team of experienced and competent legal professionals.
                   </p>

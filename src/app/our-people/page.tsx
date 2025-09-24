@@ -16,15 +16,8 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import React from "react";
 import { Linkedin, Mail } from "lucide-react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useScroll, useSpring } from "framer-motion";
 import Link from "next/link";
-import type { Metadata } from "next";
-
-// This is a client component, so metadata should be defined in a parent layout or through other means if static generation is needed.
-// export const metadata: Metadata = {
-//   title: 'Our People',
-//   description: 'Meet our dedicated team of experienced and competent legal professionals.',
-// }
 
 type TeamMember = (typeof teamMembers)[0];
 
@@ -60,7 +53,6 @@ function TeamMemberCard({ member, index, onClick }: { member: TeamMember, index:
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   
-  // For the first few items, don't animate. The number can be adjusted (e.g., 3 for desktop).
   const isInitialLoad = index < 3;
 
   return (
@@ -81,7 +73,7 @@ function TeamMemberCard({ member, index, onClick }: { member: TeamMember, index:
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
             style={member.imageStyle || {}}
             data-ai-hint={member.hint}
-            priority={index < 3} // Prioritize loading for above-the-fold images
+            priority={index < 3}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
           <div className="absolute bottom-0 left-0 p-6 text-left text-white">
@@ -97,24 +89,39 @@ function TeamMemberCard({ member, index, onClick }: { member: TeamMember, index:
 
 export default function OurPeoplePage() {
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll();
+  const { scrollYProgress: heroScrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   return (
     <>
       <div className="flex flex-col min-h-screen bg-background font-body">
-        <Header />
+        <motion.div className="progress-bar" style={{ scaleX }} />
+        <Header scrollYProgress={heroScrollYProgress} />
         <main className="flex-1">
 
-          <section className="relative w-full h-64 md:h-80">
-            <Image
-              src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1162_v2.jpeg"
-              alt="A premier law firm"
-              fill
-              className="object-cover"
-              priority
-              data-ai-hint="office building modern"
-            />
-            <div className="absolute inset-0 bg-black/60 z-10"></div>
-            <div className="relative container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white z-20">
+          <section ref={heroRef} className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden -mt-20">
+            <motion.div className="absolute inset-0 z-0">
+                <Image
+                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1162_v2.jpeg"
+                alt="A premier law firm"
+                fill
+                className="object-cover fixed h-screen"
+                priority
+                data-ai-hint="office building modern"
+                />
+                <div className="absolute inset-0 bg-black/80"></div>
+            </motion.div>
+            <div className="relative z-10 container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white">
               <h1 className="text-4xl md:text-6xl font-bold font-headline">Our People</h1>
               <div className="mt-4 text-lg">
                   <Link href="/" className="hover:underline">Home</Link>
@@ -124,7 +131,7 @@ export default function OurPeoplePage() {
             </div>
           </section>
 
-          <section id="our-people-full" className="w-full py-12 md:py-24 lg:py-32">
+          <section id="our-people-full" className="w-full py-12 md:py-24 lg:py-32 bg-background relative z-10">
             <div className="container mx-auto px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                 <div className="space-y-2">

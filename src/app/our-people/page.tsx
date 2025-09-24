@@ -78,7 +78,7 @@ export default function OurPeoplePage() {
                                 data-ai-hint={member.hint}
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                            <div className="absolute bottom-0 right-0 p-6 text-right text-white">
+                            <div className="absolute bottom-0 left-0 p-6 text-left text-white">
                                 <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
                                 <p className="text-md font-semibold text-white/80">{member.role}</p>
                             </div>

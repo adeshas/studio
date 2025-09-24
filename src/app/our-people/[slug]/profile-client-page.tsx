@@ -117,7 +117,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         <main className="flex-1">
 
           <section 
-              className="relative w-full h-[50vh] bg-cover bg-center-top bg-no-repeat bg-fixed flex flex-col justify-end items-center text-white pt-20"
+              className="relative w-full h-[50vh] bg-contain bg-center-top bg-no-repeat bg-fixed flex flex-col justify-end items-center text-white pt-20"
               style={{ 
                 backgroundImage: `radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(20,20,20,0.8) 100%), url(${member.maskedImage || member.image})` 
               }}

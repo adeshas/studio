@@ -5,7 +5,7 @@ import Image from "next/image";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import React, { useRef } from "react";
-import { Linkedin, Mail, ArrowDown, ArrowLeft } from "lucide-react";
+import { Linkedin, Mail, ArrowDown } from "lucide-react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -49,36 +49,44 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
       <div className="flex flex-col min-h-screen bg-background font-body">
         <motion.div className="progress-bar" style={{ scaleX }} />
         <Header />
-        <main className="flex-1 pt-24 md:pt-32">
-          
-          <section className="w-full bg-background relative z-10 pb-12">
-              <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-                  <div className="relative mx-auto w-full max-w-md h-[400px] md:h-[500px] mb-8">
-                      <Image
-                          src={member.image}
-                          alt={`Portrait of ${member.name}, ${member.role}`}
-                          fill
-                          className="object-contain object-bottom"
-                          priority
-                          data-ai-hint={member.hint}
-                      />
-                  </div>
-              </div>
+        <main className="flex-1">
+
+          <section className="relative w-full min-h-screen flex flex-col justify-center items-center text-center text-white bg-black pt-20">
+            <div className="relative w-full max-w-4xl h-[400px] md:h-[500px] flex-shrink-0">
+                <Image
+                    src={member.image}
+                    alt={`Portrait of ${member.name}, ${member.role}`}
+                    fill
+                    className="object-contain object-bottom"
+                    priority
+                    data-ai-hint={member.hint}
+                />
+            </div>
+            <div className="mt-8">
+                <h1 className="text-4xl md:text-6xl font-light font-headline tracking-widest">{member.name}</h1>
+                <p className="mt-2 text-lg text-white/80 uppercase tracking-[0.2em]">{member.role}</p>
+            </div>
+             <motion.div
+                className="absolute bottom-10"
+                animate={{ y: [0, 10, 0] }}
+                transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
+            >
+                <ArrowDown className="h-8 w-8 text-white" />
+            </motion.div>
           </section>
 
-          <section id="member-details" className="w-full pb-12 md:pb-24 lg:pb-32 bg-background relative z-10">
+          <section id="member-details" className="w-full py-12 md:py-24 lg:py-32 bg-background relative z-10">
             <div className="container mx-auto px-4 md:px-6 max-w-4xl">
-
-              <div className="text-center mb-12">
-                  <h1 className="text-4xl md:text-6xl font-bold font-headline">{member.name}</h1>
-                  <p className="mt-2 text-lg text-white/80">{member.role}</p>
+              <div className="mb-8">
+                  <h2 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground">Bio</h2>
+                  <div className="w-16 h-px bg-primary mt-2"></div>
               </div>
               
               <div className="text-lg text-muted-foreground space-y-6">
                 {formatDescription(member.description)}
               </div>
 
-               <div className="flex flex-col sm:flex-row gap-4 mt-12 items-start sm:items-center border-t pt-8">
+               <div className="flex flex-col sm:flex-row gap-4 mt-12 items-start sm:items-center border-t border-border pt-8">
                   {member.email && (
                       <a href={`mailto:${member.email}`} className="text-muted-foreground hover:text-accent flex items-center gap-2 text-lg">
                           <Mail className="h-6 w-6" /> <span>{member.email}</span>
@@ -89,15 +97,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
                           <Linkedin className="h-6 w-6" /> <span>LinkedIn</span>
                       </a>
                   )}
-              </div>
-
-              <div className="mt-12">
-                  <Button asChild variant="outline">
-                      <Link href="/our-people">
-                          <ArrowLeft className="h-4 w-4 mr-2" />
-                          Back to Our People
-                      </Link>
-                  </Button>
               </div>
 
             </div>

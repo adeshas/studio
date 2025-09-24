@@ -44,8 +44,8 @@ const formatDescription = (text: string) => {
 };
 
 const cardVariants = {
-  initial: { opacity: 0, y: 50 },
-  animate: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } },
+  initial: { opacity: 0, y: 90 },
+  animate: { opacity: 1, y: 0, transition: { duration: 1.8, ease: "easeOut" } },
 };
 
 function TeamMemberCard({ member, index, onClick }: { member: TeamMember, index: number, onClick: () => void }) {

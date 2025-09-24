@@ -10,10 +10,11 @@ import { motion, useScroll, useSpring } from "framer-motion";
 import { teamMembers } from "@/lib/team-data";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 type TeamMember = (typeof teamMembers)[0];
 
-const formatDescription = (text: string) => {
+const formatDescription = (text: string | undefined) => {
   if (!text) return null;
   const lines = text.split('\n');
   
@@ -65,6 +66,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
     restDelta: 0.001
   });
   const [openAccordion, setOpenAccordion] = useState<string[]>([]);
+  const [isBioExpanded, setIsBioExpanded] = useState(false);
 
   const sections = ['Expertise', 'Education', 'Certifications', 'Associations', 'Awards'];
   const memberData: { [key: string]: string | undefined } = {
@@ -74,6 +76,11 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
     Associations: member.description,
     Awards: member.description,
   };
+
+  const bioText = member.description?.split('**EDUCATION**')[0];
+  const bioParagraphs = bioText?.split('\n\n').filter(p => p.trim() !== '') || [];
+  const truncatedBio = bioParagraphs.slice(0, 2).join('\n\n');
+  const showReadMore = bioParagraphs.length > 2;
 
   const extractSection = (text: string | undefined, sectionTitle: string) => {
     if (!text) return null;
@@ -85,11 +92,14 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
     for (const line of lines) {
       const trimmedLine = line.trim();
       if (trimmedLine.startsWith('**') && trimmedLine.endsWith('**')) {
-        if (trimmedLine.slice(2,-2).toUpperCase() === sectionTitle.toUpperCase()) {
-          inSection = true;
-        } else if (inSection) {
-          // We've hit the next section title, so stop.
-          break;
+        const currentTitle = trimmedLine.slice(2,-2).toUpperCase();
+        if (sections.includes(currentTitle.charAt(0) + currentTitle.slice(1).toLowerCase())) {
+            if (currentTitle === sectionTitle.toUpperCase()) {
+                inSection = true;
+            } else if (inSection) {
+                // We've hit the next section title, so stop.
+                break;
+            }
         }
       } else if (inSection) {
         sectionContent += line + '\n';
@@ -140,8 +150,16 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
               </div>
               
               <div className="text-lg text-muted-foreground space-y-6">
-                {formatDescription(member.description?.split('**EDUCATION**')[0])}
+                {formatDescription(isBioExpanded ? bioText : truncatedBio)}
               </div>
+
+              {showReadMore && !isBioExpanded && (
+                <div className="mt-6">
+                  <Button variant="link" onClick={() => setIsBioExpanded(true)} className="p-0 text-accent">
+                    Read more
+                  </Button>
+                </div>
+              )}
 
               <div className="mt-16">
                 <h2 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-4">Credentials</h2>

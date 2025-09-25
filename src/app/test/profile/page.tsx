@@ -3,8 +3,11 @@
 
 import Link from "next/link";
 import { useCallback, useMemo, useState } from "react";
+import { teamMembers } from "@/lib/team-data";
 
-const heroImage = "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/NEW_DAYO-masked.png";
+const member = teamMembers.find(m => m.slug === 'adedayo-adesina');
+
+const heroImage = member?.maskedImage || "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/NEW_DAYO-masked.png";
 
 const accordionSections = [
   {
@@ -111,13 +114,13 @@ export default function ProfileTestPage() {
       <section className="profile-hero">
         <div className="profile-hero__glow" />
         <div className="profile-hero__image">
-          <img src={heroImage} alt="Adedayo Adesina" />
+          <img src={heroImage} alt={member?.name || "Team member"} />
         </div>
         <div className="shell">
           <div className="profile-hero__content">
             <div className="profile-hero__title" data-animate>
-              <h1>Adedayo Adesina</h1>
-              <h6>Lead Partner</h6>
+              <h1>{member?.name}</h1>
+              <h6>{member?.role}</h6>
             </div>
           </div>
         </div>
@@ -179,15 +182,6 @@ export default function ProfileTestPage() {
                           </li>
                         ))}
                       </ul>
-                    )}
-                    {section.review && (
-                      <div className="accordion__review">
-                        <div className="accordion__review-inner">
-                          <h6>{section.review.headline}</h6>
-                          <p>{section.review.body}</p>
-                          <p className="accordion__review-source">{section.review.source}</p>
-                        </div>
-                      </div>
                     )}
                   </div>
                 </div>
@@ -321,7 +315,6 @@ export default function ProfileTestPage() {
           object-fit: contain;
           object-position: bottom;
           filter: saturate(110%);
-          mix-blend-mode: lighten;
           mask-image: radial-gradient(circle at 70% 30%, black 60%, transparent 92%);
           -webkit-mask-image: radial-gradient(circle at 70% 30%, black 60%, transparent 92%);
           opacity: 0;
@@ -842,5 +835,3 @@ export default function ProfileTestPage() {
     </div>
   );
 }
-
-    

@@ -169,8 +169,8 @@ export default function ProfileTestPage() {
                     onClick={() => toggleSection(section.title)}
                     aria-expanded={isOpen}
                   >
-                    <span className="accordion__icon" aria-hidden />
                     <h5>{section.title}</h5>
+                    <span className="accordion__icon" aria-hidden />
                   </button>
                   <div className="accordion__body" aria-hidden={!isOpen}>
                     {section.items.length > 0 && (
@@ -502,6 +502,7 @@ export default function ProfileTestPage() {
           letter-spacing: 0.32em;
           font-size: 0.92rem;
           margin: 0;
+          margin-right: 1.1rem;
         }
 
         .accordion__icon {
@@ -510,7 +511,6 @@ export default function ProfileTestPage() {
           height: 44px;
           border-radius: 50%;
           border: 1px solid rgba(255, 255, 255, 0.18);
-          margin-right: 1.1rem;
         }
 
         .accordion__icon::before,
@@ -645,7 +645,6 @@ export default function ProfileTestPage() {
           height: 320px;
           object-fit: cover;
           display: block;
-          mix-blend-mode: screen;
         }
 
         .card__head {

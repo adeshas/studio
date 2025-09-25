@@ -1,61 +1,72 @@
+
 "use client";
 
 import Link from "next/link";
 import { useCallback, useMemo, useState } from "react";
 
-const heroImage = "https://placehold.co/900x1200/png";
+const heroImage = "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/NEW_DAYO-masked.png";
 
 const accordionSections = [
   {
     title: "Expertise",
     items: [
-      { label: "Legal Experience", value: "18 Years" },
-      { label: "Specialty", value: "High Conflict, Parenting Issues" },
+      { label: "Dispute Resolution", value: "" },
+      { label: "Real Estate and Infrastructure Practice", value: "" },
+      { label: "Energy and Natural Resources", value: "" },
+      { label: "Banking, Finance and Insurance", value: "" },
     ],
   },
   {
     title: "Education",
     items: [
-      { label: "University of Windsor, LL.B.", value: "Law Degree" },
-      { label: "University of Detroit Mercy, J.D.", value: "Law Degree" },
+      { label: "University of London", value: "Masters in Banking & Finance Law" },
+      { label: "Nigerian Law School", value: "B.L" },
+      { label: "University of Jos", value: "LLB" },
     ],
   },
   {
     title: "Certifications",
-    items: [{ label: "Collaborative Family Law", value: "Certificate" }],
+    items: [
+        { label: "Notary Public of the Federal Republic of Nigeria", value: "" },
+        { label: "Registered Professional, Financial Reporting Council of Nigeria", value: "" },
+        { label: "Fellow, Institute of Management Consultants (IMC-Nigeria)", value: "" },
+        { label: "Member, Business Recovery and Insolvency Practitioners of Nigeria (BRIPAN)", value: "" },
+        { label: "Associate Member, Chartered Institute of Arbitrators,UK (Ciarb)", value: "" },
+    ],
   },
   {
     title: "Associations",
     items: [
-      { label: "Toronto Lawyers Association", value: "Member" },
-      { label: "Law Society of Ontario", value: "Member" },
+      { label: "Nigerian Bar Association (NBA)", value: "" },
+      { label: "International Bar Association (IBA)", value: "" },
+      { label: "Chartered Institute of Arbitrators (UK)", value: "" },
+      { label: "Business Recovery & Insolvency Practitioners of Nigeria (BRIPAN)", value: "" },
+      { label: "Society of Petroleum Engineers", value: "" },
     ],
   },
   {
-    title: "Reviews",
-    items: [],
-    review: {
-      headline: "Highly Recommend",
-      body: `I am very thankful and blessed to be recommended by a friend of mine from USA to Stanchieri Family law. My case was very complicated, I had two previous lawyers from two different law firms who failed miserably to fight my case for 1 year and a half with multiple unsuccessful mediation sessions. I was on a verge of giving up as I felt defeated and completely lost before I was introduced to Stanchieri family law firm;  where I felt confident, stronger and hopeful. Immediately after talking to the receptionist, I felt a sense of peace and instantly I knew I was in good hands. She was very professional, comforting and understanding. After a brief conversation she recommended me a very suitable lawyer for my case who dealt more with custody and mobility rights. That’s when Ms. Rachel Healey and Mr. Robert Milley came on board and took my case very seriously with no time to waste. They tuned my case from impossible to possible, Ms. Healey managed to start and finish my case within 6 months. I couldn’t be happier, I just wish I had known about Stanchieri Family law firm from the beginning, would’ve saved me a lot of money, time and stress. I highly recommend Stanchieri family law firm.`,
-      source: "//Google Reviews",
-    },
+    title: "Awards",
+    items: [
+        { label: "Special Recognition Award by VP of Nigeria, 2019, 2021, 2023", value: "" },
+        { label: "Appreciation Award from the Doing Business Team of the World Bank Group, 2019, 2020", value: "" },
+    ],
   },
 ];
 
 const otherProfiles = [
   {
-    name: "Julie Stanchieri",
+    name: "Victor Akpeji",
     title: "Partner",
-    experience: "23 Years Experience",
-    href: "#",
-    image: "https://placehold.co/740x940/png",
+    experience: "10+ Years Experience",
+    href: "/our-people/victor-akpeji",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/VICTOR%201%20(2).jpg",
   },
   {
-    name: "Andrew Vankoughnett",
-    title: "Lawyer",
-    experience: "10 Years Experience",
-    href: "#",
-    image: "https://placehold.co/740x940/png",
+    name: "Tochukwu Itumo",
+    title: "Senior Associate",
+    experience: "10+ Years Experience",
+    href: "/our-people/tochukwu-itumo",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/TOCHUKWU%201.jpg",
   },
 ];
 
@@ -64,10 +75,10 @@ export default function ProfileTestPage() {
   const [openSections, setOpenSections] = useState(() => new Set([accordionSections[0].title]));
 
   const bioIntro =
-    "I completed both my American and Canadian law degrees in 2006 and have practised in family law, almost exclusively, since my call to the bar in 2007. I feel humbled and fortunate every day to be trusted by individuals to assist them in the most personal transitions shaping their family’s futures.";
+    "Adedayo Adesina is a Legal Practitioner with over a quindecennial of extensive practical experience in Dispute Resolution, Real Estate and Infrastructure, Energy, Natural Resources, Banking, Finance, and Insurance. He holds a Master of Laws Degree with specialization in Banking and Finance Law from the University of London, United Kingdom, and an undergraduate degree from the University of Jos, Nigeria. He is the Lead Partner of Oyewole & Adesina, a full-service law firm situated at Ikoyi, Lagos.";
 
   const bioFull =
-    "I spent a large part of my life on the East Coast of Canada and that is where I learned the importance of treating people as people, not files. Specifically, I learned to treat people with honesty, integrity, and fairness. I also pride myself on being approachable. Given the personal nature of topics that family law deals with, it is important to me that my clients feel that they can be completely honest with me so that they can decide, fully informed, how they wish to proceed. I pride myself on being a tireless advocate for my client’s interests. I especially enjoy helping families through high conflict parenting matters, including those dealing with mental health and addiction issues. My goal in all matters is to bring calm and stability to what can be a stressful and chaotic period. Sometimes court is the only avenue in which to advance files. Mediation, collaborative law, and negotiation all require the cooperation of both parties to be successful. In many family law cases, that doesn’t exist. In those instances, you need an advocate who is not only not afraid but can effectively advance a case through the Court system. I have advocated at all levels of Court in Ontario, including the Court of Appeal, and utilize arbitration when possible. If you would like to discuss options appropriate for your situation, I would be happy to discuss your circumstances in a confidential consultation.";
+    "Adedayo is renowned for his profound understanding of the legal field, coupled with outstanding analytical, writing, and advocacy skills, which he consistently applies to deliver exceptional results to clients.\n\nAdedayo's expertise extends to various legal domains, including arbitration (both domestic and international), litigation, and insolvency practice. He has successfully litigated complex commercial, environmental, labor, real estate, constitutional, criminal, and election petition disputes at various judicial levels in Nigeria.\n\nHis extensive practical experience encompasses providing expert counsel on concessions, asset acquisitions, licensing, and forging strategic alliances and partnerships within the oil and gas, power, real estate and maritime sectors. Adedayo also advised both local and international companies during the privatisation of the PHCN successor firms. He also demonstrated his prowess in reviewing and negotiating a wide spectrum of industry-standard agreements, including the Bulk Power Purchase Agreement, Vesting Contract, Gas Transportation Agreement, Gas Sales and Purchase Agreement, and related contracts.";
 
   const toggleFullBio = useCallback(() => {
     setShowFullBio((prev) => !prev);
@@ -100,13 +111,13 @@ export default function ProfileTestPage() {
       <section className="profile-hero">
         <div className="profile-hero__glow" />
         <div className="profile-hero__image">
-          <img src={heroImage} alt="Rachel Healey" />
+          <img src={heroImage} alt="Adedayo Adesina" />
         </div>
         <div className="shell">
           <div className="profile-hero__content">
             <div className="profile-hero__title" data-animate>
-              <h1>Rachel Healey</h1>
-              <h6>Partner</h6>
+              <h1>Adedayo Adesina</h1>
+              <h6>Lead Partner</h6>
             </div>
           </div>
         </div>
@@ -129,7 +140,7 @@ export default function ProfileTestPage() {
             <p>{bioIntro}</p>
           </div>
           <div className={`section-full ${showFullBio ? "is-open" : ""}`}>
-            <p>{bioFull}</p>
+            <p className="whitespace-pre-line">{bioFull}</p>
           </div>
           <div className="section-actions">
             <button type="button" className="btn btn--outline" onClick={toggleFullBio}>
@@ -215,9 +226,9 @@ export default function ProfileTestPage() {
             ))}
           </div>
           <div className="section-actions">
-            <button type="button" className="btn btn--outline">
-              Show More
-            </button>
+            <Link href="/our-people" className="btn btn--outline">
+              View All People
+            </Link>
           </div>
         </div>
       </section>
@@ -226,7 +237,7 @@ export default function ProfileTestPage() {
         <div className="shell">
           <div className="profile-cta__inner">
             <h4>Need Legal Advice?</h4>
-            <Link href="#" className="btn">
+            <Link href="/contact" className="btn">
               Book consultation
             </Link>
           </div>
@@ -237,13 +248,13 @@ export default function ProfileTestPage() {
         <div className="shell">
           <div className="profile-footer__inner">
             <nav className="footer-nav">
-              <Link href="#">Services</Link>
-              <Link href="#">Team</Link>
+              <Link href="/our-expertise">Expertise</Link>
+              <Link href="/our-people">Team</Link>
             </nav>
-            <div className="profile-footer__logo">Stanchieri Family Law</div>
+            <div className="profile-footer__logo">Oyewole & Adesina</div>
             <nav className="footer-nav">
-              <Link href="#">About</Link>
-              <Link href="#">Contact</Link>
+              <Link href="/the-firm">About</Link>
+              <Link href="/contact">Contact</Link>
             </nav>
           </div>
           <div className="profile-footer__bar">
@@ -307,7 +318,8 @@ export default function ProfileTestPage() {
         .profile-hero__image img {
           width: clamp(280px, 40vw, 480px);
           height: auto;
-          object-fit: cover;
+          object-fit: contain;
+          object-position: bottom;
           filter: saturate(110%);
           mix-blend-mode: lighten;
           mask-image: radial-gradient(circle at 70% 30%, black 60%, transparent 92%);
@@ -830,3 +842,5 @@ export default function ProfileTestPage() {
     </div>
   );
 }
+
+    

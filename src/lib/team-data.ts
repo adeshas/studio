@@ -9,7 +9,7 @@ export const teamMembers = [
     email: "dayo@oyewoleadesina.com",
     linkedin: "https://www.linkedin.com/in/adedayo-adesina-1743233b/",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ADESINA%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/ADESINA%20BLACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/ADESINA_BLACK-masked.png",
     hint: "man portrait executive"
   },
   {
@@ -19,7 +19,7 @@ export const teamMembers = [
     description: "Victor O. Akpeji is a seasoned legal practitioner with over a decade of extensive experience spanning **dispute resolution, labour and employment, shipping, admiralty and maritime, as well as banking and finance**. He holds an LL.B from Ahmadu Bello University, Zaria and a B.L from the Nigerian Law School. He is currently a Partner at Oyewole & Adesina, a full-service law firm based in Ikoyi, Lagos.\n\nVictor is widely recognized as a formidable advocate and trusted advisor to leading corporations, financial institutions, and multinationals within and outside Nigeria. His practice covers a broad range of areas, including **commercial law, real estate, maritime law, insolvency, labour and employment, banking and finance, and insurance law**.\n\nHe regularly represents clients in high-stakes arbitration and litigation, with expertise in Commercial disputes, Labour and employment matters, Insolvency proceedings, Banking, finance and insurance matters, Shipping, admiralty and maritime claims.\n\nVictor has acted in industry-defining mandates, includingacting as Counsel to a multinational shipping company in a recovery claim worth several millions of dollars, Representation in multi-billion-naira arbitrations, Precedent-setting insolvency litigation involving the liquidation of a major Nigerian investment company. With his cross-border perspective, Victor delivers practical and commercially sound solutions to complex, multi-jurisdictional disputes.\n\n**EDUCATION**\n✓ Nigerian Law School (B.L.)\n✓ Ahmadu Bello University, Zaria (LL.B)\n\n**EXPERTISE**\n✓ Dispute Resolution\n✓ Labour and Employment\n✓ Shipping, Admiralty & Maritime\n✓ Banking, Finance & Insurance\n\n**CERTIFICATIONS**\n✓ Member, Business Recovery and Insolvency Practitioners of Nigeria (BRIPAN)\n✓ Associate Member, The Nigerian Institute of Chartered Arbitrators\n✓ Licensed Insolvency Practitioner, Corporate Affairs Commission\n\n**PROFESSIONAL ASSOCIATIONS**\n✓ Nigerian Bar Association (NBA)\n✓ NBA Lagos Branch – Section on Legal Practice\n✓ The Nigerian Institute of Chartered Arbitrators\n✓ Business Recovery & Insolvency Practitioners of Nigeria (BRIPAN)",
     email: "victor@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/VICTOR%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/VICTOR%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/VICTOR_BACK-masked.png",
     hint: "man portrait lawyer"
   },
   {
@@ -29,7 +29,7 @@ export const teamMembers = [
     description: "Tochukwu Itumo is a **Senior Associate** and a core member of the **Corporate Commercial Practice team** in Oyewole & Adesina. He is a seasoned lawyer with over 10 years’experience in **Corporate & Commercial Advisory, Regulatory Compliance, Corporate Debt Recovery and Insolvency Practice**.\n\nHe advises on corporate transactions in real estate, manufacturing, transportation, telecommunication, energyand hospitality sectors of the economy. He has helped corporate clients to develop an effective compliance manual in line with sector regulations. He also provides secretarial services to public, private and listed companies, ensuring regulatory compliance in their general, board and committee meetings, statutory filings, and internal policies.\n\nHe has provided years of legal services to the Asset Management Corporation of Nigeria and the investment committee of a leading Real Estate Investment Trust (REIT).\n\nWith substantial experience in corporate/commercial practice, Tochukwu is equipped with the resources and skillset to address clients’ interests using business-oriented methods and strategies.\n\n**Education**\n✓ Ebonyi State University, (LLB)\n✓ University of Lagos, (LLM)\n✓ Nigerian Law School, (B.L)\n\n**Expertise**\n✓ Corporate & Commercial Advisory\n✓ Regulatory Compliance\n✓ Corporate Debt Recovery and Insolvency Practice\n✓ Real Estate and Infrastructure Practice\n✓ Dispute Resolution\n\n**Membership Association**\n✓ Nigerian Bar Association (NBA)\n✓ Business Recovery & Insolvency Practitioners of Nigeria (BRIPAN)\n✓ Capital Market Solicitors of Nigeria (CMSA).",
     email: "tochukwu@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/TOCHUKWU%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/TOCHUKWU%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/TOCHUKWU_BACK-masked.png",
     hint: "man portrait lawyer"
   },
   {
@@ -38,7 +38,7 @@ export const teamMembers = [
     role: "Senior Associate",
     description: "Bankole Oyewole is a seasoned legal practitioner with expertise in **litigation, drafting, reviewing and negotiating contracts, consultancy and advisory in corporate and commercial matters**. He is an alumnus of the University of Jos and the Nigerian Law School Bwari Abuja. Bankole had a brief training at the University of Manchester and is considered an alumnus of the University of Manchester. Bankole’s early training in litigation expounded his knowledge and interest in impact litigation.\n\nBankole’s more specific expertise include **corporate and commercial law, Property and taxation**.\n\nSome of Bankole’s achievements include: An active member of the team that brought pharmaceutical giants, Pfizer to book resulting in a settlement of over 40 Million dollars to the Federal Government of Nigeria; Some of Bankole’s achievements include active participation in the team that issued the Ekiti State Bond of 2011; Advising major multinationals on entrance strategies into the Nigerian economy; Acting as a Consultant to major multinationals on Tax matters.\n\nLitigated an action for the reduction of tax assessments for a multi national to the tune of 20 million naira.\n\n**Expertise**\n✓ Dispute Resolution;\n✓ Corporate and Commercial Advisory and Practice;\n✓ Real Estate and Infrastructure Practice;\n✓ Taxation.\n\n**Education**\n✓ University of Jos, Jos, Plateau State (LL.B.);\n✓ Nigerian Law School, (B.L)\n\n**Association**\n✓ Nigerian Bar Association (NBA).",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BANKOLE%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/BANKOLE%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/BANKOLE_BACK-masked.png",
     hint: "man portrait lawyer",
     email: "",
     linkedin: ""
@@ -51,7 +51,7 @@ export const teamMembers = [
     linkedin: "https://www.linkedin.com/in/hildaibukun506",
     email: "hilda@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/HILDA%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/HILDA%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/HILDA_BACK-masked.png",
     hint: "woman portrait lawyer"
   },
   {
@@ -71,7 +71,7 @@ export const teamMembers = [
     description: "Justice is a results-driven legal practitioner whose practice spans **dispute resolution, corporate advisory, and regulatory compliance**. He holds a Bachelor of Laws (LLB) from Kogi State University and was called to the Nigerian Bar after earning a Barrister at Law (B.L) from the Nigerian Law School, Lagos, where he graduated with Second Class Upper Division Honors.\n\nJustice’s professional experience reflects a balance of litigation and corporate practice. At Oyewole & Adesina, he has been involved in matters that cut across commercial litigation, debt recovery, and cross-border investments. His work includes preparing, advising on corporate transactions, and assisting clients in navigating compliance and risk management challenges.\n\nNotably, he has represented a Multinational Shipping and logistics company in widespread debt recovery proceedings and contributed to cross-border investment documentation for a Pan-African healthcare and investment firm.\n\nHis exposure at different levels of practice has enabled him to develop a keen eye for problem-solving, strategy, and client-centered advocacy. Outside the courtroom, Justice has consistently demonstrated leadership and organizational capacity.\n\nJustice is committed to continuous professional development, with additional training in European Business Law. His career reflects a blend of technical expertise, leadership, and a deep commitment to excellence, positioning him as a versatile lawyer capable of delivering value across legal and corporate environments.\n\n**EDUCATION**\n✓ Nigerian Law School, (B.L)\n✓ Kogi State University,(LLB)\n\n**EXPERTISE**\n✓ Dispute Resolution\n✓ Corporate and Commercial Practice\n✓ Banking, Finance and Insurance\n✓ Shipping, Admiralty and Maritime\n\n**ASSOCIATIONS**\n✓ Nigerian Bar Association (NBA)",
     email: "justice@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/JUSTICE%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/JUSTICE%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/JUSTICE_BACK-masked.png",
     hint: "man portrait lawyer"
   },
   {
@@ -82,7 +82,7 @@ export const teamMembers = [
     linkedin: "https://www.linkedin.com/in/ayodeleabisola",
     email: "abisola@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ABISOLA%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/ABISOLA%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/ABISOLA_BLACK-masked.png",
     hint: "woman portrait lawyer"
   },
   {
@@ -92,7 +92,7 @@ export const teamMembers = [
     description: "Damilola Olaniyan is an **Associate** in the firm’s **Corporate Group**. She holds a Bachelor of Laws (LLB) from Afe Babalola University and was called to the Nigerian Bar after obtaining her Bachelor at Law (B.L) from the Nigerian Law School.\n\nDamilola advises on a broad range of corporate and commercial matters, including **regulatory compliance, corporate governance, company secretarial support, and contract advisory**. With a meticulous approach and strong analytical skills, she contributes to the structuring and execution of corporate transactions, ensuring that clients meet their legal and commercial objectives.\n\nDamilola has built a diverse legal background through her work with reputable law firms and government institutions, where she developed strong research, drafting, and strategic problem-solving skills.\n\nPassionate about providing practical, business-oriented solutions, Damilola is committed to supporting clients with clear, effective legal guidance while maintaining a keen focus on compliance and risk management.\n\n**EDUCATION**\n✓ Afe Babalola University (LLB)\n✓ Nigerian Law School, (B.L)\n\n**EXPERTISE AREA**\n✓ Dispute Resolution\n✓ Corporate and Commercial Practice\n✓ Telecommunications\n\n**CERTIFICATIONS**\n✓ Associate, Nigerian Institute of Chartered Arbitrators\n\n**Association**\n✓ Nigerian Bar Association (NBA)\n✓ Section on Business Law",
     email: "dami@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/DAMI%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/DAMI%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/DAMI_BACK-masked.png",
     hint: "woman portrait lawyer"
   },
    {
@@ -103,7 +103,7 @@ export const teamMembers = [
     email: "iyanuoluwa@oyewoleadesina.com",
     linkedin: "",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/IYANU%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/IYANU%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/IYANU_BACK-masked.png",
     hint: "woman portrait lawyer"
   },
   {
@@ -114,7 +114,7 @@ export const teamMembers = [
     email: "ibukun@oyewoleadesina.com",
     linkedin: "",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/IBUKUN%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/IBUKUN%20BACK.png",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/IBUKUN_BACK-masked.png",
     hint: "woman portrait lawyer"
   },
   {
@@ -135,7 +135,7 @@ export const teamMembers = [
     description: "Eniye Seibri is a detail-oriented and client-focused **Front Desk Manager** with a degree in Business Administration and solid experience in customer relations. Skilled in managing reception operations within professional service environments, with a proven ability to provide a welcoming and efficient first point of contact for clients. Adept at handling sensitive information with discretion, coordinating appointments and ensuring seamless communication between clients and legal teams.\n\nWith a strong administrative background, Eniyebring expertise in scheduling, document management, and front office coordination, contributing to the smooth daily operations of the firm. My customer relations experience has honed my ability to maintain professionalism under pressure, resolve inquiries with tact and build positive client relationships.\n\nRecognized for strong organizational skills, attention to detail, and the ability to anticipate client and team needs, I am committed to upholding the highest standards of service and professionalism, ensuring that every client interaction reflects the integrity and values of the firm.\n\n**Expertise**\n✓ Confidential Information Management\n✓ Appointment scheduling and calendar coordination\n✓ Clients and Visitor Relations\n✓ Multi- tasking and Time management.\n\n**Education**\n✓ B.SC BUSINESS ADMINISTRATIONfrom CALEB UNIVERSITY",
     email: "Info@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ENIYE%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/ENIYE%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/ENIYE_BACK-masked.png",
     hint: "woman portrait professional"
   },
   {
@@ -145,7 +145,7 @@ export const teamMembers = [
     description: "Sodiq is a **Litigation Administrator** who boasts an impressive track record of over five years in this role. His expertise primarily revolves around managing and maintaining a highly efficient judicial filing system.\n\nIn his capacity as a Litigation Administrator, Sodiq plays a crucial role in providing vital administrative support to lawyers within the organization. This support extends to a diverse range of tasks associated with legal cases. Some of his key responsibilities include conducting thorough legal research, ensuring the meticulous organization and upkeep of legal documents, and effectively liaising with attorneys, clients, and other support staff.\n\nSodiq’s experience and skills in judicial filing systems make him a valuable asset to the legal team, as he contributes to the smooth and streamlined operation of legal proceedings. His ability to interact professionally and collaboratively with various stakeholders within the legal field underscores his effectiveness in the role of a Litigation Administrator.\n\n**Expertise**\n✓ File Management\n✓ Court Filing,\n✓ Bail bond perfection,\n✓ General Licencing perfection,\n✓ Research Assistant.\n\n**Education**\n✓ He obtained his National Diploma (ND) degree in Business Administration from Kwara State Polytechnic.\n\n**Certification**\n✓ General Paralegal Certification (GPS)( Institute of Paralegal Services)\n✓ Law Office Administration Certification (LOA) ( Institute of Paralegal Services)\n✓ Research Library Assistant Certification (RLA) ( Institute of Paralegal Services)\n\n**Association**\n✓ ",
     email: "oloyede@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/SODIQ%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/SODIQ%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/SODIQ_BACK-masked.png",
     hint: "man portrait professional"
   },
   {
@@ -154,7 +154,7 @@ export const teamMembers = [
     role: "Litigation Clerk",
     description: "Olatubosun is a dedicated **Litigation Clerk** who possesses a strong passion for supporting legal professionals in various aspects of their work. His commitment to this role is evident in his diligence and enthusiasm for assisting with tasks related to legal cases.\n\nAs a Litigation Clerk, Olatubosun is responsible for a range of essential functions within the legal team. These include the filing of court processes, ensuring that all documents are organized and well-maintained, and handling the service of court documents. These tasks are crucial in the smooth progression of legal cases and the adherence to legal procedures.\n\nOne of Olatubosun’s standout qualities is his ability to interact seamlessly and professionally with attorneys, clients, and other members of the support staff. This skill not only fosters effective communication within the legal team but also enhances the overall efficiency and effectiveness of legal proceedings. Olatubosun’s dedication and aptitude for his role as a Litigation Clerk make him a valuable asset to the legal professionals he assists and contribute to the successful management of legal cases.",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/OLATUBOSUN%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/OLATUBOSUN%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/OLATUBOSUN_BACK-masked.png",
     hint: "man portrait professional"
   },
   {
@@ -164,7 +164,7 @@ export const teamMembers = [
     description: "Zainab Salaudeen is an experienced **accountant** with over three (4) years of professional expertise in accounting and financial management. She is proactive, innovative, and self-driven, with a strong passion for identifying opportunities that create value.\n\nShe possesses excellent organizational and decision-making skills, with a proven record of consistently meeting and often exceeding demanding performance goals. Zainab is skilled in managing business challenges, cost control, financial reporting, business analysis, and driving positive impact within organizations.\n\nWith her commitment to excellence and her ability to adapt to dynamic business environments, Zainab continues to make a positive impact by strengthening financial performance and enabling informed decision-making within organizations.\n\n**EDUCATION**\n✓ Higher National Diploma (HND) in Banking & Finance, The Polytechnic, Ibadan\n✓ National Diploma (ND) in Banking & Finance, The Polytechnic, Ibadan\n✓ Diploma in Desktop Publishing, Centre Point Computer College\n\n**EXPERTISE**\n✓ Accounting & Financial Reporting\n✓ Cash Management\n✓ Business & Cost Analysis\n✓ Administrative Support",
     email: "zainab@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ZAINAB%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/ZAINAB%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/ZAINAB_BACK-masked.png",
     hint: "woman portrait professional"
   },
   {
@@ -173,7 +173,7 @@ export const teamMembers = [
     role: "In-House IT Solutions Specialist",
     description: "Adepitan Inioluwa Michael is the **in-house IT Solutions Specialist** at Oyewole & Adesina, where he plays a central role in managing and sustaining the firm’s entire technology framework. His responsibilities extend across a wide spectrum of the firm’s operations, including the management of email systems, cloud storage platforms, internet connectivity, the firm’s website, and all office technical equipment. By ensuring that every aspect of the firm’s IT infrastructure functions smoothly, Inioluwa enables the team to focus on delivering excellent legal services without disruption.\n\nIn his role, he is not only tasked with maintaining existing systems but also with identifying and resolving technical issues as they arise. His hands-on approach to managing and troubleshooting office equipment and IT-related problems makes him a dependable first point of contact for staff, ensuring quick resolutions and minimal downtime. He combines technical expertise with strong critical decision-making skills, which allows him to evaluate challenges, weigh available options, and implement solutions that align with both immediate needs and long-term goals.\n\nHis work requires balancing daily operational demands with forward-looking technology planning. Inioluwa consistently ensures that systems remain secure, reliable, and efficient, while also seeking opportunities to enhance productivity and streamline workflows through the adoption of practical digital tools.\n\nRespected throughout the firm for his professionalism, reliability, and solution-oriented mindset, Inioluwa has established himself as an integral part of the team. By aligning technology with business objectives, he brings stability and clarity to the firm’s digital operations, while also adding measurable value to its growth and performance.\n\n**Education**\n✓ Trinity Univeristy, Bachelor of Science (B.Sc.) in Computer Science\n\n**Expertise**\n✓ IT Systems Administration\n✓ Office Technical Equipment Management\n✓ Cloud Technologies\n✓ Cybersecurity (Foundational)\n✓ Website & Email Management\n✓ Data Analysis & Reporting (Excel)\n\n**Certifcations**\n✓ Microsoft Technology Associate (MTA): Introduction to Programming Using HTML and CSS – Issued 2022 by Microsoft\n\n**Association**\n✓ Member, National Association of Computer Science Students (NACOSS)",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MICHAEL%20FRONT.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/MICHAEL%20BACK.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/MICHAEL_BACK-masked.png",
     hint: "man portrait professional",
     email: "michael7@oyewoleadesina.com",
     linkedin: ""

@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/the-firm", label: "The Firm" },
   { href: "/our-expertise", label: "Our Expertise" },
   { href: "/our-people", label: "Our People" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/careers", label: "Careers" },
   { href: "/publications", label: "Publications" },
   { href: "/contact", label: "Contact Us" },

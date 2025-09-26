@@ -71,7 +71,18 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
   const bioIntro = useMemo(() => {
     if(!bioText) return '';
     // Take the first paragraph as the intro
-    return bioText.split('\n\n')[0] || '';
+    const intro = bioText.split('\n\n')[0] || '';
+    const parts = intro.split(/(\*\*.*?\*\*)/g).filter(part => part);
+    return (
+        <p>
+            {parts.map((part, partIndex) => {
+                if (part.startsWith('**') && part.endsWith('**')) {
+                    return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
+                }
+                return part;
+            })}
+        </p>
+    );
   }, [bioText]);
 
   const bioFull = useMemo(() => {
@@ -195,7 +206,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
             <h3>Bio</h3>
           </div>
           <div className="section-intro">
-            <p>{bioIntro}</p>
+            {bioIntro}
           </div>
           {bioFull && (
             <>
@@ -623,12 +634,19 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
           font-size: 0.82rem;
           color: rgba(240, 239, 246, 0.7);
         }
+        
+        .accordion__list li span {
+          flex-shrink: 1;
+          min-width: 0;
+          padding-right: 1rem;
+        }
 
         .accordion__list strong {
           font-size: 0.85rem;
           color: rgba(255, 255, 255, 0.85);
           text-align: right;
           padding-left: 1rem;
+          flex-shrink: 0;
         }
 
         .accordion__review {

@@ -21,7 +21,9 @@ const Wall = () => {
     const randomVideos = shuffleArray(videos).slice(0, 8);
     const randomImages = shuffleArray(images).slice(0, 8);
 
-    setShuffledMedia(shuffleArray([...randomVideos, ...randomImages]));
+    const combinedMedia = shuffleArray([...randomVideos, ...randomImages]);
+    // Duplicate the array to ensure seamless looping
+    setShuffledMedia([...combinedMedia, ...combinedMedia]);
   }, []);
 
   const swiperParams = {
@@ -29,7 +31,7 @@ const Wall = () => {
     slidesPerView: 'auto' as const,
     spaceBetween: 16,
     loop: true,
-    centeredSlides: true,
+    centeredSlides: false,
     allowTouchMove: false,
     autoplay: {
       delay: 0,
@@ -37,11 +39,11 @@ const Wall = () => {
     },
   };
 
-  const renderMedia = (item: typeof testGalleryMedia[0]) => {
+  const renderMedia = (item: typeof testGalleryMedia[0], index: number) => {
     if (item.type === 'video') {
-      return <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />;
+      return <video key={`${item.src}-${index}`} src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />;
     }
-    return <Image src={item.src} alt={item.alt} fill className="w-full h-full object-cover" data-ai-hint={item.hint} />;
+    return <Image key={`${item.src}-${index}`} src={item.src} alt={item.alt} fill className="w-full h-full object-cover" data-ai-hint={item.hint} />;
   };
 
   const mediaForSwiper = (start: number, end: number) => {
@@ -51,63 +53,65 @@ const Wall = () => {
   return (
     <div className="flex flex-col min-h-screen bg-background font-body">
         <Header />
-        <main className="flex-1 flex items-center justify-center overflow-hidden">
-            <div className="relative w-[150vw] h-[150vh] flex items-center justify-center">
-                <div className="grid grid-cols-1 gap-4 -rotate-[22.5deg] scale-110">
-                    <Swiper
-                        {...swiperParams}
-                        speed={10000}
-                        className="w-full"
-                    >
-                        {mediaForSwiper(0, 4).map((item, index) => (
-                            <SwiperSlide key={`r1-${index}`} style={{ width: '400px' }}>
-                                <div className="aspect-video w-[400px] h-[225px] rounded-lg overflow-hidden bg-muted">
-                                    {renderMedia(item)}
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                    <Swiper
-                        {...swiperParams}
-                        speed={12000}
-                        autoplay={{ ...swiperParams.autoplay, reverseDirection: true }}
-                        className="w-full"
-                    >
-                        {mediaForSwiper(4, 8).map((item, index) => (
-                            <SwiperSlide key={`r2-${index}`} style={{ width: '300px' }}>
-                                <div className="aspect-video w-[300px] h-[169px] rounded-lg overflow-hidden bg-muted">
-                                    {renderMedia(item)}
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                    <Swiper
-                        {...swiperParams}
-                        speed={9000}
-                        className="w-full"
-                    >
-                        {mediaForSwiper(8, 12).map((item, index) => (
-                           <SwiperSlide key={`r3-${index}`} style={{ width: '500px' }}>
-                                <div className="aspect-video w-[500px] h-[281px] rounded-lg overflow-hidden bg-muted">
-                                    {renderMedia(item)}
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                     <Swiper
-                        {...swiperParams}
-                        speed={11000}
-                        autoplay={{ ...swiperParams.autoplay, reverseDirection: true }}
-                        className="w-full"
-                    >
-                        {mediaForSwiper(12, 16).map((item, index) => (
-                           <SwiperSlide key={`r4-${index}`} style={{ width: '350px' }}>
-                                <div className="aspect-video w-[350px] h-[197px] rounded-lg overflow-hidden bg-muted">
-                                   {renderMedia(item)}
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
+        <main className="flex-1 flex flex-col items-center justify-center overflow-hidden py-12">
+            <div className="w-full h-[80vh] overflow-hidden flex items-center justify-center">
+                <div className="relative w-[150vw] h-[150vh] flex items-center justify-center">
+                    <div className="grid grid-cols-1 gap-4 -rotate-[22.5deg] scale-110">
+                        <Swiper
+                            {...swiperParams}
+                            speed={10000}
+                            className="w-full"
+                        >
+                            {mediaForSwiper(0, 8).map((item, index) => (
+                                <SwiperSlide key={`r1-${index}`} style={{ width: '400px' }}>
+                                    <div className="aspect-video w-[400px] h-[225px] rounded-lg overflow-hidden bg-muted">
+                                        {renderMedia(item, index)}
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                        <Swiper
+                            {...swiperParams}
+                            speed={12000}
+                            autoplay={{ ...swiperParams.autoplay, reverseDirection: true }}
+                            className="w-full"
+                        >
+                            {mediaForSwiper(8, 16).map((item, index) => (
+                                <SwiperSlide key={`r2-${index}`} style={{ width: '300px' }}>
+                                    <div className="aspect-video w-[300px] h-[169px] rounded-lg overflow-hidden bg-muted">
+                                        {renderMedia(item, index)}
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                        <Swiper
+                            {...swiperParams}
+                            speed={9000}
+                            className="w-full"
+                        >
+                            {shuffledMedia.map((item, index) => (
+                               <SwiperSlide key={`r3-${index}`} style={{ width: '500px' }}>
+                                    <div className="aspect-video w-[500px] h-[281px] rounded-lg overflow-hidden bg-muted">
+                                        {renderMedia(item, index)}
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                         <Swiper
+                            {...swiperParams}
+                            speed={11000}
+                            autoplay={{ ...swiperParams.autoplay, reverseDirection: true }}
+                            className="w-full"
+                        >
+                            {mediaForSwiper(4, 12).map((item, index) => (
+                               <SwiperSlide key={`r4-${index}`} style={{ width: '350px' }}>
+                                    <div className="aspect-video w-[350px] h-[197px] rounded-lg overflow-hidden bg-muted">
+                                       {renderMedia(item, index)}
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+                    </div>
                 </div>
             </div>
         </main>

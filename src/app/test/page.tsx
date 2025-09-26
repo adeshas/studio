@@ -74,9 +74,151 @@ export default function TestPage() {
           </div>
         </div>
       </div>
+       <style jsx>{`
+        #poda {
+          --primary: #c951e7;
+          --secondary: #65499a;
+          position: relative;
+          width: 480px;
+          height: 60px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        #main {
+          z-index: 5;
+          position: relative;
+          width: calc(100% - 4px);
+          height: calc(100% - 4px);
+          background-color: #17171d;
+          border-radius: 13px;
+          display: flex;
+          align-items: center;
+          padding: 0 1rem;
+        }
+
+        .input {
+          flex-grow: 1;
+          height: 100%;
+          background: transparent;
+          border: none;
+          color: #e2e2e2;
+          font-size: 1rem;
+          padding-left: 2.5rem;
+        }
+
+        .input:focus {
+          outline: none;
+        }
+
+        .input::placeholder {
+          color: #7e7e8b;
+        }
+
+        #search-icon {
+          position: absolute;
+          left: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          pointer-events: none;
+        }
+
+        #filter-icon {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+
+        .border,
+        .darkBorderBg,
+        .glow {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 15px;
+        }
+
+        .border {
+          z-index: 2;
+          background: linear-gradient(
+            90deg,
+            var(--primary) 0%,
+            var(--secondary) 100%
+          );
+        }
+
+        .darkBorderBg {
+          z-index: 1;
+          background-color: #0d0d12;
+        }
+
+        .darkBorderBg:nth-of-type(2) {
+          transform: translate(1px, 1px);
+        }
+        .darkBorderBg:nth-of-type(3) {
+          transform: translate(-1px, -1px);
+        }
+        .darkBorderBg:nth-of-type(4) {
+          transform: translate(1px, -1px);
+        }
+
+        .glow {
+          z-index: 0;
+          background: linear-gradient(
+            90deg,
+            var(--primary) 0%,
+            var(--secondary) 100%
+          );
+          filter: blur(12px);
+          opacity: 0.6;
+        }
+        
+        .white {
+          position: absolute;
+          z-index: 3;
+          width: calc(100% - 2px);
+          height: calc(100% - 2px);
+          top: 1px;
+          left: 1px;
+          border-radius: 14px;
+          background-color: white;
+          opacity: 0.08;
+        }
+
+        .filterBorder {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            width: 56px;
+            height: calc(100% - 4px);
+            background: #2a2a33;
+            border-radius: 12px;
+            z-index: 4;
+        }
+        
+        #filter-icon {
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            width: 56px;
+            height: calc(100% - 4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 6;
+        }
+
+        #filter-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+      `}</style>
     </div>
   );
 }
-    
-
     

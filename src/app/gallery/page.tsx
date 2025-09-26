@@ -72,11 +72,6 @@ const officeImages = [
         src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/WORKSTATION.JPG",
         alt: "Workstation area at the office",
         hint: "office workstation"
-    },
-    {
-        src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/julian-hochgesang-Dkn8-zPIbwo-unsplash.jpg",
-        alt: "Abstract architectural detail",
-        hint: "abstract architecture"
     }
 ];
 

@@ -41,7 +41,7 @@ function TeamMemberCard({ member, index }: { member: TeamMember, index: number }
               alt={`Portrait of ${member.name}, ${member.role}`}
               fill
               className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              style={member.imageStyle || {}}
+              style={{ ...member.imageStyle, objectPosition: 'top' } || { objectPosition: 'top' }}
               data-ai-hint={member.hint}
               priority={index < 3}
             />

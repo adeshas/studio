@@ -45,8 +45,7 @@ function TeamMemberCard({ member, index }: { member: TeamMember, index: number }
               data-ai-hint={member.hint}
               priority={index < 3}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-            <div className="absolute bottom-0 left-0 p-6 text-left text-white">
+            <div className="absolute bottom-0 left-0 p-6 text-left text-white bg-gradient-to-t from-black/80 via-black/40 to-transparent w-full">
               <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
               <p className="text-md font-semibold text-white/80">{member.role}</p>
             </div>

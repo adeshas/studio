@@ -19,10 +19,12 @@ export async function generateMetadata(
       description: 'The requested team member could not be found.',
     }
   }
+  
+  const description = member.description?.split('\n\n')[0] || `Learn more about ${member.name}, ${member.role} at Oyewole & Adesina.`;
 
   return {
     title: member.name,
-    description: member.description.split('\n')[0], // Use first line of description
+    description: description,
     openGraph: {
       images: [member.image],
     },

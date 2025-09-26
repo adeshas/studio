@@ -30,48 +30,73 @@ export default function Footer() {
       variants={variants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      className="bg-black border-t border-white/10 text-white"
+      className="profile-footer bg-black border-t border-white/10 text-white"
     >
-      <div className="container mx-auto py-12 px-4 md:px-6">
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="space-y-4">
-            <Link href="/" className="inline-block">
+      <div className="shell">
+        <div className="profile-footer__inner">
+            <div className="space-y-4">
+            <Link href="/" className="inline-block w-48">
               <Logo variant="white" />
             </Link>
-            <div className="max-w-xs text-muted-foreground">
-              <h4 className="font-light font-headline text-foreground">Oyewole & Adesina</h4>
-              <h5 className="font-semibold text-foreground/90 mb-1 text-sm">Legal Practitioners, Consultants and Notaries</h5>
-              <p>A top-tier law firm delivering client-focused, detailed-oriented legal solutions guided by commercial insights and unwavering integrity.</p>
-            </div>
           </div>
-          <div className="space-y-4">
-            <h4 className="font-light font-headline text-foreground">Useful Links</h4>
-            <ul className="space-y-2">
-              <li><Link href="/" className="text-muted-foreground hover:text-accent">Home</Link></li>
-              <li><Link href="/the-firm" className="text-muted-foreground hover:text-accent">The Firm</Link></li>
-              <li><Link href="/contact" className="text-muted-foreground hover:text-accent">Contact Us</Link></li>
-              <li><Link href="/careers" className="text-muted-foreground hover:text-accent">Careers</Link></li>
-              <li><Link href="/publications" className="text-muted-foreground hover:text-accent">Publications</Link></li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h4 className="font-light font-headline text-foreground">Contact Us</h4>
-            <div className="space-y-4 text-sm text-muted-foreground">
-              <div>
-                <h5 className="font-semibold text-foreground/90 mb-1">Lagos Office</h5>
-                <p>19A, Udi Street,<br/>Osborne Foreshore Estate Phase 1,<br/>Ikoyi, Lagos</p>
-                <p>M: <a href="tel:+2347062103941" className="hover:text-accent">+234 706 210 3941</a></p>
-                <p>O: <a href="tel:+2342012932390" className="hover:text-accent">+234 201 293 2390</a></p>
-              </div>
-              <div className="flex items-center gap-4">
-                <a href="mailto:info@oyewoleadesina.com" className="hover:text-accent inline-flex items-center gap-2"><Mail className="h-4 w-4" />info@oyewoleadesina.com</a>
-              </div>
-            </div>
-          </div>
+          <nav className="footer-nav">
+              <Link href="/the-firm">About</Link>
+              <Link href="/our-expertise">Expertise</Link>
+              <Link href="/our-people">Team</Link>
+              <Link href="/contact">Contact</Link>
+          </nav>
         </div>
         <div className="mt-8 border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>Copyright &copy; {year} Oyewole &amp; Adesina. All Rights Reserved.</p>
+           <nav className="footer-nav">
+              <Link href="#">Legal Disclaimer</Link>
+            </nav>
         </div>
+        <style jsx>{`
+        .profile-footer {
+          background: rgba(4, 2, 8, 0.95);
+          padding: 3rem 0 2rem;
+        }
+
+        .shell {
+          width: min(1120px, 92vw);
+          margin: 0 auto;
+        }
+
+        .profile-footer__inner {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1.5rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .footer-nav {
+          display: flex;
+          gap: 1.25rem;
+          letter-spacing: 0.32em;
+          text-transform: uppercase;
+          font-size: 0.75rem;
+        }
+
+        .footer-nav a {
+          color: rgba(255, 255, 255, 0.62);
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+          color: rgba(255, 255, 255, 0.95);
+        }
+        
+        @media (max-width: 768px) {
+           .profile-footer__inner {
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      `}</style>
       </div>
     </motion.footer>
   );

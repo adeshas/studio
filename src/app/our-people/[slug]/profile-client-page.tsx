@@ -1,16 +1,11 @@
 
 "use client";
 
-import Image from "next/image";
+import Link from "next/link";
+import React, { useCallback, useMemo, useState } from "react";
+import { teamMembers } from "@/lib/team-data";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import React, { useState } from "react";
-import { Linkedin, Mail, ArrowDown } from "lucide-react";
-import { motion, useScroll, useSpring } from "framer-motion";
-import { teamMembers } from "@/lib/team-data";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 
 type TeamMember = (typeof teamMembers)[0];
 
@@ -21,10 +16,11 @@ const formatDescription = (text: string | undefined) => {
   let listItems: string[] = [];
   const content = lines.flatMap((line, lineIndex) => {
     const trimmedLine = line.trim();
-    if (trimmedLine.startsWith('✓')) {
+    if (trimmedLine.startsWith('✓') || trimmedLine.startsWith('-')) {
       listItems.push(trimmedLine.substring(1).trim());
       // If the next line is not a list item, render the list
-      if (!lines[lineIndex + 1]?.trim().startsWith('✓')) {
+      const nextLine = lines[lineIndex + 1]?.trim();
+      if (!nextLine || (!nextLine.startsWith('✓') && !nextLine.startsWith('-'))) {
         const list = (
           <ul key={`list-${lineIndex}`} className="space-y-2 my-4 list-disc pl-6">
             {listItems.map((item, itemIndex) => (
@@ -59,35 +55,36 @@ const formatDescription = (text: string | undefined) => {
 };
 
 export default function ProfileClientPage({ member }: { member: TeamMember }) {
-  const { scrollYProgress: pageScrollYProgress } = useScroll();
-  const scaleX = useSpring(pageScrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
-  const [openAccordion, setOpenAccordion] = useState<string[]>([]);
-  const [isBioExpanded, setIsBioExpanded] = useState(false);
-
+  const [showFullBio, setShowFullBio] = useState(false);
+  
   const sections = ['Expertise', 'Education', 'Certifications', 'Associations', 'Awards'];
-  const memberData: { [key: string]: string | undefined } = {
-    Expertise: member.description,
-    Education: member.description,
-    Certifications: member.description,
-    Associations: member.description,
-    Awards: member.description,
-  };
+  const [openSections, setOpenSections] = useState(() => new Set([sections[0]]));
 
-  const bioText = member.description?.split('**EDUCATION**')[0];
-  const bioParagraphs = bioText?.split('\n\n').filter(p => p.trim() !== '') || [];
-  const truncatedBio = bioParagraphs.slice(0, 2).join('\n\n');
-  const showReadMore = bioParagraphs.length > 2;
+  const bioText = useMemo(() => {
+    if (!member.description) return '';
+    const sectionHeaders = sections.map(s => `**${s.toUpperCase()}**`);
+    const regex = new RegExp(sectionHeaders.join('|'));
+    return member.description.split(regex)[0].trim();
+  }, [member.description]);
+  
+  const bioIntro = useMemo(() => {
+    if(!bioText) return '';
+    // Take the first paragraph as the intro
+    return bioText.split('\n\n')[0] || '';
+  }, [bioText]);
 
-  const extractSection = (text: string | undefined, sectionTitle: string) => {
+  const bioFull = useMemo(() => {
+    if(!bioText) return '';
+    const parts = bioText.split('\n\n');
+    return parts.slice(1).join('\n\n');
+  }, [bioText]);
+
+  const extractSection = useCallback((text: string | undefined, sectionTitle: string) => {
     if (!text) return null;
   
     const lines = text.split('\n');
     let inSection = false;
-    let sectionContent = '';
+    let sectionContent: { label: string, value: string }[] = [];
   
     for (const line of lines) {
       const trimmedLine = line.trim();
@@ -101,103 +98,735 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
                 break;
             }
         }
-      } else if (inSection) {
-        sectionContent += line + '\n';
+      } else if (inSection && (trimmedLine.startsWith('✓') || trimmedLine.startsWith('-'))) {
+        const item = trimmedLine.substring(1).trim();
+        const parts = item.split(', (');
+        if (parts.length > 1 && parts[1].endsWith(')')) {
+            sectionContent.push({ label: parts[0], value: `(${parts[1]}`});
+        } else {
+            sectionContent.push({ label: item, value: "" });
+        }
       }
     }
-    return sectionContent.trim() ? formatDescription(sectionContent.trim()) : null;
-  };
+    return sectionContent.length > 0 ? sectionContent : null;
+  }, [sections]);
 
+  const accordionSections = useMemo(() => {
+    return sections.map(section => ({
+      title: section,
+      items: extractSection(member.description, section)
+    })).filter(section => section.items && section.items.length > 0);
+  }, [member.description, extractSection, sections]);
+
+
+  const toggleFullBio = useCallback(() => {
+    setShowFullBio((prev) => !prev);
+  }, []);
+
+  const toggleSection = useCallback((title: string) => {
+    setOpenSections((prev) => {
+      const next = new Set(prev);
+      if (next.has(title)) {
+        next.delete(title);
+      } else {
+        next.add(title);
+      }
+      return next;
+    });
+  }, []);
+
+  const handleScrollToBio = useCallback(() => {
+    const section = document.querySelector("#profile-bio");
+    section?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
+  const showMoreLabel = useMemo(
+    () => (showFullBio ? "Show Less" : "Show More"),
+    [showFullBio]
+  );
+  
+  const heroImage = member?.maskedImage || member?.image || "https://placehold.co/480x680/000000/FFFFFF/png";
+
+  const otherProfiles = useMemo(() => {
+    return teamMembers
+      .filter(p => p.slug !== member.slug)
+      .sort(() => 0.5 - Math.random()) // Shuffle
+      .slice(0, 2)
+      .map(p => ({
+        name: p.name,
+        title: p.role,
+        experience: "",
+        href: `/our-people/${p.slug}`,
+        image: p.image || "https://placehold.co/260x320"
+      }));
+  }, [member.slug]);
 
   return (
     <>
-      <div className="flex flex-col min-h-screen bg-background font-body">
-        <motion.div className="progress-bar" style={{ scaleX }} />
-        <Header />
-        <main className="flex-1">
-
-          <section 
-              className="relative w-full bg-contain bg-center bg-no-repeat bg-fixed flex flex-col justify-end items-center text-white -mt-28"
-              style={{ 
-                height: '90vh',
-                backgroundImage: `url(${member.maskedImage || member.image}), radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(50,50,50,0.7) 50%, rgba(0,0,0,0.9) 100%)`
-              }}
-          >
-              <div className="relative z-10 p-8 text-center flex flex-col justify-end items-center h-full">
-                  <h1 className="text-4xl md:text-6xl font-light font-headline tracking-widest uppercase">{member.name}</h1>
-                  <p className="mt-2 text-lg text-white/80 uppercase tracking-[0.2em]">{member.role}</p>
-              </div>
-              <motion.div
-                  className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10"
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
-              >
-                  <ArrowDown className="h-8 w-8 text-white" />
-              </motion.div>
-          </section>
-          
-          <section id="member-details" className="w-full py-12 md:py-24 lg:py-32 bg-neutral-900 relative z-10 -mt-32">
-            <div className="container mx-auto px-4 md:px-6 max-w-4xl pt-16">
-              <div className="mb-8">
-                  <h2 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground">Bio</h2>
-                  <div className="w-16 h-px bg-primary mt-2"></div>
-              </div>
-              
-              <div className="text-lg text-muted-foreground space-y-6">
-                {formatDescription(isBioExpanded ? bioText : truncatedBio)}
-              </div>
-
-              {showReadMore && !isBioExpanded && (
-                <div className="mt-6">
-                  <Button variant="link" onClick={() => setIsBioExpanded(true)} className="p-0 text-accent">
-                    Read more
-                  </Button>
-                </div>
-              )}
-
-              <div className="mt-16">
-                <h2 className="text-sm font-semibold tracking-widest uppercase text-muted-foreground mb-4">Credentials</h2>
-                <Accordion type="multiple" value={openAccordion} onValueChange={setOpenAccordion} className="w-full">
-                  {sections.map(section => {
-                      const content = extractSection(member.description, section);
-                      if (!content) return null;
-                      
-                      const value = section.toLowerCase();
-
-                      return (
-                        <AccordionItem value={value} key={value} className="border-b border-white/20">
-                            <AccordionTrigger className="text-lg hover:no-underline">
-                                {section}
-                            </AccordionTrigger>
-                            <AccordionContent>
-                                <div className="py-4 text-muted-foreground space-y-4">
-                                    {content}
-                                </div>
-                            </AccordionContent>
-                        </AccordionItem>
-                      );
-                  })}
-                </Accordion>
-              </div>
-
-               <div className="flex flex-col sm:flex-row gap-4 mt-12 items-start sm:items-center border-t border-border pt-8">
-                  {member.email && (
-                      <a href={`mailto:${member.email}`} className="text-muted-foreground hover:text-accent flex items-center gap-2 text-lg">
-                          <Mail className="h-6 w-6" /> <span>{member.email}</span>
-                      </a>
-                  )}
-                  {member.linkedin && (
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent flex items-center gap-2 text-lg">
-                          <Linkedin className="h-6 w-6" /> <span>LinkedIn</span>
-                      </a>
-                  )}
-              </div>
-
+    <Header />
+    <div className="profile-page">
+      <section className="profile-hero">
+        <div className="profile-hero__glow" />
+        <div className="profile-hero__image">
+          <img src={heroImage} alt={member?.name || "Team member"} />
+        </div>
+        <div className="shell">
+          <div className="profile-hero__content">
+            <div className="profile-hero__title" data-animate>
+              <h1>{member?.name}</h1>
+              <h6>{member?.role}</h6>
             </div>
-          </section>
-        </main>
-        <Footer />
-      </div>
+          </div>
+        </div>
+        <button
+          type="button"
+          className="btn-scroll"
+          onClick={handleScrollToBio}
+          aria-label="Scroll to bio section"
+        >
+          <span className="btn-scroll__icon" />
+        </button>
+      </section>
+
+      <section id="profile-bio" className="profile-section profile-section--border" data-animate>
+        <div className="shell">
+          <div className="section-head">
+            <h3>Bio</h3>
+          </div>
+          <div className="section-intro">
+            <p>{bioIntro}</p>
+          </div>
+          {bioFull && (
+            <>
+                <div className={`section-full ${showFullBio ? "is-open" : ""}`}>
+                    <div className="whitespace-pre-line">{formatDescription(bioFull)}</div>
+                </div>
+                <div className="section-actions">
+                    <button type="button" className="btn btn--outline" onClick={toggleFullBio}>
+                    {showMoreLabel}
+                    </button>
+                </div>
+            </>
+          )}
+        </div>
+      </section>
+
+      <section className="profile-section profile-section--border" data-animate>
+        <div className="shell">
+          <div className="section-head">
+            <h3>Credentials</h3>
+          </div>
+          <div className="accordion">
+            {accordionSections.map((section) => {
+              if (!section.items) return null;
+              const isOpen = openSections.has(section.title);
+              return (
+                <div className={`accordion__section ${isOpen ? "is-open" : ""}`} key={section.title}>
+                  <button
+                    type="button"
+                    className="accordion__head"
+                    onClick={() => toggleSection(section.title)}
+                    aria-expanded={isOpen}
+                  >
+                    <h5>{section.title}</h5>
+                    <span className="accordion__icon" aria-hidden />
+                  </button>
+                  <div className="accordion__body" aria-hidden={!isOpen}>
+                    {section.items.length > 0 && (
+                      <ul className="accordion__list">
+                        {section.items.map((item, index) => (
+                          <li key={index}>
+                            <span>{item.label}</span>
+                            <strong>{item.value}</strong>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {otherProfiles.length > 0 && (
+        <section className="profile-section profile-section--border profile-section--center" data-animate>
+            <div className="shell">
+            <div className="section-head">
+                <h3>Meet the Others</h3>
+            </div>
+            <div className="cards">
+                {otherProfiles.map((card) => (
+                <div className="card" key={card.name}>
+                    <div className="card__inner">
+                    <div className="card__image">
+                        <img src={card.image} alt={card.name} />
+                    </div>
+                    <div className="card__head">
+                        <h5>{card.name}</h5>
+                        <p>{card.title}</p>
+                    </div>
+                    {card.experience && (
+                        <div className="card__entry">
+                            <p>{card.experience}</p>
+                        </div>
+                    )}
+                    <div className="card__actions">
+                        <Link href={card.href} className="btn">
+                        View Profile
+                        </Link>
+                    </div>
+                    </div>
+                </div>
+                ))}
+            </div>
+            <div className="section-actions">
+                <Link href="/our-people" className="btn btn--outline">
+                View All People
+                </Link>
+            </div>
+            </div>
+        </section>
+      )}
+
+      <section className="profile-cta" data-animate>
+        <div className="shell">
+          <div className="profile-cta__inner">
+            <h4>Need Legal Advice?</h4>
+            <Link href="/contact" className="btn">
+              Book consultation
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+
+      <style jsx>{`
+        .profile-page {
+          color: #f3f3f9;
+          background: #030104;
+          font-family: "var(--font-encode-sans)", "Helvetica Neue", Arial, sans-serif;
+          min-height: 100vh;
+        }
+
+        .shell {
+          width: min(1120px, 92vw);
+          margin: 0 auto;
+        }
+
+        .profile-hero {
+          position: relative;
+          min-height: clamp(420px, 60vw, 680px);
+          display: flex;
+          align-items: flex-end;
+          padding: clamp(3rem, 5vw, 6rem) 0 clamp(6rem, 8vw, 9rem);
+          background: radial-gradient(
+            120% 120% at 72% 10%,
+            rgba(107, 85, 215, 0.55),
+            rgba(33, 18, 66, 0.95) 45%,
+            rgba(7, 4, 17, 0.98) 70%,
+            #05010b 100%
+          );
+          overflow: hidden;
+        }
+
+        .profile-hero__glow {
+          position: absolute;
+          inset: 0;
+          background: radial-gradient(
+            110% 110% at 80% 30%,
+            rgba(220, 152, 255, 0.32),
+            rgba(20, 12, 36, 0.2) 45%,
+            transparent 70%
+          );
+          filter: blur(4px);
+          pointer-events: none;
+        }
+
+        .profile-hero__image {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding-right: clamp(2rem, 8vw, 6rem);
+          pointer-events: none;
+        }
+
+        .profile-hero__image img {
+          width: clamp(280px, 40vw, 480px);
+          height: auto;
+          object-fit: contain;
+          object-position: bottom;
+          filter: saturate(110%);
+          mask-image: radial-gradient(circle at 70% 30%, black 60%, transparent 92%);
+          -webkit-mask-image: radial-gradient(circle at 70% 30%, black 60%, transparent 92%);
+          opacity: 0;
+          transform: translate3d(0, 40px, 0) scale(1.04);
+          animation: fadeUp 1.1s ease forwards 0.15s;
+        }
+
+        .profile-hero__content {
+          position: relative;
+          z-index: 2;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          padding-left: clamp(1.5rem, 6vw, 4rem);
+        }
+
+        .profile-hero__title h1 {
+          font-size: clamp(2.75rem, 6vw, 4.75rem);
+          font-weight: 600;
+          margin: 0;
+          letter-spacing: -0.04em;
+          text-transform: uppercase;
+        }
+
+        .profile-hero__title h6 {
+          margin: 0.5rem 0 0;
+          font-size: clamp(0.95rem, 2.4vw, 1.2rem);
+          text-transform: uppercase;
+          letter-spacing: 0.36em;
+          color: rgba(255, 255, 255, 0.68);
+        }
+
+        .btn-scroll {
+          position: absolute;
+          left: 50%;
+          bottom: clamp(2rem, 4vw, 3.5rem);
+          transform: translateX(-50%);
+          width: 52px;
+          height: 52px;
+          border-radius: 50%;
+          border: 1px solid rgba(255, 255, 255, 0.24);
+          background: rgba(2, 2, 6, 0.75);
+          display: grid;
+          place-items: center;
+          cursor: pointer;
+          transition: transform 0.4s ease, border-color 0.3s ease;
+          z-index: 3;
+        }
+
+        .btn-scroll:hover {
+          transform: translate(-50%, -6px);
+          border-color: rgba(255, 255, 255, 0.55);
+        }
+
+        .btn-scroll__icon {
+          width: 14px;
+          height: 14px;
+          border-bottom: 2px solid #fff;
+          border-right: 2px solid #fff;
+          transform: rotate(45deg);
+          animation: float 1.6s ease-in-out infinite;
+        }
+
+        .profile-section {
+          position: relative;
+          padding: clamp(4rem, 6vw, 5.5rem) 0;
+          background: rgba(9, 6, 16, 0.8);
+        }
+
+        .profile-section:nth-of-type(even) {
+          background: rgba(6, 4, 12, 0.92);
+        }
+
+        .profile-section--border::after {
+          content: "";
+          position: absolute;
+          inset: auto 0 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+          transform: scaleX(0.92);
+        }
+
+        .profile-section--center {
+          text-align: center;
+        }
+
+        .section-head h3 {
+          text-transform: uppercase;
+          letter-spacing: 0.42em;
+          font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.6);
+          margin: 0 0 1.5rem;
+        }
+
+        .section-intro :global(p),
+        .section-full :global(p) {
+          line-height: 1.65;
+          color: rgba(242, 241, 246, 0.86);
+          font-size: 1.05rem;
+        }
+
+        .section-full {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.6s ease;
+          opacity: 0;
+        }
+
+        .section-full.is-open {
+          max-height: 200vh;
+          opacity: 1;
+          margin-top: 1.25rem;
+        }
+        
+        .section-full > :global(div) {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .section-actions {
+          margin-top: 2.5rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+          padding: 0.85rem 2.6rem;
+          border-radius: 999px;
+          background: linear-gradient(135deg, rgba(138, 96, 255, 0.85), rgba(217, 169, 255, 0.65));
+          color: #111;
+          font-weight: 600;
+          text-decoration: none;
+          transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+          border: none;
+          cursor: pointer;
+        }
+
+        .btn:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 36px rgba(97, 71, 188, 0.45);
+        }
+
+        .btn--outline {
+          background: transparent;
+          color: #f3f3f9;
+          border: 1px solid rgba(255, 255, 255, 0.24);
+        }
+
+        .btn--outline:hover {
+          border-color: rgba(255, 255, 255, 0.5);
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        .accordion {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .accordion__section {
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 18px;
+          background: rgba(6, 5, 15, 0.7);
+          overflow: hidden;
+          transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .accordion__section.is-open {
+          border-color: rgba(176, 152, 255, 0.5);
+          box-shadow: 0 18px 40px rgba(78, 56, 150, 0.35);
+        }
+
+        .accordion__head {
+          all: unset;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: 1.35rem 1.6rem;
+          cursor: pointer;
+          position: relative;
+        }
+
+        .accordion__head h5 {
+          text-transform: uppercase;
+          letter-spacing: 0.32em;
+          font-size: 0.92rem;
+          margin: 0;
+          margin-right: 1.1rem;
+        }
+
+        .accordion__icon {
+          position: relative;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .accordion__icon::before,
+        .accordion__icon::after {
+          content: "";
+          position: absolute;
+          background: #fff;
+          border-radius: 2px;
+          transition: transform 0.3s ease;
+        }
+
+        .accordion__icon::before {
+          width: 16px;
+          height: 2px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .accordion__icon::after {
+          width: 2px;
+          height: 16px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .accordion__section.is-open .accordion__icon::after {
+          transform: translate(-50%, -50%) scaleY(0);
+        }
+
+        .accordion__body {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.7s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.6s ease;
+          opacity: 0;
+        }
+
+        .accordion__section.is-open .accordion__body {
+          max-height: 480px;
+          opacity: 1;
+        }
+
+        .accordion__list {
+          list-style: none;
+          margin: 0;
+          padding: 0 1.6rem 1.6rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .accordion__list li {
+          display: flex;
+          justify-content: space-between;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          font-size: 0.82rem;
+          color: rgba(240, 239, 246, 0.7);
+        }
+
+        .accordion__list strong {
+          font-size: 0.85rem;
+          color: rgba(255, 255, 255, 0.85);
+          text-align: right;
+          padding-left: 1rem;
+        }
+
+        .accordion__review {
+          padding: 0 1.6rem 1.6rem;
+        }
+
+        .accordion__review-inner {
+          border-top: 1px solid rgba(255, 255, 255, 0.12);
+          padding-top: 1.2rem;
+        }
+
+        .accordion__review-inner h6 {
+          margin: 0 0 0.75rem;
+          font-size: 1.05rem;
+          text-transform: uppercase;
+          letter-spacing: 0.32em;
+        }
+
+        .accordion__review-inner p {
+          margin: 0 0 0.75rem;
+          line-height: 1.6;
+          color: rgba(237, 234, 248, 0.82);
+        }
+
+        .accordion__review-source {
+          font-size: 0.75rem;
+          color: rgba(255, 255, 255, 0.42);
+        }
+
+        .cards {
+          display: grid;
+          gap: 2rem;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          margin-top: 2.5rem;
+        }
+
+        .card__inner {
+          background: rgba(14, 10, 22, 0.8);
+          border-radius: 22px;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          padding-bottom: 2rem;
+          position: relative;
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .card__inner::before {
+          content: "";
+          position: absolute;
+          inset: -40% -40% auto;
+          height: 80%;
+          background: radial-gradient(circle at 50% 50%, rgba(178, 121, 255, 0.4), transparent 65%);
+          opacity: 0;
+          transition: opacity 0.4s ease;
+        }
+
+        .card:hover .card__inner {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 45px rgba(61, 45, 110, 0.45);
+        }
+
+        .card:hover .card__inner::before {
+          opacity: 1;
+        }
+
+        .card__image img {
+          width: 100%;
+          height: 320px;
+          object-fit: cover;
+          display: block;
+        }
+
+        .card__head {
+          padding: 1.5rem 1.75rem 0.5rem;
+        }
+
+        .card__head h5 {
+          margin: 0;
+          font-size: 1.25rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .card__head p {
+          margin: 0.75rem 0 0;
+          font-size: 0.85rem;
+          letter-spacing: 0.35em;
+          text-transform: uppercase;
+          color: rgba(255, 255, 255, 0.55);
+        }
+
+        .card__entry {
+          padding: 0 1.75rem;
+          font-size: 0.92rem;
+          color: rgba(232, 228, 242, 0.78);
+        }
+
+        .card__actions {
+          padding: 1.75rem 1.75rem 0;
+        }
+
+        .profile-cta {
+          padding: clamp(4rem, 7vw, 6rem) 0;
+          background: radial-gradient(
+              120% 120% at 50% 0%,
+              rgba(153, 105, 255, 0.35),
+              transparent 60%
+            ),
+            rgba(7, 5, 15, 0.95);
+        }
+
+        .profile-cta__inner {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1.5rem;
+          text-align: center;
+        }
+
+        .profile-cta__inner h4 {
+          margin: 0;
+          font-size: clamp(1.8rem, 4vw, 2.6rem);
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+        }
+
+        [data-animate] {
+          opacity: 0;
+          transform: translate3d(0, 35px, 0);
+          animation: fadeUp 0.9s ease forwards;
+        }
+
+        [data-animate]:nth-of-type(2) {
+          animation-delay: 0.2s;
+        }
+
+        [data-animate]:nth-of-type(3) {
+          animation-delay: 0.32s;
+        }
+
+        [data-animate]:nth-of-type(4) {
+          animation-delay: 0.44s;
+        }
+
+        [data-animate]:nth-of-type(5) {
+          animation-delay: 0.56s;
+        }
+
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translate3d(0, 40px, 0);
+          }
+          to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+          }
+        }
+
+        @keyframes float {
+          0%,
+          100% {
+            transform: rotate(45deg) translateY(0);
+          }
+          50% {
+            transform: rotate(45deg) translateY(4px);
+          }
+        }
+
+        @media (max-width: 768px) {
+          .profile-hero {
+            min-height: 540px;
+            align-items: flex-end;
+            padding: 3.5rem 0 8rem;
+          }
+
+          .profile-hero__image {
+            justify-content: center;
+            padding-right: 0;
+          }
+
+          .profile-hero__image img {
+            width: clamp(240px, 60vw, 420px);
+            mask-image: radial-gradient(circle at 50% 30%, black 58%, transparent 94%);
+            -webkit-mask-image: radial-gradient(circle at 50% 30%, black 58%, transparent 94%);
+          }
+
+          .profile-hero__content {
+            padding: 0 clamp(1.25rem, 6vw, 2rem);
+          }
+
+          .section-actions {
+            justify-content: flex-start;
+          }
+
+        }
+      `}</style>
+    </div>
     </>
   );
 }

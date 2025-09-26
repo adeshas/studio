@@ -33,6 +33,7 @@ export default function PeopleHighlight() {
   });
 
   return (
+    <>
     <motion.section
       ref={ref}
       variants={variants}
@@ -43,13 +44,13 @@ export default function PeopleHighlight() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
-            <motion.div className="relative w-full max-w-md h-[480px] rounded-xl overflow-hidden shadow-xl mx-auto" variants={itemVariants}>
+            <motion.div className="relative w-full max-w-md h-[480px] rounded-xl mx-auto image-container" variants={itemVariants}>
                 <Image
-                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/ABISOLA%201.jpg"
-                alt="Abisola Ayodele, Associate at Oyewole & Adesina"
+                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/MEET%20THE%20TEAM.jpg"
+                alt="Meet the team at Oyewole & Adesina"
                 fill
                 className="object-cover object-top"
-                data-ai-hint="woman portrait lawyer"
+                data-ai-hint="lawyers team portrait"
                 />
             </motion.div>
             <motion.div className="space-y-6" variants={itemVariants}>
@@ -67,5 +68,32 @@ export default function PeopleHighlight() {
         </div>
       </div>
     </motion.section>
+    <style jsx>{`
+      .image-container {
+        position: relative;
+        overflow: visible;
+      }
+      .image-container::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 3px solid;
+        border-image: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--primary) / 0.5)) 1;
+        transform: rotate(-15deg) scale(0.9);
+        z-index: -1;
+        border-radius: 1.5rem;
+        transition: transform 0.4s ease;
+      }
+      .image-container:hover::before {
+        transform: rotate(-10deg) scale(0.95);
+      }
+      .image-container > :global(img) {
+         border-radius: 0.75rem;
+         box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4);
+      }
+    `}</style>
+    </>
   );
 }

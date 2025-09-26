@@ -158,7 +158,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         title: p.role,
         experience: "",
         href: `/our-people/${p.slug}`,
-        image: p.image || "https://placehold.co/260x320"
+        image: p.blackedImage || p.image || "https://placehold.co/260x320"
       }));
   }, [member.slug]);
 

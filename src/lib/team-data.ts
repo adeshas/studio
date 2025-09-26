@@ -10,6 +10,7 @@ export const teamMembers = [
     linkedin: "https://www.linkedin.com/in/adedayo-adesina-1743233b/",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ADESINA%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/ADESINA_BLACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/ADESINA%20BLACK.jpg",
     hint: "man portrait executive"
   },
   {
@@ -20,6 +21,7 @@ export const teamMembers = [
     email: "victor@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/VICTOR%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/VICTOR_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/VICTOR%20BACK.jpg",
     hint: "man portrait lawyer"
   },
   {
@@ -30,6 +32,7 @@ export const teamMembers = [
     email: "tochukwu@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/TOCHUKWU%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/TOCHUKWU_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/TOCHUKWU%20BACK.jpg",
     hint: "man portrait lawyer"
   },
   {
@@ -39,6 +42,7 @@ export const teamMembers = [
     description: "Bankole Oyewole is a seasoned legal practitioner with expertise in **litigation, drafting, reviewing and negotiating contracts, consultancy and advisory in corporate and commercial matters**. He is an alumnus of the University of Jos and the Nigerian Law School Bwari Abuja. Bankole had a brief training at the University of Manchester and is considered an alumnus of the University of Manchester. Bankole’s early training in litigation expounded his knowledge and interest in impact litigation.\n\nBankole’s more specific expertise include **corporate and commercial law, Property and taxation**.\n\nSome of Bankole’s achievements include: An active member of the team that brought pharmaceutical giants, Pfizer to book resulting in a settlement of over 40 Million dollars to the Federal Government of Nigeria; Some of Bankole’s achievements include active participation in the team that issued the Ekiti State Bond of 2011; Advising major multinationals on entrance strategies into the Nigerian economy; Acting as a Consultant to major multinationals on Tax matters.\n\nLitigated an action for the reduction of tax assessments for a multi national to the tune of 20 million naira.\n\n**Expertise**\n✓ Dispute Resolution;\n✓ Corporate and Commercial Advisory and Practice;\n✓ Real Estate and Infrastructure Practice;\n✓ Taxation.\n\n**Education**\n✓ University of Jos, Jos, Plateau State (LL.B.);\n✓ Nigerian Law School, (B.L)\n\n**Association**\n✓ Nigerian Bar Association (NBA).",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BANKOLE%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/BANKOLE_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/BANKOLE%20BACK.jpg",
     hint: "man portrait lawyer",
     email: "",
     linkedin: ""
@@ -52,6 +56,7 @@ export const teamMembers = [
     email: "hilda@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/HILDA%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/HILDA_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/HILDA%20BACK.jpg",
     hint: "woman portrait lawyer"
   },
   {
@@ -62,6 +67,7 @@ export const teamMembers = [
     email: "dele@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2023/10/DELE.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2023/10/DELE.jpg",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2023/10/DELE.jpg",
     hint: "man portrait lawyer"
   },
   {
@@ -72,6 +78,7 @@ export const teamMembers = [
     email: "justice@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/JUSTICE%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/JUSTICE_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/JUSTICE%20BACK.jpg",
     hint: "man portrait lawyer"
   },
   {
@@ -83,6 +90,7 @@ export const teamMembers = [
     email: "abisola@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ABISOLA%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/ABISOLA_BLACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/ABISOLA%20BACK.jpg",
     hint: "woman portrait lawyer"
   },
   {
@@ -93,6 +101,7 @@ export const teamMembers = [
     email: "dami@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/DAMI%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/DAMI_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/DAMI%20BACK.jpg",
     hint: "woman portrait lawyer"
   },
    {
@@ -104,6 +113,7 @@ export const teamMembers = [
     linkedin: "",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/IYANU%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/IYANU_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/IYANU%20BACK.jpg",
     hint: "woman portrait lawyer"
   },
   {
@@ -115,6 +125,7 @@ export const teamMembers = [
     linkedin: "",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/IBUKUN%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/IBUKUN_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/IBUKUN%20BACK.png",
     hint: "woman portrait lawyer"
   },
   {
@@ -125,6 +136,7 @@ export const teamMembers = [
     email: "librarian@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/BEATRICE%201.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/BEATRICE%201.jpg",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/BEATRICE%201.jpg",
     hint: "woman portrait professional",
     linkedin: ""
   },
@@ -136,6 +148,7 @@ export const teamMembers = [
     email: "Info@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ENIYE%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/ENIYE_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/ENIYE%20BACK.jpg",
     hint: "woman portrait professional"
   },
   {
@@ -146,6 +159,7 @@ export const teamMembers = [
     email: "oloyede@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/SODIQ%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/SODIQ_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/SODIQ%20BACK.jpg",
     hint: "man portrait professional"
   },
   {
@@ -155,6 +169,7 @@ export const teamMembers = [
     description: "Olatubosun is a dedicated **Litigation Clerk** who possesses a strong passion for supporting legal professionals in various aspects of their work. His commitment to this role is evident in his diligence and enthusiasm for assisting with tasks related to legal cases.\n\nAs a Litigation Clerk, Olatubosun is responsible for a range of essential functions within the legal team. These include the filing of court processes, ensuring that all documents are organized and well-maintained, and handling the service of court documents. These tasks are crucial in the smooth progression of legal cases and the adherence to legal procedures.\n\nOne of Olatubosun’s standout qualities is his ability to interact seamlessly and professionally with attorneys, clients, and other members of the support staff. This skill not only fosters effective communication within the legal team but also enhances the overall efficiency and effectiveness of legal proceedings. Olatubosun’s dedication and aptitude for his role as a Litigation Clerk make him a valuable asset to the legal professionals he assists and contribute to the successful management of legal cases.",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/OLATUBOSUN%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/OLATUBOSUN_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/OLATUBOSUN%20BACK.jpg",
     hint: "man portrait professional"
   },
   {
@@ -165,6 +180,7 @@ export const teamMembers = [
     email: "zainab@oyewoleadesina.com",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ZAINAB%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/ZAINAB_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/ZAINAB%20BACK.jpg",
     hint: "woman portrait professional"
   },
   {
@@ -174,6 +190,7 @@ export const teamMembers = [
     description: "Adepitan Inioluwa Michael is the **in-house IT Solutions Specialist** at Oyewole & Adesina, where he plays a central role in managing and sustaining the firm’s entire technology framework. His responsibilities extend across a wide spectrum of the firm’s operations, including the management of email systems, cloud storage platforms, internet connectivity, the firm’s website, and all office technical equipment. By ensuring that every aspect of the firm’s IT infrastructure functions smoothly, Inioluwa enables the team to focus on delivering excellent legal services without disruption.\n\nIn his role, he is not only tasked with maintaining existing systems but also with identifying and resolving technical issues as they arise. His hands-on approach to managing and troubleshooting office equipment and IT-related problems makes him a dependable first point of contact for staff, ensuring quick resolutions and minimal downtime. He combines technical expertise with strong critical decision-making skills, which allows him to evaluate challenges, weigh available options, and implement solutions that align with both immediate needs and long-term goals.\n\nHis work requires balancing daily operational demands with forward-looking technology planning. Inioluwa consistently ensures that systems remain secure, reliable, and efficient, while also seeking opportunities to enhance productivity and streamline workflows through the adoption of practical digital tools.\n\nRespected throughout the firm for his professionalism, reliability, and solution-oriented mindset, Inioluwa has established himself as an integral part of the team. By aligning technology with business objectives, he brings stability and clarity to the firm’s digital operations, while also adding measurable value to its growth and performance.\n\n**Education**\n✓ Trinity Univeristy, Bachelor of Science (B.Sc.) in Computer Science\n\n**Expertise**\n✓ IT Systems Administration\n✓ Office Technical Equipment Management\n✓ Cloud Technologies\n✓ Cybersecurity (Foundational)\n✓ Website & Email Management\n✓ Data Analysis & Reporting (Excel)\n\n**Certifcations**\n✓ Microsoft Technology Associate (MTA): Introduction to Programming Using HTML and CSS – Issued 2022 by Microsoft\n\n**Association**\n✓ Member, National Association of Computer Science Students (NACOSS)",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MICHAEL%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/MICHAEL_BACK-masked.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/MICHAEL%20BACK.jpg",
     hint: "man portrait professional",
     email: "michael7@oyewoleadesina.com",
     linkedin: ""
@@ -185,6 +202,7 @@ export const teamMembers = [
     description: "Ademola Shasanya is a seasoned IT professional with over two decades of experience in the Information Technology and Computer Technology industry. He holds a B.Sc. in Computer Engineering from **Richmond, The American International University in London**. His passion is rooted in utilizing technology and innovation to drive business growth and operational efficiency. He is the **IT Consultant for the Firm**, overseeing and managing the IT-driven innovations, services and needs of the Firm.",
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2020/01/NEW_AdemolaShasanya.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2020/01/NEW_AdemolaShasanya.jpg",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2020/01/NEW_AdemolaShasanya.jpg",
     hint: "man portrait professional"
   }
 ];

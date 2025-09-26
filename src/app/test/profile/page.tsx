@@ -63,14 +63,14 @@ const otherProfiles = [
     title: "Partner",
     experience: "10+ Years Experience",
     href: "/our-people/victor-akpeji",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/VICTOR%201%20(2).jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/VICTOR%20BACK.jpg",
   },
   {
     name: "Tochukwu Itumo",
     title: "Senior Associate",
     experience: "10+ Years Experience",
     href: "/our-people/tochukwu-itumo",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/TOCHUKWU%201.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/TOCHUKWU%20BACK.jpg",
   },
 ];
 

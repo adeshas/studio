@@ -14,6 +14,7 @@ import Intro from '@/components/intro';
 import FirmIntroduction from '@/components/firm-introduction';
 import PeopleHighlight from '@/components/people-highlight';
 import PublicationsHighlight from '@/components/publications-highlight';
+import VideoWall from '@/components/video-wall';
 
 
 export default function Home() {
@@ -43,6 +44,7 @@ export default function Home() {
         <Clients />
         <About />
         <Expertise />
+        <VideoWall />
         <PeopleHighlight />
         <PublicationsHighlight />
         <Contact />

@@ -18,6 +18,16 @@ const officeImages = [
         src: "https://oyewoleadesina.com/wp-content/uploads/2025/07/office2.webp",
         alt: "Collaborative workspace at Oyewole & Adesina",
         hint: "office workspace"
+    },
+    {
+        src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BUILDING.JPG",
+        alt: "Exterior of the Oyewole & Adesina office building",
+        hint: "office building"
+    },
+    {
+        src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/SIGN.JPG",
+        alt: "Oyewole & Adesina office sign",
+        hint: "office sign"
     }
 ];
 
@@ -70,7 +80,7 @@ export default function ContactPage() {
                   </div>
               </div>
               <div>
-                <Carousel className="w-full max-w-md mx-auto" opts={{ loop: false }}>
+                <Carousel className="w-full max-w-md mx-auto" opts={{ loop: true }}>
                   <CarouselContent>
                     {officeImages.map((image, index) => (
                       <CarouselItem key={index}>

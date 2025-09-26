@@ -105,8 +105,8 @@ export const teamMembers = [
     hint: "woman portrait lawyer"
   },
    {
-    name: "Akinsanmi Iyanuoluwa Celestina",
-    slug: "akinsanmi-iyanuoluwa-celestina",
+    name: "Akinsanmi Iyanuoluwa",
+    slug: "akinsanmi-iyanuoluwa",
     role: "Associate",
     description: "Akinsanmi Iyanuoluwa is an **Associate** at the firm, where she contributed to the firm’s commitment to excellence through dedicated client service, legal research, and strategic problem-solving. Iyanuoluwa supports the firm’s practice across various areas, ensuring thorough and effective legal solutions for both individual and corporate clients. As part of the Oyewole & Adesina team, Iyanuoluwa works closely with senior counsel to deliver tailored legal strategies, assist in case preparation, and contribute to the firm’s ongoing success.\n\nIyanuoluwa is developing keen interest in **Dispute Resolution, Commercial law, Real Estate, Corporate Law & Energy and Natural Resources**. She obtained her L.L.B (Hons) from Adeleke university, Osun State, in 2020, and was called to the Nigerian Bar in 2024 as a Barrister and Solicitor of the Supreme Court of Nigeria. Iyanuoluwa remains passionate about continuous legal education, professional integrity, adding value through thoughtful advocacy and sound legal judgment, and contributing meaningfully to the advancement of the legal profession.\n\n**EDUCATION**\n✓ Nigerian Law School, (B.L)\n✓ Adeleke University, Osun, (L L B)\n\n**EXPERTISE**\n✓ Dispute Resolution\n✓ Corporate law & Commercial Practice\n✓ Real Estate\n✓ Energy and Natural resources\n\n**CERTIFICATIONS**\n✓ Institute of Chartered Mediators and Conciliation\n✓ Mediation Training Institute\n\n**ASSOCIATIONS**\n✓ Nigerian Bar Association (NBA)",
     email: "iyanuoluwa@oyewoleadesina.com",

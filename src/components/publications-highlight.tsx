@@ -47,7 +47,7 @@ export default function PublicationsHighlight() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
             <div className="space-y-2">
-                <h2 id="publications-heading" className="text-3xl font-light font-headline tracking-tighter sm:text-5xl">Latest Publications</h2>
+                <h2 id="publications-heading" className="text-3xl font-light font-headline tracking-tighter sm:text-5xl">Publications</h2>
             </div>
             <p className="max-w-[900px] text-muted-foreground md:text-lg/relaxed mt-4 md:mt-0">
               Stay informed with our legal insights and analysis
@@ -85,7 +85,3 @@ export default function PublicationsHighlight() {
     </motion.section>
   );
 }
-
-
-
-

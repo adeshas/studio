@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Link from "next/link";
@@ -487,7 +488,6 @@ export default function ProfileTestPage() {
         }
 
         .accordion__head {
-          all: unset;
           display: flex;
           align-items: center;
           justify-content: space-between;

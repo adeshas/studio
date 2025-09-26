@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Link from "next/link";
@@ -539,7 +540,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         }
 
         .accordion__head {
-          all: unset;
           display: flex;
           align-items: center;
           justify-content: space-between;

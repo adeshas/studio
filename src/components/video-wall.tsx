@@ -54,7 +54,7 @@ const VideoWall = () => {
             <h2 className="text-3xl font-light font-headline tracking-tighter sm:text-5xl">Our World in Motion</h2>
             <p className="max-w-[900px] mx-auto mt-4 text-muted-foreground md:text-xl/relaxed">A dynamic view into the industries we serve and the sectors we help shape.</p>
         </div>
-        <div className="w-full h-[60vh] md:h-[80vh] overflow-hidden flex items-center justify-center">
+        <div className="w-full h-[40vh] md:h-[50vh] overflow-hidden flex items-center justify-center">
             <div className="relative w-[150vw] h-[150vh] flex items-center justify-center">
                 <div className="grid grid-cols-1 gap-4 -rotate-[22.5deg] scale-110">
                     <Swiper

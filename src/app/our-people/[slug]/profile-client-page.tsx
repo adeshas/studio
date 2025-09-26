@@ -62,10 +62,10 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
 
   const bioText = useMemo(() => {
     if (!member.description) return '';
-    const sectionHeaders = sections.map(s => `**${s.toUpperCase()}**`);
+    const sectionHeaders = sections.map(s => `\\*\\*${s.toUpperCase()}\\*\\*`);
     const regex = new RegExp(sectionHeaders.join('|'));
     return member.description.split(regex)[0].trim();
-  }, [member.description]);
+  }, [member.description, sections]);
   
   const bioIntro = useMemo(() => {
     if(!bioText) return '';

@@ -24,6 +24,8 @@ const Wall = () => {
     },
   };
 
+  const allVideos = testGalleryMedia.filter(item => item.type === 'video');
+
   return (
     <div className="flex flex-col min-h-screen bg-background font-body">
         <Header />
@@ -35,14 +37,10 @@ const Wall = () => {
                         speed={10000}
                         className="w-full"
                     >
-                        {testGalleryMedia.map((item, index) => (
+                        {allVideos.map((item, index) => (
                             <SwiperSlide key={`r1-${index}`} style={{ width: '400px' }}>
                                 <div className="aspect-video w-[400px] h-[225px] rounded-lg overflow-hidden bg-muted">
-                                    {item.type === 'video' ? (
-                                        <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
-                                    ) : (
-                                        <Image src={item.src} alt={item.alt} fill className="object-cover" data-ai-hint={item.hint} />
-                                    )}
+                                    <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
                                 </div>
                             </SwiperSlide>
                         ))}
@@ -53,14 +51,10 @@ const Wall = () => {
                         autoplay={{ ...swiperParams.autoplay, reverseDirection: true }}
                         className="w-full"
                     >
-                        {[...testGalleryMedia].reverse().map((item, index) => (
+                        {[...allVideos].reverse().slice(3).map((item, index) => (
                             <SwiperSlide key={`r2-${index}`} style={{ width: '300px' }}>
                                 <div className="aspect-video w-[300px] h-[169px] rounded-lg overflow-hidden bg-muted">
-                                    {item.type === 'video' ? (
-                                        <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
-                                    ) : (
-                                        <Image src={item.src} alt={item.alt} fill className="object-cover" data-ai-hint={item.hint} />
-                                    )}
+                                    <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
                                 </div>
                             </SwiperSlide>
                         ))}
@@ -70,14 +64,10 @@ const Wall = () => {
                         speed={9000}
                         className="w-full"
                     >
-                        {testGalleryMedia.slice(2).map((item, index) => (
+                        {allVideos.slice(6).map((item, index) => (
                            <SwiperSlide key={`r3-${index}`} style={{ width: '500px' }}>
                                 <div className="aspect-video w-[500px] h-[281px] rounded-lg overflow-hidden bg-muted">
-                                    {item.type === 'video' ? (
-                                        <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
-                                    ) : (
-                                        <Image src={item.src} alt={item.alt} fill className="object-cover" data-ai-hint={item.hint} />
-                                    )}
+                                    <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
                                 </div>
                             </SwiperSlide>
                         ))}
@@ -88,14 +78,10 @@ const Wall = () => {
                         autoplay={{ ...swiperParams.autoplay, reverseDirection: true }}
                         className="w-full"
                     >
-                        {testGalleryMedia.slice(4).map((item, index) => (
+                        {allVideos.slice(9).map((item, index) => (
                            <SwiperSlide key={`r4-${index}`} style={{ width: '350px' }}>
                                 <div className="aspect-video w-[350px] h-[197px] rounded-lg overflow-hidden bg-muted">
-                                    {item.type === 'video' ? (
-                                        <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
-                                    ) : (
-                                        <Image src={item.src} alt={item.alt} fill className="object-cover" data-ai-hint={item.hint} />
-                                    )}
+                                   <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
                                 </div>
                             </SwiperSlide>
                         ))}

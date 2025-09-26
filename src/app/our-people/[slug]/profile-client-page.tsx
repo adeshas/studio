@@ -675,23 +675,9 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
           transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .card__inner::before {
-          content: "";
-          position: absolute;
-          inset: -40% -40% auto;
-          height: 80%;
-          background: radial-gradient(circle at 50% 50%, rgba(178, 121, 255, 0.4), transparent 65%);
-          opacity: 0;
-          transition: opacity 0.4s ease;
-        }
-
         .card:hover .card__inner {
           transform: translateY(-10px);
           box-shadow: 0 20px 45px rgba(61, 45, 110, 0.45);
-        }
-
-        .card:hover .card__inner::before {
-          opacity: 1;
         }
 
         .card__image img {

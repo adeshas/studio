@@ -1,6 +1,6 @@
 
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -10,6 +10,19 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 
 const Wall = () => {
+  const [shuffledMedia, setShuffledMedia] = useState<typeof testGalleryMedia>([]);
+
+  useEffect(() => {
+    const videos = testGalleryMedia.filter(item => item.type === 'video');
+    const images = testGalleryMedia.filter(item => item.type === 'image');
+
+    const shuffleArray = (array: any[]) => array.sort(() => 0.5 - Math.random());
+
+    const randomVideos = shuffleArray(videos).slice(0, 8);
+    const randomImages = shuffleArray(images).slice(0, 8);
+
+    setShuffledMedia(shuffleArray([...randomVideos, ...randomImages]));
+  }, []);
 
   const swiperParams = {
     modules: [Autoplay],
@@ -24,7 +37,16 @@ const Wall = () => {
     },
   };
 
-  const allVideos = testGalleryMedia.filter(item => item.type === 'video');
+  const renderMedia = (item: typeof testGalleryMedia[0]) => {
+    if (item.type === 'video') {
+      return <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />;
+    }
+    return <Image src={item.src} alt={item.alt} fill className="w-full h-full object-cover" data-ai-hint={item.hint} />;
+  };
+
+  const mediaForSwiper = (start: number, end: number) => {
+    return shuffledMedia.slice(start, end);
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-background font-body">
@@ -37,10 +59,10 @@ const Wall = () => {
                         speed={10000}
                         className="w-full"
                     >
-                        {allVideos.map((item, index) => (
+                        {mediaForSwiper(0, 4).map((item, index) => (
                             <SwiperSlide key={`r1-${index}`} style={{ width: '400px' }}>
                                 <div className="aspect-video w-[400px] h-[225px] rounded-lg overflow-hidden bg-muted">
-                                    <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                                    {renderMedia(item)}
                                 </div>
                             </SwiperSlide>
                         ))}
@@ -51,10 +73,10 @@ const Wall = () => {
                         autoplay={{ ...swiperParams.autoplay, reverseDirection: true }}
                         className="w-full"
                     >
-                        {[...allVideos].reverse().slice(3).map((item, index) => (
+                        {mediaForSwiper(4, 8).map((item, index) => (
                             <SwiperSlide key={`r2-${index}`} style={{ width: '300px' }}>
                                 <div className="aspect-video w-[300px] h-[169px] rounded-lg overflow-hidden bg-muted">
-                                    <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                                    {renderMedia(item)}
                                 </div>
                             </SwiperSlide>
                         ))}
@@ -64,10 +86,10 @@ const Wall = () => {
                         speed={9000}
                         className="w-full"
                     >
-                        {allVideos.slice(6).map((item, index) => (
+                        {mediaForSwiper(8, 12).map((item, index) => (
                            <SwiperSlide key={`r3-${index}`} style={{ width: '500px' }}>
                                 <div className="aspect-video w-[500px] h-[281px] rounded-lg overflow-hidden bg-muted">
-                                    <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                                    {renderMedia(item)}
                                 </div>
                             </SwiperSlide>
                         ))}
@@ -78,10 +100,10 @@ const Wall = () => {
                         autoplay={{ ...swiperParams.autoplay, reverseDirection: true }}
                         className="w-full"
                     >
-                        {allVideos.slice(9).map((item, index) => (
+                        {mediaForSwiper(12, 16).map((item, index) => (
                            <SwiperSlide key={`r4-${index}`} style={{ width: '350px' }}>
                                 <div className="aspect-video w-[350px] h-[197px] rounded-lg overflow-hidden bg-muted">
-                                   <video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />
+                                   {renderMedia(item)}
                                 </div>
                             </SwiperSlide>
                         ))}

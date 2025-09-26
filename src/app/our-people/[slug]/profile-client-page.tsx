@@ -336,8 +336,8 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
           padding: clamp(3rem, 5vw, 6rem) 0 clamp(6rem, 8vw, 9rem);
           background: radial-gradient(
             120% 120% at 72% 10%,
-            rgba(107, 85, 215, 0.55),
-            rgba(33, 18, 66, 0.95) 45%,
+            rgba(80, 80, 80, 0.55),
+            rgba(30, 30, 30, 0.95) 45%,
             rgba(7, 4, 17, 0.98) 70%,
             #05010b 100%
           );

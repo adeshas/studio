@@ -51,7 +51,7 @@ export default function FirmIntroduction() {
           </motion.div>
           <motion.div className="space-y-4" variants={itemVariants}>
             <blockquote className="text-xl md:text-2xl font-light text-muted-foreground italic text-center">
-              At <span className="font-bold text-foreground">Oyewole & Adesina</span>, we combine deep legal expertise with a strategic and business focused mindset to guide clients through every challenge. As a full-service firm headquartered in Lagos, we pride ourselves on delivering tailored, end-to-end solutions—backed by rigorous analysis, clear communication, and an unwavering commitment to integrity.
+              &ldquo;At <span className="font-bold text-foreground">Oyewole & Adesina</span>, we combine deep legal expertise with a strategic and business-focused mindset to guide clients through every challenge. As a full-service firm headquartered in Lagos, we pride ourselves on delivering tailored, end-to-end solutions—backed by rigorous analysis, clear communication, and an unwavering commitment to integrity.&rdquo;
             </blockquote>
           </motion.div>
         </div>

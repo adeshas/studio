@@ -178,7 +178,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
     <Header />
     <div className="profile-page">
       <section className="profile-hero">
-        <div className="profile-hero__glow" />
         <div className="profile-hero__image">
           <img src={heroImage} alt={member?.name || "Team member"} />
         </div>
@@ -342,19 +341,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
             #05010b 100%
           );
           overflow: hidden;
-        }
-
-        .profile-hero__glow {
-          position: absolute;
-          inset: 0;
-          background: radial-gradient(
-            110% 110% at 80% 30%,
-            rgba(220, 152, 255, 0.32),
-            rgba(20, 12, 36, 0.2) 45%,
-            transparent 70%
-          );
-          filter: blur(4px);
-          pointer-events: none;
         }
 
         .profile-hero__image {

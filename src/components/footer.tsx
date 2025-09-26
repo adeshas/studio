@@ -4,7 +4,7 @@
 import { motion } from 'framer-motion';
 import Link from "next/link";
 import Logo from "./logo";
-import { Mail } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState } from 'react';
 
@@ -30,73 +30,62 @@ export default function Footer() {
       variants={variants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      className="profile-footer bg-black border-t border-white/10 text-white"
+      className="bg-black border-t border-white/10 text-white pt-16 pb-8"
     >
-      <div className="shell">
-        <div className="profile-footer__inner">
-            <div className="space-y-4">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          
+          <div className="space-y-4 lg:col-span-2">
             <Link href="/" className="inline-block w-48">
               <Logo variant="white" />
             </Link>
+            <p className="font-bold">Oyewole & Adesina</p>
+            <p className="text-sm font-semibold">Legal Practitioners, Consultants and Notaries</p>
+            <p className="text-sm text-muted-foreground">
+                A top-tier law firm delivering client-focused, detailed-oriented legal solutions guided by commercial insights and unwavering integrity.
+            </p>
           </div>
-          <nav className="footer-nav">
-              <Link href="/the-firm">About</Link>
-              <Link href="/our-expertise">Expertise</Link>
-              <Link href="/our-people">Team</Link>
-              <Link href="/contact">Contact</Link>
-          </nav>
+
+          <div className="space-y-4">
+            <h3 className="font-bold text-lg">Useful Links</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><Link href="/" className="hover:text-white">Home</Link></li>
+              <li><Link href="/the-firm" className="hover:text-white">The Firm</Link></li>
+              <li><Link href="/contact" className="hover:text-white">Contact Us</Link></li>
+              <li><Link href="/careers" className="hover:text-white">Careers</Link></li>
+              <li><Link href="/publications" className="hover:text-white">Publications</Link></li>
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+             <h3 className="font-bold text-lg">Contact Us</h3>
+             <div className="space-y-3 text-sm text-muted-foreground">
+                 <p className="font-bold text-white">Lagos Office</p>
+                <div className="flex items-start gap-3">
+                    <MapPin className="h-4 w-4 text-accent mt-1 shrink-0" />
+                    <span>19A, Udi Street,<br/>Osborne Foreshore Estate Phase 1,<br/>Ikoyi, Lagos</span>
+                </div>
+                 <div className="flex items-start gap-3">
+                    <Phone className="h-4 w-4 text-accent mt-1 shrink-0" />
+                    <div>
+                        <p>M: <a href="tel:+2347062103941" className="hover:text-white">+234 706 210 3941</a></p>
+                        <p>O: <a href="tel:+2342012932390" className="hover:text-white">+234 201 293 2390</a></p>
+                    </div>
+                </div>
+                <div className="flex items-start gap-3">
+                    <Mail className="h-4 w-4 text-accent mt-1 shrink-0" />
+                    <a href="mailto:info@oyewoleadesina.com" className="hover:text-white">info@oyewoleadesina.com</a>
+                </div>
+             </div>
+          </div>
         </div>
-        <div className="mt-8 border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
+
+        <div className="mt-12 border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>Copyright &copy; {year} Oyewole &amp; Adesina. All Rights Reserved.</p>
-           <nav className="footer-nav">
-              <Link href="#">Legal Disclaimer</Link>
+           <nav className="flex gap-4 mt-4 sm:mt-0">
+              <Link href="#" className="hover:text-white">Legal Disclaimer</Link>
             </nav>
         </div>
-        <style jsx>{`
-        .profile-footer {
-          background: rgba(4, 2, 8, 0.95);
-          padding: 3rem 0 2rem;
-        }
-
-        .shell {
-          width: min(1120px, 92vw);
-          margin: 0 auto;
-        }
-
-        .profile-footer__inner {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: space-between;
-          gap: 1.5rem;
-          margin-bottom: 1.5rem;
-        }
-
-        .footer-nav {
-          display: flex;
-          gap: 1.25rem;
-          letter-spacing: 0.32em;
-          text-transform: uppercase;
-          font-size: 0.75rem;
-        }
-
-        .footer-nav a {
-          color: rgba(255, 255, 255, 0.62);
-          text-decoration: none;
-          transition: color 0.3s ease;
-        }
-
-        .footer-nav a:hover {
-          color: rgba(255, 255, 255, 0.95);
-        }
-        
-        @media (max-width: 768px) {
-           .profile-footer__inner {
-            flex-direction: column;
-            align-items: center;
-          }
-        }
-      `}</style>
       </div>
     </motion.footer>
   );

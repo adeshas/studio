@@ -46,10 +46,10 @@ export default function PeopleHighlight() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
             <motion.div className="relative w-full max-w-md h-[480px] rounded-xl mx-auto image-container" variants={itemVariants}>
                 <Image
-                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/MEET%20THE%20TEAM.jpg"
+                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/MEET_THE_TEAM-masked.png"
                 alt="Meet the team at Oyewole & Adesina"
                 fill
-                className="object-cover object-top"
+                className="object-contain object-top"
                 data-ai-hint="lawyers team portrait"
                 />
             </motion.div>

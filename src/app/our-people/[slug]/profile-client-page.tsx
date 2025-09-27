@@ -7,6 +7,7 @@ import React, { useCallback, useMemo, useState } from "react";
 import { teamMembers } from "@/lib/team-data";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import Contact from "@/components/contact";
 
 type TeamMember = (typeof teamMembers)[0];
 
@@ -301,16 +302,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         </section>
       )}
 
-      <section className="profile-cta" data-animate>
-        <div className="shell">
-          <div className="profile-cta__inner">
-            <h4>Need Legal Advice?</h4>
-            <Link href="/contact" className="btn">
-              Book consultation
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Contact />
 
       <Footer />
 
@@ -546,6 +538,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         }
 
         .accordion__head h5 {
+          text-transform: uppercase;
           letter-spacing: 0.32em;
           font-size: 0.92rem;
           margin: 0;
@@ -724,31 +717,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
 
         .card__actions {
           padding: 1.75rem 1.75rem 0;
-        }
-
-        .profile-cta {
-          padding: clamp(4rem, 7vw, 6rem) 0;
-          background: radial-gradient(
-              120% 120% at 50% 0%,
-              rgba(153, 105, 255, 0.35),
-              transparent 60%
-            ),
-            rgba(7, 5, 15, 0.95);
-        }
-
-        .profile-cta__inner {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 1.5rem;
-          text-align: center;
-        }
-
-        .profile-cta__inner h4 {
-          margin: 0;
-          font-size: clamp(1.8rem, 4vw, 2.6rem);
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
         }
 
         [data-animate] {

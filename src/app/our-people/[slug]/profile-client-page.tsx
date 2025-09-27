@@ -547,6 +547,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         }
 
         .accordion__head h5 {
+          text-transform: uppercase;
           letter-spacing: 0.32em;
           font-size: 0.92rem;
           margin: 0;

@@ -65,8 +65,8 @@ export const teamMembers = [
     role: "Associate",
     description: "Dele Kashim is an **Associate** in the firm’s **Dispute Resolution Practice Group**. His legal expertise spans a broad spectrum, encompassing both **commercial and criminal law practice**. Dele has garnered substantial experience in handling contentious legal matters and has actively involved in representing clients before the Superior Courts of record in Nigeria.\n\nDele’s professional qualities are characterized by his unwavering work ethic, diligence, and industriousness. He is known for his commitment to his work and his ability to contribute effectively as a team player.\n\nDele’s educational background includes a bachelor’s Degree in Law, which he obtained from Benue State University. Following his academic pursuits, he successfully completed the necessary legal training and was subsequently called to the Nigerian Bar. His legal qualifications and experience make him a valuable asset to the Firm’s Dispute Resolution Group.\n\n**EXPERTISE**\n- Dispute Resolution\n- Labour and Employment\n- Corporate & Commercial Practice\n\n**EDUCATION**\n- Benue State University (LL.B)\n- Nigerian Law School Kano Campus (B.L)\n\n**CERTIFICATIONS**\n- Data Protection (Digital Right Lawyers initiative)\n\n**ASSOCIATIONS**\n- Nigerian Bar Association Member",
     email: "dele@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2023/10/DELE.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2023/10/DELE.jpg",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/Dele_Kashim.jpg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/Dele_Kashim-masked.png",
     blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2023/10/DELE.jpg",
     hint: "man portrait lawyer"
   },
@@ -209,3 +209,5 @@ export const teamMembers = [
 
     
     
+
+  

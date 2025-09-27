@@ -367,7 +367,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         }
 
         .profile-hero__title h1 {
-          font-size: clamp(2.75rem, 6vw, 4.75rem);
+          font-size: clamp(2.75rem, 4vw, 4.75rem);
           font-weight: 600;
           margin: 0;
           letter-spacing: -0.04em;
@@ -794,5 +794,3 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
     </>
   );
 }
-
-    

@@ -39,21 +39,15 @@ export default function PeopleHighlight() {
       variants={variants}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
-      className="w-full py-20 md:py-32 lg:py-40 bg-background"
+      className="w-full bg-background"
       aria-labelledby="people-highlight-heading"
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
-            <motion.div className="relative w-full max-w-md h-[480px] rounded-xl mx-auto image-container" variants={itemVariants}>
-                <Image
-                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/MEET_THE_TEAM-masked.png"
-                alt="Meet the team at Oyewole & Adesina"
-                fill
-                className="object-contain object-top"
-                data-ai-hint="lawyers team portrait"
-                />
-            </motion.div>
-            <motion.div className="space-y-6" variants={itemVariants}>
+        <div className="flex flex-col-reverse lg:flex-row items-center justify-center lg:gap-24 min-h-[480px]">
+            <motion.div 
+              className="space-y-6 text-center lg:text-left pt-12 lg:pt-0" 
+              variants={itemVariants}
+            >
                 <h2 id="people-highlight-heading" className="text-3xl font-light font-headline tracking-tighter sm:text-5xl">Our People</h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     The people behind our excellence—dedicated, skilled, and trusted.
@@ -65,6 +59,15 @@ export default function PeopleHighlight() {
                     </Link>
                 </Button>
             </motion.div>
+             <motion.div className="relative w-full max-w-md h-[480px] image-container self-end" variants={itemVariants}>
+                <Image
+                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/MEET_THE_TEAM-masked.png"
+                alt="Meet the team at Oyewole & Adesina"
+                fill
+                className="object-contain object-bottom"
+                data-ai-hint="lawyers team portrait"
+                />
+            </motion.div>
         </div>
       </div>
     </motion.section>
@@ -72,13 +75,6 @@ export default function PeopleHighlight() {
       .image-container {
         position: relative;
         overflow: visible;
-        background: radial-gradient(
-            120% 120% at 72% 10%,
-            rgba(80, 80, 80, 0.55),
-            rgba(30, 30, 30, 0.95) 45%,
-            rgba(7, 4, 17, 0.98) 70%,
-            #05010b 100%
-          );
       }
       .image-container::before {
         content: '';
@@ -99,6 +95,15 @@ export default function PeopleHighlight() {
       .image-container > :global(img) {
          border-radius: 0.75rem;
          box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4);
+      }
+      @media (min-width: 1024px) {
+        .image-container::before {
+          background: radial-gradient(
+            circle at bottom center,
+            hsl(var(--primary) / 0.15),
+            transparent 60%
+          );
+        }
       }
     `}</style>
     </>

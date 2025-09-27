@@ -57,6 +57,14 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground">
                 A top-tier law firm delivering client-focused, detailed-oriented legal solutions guided by commercial insights and unwavering integrity.
             </p>
+            <div className="flex items-center gap-4 pt-4">
+             <a href="https://twitter.com/oyewoleadesina" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-white/60 hover:text-white transition-colors">
+                <TwitterIcon className="h-5 w-5 fill-current" />
+              </a>
+              <a href="https://www.linkedin.com/company/oyewoleadesina/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white/60 hover:text-white transition-colors">
+                <LinkedInIcon className="h-5 w-5 fill-current" />
+              </a>
+            </div>
           </div>
 
           <div className="space-y-4">
@@ -96,12 +104,6 @@ export default function Footer() {
         <div className="mt-12 border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>Copyright &copy; {year} Oyewole &amp; Adesina. All Rights Reserved.</p>
            <div className="flex items-center gap-4 mt-4 sm:mt-0">
-             <a href="https://twitter.com/oyewoleadesina" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-white/60 hover:text-white transition-colors">
-                <TwitterIcon className="h-5 w-5 fill-current" />
-              </a>
-              <a href="https://www.linkedin.com/company/oyewoleadesina/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white/60 hover:text-white transition-colors">
-                <LinkedInIcon className="h-5 w-5 fill-current" />
-              </a>
               <Link href="#" className="hover:text-white">Legal Disclaimer</Link>
             </div>
         </div>

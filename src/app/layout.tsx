@@ -15,7 +15,7 @@ const encodeSans = Encode_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Oyewole & Adesina - Premier Nigerian Law Firm',
+    default: 'Oyewole & Adesina - A top-tier law firm',
     template: '%s | Oyewole & Adesina',
   },
   description: 'Oyewole & Adesina is a top-tier law firm in Nigeria with proficiency in dispute resolution, corporate and commercial law, real estate, finance, energy, and more.',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   publisher: 'Oyewole & Adesina',
   metadataBase: new URL('https://www.oyewoleadesina.com'),
   openGraph: {
-    title: 'Oyewole & Adesina - Premier Nigerian Law Firm',
+    title: 'Oyewole & Adesina - A top-tier law firm',
     description: 'Expert legal services in dispute resolution, corporate law, real estate, and more in Nigeria.',
     url: 'https://www.oyewoleadesina.com',
     siteName: 'Oyewole & Adesina',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Oyewole & Adesina - Premier Nigerian Law Firm',
+    title: 'Oyewole & Adesina - A top-tier law firm',
     description: 'Expert legal services in dispute resolution, corporate law, real estate, and more in Nigeria.',
     // images: ['https://www.oyewoleadesina.com/og-image.png'], // Must be an absolute URL
   },

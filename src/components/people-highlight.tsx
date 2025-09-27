@@ -72,6 +72,13 @@ export default function PeopleHighlight() {
       .image-container {
         position: relative;
         overflow: visible;
+        background: radial-gradient(
+            120% 120% at 72% 10%,
+            rgba(80, 80, 80, 0.55),
+            rgba(30, 30, 30, 0.95) 45%,
+            rgba(7, 4, 17, 0.98) 70%,
+            #05010b 100%
+          );
       }
       .image-container::before {
         content: '';

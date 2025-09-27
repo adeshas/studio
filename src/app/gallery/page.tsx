@@ -67,11 +67,6 @@ const officeImages = [
         src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/WAITING%20ROOM.JPG",
         alt: "Waiting room at the office",
         hint: "reception area"
-    },
-    {
-        src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/WORKSTATION.JPG",
-        alt: "Workstation area at the office",
-        hint: "office workstation"
     }
 ];
 

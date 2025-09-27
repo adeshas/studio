@@ -183,11 +183,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         </div>
         <div className="shell">
           <div className="profile-hero__content">
-            <div className="profile-hero__breadcrumb" data-animate>
-                <Link href="/our-people" className="hover:underline">Our People</Link>
-                <span className="mx-2">/</span>
-                <span>{member.name}</span>
-            </div>
             <div className="profile-hero__title" data-animate>
               <h1>{member?.name}</h1>
               <h6>{member?.role}</h6>
@@ -370,21 +365,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
           animation: fadeUp 1.1s ease forwards 0.15s;
         }
         
-        .profile-hero__breadcrumb {
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 1.5rem;
-        }
-        
-        .profile-hero__breadcrumb a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-        
-        .profile-hero__breadcrumb a:hover {
-            text-decoration: underline;
-        }
-
         .profile-hero__content {
           position: relative;
           z-index: 2;
@@ -819,7 +799,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
           }
 
           .profile-hero__image img {
-            width: clamp(240px, 60vw, 420px);
+            height: 115%;
             mask-image: radial-gradient(circle at 50% 30%, black 58%, transparent 94%);
             -webkit-mask-image: radial-gradient(circle at 50% 30%, black 58%, transparent 94%);
           }

@@ -16,7 +16,6 @@ const encodeSans = Encode_Sans({
 export const metadata: Metadata = {
   title: {
     default: 'Oyewole & Adesina - A top-tier Law Firm',
-
     template: '%s | Oyewole & Adesina',
   },
   description: 'Oyewole & Adesina is a top-tier law firm in Nigeria with proficiency in dispute resolution, corporate and commercial law, real estate, finance, energy, and more.',

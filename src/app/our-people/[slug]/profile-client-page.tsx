@@ -353,14 +353,13 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
           inset: 0;
           display: flex;
           align-items: flex-end;
-          justify-content: flex-end;
+          justify-content: center;
           padding-right: clamp(2rem, 8vw, 6rem);
           pointer-events: none;
         }
 
         .profile-hero__image img {
-          width: clamp(280px, 40vw, 480px);
-          height: auto;
+          height: 115%;
           object-fit: contain;
           object-position: bottom;
           filter: saturate(110%);

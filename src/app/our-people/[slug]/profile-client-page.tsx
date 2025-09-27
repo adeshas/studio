@@ -599,12 +599,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         }
 
         .accordion__list li {
-<<<<<<< HEAD
-=======
-          display: flex;
-          justify-content: flex-start;
-          align-items: flex-start;
->>>>>>> ee5b855 (-In the Credentials section under the headings, the sub-heading has text)
           letter-spacing: 0.1em;
           font-size: 0.82rem;
           color: rgba(240, 239, 246, 0.7);

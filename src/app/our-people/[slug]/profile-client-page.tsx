@@ -161,8 +161,9 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
   const heroImage = member?.maskedImage || member?.image || "https://placehold.co/480x680/000000/FFFFFF/png";
 
   const otherProfiles = useMemo(() => {
+    const excludedSlugs = ['ademola-shasanya', 'beatrice-kikelomo-kehinde'];
     return teamMembers
-      .filter(p => p.slug !== member.slug)
+      .filter(p => p.slug !== member.slug && !excludedSlugs.includes(p.slug))
       .sort(() => 0.5 - Math.random()) // Shuffle
       .slice(0, 2)
       .map(p => ({
@@ -538,11 +539,11 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         }
 
         .accordion__head h5 {
-          text-transform: uppercase;
           letter-spacing: 0.32em;
           font-size: 0.92rem;
           margin: 0;
           margin-right: 1.1rem;
+          text-transform: uppercase;
         }
 
         .accordion__icon {

@@ -88,6 +88,11 @@ export default function PeopleHighlight() {
         z-index: -1;
         border-radius: 1.5rem;
         transition: transform 0.4s ease;
+        background: radial-gradient(
+            circle at bottom center,
+            hsl(var(--primary) / 0.15),
+            transparent 60%
+          );
       }
       .image-container:hover::before {
         transform: rotate(-10deg) scale(0.95);
@@ -95,15 +100,6 @@ export default function PeopleHighlight() {
       .image-container > :global(img) {
          border-radius: 0.75rem;
          box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4);
-      }
-      @media (min-width: 1024px) {
-        .image-container::before {
-          background: radial-gradient(
-            circle at bottom center,
-            hsl(var(--primary) / 0.15),
-            transparent 60%
-          );
-        }
       }
     `}</style>
     </>

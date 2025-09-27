@@ -17,11 +17,11 @@ const formatDescription = (text: string | undefined) => {
   let listItems: string[] = [];
   const content = lines.flatMap((line, lineIndex) => {
     const trimmedLine = line.trim();
-    if (trimmedLine.startsWith('✓') || trimmedLine.startsWith('-')) {
+    if (trimmedLine.startsWith('✓') || trimmedLine.startsWith('-') || trimmedLine.startsWith('•')) {
       listItems.push(trimmedLine.substring(1).trim());
       // If the next line is not a list item, render the list
       const nextLine = lines[lineIndex + 1]?.trim();
-      if (!nextLine || (!nextLine.startsWith('✓') && !nextLine.startsWith('-'))) {
+      if (!nextLine || (!nextLine.startsWith('✓') && !nextLine.startsWith('-') && !nextLine.startsWith('•'))) {
         const list = (
           <ul key={`list-${lineIndex}`} className="space-y-2 my-4 list-disc pl-6">
             {listItems.map((item, itemIndex) => (
@@ -58,7 +58,7 @@ const formatDescription = (text: string | undefined) => {
 export default function ProfileClientPage({ member }: { member: TeamMember }) {
   const [showFullBio, setShowFullBio] = useState(false);
   
-  const sections = ['Expertise', 'Education', 'Certifications', 'Associations', 'Awards'];
+  const sections = ['Education', 'Expertise', 'Certifications', 'Associations', 'Awards'];
   const [openSections, setOpenSections] = useState(() => new Set([sections[0]]));
 
   const bioText = useMemo(() => {
@@ -110,7 +110,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
                 break;
             }
         }
-      } else if (inSection && (trimmedLine.startsWith('✓') || trimmedLine.startsWith('-'))) {
+      } else if (inSection && (trimmedLine.startsWith('✓') || trimmedLine.startsWith('-') || trimmedLine.startsWith('•') || trimmedLine.startsWith('❖'))) {
         const item = trimmedLine.substring(1).trim();
         const parts = item.split(', (');
         if (parts.length > 1 && parts[1].endsWith(')')) {
@@ -547,7 +547,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         }
 
         .accordion__head h5 {
-          text-transform: uppercase;
           letter-spacing: 0.32em;
           font-size: 0.92rem;
           margin: 0;
@@ -615,7 +614,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         .accordion__list li {
           display: flex;
           justify-content: space-between;
-          text-transform: uppercase;
           letter-spacing: 0.1em;
           font-size: 0.82rem;
           color: rgba(240, 239, 246, 0.7);

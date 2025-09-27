@@ -546,7 +546,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         }
 
         .accordion__head h5 {
-          text-transform: uppercase;
           letter-spacing: 0.32em;
           font-size: 0.92rem;
           margin: 0;
@@ -682,10 +681,19 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
           box-shadow: 0 20px 45px rgba(61, 45, 110, 0.45);
         }
 
+        .card__image {
+            height: 320px;
+            width: 100%;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .card__image img {
           width: 100%;
-          height: 320px;
-          object-fit: cover;
+          height: 100%;
+          object-fit: contain;
           display: block;
         }
 
@@ -818,3 +826,5 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
     </>
   );
 }
+
+    

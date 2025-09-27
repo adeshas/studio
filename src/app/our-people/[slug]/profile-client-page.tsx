@@ -97,7 +97,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
   
     const lines = text.split('\n');
     let inSection = false;
-    let sectionContent: { label: string, value: string }[] = [];
+    let sectionContent: { label: string }[] = [];
   
     for (const line of lines) {
       const trimmedLine = line.trim();
@@ -113,12 +113,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         }
       } else if (inSection && (trimmedLine.startsWith('✓') || trimmedLine.startsWith('-') || trimmedLine.startsWith('•') || trimmedLine.startsWith('❖'))) {
         const item = trimmedLine.substring(1).trim();
-        const parts = item.split(', (');
-        if (parts.length > 1 && parts[1].endsWith(')')) {
-            sectionContent.push({ label: parts[0], value: `(${parts[1]}`});
-        } else {
-            sectionContent.push({ label: item, value: "" });
-        }
+        sectionContent.push({ label: item });
       }
     }
     return sectionContent.length > 0 ? sectionContent : null;
@@ -250,7 +245,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
                         {section.items.map((item, index) => (
                           <li key={index}>
                             <span>{item.label}</span>
-                            <strong>{item.value}</strong>
                           </li>
                         ))}
                       </ul>
@@ -605,15 +599,12 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
         }
 
         .accordion__list li {
-          display: flex;
-          justify-content: space-between;
           letter-spacing: 0.1em;
           font-size: 0.82rem;
           color: rgba(240, 239, 246, 0.7);
         }
         
         .accordion__list li span {
-          flex-shrink: 1;
           min-width: 0;
           padding-right: 1rem;
         }

@@ -44,6 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Oyewole & Adesina - A top-tier law firm',
     description: 'Expert legal services in dispute resolution, corporate law, real estate, and more in Nigeria.',
+    creator: '@oyewoleadesina',
     // images: ['https://www.oyewoleadesina.com/og-image.png'], // Must be an absolute URL
   },
   robots: {

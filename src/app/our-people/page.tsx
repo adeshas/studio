@@ -75,7 +75,7 @@ export default function OurPeoplePage() {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen bg-background font-body">
+      <div className="flex flex-col min-h-screen bg-background font-body relative">
         <motion.div className="progress-bar" style={{ scaleX }} />
         <Header scrollYProgress={heroScrollYProgress} />
         <main className="flex-1">

@@ -8,6 +8,19 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import { useInView } from 'react-intersection-observer';
 import { useEffect, useState } from 'react';
 
+const TwitterIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+);
+
+const LinkedInIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+        <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.59-11.018-3.714v-2.155z" />
+    </svg>
+);
+
+
 export default function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
   const { ref, inView } = useInView({
@@ -82,9 +95,15 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
           <p>Copyright &copy; {year} Oyewole &amp; Adesina. All Rights Reserved.</p>
-           <nav className="flex gap-4 mt-4 sm:mt-0">
+           <div className="flex items-center gap-4 mt-4 sm:mt-0">
+             <a href="https://twitter.com/oyewoleadesina" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-white/60 hover:text-white transition-colors">
+                <TwitterIcon className="h-5 w-5 fill-current" />
+              </a>
+              <a href="https://www.linkedin.com/company/oyewoleadesina/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white/60 hover:text-white transition-colors">
+                <LinkedInIcon className="h-5 w-5 fill-current" />
+              </a>
               <Link href="#" className="hover:text-white">Legal Disclaimer</Link>
-            </nav>
+            </div>
         </div>
       </div>
     </motion.footer>

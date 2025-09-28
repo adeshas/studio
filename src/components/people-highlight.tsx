@@ -43,7 +43,7 @@ export default function PeopleHighlight() {
       aria-labelledby="people-highlight-heading"
     >
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-center lg:gap-24 min-h-[480px]">
+        <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-24 min-h-[480px]">
             <motion.div 
               className="space-y-6 text-center lg:text-left pt-12 lg:pt-0" 
               variants={itemVariants}

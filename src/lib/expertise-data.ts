@@ -3,13 +3,13 @@ export const expertiseData = [
     {
         slug: "dispute-resolution",
         title: "Dispute Resolution",
-        shortDescription: "Oyewole & Adesina’s dispute resolution practice handles issues relating to litigation, arbitration and alternative dispute resolution, the...",
+        shortDescription: "Oyewole & Adesina’s dispute resolution practice handles issues relating to litigation, arbitration and alternative dispute resolution...",
         image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/dispute_resolution_featured.jpg",
         hint: "gavel judge court",
         longDescription: [
-            "Oyewole & Adesina’s dispute resolution practice handles issues relating to litigation, arbitration and alternative dispute resolution, the practice has a broad range of experience in all facets of commercial litigation, such as banking, contracts, corporate issues and shareholder disputes, debt recovery, energy, environmental issues, insolvency, intellectual property, labour and employment, product liability, real estate, shipping and maritime and telecommunications.",
+            "Oyewole & Adesina’s dispute resolution practice handles issues relating to litigation, arbitration and alternative dispute resolution. The practice has a broad range of experience in all facets of commercial litigation, such as banking, contracts, corporate issues and shareholder disputes, debt recovery, energy, environmental issues, insolvency, intellectual property, labour and employment, product liability, real estate, shipping and maritime and telecommunications.",
             "We also represent clients in criminal matters and election petitions.",
-            "Our dispute resolution lawyers recognize that the primary objective of our clients is to resolve disputes in the most efficient and cost-effective manner, in furtherance of this we analyze the peculiar facts and circumstances of each dispute in line with our clients’ commercial objectives to determine the most suitable dispute resolution option, whether litigation or any of the forms of alternative dispute resolution.",
+            "Our dispute resolution lawyers recognize that the primary objective of our clients is to resolve disputes in the most efficient and cost-effective manner. In furtherance of this, we analyze the peculiar facts and circumstances of each dispute in line with our clients’ commercial objectives to determine the most suitable dispute resolution option, whether litigation or any of the forms of alternative dispute resolution.",
             "We have represented a wide array of clients, including individuals, public and private companies, financial institutions, foreign corporations and multinational companies before the various courts and tribunals in Nigeria."
         ]
     },
@@ -20,7 +20,7 @@ export const expertiseData = [
         image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/boardroom1.jpeg",
         hint: "boardroom empty office",
         longDescription: [
-            "Oyewole & Adesina’s corporate and commercial experience spans through company/business entity formation to procurement of operational licenses, company secretarial work, regulatory compliance, corporate restructuring, insolvency, mergers and acquisitions.",
+            "Oyewole & Adesina’s corporate and commercial experience spans from company/business entity formation to procurement of operational licenses, company secretarial work, regulatory compliance, corporate restructuring, insolvency, mergers and acquisitions.",
             "Our Corporate and Commercial practice offers a wide range of services designed to meet the diverse needs of our clients. We provide strategic legal advice on all aspects of corporate and commercial law, from initial business setup to ongoing operational matters.",
             "Our services include:",
             "- Company Formation and Registration",
@@ -45,11 +45,11 @@ export const expertiseData = [
     {
         slug: "energy-and-natural-resources",
         title: "Energy and Natural Resources",
-        shortDescription: "Oyewole & Adesina’s energy practice covers oil and gas (downstream, mid-stream and upstream), power and natural resources, our...",
+        shortDescription: "Oyewole & Adesina’s energy practice covers oil and gas (downstream, mid-stream and upstream), power and natural resources...",
         image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/ben-wicks-Ej2FQy1W7z4-unsplash(1).jpg",
         hint: "oil rig energy",
         longDescription: [
-            "Oyewole & Adesina’s energy practice covers oil and gas (downstream, mid-stream and upstream), power and natural resources, our energy practice is an integral part of our corporate and commercial practice.",
+            "Oyewole & Adesina’s energy practice covers oil and gas (downstream, mid-stream and upstream), power and natural resources. Our energy practice is an integral part of our corporate and commercial practice.",
             "We advise on acquisitions, divestments, concessions, licensing, joint ventures and strategic alliances. We also provide advice on regulatory compliance.",
             "Our team of lawyers has advised companies in the oil, gas and power sectors on various legal, commercial, and regulatory issues. We have assisted clients in negotiating and drafting various industry-specific agreements, including Production Sharing Contracts, Joint Operating Agreements, Power Purchase Agreements, and Gas Sale and Purchase Agreements.",
             "We combine our legal expertise with an in-depth understanding of the energy industry to provide our clients with practical and innovative legal solutions."
@@ -90,7 +90,7 @@ export const expertiseData = [
         image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/shipping_maritime_featured.jpg",
         hint: "cargo ship sea",
         longDescription: [
-            "Oyewole & Adesina’s shipping, admiralty and maritime practice covers advisory services, admiralty litigation, processing of cabotage registration for vessels. Our team of lawyers has extensive experience in handling a wide range of shipping and maritime matters.",
+            "Oyewole & Adesina’s shipping, admiralty and maritime practice covers advisory services, admiralty litigation, and processing of cabotage registration for vessels. Our team of lawyers has extensive experience in handling a wide range of shipping and maritime matters.",
             "Our services in this area include:",
             "- Ship registration and finance",
             "- Cabotage registration and compliance",

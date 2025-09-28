@@ -56,7 +56,7 @@ export default function PeopleHighlight() {
                     </Link>
                 </Button>
             </motion.div>
-             <motion.div className="relative w-full max-w-md h-[480px] image-container self-end" variants={itemVariants}>
+             <motion.div className="relative w-full max-w-md h-[480px] image-container" variants={itemVariants}>
                 <Image
                 src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/MEET_THE_TEAM-masked.png"
                 alt="Meet the team at Oyewole & Adesina"

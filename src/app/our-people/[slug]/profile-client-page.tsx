@@ -1,9 +1,8 @@
 
-
 "use client";
 
 import Link from "next/link";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo, useState, useEffect } from "react";
 import { teamMembers } from "@/lib/team-data";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
@@ -61,6 +60,23 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
   
   const sections = ['Education', 'Expertise', 'Certifications', 'Associations', 'Awards'];
   const [openSections, setOpenSections] = useState(() => new Set([sections[0]]));
+  const [otherProfiles, setOtherProfiles] = useState<any[]>([]);
+
+  useEffect(() => {
+    const excludedSlugs = ['ademola-shasanya', 'beatrice-kikelomo-kehinde'];
+    const shuffled = teamMembers
+      .filter(p => p.slug !== member.slug && !excludedSlugs.includes(p.slug))
+      .sort(() => 0.5 - Math.random()) // Shuffle
+      .slice(0, 2)
+      .map(p => ({
+        name: p.name,
+        title: p.role,
+        experience: "",
+        href: `/our-people/${p.slug}`,
+        image: p.blackedImage || p.image || "https://placehold.co/260x320"
+      }));
+    setOtherProfiles(shuffled);
+  }, [member.slug]);
 
   const bioText = useMemo(() => {
     if (!member.description) return '';
@@ -154,21 +170,6 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
   );
   
   const heroImage = member?.maskedImage || member?.image || "https://placehold.co/480x680/000000/FFFFFF/png";
-
-  const otherProfiles = useMemo(() => {
-    const excludedSlugs = ['ademola-shasanya', 'beatrice-kikelomo-kehinde'];
-    return teamMembers
-      .filter(p => p.slug !== member.slug && !excludedSlugs.includes(p.slug))
-      .sort(() => 0.5 - Math.random()) // Shuffle
-      .slice(0, 2)
-      .map(p => ({
-        name: p.name,
-        title: p.role,
-        experience: "",
-        href: `/our-people/${p.slug}`,
-        image: p.blackedImage || p.image || "https://placehold.co/260x320"
-      }));
-  }, [member.slug]);
 
   return (
     <>
@@ -789,3 +790,5 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
     </>
   );
 }
+
+    

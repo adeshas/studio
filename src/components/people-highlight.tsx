@@ -49,9 +49,6 @@ export default function PeopleHighlight() {
               variants={itemVariants}
             >
                 <h2 id="people-highlight-heading" className="text-3xl font-light font-headline tracking-tighter sm:text-5xl">Our People</h2>
-                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    The people behind our excellence—dedicated, skilled, and trusted.
-                </p>
                 <Button asChild size="lg" variant="outline">
                     <Link href="/our-people">
                         Meet The Team

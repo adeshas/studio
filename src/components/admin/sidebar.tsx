@@ -1,4 +1,3 @@
-
 "use client"
 
 import {
@@ -22,7 +21,6 @@ const menuItems = [
     { href: "/admin/publications", label: "Publications", icon: Newspaper },
 ];
 
-
 export default function AdminSidebar() {
     const pathname = usePathname();
 
@@ -43,11 +41,11 @@ export default function AdminSidebar() {
                             <Link href={item.href} legacyBehavior passHref>
                                 <SidebarMenuButton
                                     isActive={pathname === item.href}
-                                    icon={item.icon}
                                     tooltip={{
                                         children: item.label,
                                     }}
                                 >
+                                    <item.icon className="h-4 w-4" />
                                     <span>{item.label}</span>
                                 </SidebarMenuButton>
                             </Link>

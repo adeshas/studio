@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { teamMembers } from "@/lib/team-data";
@@ -21,7 +21,7 @@ export default function Team() {
           </div>
         </div>
         <div className="mx-auto max-w-5xl mt-12">
-           <Carousel
+          <Carousel
             opts={{
               align: "start",
             }}
@@ -33,13 +33,13 @@ export default function Team() {
                   <div className="p-1 h-full">
                     <Card className="text-center border-none shadow-lg rounded-xl overflow-hidden h-full flex flex-col">
                       <div className="relative w-full aspect-[600/1024]">
-                        <Image
-                            src={member.image}
-                            alt={`Portrait of ${member.name}, ${member.role}`}
-                            fill
-                            className="w-full h-full object-cover"
-                            style={member.imageStyle}
-                            data-ai-hint={member.hint}
+                        <img
+                          src={member.image}
+                          alt={`Portrait of ${member.name}, ${member.role}`}
+                          className="w-full h-full object-cover absolute inset-0"
+                          style={{ objectPosition: 'top', objectFit: 'cover', position: 'absolute', inset: 0 }}
+                          data-ai-hint={member.hint}
+                          loading="lazy"
                         />
                       </div>
                       <CardContent className="p-6 flex flex-col flex-grow">

@@ -1,3 +1,5 @@
+"use client"
+
 export default function TestPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-black">
@@ -74,7 +76,7 @@ export default function TestPage() {
           </div>
         </div>
       </div>
-       <style jsx>{`
+      <style jsx>{`
         #poda {
           --primary: #c951e7;
           --secondary: #65499a;
@@ -221,4 +223,3 @@ export default function TestPage() {
     </div>
   );
 }
-    

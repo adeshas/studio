@@ -1,7 +1,7 @@
 
 "use client";
 
-import Image from "next/image";
+
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Button } from "@/components/ui/button";
@@ -10,14 +10,14 @@ import { ArrowRight } from "lucide-react";
 
 const variants = {
   hidden: { opacity: 0, y: 90 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 2.0, 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 2.0,
       ease: "easeOut",
       staggerChildren: 0.8
-    } 
+    }
   },
 };
 
@@ -34,41 +34,42 @@ export default function PeopleHighlight() {
 
   return (
     <>
-    <motion.section
-      ref={ref}
-      variants={variants}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-      className="w-full bg-background"
-      aria-labelledby="people-highlight-heading"
-    >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-24 min-h-[480px]">
-            <motion.div 
-              className="space-y-6 text-center lg:text-left pt-12 lg:pt-0" 
+      <motion.section
+        ref={ref}
+        variants={variants}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+        className="w-full bg-background"
+        aria-labelledby="people-highlight-heading"
+      >
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-24 min-h-[480px]">
+            <motion.div
+              className="space-y-6 text-center lg:text-left pt-12 lg:pt-0"
               variants={itemVariants}
             >
-                <h2 id="people-highlight-heading" className="text-3xl font-light font-headline tracking-tighter sm:text-5xl">Our People</h2>
-                <Button asChild size="lg" variant="outline">
-                    <Link href="/our-people">
-                        Meet The Team
-                        <ArrowRight className="ml-2 h-5 w-5" />
-                    </Link>
-                </Button>
+              <h2 id="people-highlight-heading" className="text-3xl font-light font-headline tracking-tighter sm:text-5xl">Our People</h2>
+              <Button asChild size="lg" variant="outline">
+                <Link href="/our-people">
+                  Meet The Team
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
             </motion.div>
-             <motion.div className="relative w-full max-w-md h-[480px] image-container" variants={itemVariants}>
-                <Image
+            <motion.div className="relative w-full max-w-md h-[480px] image-container" variants={itemVariants}>
+              <img
                 src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/MEET_THE_TEAM-masked.png"
                 alt="Meet the team at Oyewole & Adesina"
-                fill
-                className="object-contain object-bottom"
+                className="object-contain object-bottom w-full h-full absolute inset-0"
                 data-ai-hint="lawyers team portrait"
-                />
+                style={{ objectFit: 'contain', objectPosition: 'bottom', position: 'absolute', inset: 0 }}
+                loading="eager"
+              />
             </motion.div>
+          </div>
         </div>
-      </div>
-    </motion.section>
-    <style jsx>{`
+      </motion.section>
+      <style jsx>{`
       .image-container {
         position: relative;
         overflow: visible;

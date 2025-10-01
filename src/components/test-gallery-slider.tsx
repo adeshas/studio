@@ -38,12 +38,12 @@ export default function TestGallerySlider() {
                     className="w-full h-full object-cover"
                   />
                 ) : (
-                  <Image
+                  <img
                     src={media.src}
                     alt={media.alt}
-                    fill
-                    className="object-cover"
-                    data-ai-hint={media.hint}
+                    className="object-cover w-full h-full absolute inset-0"
+                    style={{ objectFit: 'cover', position: 'absolute', inset: 0 }}
+                    loading="lazy"
                   />
                 )}
               </div>

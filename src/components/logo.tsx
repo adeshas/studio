@@ -14,13 +14,12 @@ export default function Logo({ variant = 'color' }: LogoProps) {
   const src = logos[variant] || logos.color;
 
   return (
-    <Image
+    <img
       src={src}
       alt="Oyewole & Adesina Logo"
       width={1024}
-      height={variant === 'color' ? 332 : 221}
-      className="w-full h-auto"
-      priority
+      style={{ maxWidth: '100%', height: 'auto' }}
+      loading="eager"
     />
   );
 }

@@ -4,14 +4,15 @@ import ProfileClientPage from "./profile-client-page";
 import type { Metadata, ResolvingMetadata } from 'next';
 
 type Props = {
-  params: { slug: string }
+  params: Promise<{ slug: string }> // Changed: Added Promise wrapper
 }
 
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const member = teamMembers.find((item) => item.slug === params.slug);
+  const { slug } = await params; // Changed: await params
+  const member = teamMembers.find((item) => item.slug === slug); // Changed: use slug variable
 
   if (!member) {
     return {
@@ -19,7 +20,7 @@ export async function generateMetadata(
       description: 'The requested team member could not be found.',
     }
   }
-  
+
   const description = member.description?.split('\n\n')[0] || `Learn more about ${member.name}, ${member.role} at Oyewole & Adesina.`;
 
   return {
@@ -31,9 +32,10 @@ export async function generateMetadata(
   }
 }
 
-
-export default function TeamMemberPage({ params }: { params: { slug: string } }) {
-  const member = teamMembers.find((m) => m.slug === params.slug);
+// Changed: Added async and Promise wrapper
+export default async function TeamMemberPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params; // Changed: await params
+  const member = teamMembers.find((m) => m.slug === slug); // Changed: use slug variable
 
   if (!member) {
     notFound();

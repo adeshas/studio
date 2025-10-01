@@ -13,13 +13,13 @@ export default function Testimonials() {
 
   const variants = {
     hidden: { opacity: 0, y: 90 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 2.0, 
-        ease: "easeOut" 
-      } 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 2.0,
+        ease: "easeOut"
+      }
     },
   };
 
@@ -35,13 +35,13 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-4">
-             <Image 
-                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/NEW_DAYO.JPG"
-                alt="Adedayo Adesina"
-                width={80}
-                height={80}
-                className="rounded-full mx-auto"
-             />
+            <img
+              src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/NEW_DAYO.JPG"
+              alt="Adedayo Adesina"
+              className="object-cover rounded-full mx-auto mb-6 w-[180px] h-[180px]"
+              style={{ maxWidth: 180, maxHeight: 180, objectFit: 'cover' }}
+              loading="eager"
+            />
           </div>
           <blockquote className="text-xl md:text-2xl font-light italic">
             &ldquo;Oyewole & Adesina stands out for its exceptional legal acumen and unwavering commitment to client success. Their commercially-minded approach consistently delivers results that matter.&rdquo;

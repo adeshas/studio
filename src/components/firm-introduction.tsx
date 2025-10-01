@@ -1,20 +1,20 @@
 
 "use client";
 
-import Image from "next/image";
+
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 const variants = {
   hidden: { opacity: 0, y: 90 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 2.0, 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 2.0,
       ease: "easeOut",
       staggerChildren: 0.8
-    } 
+    }
   },
 };
 
@@ -41,12 +41,13 @@ export default function FirmIntroduction() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
           <motion.div className="relative w-full h-80 lg:h-96 rounded-xl overflow-hidden shadow-xl" variants={itemVariants}>
-            <Image
+            <img
               src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ENTRANCE.JPG"
               alt="Oyewole & Adesina office discussion"
-              fill
-              className="object-cover"
+              className="object-cover w-full h-full absolute inset-0"
               data-ai-hint="cityscape office"
+              style={{ objectFit: 'cover', position: 'absolute', inset: 0 }}
+              loading="eager"
             />
           </motion.div>
           <motion.div className="space-y-4" variants={itemVariants}>

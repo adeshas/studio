@@ -1,6 +1,6 @@
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Image from "next/image";
+
 import Link from "next/link";
 import { expertiseData } from "@/lib/expertise-data";
 import { Card, CardContent } from "@/components/ui/card";
@@ -29,7 +29,7 @@ export default function OurExpertisePage() {
               {expertiseData.map((item) => (
                 <Card key={item.slug} className="flex flex-col h-full bg-card border shadow-lg rounded-xl overflow-hidden">
                   <div className="relative w-full h-48">
-                    <Image src={item.image} alt={item.title} fill className="object-cover" data-ai-hint={item.hint} />
+                    <img src={item.image} alt={item.title} className="object-cover w-full h-full absolute inset-0" data-ai-hint={item.hint} style={{ objectFit: 'cover', position: 'absolute', inset: 0 }} loading="lazy" />
                   </div>
                   <CardContent className="p-6 flex flex-col flex-grow">
                     <h3 className="text-2xl font-bold font-headline mb-4">{item.title}</h3>

@@ -2,7 +2,7 @@
 
 "use client";
 
-import Image from "next/image";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { teamMembers } from "@/lib/team-data";
 import Header from "@/components/header";
@@ -23,7 +23,7 @@ const cardVariants = {
 function TeamMemberCard({ member, index }: { member: TeamMember, index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
-  
+
   const isInitialLoad = index < 3;
 
   return (
@@ -36,14 +36,13 @@ function TeamMemberCard({ member, index }: { member: TeamMember, index: number }
       <Link href={`/our-people/${member.slug}`} className="cursor-pointer">
         <Card className="shadow-lg rounded-xl overflow-hidden h-full flex flex-col group">
           <div className="relative w-full aspect-[4/5]">
-            <Image
+            <img
               src={member.image}
               alt={`Portrait of ${member.name}, ${member.role}`}
-              fill
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              style={{ ...member.imageStyle, objectPosition: 'top' } || { objectPosition: 'top' }}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 absolute inset-0"
+              style={{ objectPosition: 'top', objectFit: 'cover', position: 'absolute', inset: 0 }}
               data-ai-hint={member.hint}
-              priority={index < 3}
+              loading={index < 3 ? "eager" : "lazy"}
             />
             <div className="absolute bottom-0 left-0 p-6 text-left text-white bg-gradient-to-t from-black/80 via-black/40 to-transparent w-full">
               <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
@@ -60,7 +59,7 @@ function TeamMemberCard({ member, index }: { member: TeamMember, index: number }
 export default function OurPeoplePage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll();
-  
+
   const { scrollYProgress: pageScrollYProgress } = useScroll();
   const scaleX = useSpring(pageScrollYProgress, {
     stiffness: 100,
@@ -82,30 +81,30 @@ export default function OurPeoplePage() {
 
           <section ref={heroRef} className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden -mt-20">
             <div className="absolute inset-0 z-0">
-                <Image
+              <img
                 src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1162_v2.jpeg"
                 alt="A premier law firm"
-                fill
-                className="object-cover fixed h-screen"
-                priority
+                className="object-cover fixed h-screen w-full h-full absolute inset-0"
+                style={{ objectFit: 'cover', position: 'absolute', inset: 0 }}
                 data-ai-hint="office building modern"
-                />
-                <div className="absolute inset-0 bg-black/80"></div>
+                loading="eager"
+              />
+              <div className="absolute inset-0 bg-black/80"></div>
             </div>
             <div className="relative z-10 container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white">
               <h1 className="text-4xl md:text-6xl font-bold font-headline">Our People</h1>
               <div className="mt-4 text-lg">
-                  <Link href="/" className="hover:underline">Home</Link>
-                  <span className="mx-2">/</span>
-                  <span>Our People</span>
+                <Link href="/" className="hover:underline">Home</Link>
+                <span className="mx-2">/</span>
+                <span>Our People</span>
               </div>
             </div>
-             <motion.div
-                className="absolute bottom-10 left-1/2 -translate-x-1/2"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
+            <motion.div
+              className="absolute bottom-10 left-1/2 -translate-x-1/2"
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
             >
-                <ArrowDown className="h-8 w-8 text-white" />
+              <ArrowDown className="h-8 w-8 text-white" />
             </motion.div>
           </section>
 
@@ -113,7 +112,7 @@ export default function OurPeoplePage() {
             <div className="container mx-auto px-4 md:px-6">
               <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                 <div className="space-y-2">
-                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Meet our Team</h2>
+                  <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Meet our Team</h2>
                   <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                     Meet our dedicated team of experienced and competent legal professionals.
                   </p>
@@ -124,7 +123,7 @@ export default function OurPeoplePage() {
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
               >
                 {teamMembers.map((member, index) => (
-                  <TeamMemberCard 
+                  <TeamMemberCard
                     key={member.name}
                     member={member}
                     index={index}

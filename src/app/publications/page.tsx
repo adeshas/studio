@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { publicationsData } from "@/lib/publications-data";
 import Link from "next/link";
-import Image from "next/image";
+
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -17,24 +17,24 @@ export default function PublicationsPage() {
     <div className="flex flex-col min-h-screen bg-background font-body">
       <Header />
       <main className="flex-1">
-         <section className="relative w-full h-64 md:h-80 bg-primary/20">
-             <Image
-                src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/absolutvision-WYd_PkCa1BY-unsplash.jpg"
-                alt="A library of legal books and publications"
-                fill
-                className="object-cover"
-                data-ai-hint="books library documents"
-                priority
-             />
-             <div className="absolute inset-0 bg-black/60 z-10"></div>
-            <div className="relative container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white z-20">
-                <h1 className="text-4xl md:text-6xl font-bold font-headline">Publications</h1>
-                <div className="mt-4 text-lg">
-                    <Link href="/" className="hover:underline">Home</Link>
-                    <span className="mx-2">/</span>
-                    <span>Publications</span>
-                </div>
+        <section className="relative w-full h-64 md:h-80 bg-primary/20">
+          <img
+            src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/absolutvision-WYd_PkCa1BY-unsplash.jpg"
+            alt="A library of legal books and publications"
+            className="object-cover w-full h-full absolute inset-0"
+            data-ai-hint="books library documents"
+            style={{ objectFit: 'cover', position: 'absolute', inset: 0 }}
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-black/60 z-10"></div>
+          <div className="relative container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white z-20">
+            <h1 className="text-4xl md:text-6xl font-bold font-headline">Publications</h1>
+            <div className="mt-4 text-lg">
+              <Link href="/" className="hover:underline">Home</Link>
+              <span className="mx-2">/</span>
+              <span>Publications</span>
             </div>
+          </div>
         </section>
 
         <section className="w-full py-12 md:py-24 lg:py-32">

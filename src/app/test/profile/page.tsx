@@ -31,11 +31,11 @@ const accordionSections = [
   {
     title: "Certifications",
     items: [
-        { label: "Notary Public of the Federal Republic of Nigeria", value: "" },
-        { label: "Registered Professional, Financial Reporting Council of Nigeria", value: "" },
-        { label: "Fellow, Institute of Management Consultants (IMC-Nigeria)", value: "" },
-        { label: "Member, Business Recovery and Insolvency Practitioners of Nigeria (BRIPAN)", value: "" },
-        { label: "Associate Member, Chartered Institute of Arbitrators,UK (Ciarb)", value: "" },
+      { label: "Notary Public of the Federal Republic of Nigeria", value: "" },
+      { label: "Registered Professional, Financial Reporting Council of Nigeria", value: "" },
+      { label: "Fellow, Institute of Management Consultants (IMC-Nigeria)", value: "" },
+      { label: "Member, Business Recovery and Insolvency Practitioners of Nigeria (BRIPAN)", value: "" },
+      { label: "Associate Member, Chartered Institute of Arbitrators,UK (Ciarb)", value: "" },
     ],
   },
   {
@@ -51,8 +51,8 @@ const accordionSections = [
   {
     title: "Awards",
     items: [
-        { label: "Special Recognition Award by VP of Nigeria, 2019, 2021, 2023", value: "" },
-        { label: "Appreciation Award from the Doing Business Team of the World Bank Group, 2019, 2020", value: "" },
+      { label: "Special Recognition Award by VP of Nigeria, 2019, 2021, 2023", value: "" },
+      { label: "Appreciation Award from the Doing Business Team of the World Bank Group, 2019, 2020", value: "" },
     ],
   },
 ];
@@ -79,7 +79,7 @@ export default function ProfileTestPage() {
   const [openSections, setOpenSections] = useState(() => new Set([accordionSections[0].title]));
 
   const bioIntro =
-    "Adedayo Adesina is a Legal Practitioner with over a quindecennial of extensive practical experience in Dispute Resolution, Real Estate and Infrastructure, Energy, Natural Resources, Banking, Finance, and Insurance. He holds a Master of Laws Degree with specialization in Banking and Finance Law from the University of London, United Kingdom, and an undergraduate degree from the University of Jos, Nigeria. He is the Lead Partner of Oyewole & Adesina, a full-service law firm situated at Ikoyi, Lagos.";
+    "Adedayo Adesina, SAN is a Legal Practitioner with over a quindecennial of extensive practical experience in Dispute Resolution, Real Estate and Infrastructure, Energy, Natural Resources, Banking, Finance, and Insurance. He holds a Master of Laws Degree with specialization in Banking and Finance Law from the University of London, United Kingdom, and an undergraduate degree from the University of Jos, Nigeria. He is the Lead Partner of Oyewole & Adesina, a full-service law firm situated at Ikoyi, Lagos.";
 
   const bioFull =
     "Adedayo is renowned for his profound understanding of the legal field, coupled with outstanding analytical, writing, and advocacy skills, which he consistently applies to deliver exceptional results to clients.\n\nAdedayo's expertise extends to various legal domains, including arbitration (both domestic and international), litigation, and insolvency practice. He has successfully litigated complex commercial, environmental, labor, real estate, constitutional, criminal, and election petition disputes at various judicial levels in Nigeria.\n\nHis extensive practical experience encompasses providing expert counsel on concessions, asset acquisitions, licensing, and forging strategic alliances and partnerships within the oil and gas, power, real estate and maritime sectors. Adedayo also advised both local and international companies during the privatisation of the PHCN successor firms. He also demonstrated his prowess in reviewing and negotiating a wide spectrum of industry-standard agreements, including the Bulk Power Purchase Agreement, Vesting Contract, Gas Transportation Agreement, Gas Sales and Purchase Agreement, and related contracts.";

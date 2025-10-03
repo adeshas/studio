@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 "use client";
 
@@ -62,9 +63,10 @@ export default function PublicationsHighlight() {
             <motion.div key={index} variants={itemVariants}>
               <Card className="flex flex-col h-full bg-transparent border-0 shadow-none rounded-none">
                 <div className="relative w-full h-64 mb-6">
-                  <img
+                  <Image
                     src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/folder-document-3.png"
                     alt={item.title}
+                    fill
                     className="object-contain w-full h-full absolute inset-0"
                     style={{ filter: 'hue-rotate(213deg) saturate(0.7)', objectFit: 'contain', position: 'absolute', inset: 0 }}
                     loading="lazy"

@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 "use client";
 
@@ -41,13 +42,14 @@ export default function FirmIntroduction() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
           <motion.div className="relative w-full h-80 lg:h-96 rounded-xl overflow-hidden shadow-xl" variants={itemVariants}>
-            <img
+            <Image
               src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ENTRANCE.JPG"
               alt="Oyewole & Adesina office discussion"
+              fill
               className="object-cover w-full h-full absolute inset-0"
               data-ai-hint="cityscape office"
               style={{ objectFit: 'cover', position: 'absolute', inset: 0 }}
-              loading="eager"
+              priority
             />
           </motion.div>
           <motion.div className="space-y-4" variants={itemVariants}>

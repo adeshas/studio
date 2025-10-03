@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 "use client";
 import React, { useState, useEffect } from 'react';
@@ -45,7 +46,16 @@ const VideoWall = () => {
       return <video key={`${item.src}-${index}`} src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />;
     }
     return <div className="relative w-full h-full">
-      <img key={`${item.src}-${index}`} src={item.src} alt={item.alt} className="w-full h-full object-cover absolute inset-0" data-ai-hint={item.hint} style={{ objectFit: 'cover', position: 'absolute', inset: 0 }} loading="lazy" />
+      <Image
+        key={`${item.src}-${index}`}
+        src={item.src}
+        alt={item.alt}
+        fill
+        className="w-full h-full object-cover absolute inset-0"
+        data-ai-hint={item.hint}
+        style={{ objectFit: 'cover', position: 'absolute', inset: 0 }}
+        loading="lazy"
+      />
     </div>;
   };
 

@@ -1,0 +1,11 @@
+# Next.js SPA rewrite rules for Apache
+RewriteEngine On
+RewriteBase /
+
+# Always serve index.html for client-side routes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
+
+# Optional: Prevent directory listing
+Options -Indexes

@@ -45,12 +45,13 @@ export default function TheFirmPage() {
             <Header />
             <main className="flex-1">
                 <section className="relative w-full h-64 md:h-80 bg-primary/20">
-                    <img
+                    <Image
                         src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/07/patrick-fore-H5Lf0nGyetk-unsplash.jpg"
                         alt="An abstract image representing the law firm's solid foundation"
+                        fill
                         className="object-cover w-full h-full absolute inset-0"
                         style={{ objectFit: 'cover', position: 'absolute', inset: 0 }}
-                        loading="eager"
+                        priority
                     />
                     <div className="absolute inset-0 bg-black/60 z-10"></div>
                     <div className="relative container mx-auto px-4 md:px-6 h-full flex flex-col justify-center items-center text-center text-white z-20">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 "use client";
 
@@ -51,13 +52,14 @@ export default function About() {
             </p>
           </motion.div>
           <motion.div className="relative w-full h-80 lg:h-96 rounded-xl overflow-hidden shadow-xl" variants={itemVariants}>
-            <img
+            <Image
               src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/CONFERENCE%20ROOM%201.JPG"
               alt="The modern and professional interior of the Oyewole & Adesina law office"
+              fill
               className="object-cover w-full h-full absolute inset-0"
               data-ai-hint="office meeting room"
               style={{ objectFit: 'cover', position: 'absolute', inset: 0 }}
-              loading="eager"
+              priority
             />
           </motion.div>
         </div>

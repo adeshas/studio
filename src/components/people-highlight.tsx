@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 "use client";
 
@@ -57,13 +58,14 @@ export default function PeopleHighlight() {
               </Button>
             </motion.div>
             <motion.div className="relative w-full max-w-md h-[480px] image-container" variants={itemVariants}>
-              <img
+              <Image
                 src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/MEET_THE_TEAM-masked.png"
                 alt="Meet the team at Oyewole & Adesina"
+                fill
                 className="object-contain object-bottom w-full h-full absolute inset-0"
                 data-ai-hint="lawyers team portrait"
                 style={{ objectFit: 'contain', objectPosition: 'bottom', position: 'absolute', inset: 0 }}
-                loading="eager"
+                priority
               />
             </motion.div>
           </div>

@@ -15,7 +15,7 @@ const slides = [
   },
   {
     heading: "Comprehensive Expertise",
-    subheading: "From dispute resolution to finance, real estate to IP—our full-service teams deliver tailored, sector-focused counsel."
+    subheading: "From dispute resolution to finance, real estate to IP, our full-service teams deliver tailored, sector-focused counsel."
   },
   {
     heading: "Client-Centric Solutions",

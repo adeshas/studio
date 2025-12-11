@@ -13,7 +13,7 @@ type TeamMember = (typeof teamMembers)[0];
 const formatDescription = (text: string | undefined) => {
   if (!text) return null;
   const lines = text.split('\n');
-  
+
   let listItems: string[] = [];
   const content = lines.flatMap((line, lineIndex) => {
     const trimmedLine = line.trim();
@@ -38,7 +38,7 @@ const formatDescription = (text: string | undefined) => {
     if (trimmedLine === '') {
       return [<div key={lineIndex} className="h-4" />];
     }
-    
+
     const parts = line.split(/(\*\*.*?\*\*)/g).filter(part => part);
     return (
       <p key={lineIndex}>
@@ -57,13 +57,13 @@ const formatDescription = (text: string | undefined) => {
 
 export default function ProfileClientPage({ member }: { member: TeamMember }) {
   const [showFullBio, setShowFullBio] = useState(false);
-  
+
   const sections = ['Education', 'Expertise', 'Certifications', 'Associations', 'Awards'];
   const [openSections, setOpenSections] = useState(() => new Set([sections[0]]));
   const [otherProfiles, setOtherProfiles] = useState<any[]>([]);
 
   useEffect(() => {
-    const excludedSlugs = ['ademola-shasanya', 'beatrice-kikelomo-kehinde'];
+    const excludedSlugs = ['ademola-shasanya'];
     const shuffled = teamMembers
       .filter(p => p.slug !== member.slug && !excludedSlugs.includes(p.slug))
       .sort(() => 0.5 - Math.random()) // Shuffle
@@ -84,48 +84,48 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
     const regex = new RegExp(sectionHeaders.join('|'));
     return member.description.split(regex)[0].trim();
   }, [member.description, sections]);
-  
+
   const bioIntro = useMemo(() => {
-    if(!bioText) return '';
+    if (!bioText) return '';
     // Take the first paragraph as the intro
     const intro = bioText.split('\n\n')[0] || '';
     const parts = intro.split(/(\*\*.*?\*\*)/g).filter(part => part);
     return (
-        <p>
-            {parts.map((part, partIndex) => {
-                if (part.startsWith('**') && part.endsWith('**')) {
-                    return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
-                }
-                return part;
-            })}
-        </p>
+      <p>
+        {parts.map((part, partIndex) => {
+          if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={partIndex}>{part.slice(2, -2)}</strong>;
+          }
+          return part;
+        })}
+      </p>
     );
   }, [bioText]);
 
   const bioFull = useMemo(() => {
-    if(!bioText) return '';
+    if (!bioText) return '';
     const parts = bioText.split('\n\n');
     return parts.slice(1).join('\n\n');
   }, [bioText]);
 
   const extractSection = useCallback((text: string | undefined, sectionTitle: string) => {
     if (!text) return null;
-  
+
     const lines = text.split('\n');
     let inSection = false;
     let sectionContent: { label: string }[] = [];
-  
+
     for (const line of lines) {
       const trimmedLine = line.trim();
       if (trimmedLine.startsWith('**') && trimmedLine.endsWith('**')) {
-        const currentTitle = trimmedLine.slice(2,-2).toUpperCase();
+        const currentTitle = trimmedLine.slice(2, -2).toUpperCase();
         if (sections.map(s => s.toUpperCase()).includes(currentTitle)) {
-            if (currentTitle === sectionTitle.toUpperCase()) {
-                inSection = true;
-            } else if (inSection) {
-                // We've hit the next section title, so stop.
-                break;
-            }
+          if (currentTitle === sectionTitle.toUpperCase()) {
+            inSection = true;
+          } else if (inSection) {
+            // We've hit the next section title, so stop.
+            break;
+          }
         }
       } else if (inSection && (trimmedLine.startsWith('✓') || trimmedLine.startsWith('-') || trimmedLine.startsWith('•') || trimmedLine.startsWith('❖'))) {
         const item = trimmedLine.substring(1).trim();
@@ -168,141 +168,141 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
     () => (showFullBio ? "Show Less" : "Show More"),
     [showFullBio]
   );
-  
+
   const heroImage = member?.maskedImage || member?.image || "https://placehold.co/480x680/000000/FFFFFF/png";
 
   return (
     <>
-    <Header />
-    <div className="profile-page">
-      <section className="profile-hero">
-        <div className="profile-hero__image">
-          <img src={heroImage} alt={member?.name || "Team member"} />
-        </div>
-        <div className="shell">
-          <div className="profile-hero__content">
-            <div className="profile-hero__title" data-animate>
-              <h1>{member?.name}</h1>
-              <h6>{member?.role}</h6>
+      <Header />
+      <div className="profile-page">
+        <section className="profile-hero">
+          <div className="profile-hero__image">
+            <img src={heroImage} alt={member?.name || "Team member"} />
+          </div>
+          <div className="shell">
+            <div className="profile-hero__content">
+              <div className="profile-hero__title" data-animate>
+                <h1>{member?.name}</h1>
+                <h6>{member?.role}</h6>
+              </div>
             </div>
           </div>
-        </div>
-        <button
-          type="button"
-          className="btn-scroll"
-          onClick={handleScrollToBio}
-          aria-label="Scroll to bio section"
-        >
-          <span className="btn-scroll__icon" />
-        </button>
-      </section>
+          <button
+            type="button"
+            className="btn-scroll"
+            onClick={handleScrollToBio}
+            aria-label="Scroll to bio section"
+          >
+            <span className="btn-scroll__icon" />
+          </button>
+        </section>
 
-      <section id="profile-bio" className="profile-section profile-section--border" data-animate>
-        <div className="shell">
-          <div className="section-head">
-            <h3>Bio</h3>
-          </div>
-          <div className="section-intro">
-            {bioIntro}
-          </div>
-          {bioFull && (
-            <>
+        <section id="profile-bio" className="profile-section profile-section--border" data-animate>
+          <div className="shell">
+            <div className="section-head">
+              <h3>Bio</h3>
+            </div>
+            <div className="section-intro">
+              {bioIntro}
+            </div>
+            {bioFull && (
+              <>
                 <div className={`section-full ${showFullBio ? "is-open" : ""}`}>
-                    <div className="whitespace-pre-line">{formatDescription(bioFull)}</div>
+                  <div className="whitespace-pre-line">{formatDescription(bioFull)}</div>
                 </div>
                 <div className="section-actions">
-                    <button type="button" className="btn btn--outline" onClick={toggleFullBio}>
+                  <button type="button" className="btn btn--outline" onClick={toggleFullBio}>
                     {showMoreLabel}
-                    </button>
-                </div>
-            </>
-          )}
-        </div>
-      </section>
-
-      <section className="profile-section profile-section--border" data-animate>
-        <div className="shell">
-          <div className="section-head">
-            <h3>Credentials</h3>
-          </div>
-          <div className="accordion">
-            {accordionSections.map((section) => {
-              if (!section.items) return null;
-              const isOpen = openSections.has(section.title);
-              return (
-                <div className={`accordion__section ${isOpen ? "is-open" : ""}`} key={section.title}>
-                  <button
-                    type="button"
-                    className="accordion__head"
-                    onClick={() => toggleSection(section.title)}
-                    aria-expanded={isOpen}
-                  >
-                    <h5>{section.title}</h5>
-                    <span className="accordion__icon" aria-hidden />
                   </button>
-                  <div className="accordion__body" aria-hidden={!isOpen}>
-                    {section.items.length > 0 && (
-                      <ul className="accordion__list">
-                        {section.items.map((item, index) => (
-                          <li key={index}>
-                            <span>{item.label}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
                 </div>
-              );
-            })}
+              </>
+            )}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {otherProfiles.length > 0 && (
-        <section className="profile-section profile-section--border profile-section--center" data-animate>
-            <div className="shell">
+        <section className="profile-section profile-section--border" data-animate>
+          <div className="shell">
             <div className="section-head">
-                <h3>Meet the Others</h3>
+              <h3>Credentials</h3>
             </div>
-            <div className="cards">
-                {otherProfiles.map((card) => (
-                <div className="card" key={card.name}>
-                    <div className="card__inner">
-                    <div className="card__image">
-                        <img src={card.image} alt={card.name} />
+            <div className="accordion">
+              {accordionSections.map((section) => {
+                if (!section.items) return null;
+                const isOpen = openSections.has(section.title);
+                return (
+                  <div className={`accordion__section ${isOpen ? "is-open" : ""}`} key={section.title}>
+                    <button
+                      type="button"
+                      className="accordion__head"
+                      onClick={() => toggleSection(section.title)}
+                      aria-expanded={isOpen}
+                    >
+                      <h5>{section.title}</h5>
+                      <span className="accordion__icon" aria-hidden />
+                    </button>
+                    <div className="accordion__body" aria-hidden={!isOpen}>
+                      {section.items.length > 0 && (
+                        <ul className="accordion__list">
+                          {section.items.map((item, index) => (
+                            <li key={index}>
+                              <span>{item.label}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
-                    <div className="card__head">
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {otherProfiles.length > 0 && (
+          <section className="profile-section profile-section--border profile-section--center" data-animate>
+            <div className="shell">
+              <div className="section-head">
+                <h3>Meet the Others</h3>
+              </div>
+              <div className="cards">
+                {otherProfiles.map((card) => (
+                  <div className="card" key={card.name}>
+                    <div className="card__inner">
+                      <div className="card__image">
+                        <img src={card.image} alt={card.name} />
+                      </div>
+                      <div className="card__head">
                         <h5>{card.name}</h5>
                         <p>{card.title}</p>
-                    </div>
-                    {card.experience && (
+                      </div>
+                      {card.experience && (
                         <div className="card__entry">
-                            <p>{card.experience}</p>
+                          <p>{card.experience}</p>
                         </div>
-                    )}
-                    <div className="card__actions">
+                      )}
+                      <div className="card__actions">
                         <Link href={card.href} className="btn">
-                        View Profile
+                          View Profile
                         </Link>
+                      </div>
                     </div>
-                    </div>
-                </div>
+                  </div>
                 ))}
-            </div>
-            <div className="section-actions">
+              </div>
+              <div className="section-actions">
                 <Link href="/our-people" className="btn btn--outline">
-                View All People
+                  View All People
                 </Link>
+              </div>
             </div>
-            </div>
-        </section>
-      )}
+          </section>
+        )}
 
-      <Contact />
+        <Contact />
 
-      <Footer />
+        <Footer />
 
-      <style jsx>{`
+        <style jsx>{`
         .profile-page {
           color: #f3f3f9;
           background: #030104;
@@ -786,9 +786,8 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
 
         }
       `}</style>
-    </div>
+      </div>
     </>
   );
 }
 
-    

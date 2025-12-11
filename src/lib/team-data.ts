@@ -129,18 +129,6 @@ export const teamMembers = [
     hint: "woman portrait lawyer"
   },
   {
-    name: "Beatrice Kikelomo Kehinde",
-    slug: "beatrice-kikelomo-kehinde",
-    role: "Librarian",
-    description: "Beatrice Kikelomo Kehinde is a **Certified Librarian** and an alumnus of the University of Ilorin, where she earned a Bachelor of Science degree in Library and Information Science. She is also a fellow of the **Young African Library Leaders Fellowship (YALLF)**.\n\nWith many years of experience in the Library and Information profession, Beatrice has worked in both academic and law libraries. Remarkably, her expertise spans heading a university library in an acting capacity, during which she successfully developed and curated a university law library collection that achieved accreditation from both the National Universities Commission (NUC) and the Council of Legal Education (CLE).\n\nShe is currently the librarian at Oyewole and Adesina, overseeing library administration, collection development,training services and the provision of relevant library services within the law firm. Beatrice plays a key role in curating an extensive collection of legal materials and supports the firm’s attorneys with in-depth legal research and library services.\n\nIn addition, Beatrice is skilled in the usage of the Moys Classification Scheme, Library of Congress Classification Scheme, cataloguing resources, digital librarianship and Koha system.\n\nShe is passionate about legal librarianship and committed to expanding her expertise in information literacy and knowledge management within legal practice, as well as improving access to legal resources by offering personalized research assistance and conducting training sessions to help patrons effectively utilize both physical and electronic resources.\n\nBeatrice is an active member of the **Nigerian Library Association (Lagos Branch)** and the **Nigerian Association of Law Libraries (Lagos Branch)**. She has a research publication in an international journal.\n\n**EDUCATION**\n- University of Ilorin, (B.Sc. Library and Information Science)\n\n**EXPERTISE**\n- Library and Information Management\n- Collection Development & Cataloguing\n- Information Literacy Training\n- Research Support & Reference Services\n- Leadership & Team Coordination\n\n**CERTIFICATIONS**\n- Certified Librarian of Nigeria (CLN)\n- Fellow, Young African Library Leaders Fellowship\n- Customer Relationship Management\n- Human Resources Management\n- Environmental Health and Safety\n\n**ASSOCIATIONS**\n- Member, Nigerian Library Association (NLA)\n- Member, Nigerian Association of Law Libraries (NALL)\n- Associate Member Chartered Institute of Customer Relationship Management (CICRM)\n- Associate Member Chartered Institute of Human Resources Management (CIHRM)\n- Associate Member Chartered Institute of Environmental Health and Safety (CIEHS)\n\n**AWARDS**\n- INEC/NYSC- Westminster Foundation for Democracy Foundation\n- National Association of Library and Information Science Entrepreneur of the Year",
-    email: "librarian@oyewoleadesina.com",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/BEATRICE%201.jpg",
-    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/BEATRICE%201.jpg",
-    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/09/BEATRICE%201.jpg",
-    hint: "woman portrait professional",
-    linkedin: ""
-  },
-  {
     name: "Eniye Seibri",
     slug: "eniye-seibri",
     role: "Front Office Manager",
@@ -181,6 +169,30 @@ export const teamMembers = [
     image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ZAINAB%20FRONT.jpg",
     maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/MASKED/ZAINAB_BACK-masked.png",
     blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/ZAINAB%20BACK.jpg",
+    hint: "woman portrait professional"
+  },
+  {
+    name: "Aderinsola Obadare",
+    slug: "aderinsola-obadare",
+    role: "Executive Assistant to the Managing Partner",
+    description: "Aderinsola Obadare is the **Executive Assistant to the Managing Partner** at Oyewole & Adesina. She provides focused administrative and operational support, managing schedules, preparing documents, and ensuring clear communication across the firm. She handles confidential information with discretion and keeps workflows organized and timely.\n\nHer background includes roles in executive administration, office management, client coordination, and facility support across corporate and investment settings. She has experience with travel planning, vendor management, document control, and maintaining structured systems for both digital and physical records.\n\nRinsola holds a Bachelor's degree in Guidance and Counseling from Osun State University. She is committed to professionalism, accuracy, and supporting leadership in a way that strengthens the firm's overall efficiency.\n\n**EDUCATION**\n- Osun State University, B.Ed Guidance & Counseling\n\n**EXPERTISE**\n- Schedule Management\n- Meeting Coordination\n- Calendar Management\n- Confidential Information Handling\n- Communication & Follow-ups\n- Operations Organization\n- Executive Support\n\n**CERTIFICATIONS**\n- Certificate of Achievement - Time Management\n- LinkedIn - Customer Service Foundations",
+    email: "",
+    linkedin: "",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/12/new/aderinsola.jpeg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/12/new/MASKED/aderinsola-cropped.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/12/new/BLACKED/black_aderinsola.jpeg",
+    hint: "woman portrait professional"
+  },
+  {
+    name: "Victoria John",
+    slug: "victoria-john",
+    role: "Communications Lead",
+    description: "At Oyewole & Adesina, Victoria John leads the **Communications team** with a sharp focus on strategic narrative development and brand reputation management. She has successfully led campaigns that enhance organizational visibility and drive meaningful engagement.\n\nKnown for delivering measurable results, Victoria brings deep expertise in crisis communication, content strategy, and cross-functional collaboration. She partners closely with executive teams to craft clear, compelling messaging that resonates with target audiences and supports business objectives.\n\nVictoria holds a Bachelor's degree in Communication Arts and is passionate about leveraging communication as a tool for organizational growth and social impact. When not developing communication strategies, Victoria enjoys engaging in lively conversations on Twitter.\n\n**EDUCATION**\n- University of Uyo, B.A Communication Arts\n\n**EXPERTISE**\n- Brand Storytelling\n- Corporate Communications\n- Communications Strategy\n- Brand Development\n- Internal & External Communications\n- Marketing Communications\n- Crisis Communications",
+    email: "",
+    linkedin: "",
+    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/12/new/victoria.jpeg",
+    maskedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/12/new/MASKED/victoria-cropped.png",
+    blackedImage: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/12/new/BLACKED/black_victoria.jpeg",
     hint: "woman portrait professional"
   },
   {

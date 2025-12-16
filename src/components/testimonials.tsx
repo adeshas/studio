@@ -47,7 +47,7 @@ export default function Testimonials() {
             &ldquo;Oyewole & Adesina stands out for its exceptional legal acumen and unwavering commitment to client success. Their commercially-minded approach consistently delivers results that matter.&rdquo;
           </blockquote>
           <cite className="block mt-6 font-semibold not-italic">
-            Adedayo Adesina, SAN
+            Adedayo G. Adesina, SAN
             <span className="block text-sm font-light text-white/60">Co-Founder, Oyewole & Adesina</span>
           </cite>
         </div>

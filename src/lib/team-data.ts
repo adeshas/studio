@@ -208,6 +208,30 @@ export const teamMembers = [
     linkedin: ""
   },
   {
+    "name": "Quadri Agboola",
+    "slug": "quadri-agboola",
+    "role": "Associate",
+    "description": "Quadri is a detail-oriented legal practitioner whose area of expertise cut across dispute resolution, corporate practice, real estate, admiralty law practice, natural and energy resources.\n\nHe obtained his Bachelor of Laws (LL.B) degree from University of Lagos and was also called to the Nigerian Bar after earning a Barrister at Law (B.L) degree from the Nigerian Law School, Abuja Campus, where he graduated with a Second Class (Upper Division) Honors.\n\nHe is a versatile lawyer with diverse work experience in the intricacies of legal practice. At Oyewole & Adesina, he has been involved in matters that cut across commercial litigation, debt recovery and estate management. Some of his work includes conducting legal research and writing, drafting and preparing legal documents, litigation, advisory on corporate matters and regulatory compliance.\n\nHence, he has developed strong legal knowledge, research abilities and analytical skills with a solid foundation in Nigerian law with keen interest in delivering high quality service to clients.\n\nQuadri is committed to client-focused services and the drive for continuous professional development whilst achieving excellence in his endeavors.\n\n**EDUCATION**\n- Nigerian Law School (B.L)\n- University of Lagos (LL.B Hons)\n\n**EXPERTISE**\n- Dispute Resolution\n- Corporate and Commercial Practice\n- Energy and Natural Resources\n- Shipping and Admiralty Practice\n\n**ASSOCIATIONS**\n- Nigerian Bar Association (NBA)",
+    "email": "",
+    "linkedin": "",
+    "image": "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/12/new/quadri.jpg",
+    "maskedImage": "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/12/new/MASKED/masked_quadri.png",
+    "blackedImage": "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/12/new/BLACKED/blacked_quadri.png",
+    "hint": "man portrait lawyer"
+  },
+  {
+    "name": "Zainab Usman",
+    "slug": "zainab-usman",
+    "role": "Librarian",
+    "description": "Zainab Usman is a dedicated Librarian with a Bachelor of Science degree in Library and Information Science from Kwara State University. She plays a key role in managing information resources to support knowledge and research within the organization.\n\n**CREDENTIALS**\n- B.Sc. in Library and Information Science, Kwara State University\n\n**EXPERTISE**\n- Library and information management\n- Research support and resource organization\n- Project and safety management principles\n- Strategic entrepreneurship and organizational development\n\n**CERTIFICATIONS**\n- International Institute of Project and Safety Management\n- Institute Of Strategic Entrepreneurs Of Nigeria\n\n**ASSOCIATIONS**\n- Institute of Strategic Entrepreneurs of Nigeria (Member)",
+    "email": "",
+    "linkedin": "",
+    "image": "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/12/new/zainab.jpg",
+    "maskedImage": "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/12/new/MASKED/masked_zainab.png",
+    "blackedImage": "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/12/new/BLACKED/blacked_zainab.png",
+    "hint": "woman portrait professional"
+  },
+  {
     name: "Ademola Shasanya",
     slug: "ademola-shasanya",
     role: "IT Consultant",

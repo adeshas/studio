@@ -81,7 +81,7 @@ export default function Hero() {
     <section ref={targetRef} className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden -mt-20">
       <motion.div style={{ y }} className="absolute inset-0 z-0">
         <img
-          src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1162_v2.jpeg"
+          src="https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/IMG_1162_v2.jpeg"
           alt="A premier law firm"
           className="object-cover w-full h-full absolute inset-0"
           data-ai-hint="office building modern"

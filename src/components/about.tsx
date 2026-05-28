@@ -53,7 +53,7 @@ export default function About() {
           </motion.div>
           <motion.div className="relative w-full h-80 lg:h-96 rounded-xl overflow-hidden shadow-xl" variants={itemVariants}>
             <Image
-              src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/CONFERENCE%20ROOM%201.JPG"
+              src="https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/CONFERENCE%20ROOM%201.JPG"
               alt="The modern and professional interior of the Oyewole & Adesina law office"
               fill
               className="object-cover w-full h-full absolute inset-0"

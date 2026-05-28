@@ -37,7 +37,7 @@ export default function CareersPage() {
       <main className="flex-1">
         <section className="relative w-full h-64 md:h-80 bg-primary/20">
           <img
-            src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/hunters-race-MYbhN8KaaEc-unsplash.jpg"
+            src="https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/hunters-race-MYbhN8KaaEc-unsplash.jpg"
             alt="Modern office interior for career opportunities"
             className="object-cover w-full h-full absolute inset-0"
             data-ai-hint="recruitment office"

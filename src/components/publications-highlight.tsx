@@ -64,7 +64,7 @@ export default function PublicationsHighlight() {
               <Card className="flex flex-col h-full bg-transparent border-0 shadow-none rounded-none">
                 <div className="relative w-full h-64 mb-6">
                   <Image
-                    src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/folder-document-3.png"
+                    src="https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/folder-document-3.png"
                     alt={item.title}
                     fill
                     className="object-contain w-full h-full absolute inset-0"

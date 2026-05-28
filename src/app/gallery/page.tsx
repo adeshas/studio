@@ -14,57 +14,57 @@ export const metadata: Metadata = {
 
 const officeImages = [
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BUILDING.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/BUILDING.JPG",
     alt: "Exterior of the Oyewole & Adesina office building",
     hint: "office building"
   },
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/CONFERENCE%20ROOM%201.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/CONFERENCE%20ROOM%201.JPG",
     alt: "Modern conference room at Oyewole & Adesina",
     hint: "conference room"
   },
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/CONFERENCE%20ROOM%202.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/CONFERENCE%20ROOM%202.JPG",
     alt: "Second conference room at Oyewole & Adesina",
     hint: "meeting room"
   },
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/COURTYARD%20%283%29.jpg",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/COURTYARD%20%283%29.jpg",
     alt: "Courtyard of the Oyewole & Adesina office",
     hint: "office courtyard"
   },
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ENTRANCE.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/ENTRANCE.JPG",
     alt: "Entrance of the Oyewole & Adesina office",
     hint: "office entrance"
   },
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/GROUND%20FLOOR%20WALKWAY.jpg",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/GROUND%20FLOOR%20WALKWAY.jpg",
     alt: "Ground floor walkway in the office",
     hint: "office hallway"
   },
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/HOME%20PAGE.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/HOME%20PAGE.JPG",
     alt: "Homepage image for Oyewole & Adesina",
     hint: "office interior"
   },
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/LIBRARY.jpg",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/LIBRARY.jpg",
     alt: "The law library at Oyewole & Adesina",
     hint: "law library"
   },
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/LOUNGE.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/LOUNGE.JPG",
     alt: "Lounge area at the office",
     hint: "office lounge"
   },
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/SIGN.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/SIGN.JPG",
     alt: "Oyewole & Adesina office sign",
     hint: "office sign"
   },
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/WAITING%20ROOM.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/WAITING%20ROOM.JPG",
     alt: "Waiting room at the office",
     hint: "reception area"
   }
@@ -77,7 +77,7 @@ export default function GalleryPage() {
       <main className="flex-1">
         <section className="relative w-full h-64 md:h-80 bg-primary/20">
           <img
-            src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/hunters-race-MYbhN8KaaEc-unsplash.jpg"
+            src="https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/hunters-race-MYbhN8KaaEc-unsplash.jpg"
             alt="Modern office interior"
             className="object-cover w-full h-full absolute inset-0"
             data-ai-hint="modern office"

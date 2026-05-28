@@ -48,7 +48,7 @@ export default function Expertise() {
     exit: { opacity: 0, transition: { duration: 0.5, ease: 'easeInOut' } },
   };
 
-  const defaultImage = "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/IMG_1166_v1.JPEG";
+  const defaultImage = "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/IMG_1166_v1.JPEG";
   const defaultHint = "lawyer office business";
 
   return (

@@ -1,4 +1,10 @@
 {
     "IDX.aI.enableInlineCompletion": true,
-    "IDX.aI.enableCodebaseIndexing": true
+    "IDX.aI.enableCodebaseIndexing": true,
+    "chat.tools.terminal.autoApprove": {
+        "/^pwd && ls -l find_and_copy_media\\.py && python3 find_and_copy_media\\.py 2>&1 \\| cat$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
 }

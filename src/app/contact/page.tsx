@@ -15,17 +15,17 @@ export const metadata: Metadata = {
 
 const officeImages = [
   {
-    src: "https://oyewoleadesina.com/wp-content/uploads/2025/07/office2.webp",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/office2.webp",
     alt: "Collaborative workspace at Oyewole & Adesina",
     hint: "office workspace"
   },
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BUILDING.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/BUILDING.JPG",
     alt: "Exterior of the Oyewole & Adesina office building",
     hint: "office building"
   },
   {
-    src: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/SIGN.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/SIGN.JPG",
     alt: "Oyewole & Adesina office sign",
     hint: "office sign"
   }
@@ -38,7 +38,7 @@ export default function ContactPage() {
       <main className="flex-1">
         <section className="relative w-full h-64 md:h-80 bg-primary/20">
           <img
-            src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/nastuh-abootalebi-yWwob8kwOCk-unsplash.jpg"
+            src="https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/nastuh-abootalebi-yWwob8kwOCk-unsplash.jpg"
             alt="Abstract architectural lines of a modern building"
             className="object-cover w-full h-full absolute inset-0"
             data-ai-hint="abstract building lines"

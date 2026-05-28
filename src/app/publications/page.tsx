@@ -19,7 +19,7 @@ export default function PublicationsPage() {
       <main className="flex-1">
         <section className="relative w-full h-64 md:h-80 bg-primary/20">
           <img
-            src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/05/absolutvision-WYd_PkCa1BY-unsplash.jpg"
+            src="https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/absolutvision-WYd_PkCa1BY-unsplash.jpg"
             alt="A library of legal books and publications"
             className="object-cover w-full h-full absolute inset-0"
             data-ai-hint="books library documents"

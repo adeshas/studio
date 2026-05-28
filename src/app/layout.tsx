@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: 'Oyewole & Adesina',
     images: [
       {
-        url: 'https://www.oyewoleadesina.com/wp-content/uploads/2025/07/oa3-logo.png', // Must be an absolute URL
+        url: 'https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/oa3-logo.png', // Must be an absolute URL
         width: 1024,
         height: 332,
         alt: 'Oyewole & Adesina Logo',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: 'Oyewole & Adesina - A top-tier Law Firm',
     description: 'Expert legal services in dispute resolution, corporate law, real estate, and more in Nigeria.',
     creator: '@oyewoleadesina',
-    // images: ['https://www.oyewoleadesina.com/og-image.png'], // Must be an absolute URL
+    // images: ['https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/og-image.png'], // Must be an absolute URL
   },
   robots: {
     index: true,
@@ -61,10 +61,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: 'any' },
-      { url: 'https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/07/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
-      { url: 'https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/07/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: 'https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: 'https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
     ],
-    apple: [{ url: 'https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/07/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+    apple: [{ url: 'https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
   manifest: '/site.webmanifest',
 };

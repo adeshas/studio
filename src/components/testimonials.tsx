@@ -36,7 +36,7 @@ export default function Testimonials() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-4">
             <img
-              src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/NEW_DAYO.JPG"
+              src="https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/NEW_DAYO.JPG"
               alt="Adedayo Adesina"
               className="object-cover rounded-full mx-auto mb-6 w-[180px] h-[180px]"
               style={{ maxWidth: 180, maxHeight: 180, objectFit: 'cover' }}

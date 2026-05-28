@@ -43,7 +43,7 @@ export default function FirmIntroduction() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-24 items-center">
           <motion.div className="relative w-full h-80 lg:h-96 rounded-xl overflow-hidden shadow-xl" variants={itemVariants}>
             <Image
-              src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/ENTRANCE.JPG"
+              src="https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/ENTRANCE.JPG"
               alt="Oyewole & Adesina office discussion"
               fill
               className="object-cover w-full h-full absolute inset-0"

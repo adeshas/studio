@@ -46,7 +46,7 @@ export default function TheFirmPage() {
             <main className="flex-1">
                 <section className="relative w-full h-64 md:h-80 bg-primary/20">
                     <Image
-                        src="https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/07/patrick-fore-H5Lf0nGyetk-unsplash.jpg"
+                        src="https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/patrick-fore-H5Lf0nGyetk-unsplash.jpg"
                         alt="An abstract image representing the law firm's solid foundation"
                         fill
                         className="object-cover w-full h-full absolute inset-0"

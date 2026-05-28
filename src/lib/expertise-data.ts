@@ -4,7 +4,7 @@ export const expertiseData = [
         slug: "dispute-resolution",
         title: "Dispute Resolution",
         shortDescription: "Oyewole & Adesina’s dispute resolution practice handles issues relating to litigation, arbitration and alternative dispute resolution...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/dispute_resolution_featured.jpg",
+        image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/dispute_resolution_featured.jpg",
         hint: "gavel judge court",
         longDescription: [
             "Oyewole & Adesina’s dispute resolution practice handles issues relating to litigation, arbitration and alternative dispute resolution. The practice has a broad range of experience in all facets of commercial litigation, such as banking, contracts, corporate issues and shareholder disputes, debt recovery, energy, environmental issues, insolvency, intellectual property, labour and employment, product liability, real estate, shipping and maritime and telecommunications.",
@@ -17,7 +17,7 @@ export const expertiseData = [
         slug: "corporate-and-commercial-practice",
         title: "Corporate and Commercial Practice",
         shortDescription: "Oyewole & Adesina’s corporate and commercial experience spans through company/business entity formation to procurement of...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/boardroom1.jpeg",
+        image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/boardroom1.jpeg",
         hint: "boardroom empty office",
         longDescription: [
             "Oyewole & Adesina’s corporate and commercial experience spans from company/business entity formation to procurement of operational licenses, company secretarial work, regulatory compliance, corporate restructuring, insolvency, mergers and acquisitions.",
@@ -35,7 +35,7 @@ export const expertiseData = [
         slug: "real-estate-and-infrastructure-practice",
         title: "Real Estate and Infrastructure Practice",
         shortDescription: "Our Real estate and infrastructure practice advises on all aspects of real estate law including acquisition, development, and financing of real estate projects.",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/realestate.jpg",
+        image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/realestate.jpg",
         hint: "construction site",
         longDescription: [
             "The firm’s real estate and projects practice cover providing advisory and legal opinions with respect to development, construction, management and financing of real estate projects. We assist our clients in negotiation, review, and drafting of commercial, technical, financing, lease, joint venture, property development and property acquisition agreements. We prepare and perfect leases, transfers, mortgages, management contracts, trust/investment deeds, finance agreements, development lease agreements and all forms of contractual documents or arrangements relating to land.",
@@ -59,7 +59,7 @@ export const expertiseData = [
         slug: "finance-and-insurance",
         title: "Banking, Finance and Insurance",
         shortDescription: "Oyewole & Adesina provides a comprehensive range of legal services for financial institutions, local and foreign...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/finance_insurance_featured.jpg",
+        image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/finance_insurance_featured.jpg",
         hint: "finance money coins",
         longDescription: [
             "Oyewole & Adesina provides a comprehensive range of legal services for financial institutions, local and foreign investors, and corporate and commercial entities. Our expertise spans corporate finance, project finance, asset-based finance, structured finance, and debt recovery. Our team of lawyers are well-versed in navigating complex financial transactions, ensuring our clients’ interests are protected at every stage.",
@@ -70,7 +70,7 @@ export const expertiseData = [
         slug: "labour-and-employment",
         title: "Labour and Employment",
         shortDescription: "Oyewole & Adesina offers both litigation based and solicitor’s services in employment related matters. We are...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/zach-wear-k1rtD9cyTvw-unsplash.jpg",
+        image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/zach-wear-k1rtD9cyTvw-unsplash.jpg",
         hint: "team workers",
         longDescription: [
             "Oyewole & Adesina offers both litigation based and solicitor’s services in employment related matters. We are well-equipped to advise on the legal and practical issues arising from employment relationships.",
@@ -87,7 +87,7 @@ export const expertiseData = [
         slug: "shipping-admiralty-and-maritime",
         title: "Shipping, Admiralty and Maritime",
         shortDescription: "Oyewole & Adesina’s shipping, admiralty and maritime practice covers advisory services, admiralty litigation, processing of...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2019/04/shipping_maritime_featured.jpg",
+        image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/shipping_maritime_featured.jpg",
         hint: "cargo ship sea",
         longDescription: [
             "Oyewole & Adesina’s shipping, admiralty and maritime practice covers advisory services, admiralty litigation, and processing of cabotage registration for vessels. Our team of lawyers has extensive experience in handling a wide range of shipping and maritime matters.",
@@ -105,7 +105,7 @@ export const expertiseData = [
         slug: "telecommunications",
         title: "Telecommunications",
         shortDescription: "We advise on the complex regulatory framework governing the telecommunications industry in Nigeria...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/mario-caruso-0C9VmZUqcT8-unsplash.jpg",
+        image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/mario-caruso-0C9VmZUqcT8-unsplash.jpg",
         hint: "communication towers",
         longDescription: [
             "The Firm’s telecommunications practice provides comprehensive legal services to clients in the dynamic and rapidly evolving telecom sector in Nigeria. We advise on regulatory compliance, licensing and permits from the Nigerian Communications Commission (NCC), spectrum management and allocation, infrastructure development and sharing, data privacy and protection under the Nigeria Data Protection Regulation (NDPR), mergers and acquisitions in the telecom space, competition law issues, consumer protection, and technology-driven transactions.",
@@ -117,7 +117,7 @@ export const expertiseData = [
         slug: "notary-public-services",
         title: "Notary Public Services",
         shortDescription: "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of...",
-        image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/mana-akbarzadegan-cUgR2cYQzec-unsplash.jpg",
+        image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/mana-akbarzadegan-cUgR2cYQzec-unsplash.jpg",
         hint: "notary seal",
         longDescription: [
             "A Notary Public in Nigeria is appointed by the Chief Justice of the Federal Republic of Nigeria, and is an officer of the Supreme Court of Nigeria. He is licensed to witness signatures to documents and to authenticate the execution of certain classes of documents, take affidavits, declarations and depositions. A Notary Public can also protest bills of exchange and promissory notes and prepare marine or ship’s protest in cases of damage.",

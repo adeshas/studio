@@ -8,7 +8,7 @@ import { teamMembers } from "@/lib/team-data";
 
 const member = teamMembers.find(m => m.slug === 'adedayo-adesina');
 
-const heroImage = member?.maskedImage || "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/NEW_DAYO-masked.png";
+const heroImage = member?.maskedImage || "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/NEW_DAYO-masked.png";
 
 const accordionSections = [
   {
@@ -63,14 +63,14 @@ const otherProfiles = [
     title: "Partner",
     experience: "10+ Years Experience",
     href: "/our-people/victor-akpeji",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/VICTOR%20BACK.jpg",
+    image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/VICTOR%20BACK.jpg",
   },
   {
     name: "Tochukwu Itumo",
     title: "Senior Associate",
     experience: "10+ Years Experience",
     href: "/our-people/tochukwu-itumo",
-    image: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/new/BLACKED/TOCHUKWU%20BACK.jpg",
+    image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/TOCHUKWU%20BACK.jpg",
   },
 ];
 

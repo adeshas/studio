@@ -1,7 +1,14 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export',
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'rmh.jsl.mybluehost.me',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

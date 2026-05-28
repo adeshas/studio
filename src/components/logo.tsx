@@ -7,8 +7,8 @@ type LogoProps = {
 
 export default function Logo({ variant = 'color' }: LogoProps) {
   const logos = {
-    color: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/07/oa3-logo.png",
-    white: "https://rmh.jsl.mybluehost.me/wp-content/uploads/2025/10/OA%20LOGO%20WHITE%20NO%20BACK%20COLOR-CORRECT.png"
+    color: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/oa3-logo.png",
+    white: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/OA%20LOGO%20WHITE%20NO%20BACK%20COLOR-CORRECT.png"
   };
 
   const src = logos[variant] || logos.color;

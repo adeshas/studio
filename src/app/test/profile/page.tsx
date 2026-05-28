@@ -63,14 +63,14 @@ const otherProfiles = [
     title: "Partner",
     experience: "10+ Years Experience",
     href: "/our-people/victor-akpeji",
-    image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/VICTOR%20BACK.jpg",
+    image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/VICTOR BACK.jpg",
   },
   {
     name: "Tochukwu Itumo",
     title: "Senior Associate",
     experience: "10+ Years Experience",
     href: "/our-people/tochukwu-itumo",
-    image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/TOCHUKWU%20BACK.jpg",
+    image: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/TOCHUKWU BACK.jpg",
   },
 ];
 

@@ -19,17 +19,17 @@ const officeImages = [
     hint: "office building"
   },
   {
-    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/CONFERENCE%20ROOM%201.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/CONFERENCE ROOM 1.JPG",
     alt: "Modern conference room at Oyewole & Adesina",
     hint: "conference room"
   },
   {
-    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/CONFERENCE%20ROOM%202.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/CONFERENCE ROOM 2.JPG",
     alt: "Second conference room at Oyewole & Adesina",
     hint: "meeting room"
   },
   {
-    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/COURTYARD%20%283%29.jpg",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/COURTYARD (3).jpg",
     alt: "Courtyard of the Oyewole & Adesina office",
     hint: "office courtyard"
   },
@@ -39,12 +39,12 @@ const officeImages = [
     hint: "office entrance"
   },
   {
-    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/GROUND%20FLOOR%20WALKWAY.jpg",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/GROUND FLOOR WALKWAY.jpg",
     alt: "Ground floor walkway in the office",
     hint: "office hallway"
   },
   {
-    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/HOME%20PAGE.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/HOME PAGE.JPG",
     alt: "Homepage image for Oyewole & Adesina",
     hint: "office interior"
   },
@@ -64,7 +64,7 @@ const officeImages = [
     hint: "office sign"
   },
   {
-    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/WAITING%20ROOM.JPG",
+    src: "https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/WAITING ROOM.JPG",
     alt: "Waiting room at the office",
     hint: "reception area"
   }

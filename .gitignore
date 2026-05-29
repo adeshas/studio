@@ -43,3 +43,14 @@ next-env.d.ts
 # firebase
 firebase-debug.log
 firestore-debug.log
+*.bak
+*.bak1
+found-broken-link-files/
+missing-links/
+ALL_IMAGE_VIDEO_URLS*
+find_and_copy_broken_link_files.py
+find_and_copy_broken_link_files_v2.py
+find_missing_r2_files.sh
+fix_r2.py
+replace.py
+

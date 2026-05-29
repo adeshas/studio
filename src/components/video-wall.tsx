@@ -81,18 +81,30 @@ const VideoWall = () => {
   const renderMedia = (item: typeof testGalleryMedia[0], index: number) => {
     if (item.type === 'video') {
       if (!item.streamId) {
-        return <div key={`${item.src}-${index}`} className="relative w-full h-full"><video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" /></div>;
+        return (
+          <div key={`${item.src}-${index}`} className="relative w-full h-full">
+            <video
+              src={item.src}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-contain"
+              style={{ objectFit: 'contain' }}
+            />
+          </div>
+        );
       }
       const posterUrl = `${STREAM_HOST}/${item.streamId}/thumbnails/thumbnail.jpg?time=&height=600`;
       return (
-        <div key={`${item.src}-${index}`} className="relative w-full h-full">
+        <div key={`${item.src}-${index}`} className="relative w-full h-full overflow-hidden">
           <iframe
             src={`${STREAM_HOST}/${item.streamId}/iframe?muted=true&loop=true&autoplay=true&controls=false&poster=${encodeURIComponent(posterUrl)}`}
             loading="lazy"
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
             allowFullScreen
-            className="w-full h-full absolute inset-0"
-            style={{ border: 'none', position: 'absolute', inset: 0 }}
+            className="absolute inset-0 w-full h-full"
+            style={{ border: 'none', position: 'absolute', inset: 0, width: '100%', height: '100%' }}
           />
         </div>
       );

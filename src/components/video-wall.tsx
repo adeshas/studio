@@ -9,6 +9,8 @@ import 'swiper/css';
 
 import { testGalleryMedia } from '@/lib/test-gallery-data';
 
+const STREAM_HOST = 'https://customer-evsgrse8zm7f6r0v.cloudflarestream.com';
+
 const VideoWall = () => {
   const [mediaReady, setMediaReady] = useState(false);
   const [shuffledMedia, setShuffledMedia] = useState<typeof testGalleryMedia>([]);
@@ -44,7 +46,22 @@ const VideoWall = () => {
 
   const renderMedia = (item: typeof testGalleryMedia[0], index: number) => {
     if (item.type === 'video') {
-      return <video key={`${item.src}-${index}`} src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" />;
+      if (!item.streamId) {
+        return <div key={`${item.src}-${index}`} className="relative w-full h-full"><video src={item.src} autoPlay muted loop playsInline className="w-full h-full object-cover" /></div>;
+      }
+      const posterUrl = `${STREAM_HOST}/${item.streamId}/thumbnails/thumbnail.jpg?time=&height=600`;
+      return (
+        <div key={`${item.src}-${index}`} className="relative w-full h-full">
+          <iframe
+            src={`${STREAM_HOST}/${item.streamId}/iframe?muted=true&loop=true&autoplay=true&controls=false&poster=${encodeURIComponent(posterUrl)}`}
+            loading="lazy"
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowFullScreen
+            className="w-full h-full absolute inset-0"
+            style={{ border: 'none', position: 'absolute', inset: 0 }}
+          />
+        </div>
+      );
     }
     return <div className="relative w-full h-full">
       <Image

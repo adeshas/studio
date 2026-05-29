@@ -15,19 +15,53 @@ const VideoWall = () => {
   const [mediaReady, setMediaReady] = useState(false);
   const [shuffledMedia, setShuffledMedia] = useState<typeof testGalleryMedia>([]);
 
+  const shuffleArray = <T,>(array: T[]) => [...array].sort(() => 0.5 - Math.random());
+
+  const buildShuffledMedia = () => {
+    const videos = shuffleArray(testGalleryMedia.filter(item => item.type === 'video'));
+    const images = shuffleArray(testGalleryMedia.filter(item => item.type === 'image'));
+
+    const selectedVideos = videos.slice(0, Math.min(videos.length, 10));
+    const selectedImages = images.slice(0, Math.min(images.length, 10));
+
+    const interleaveMedia = (videoItems: typeof testGalleryMedia, imageItems: typeof testGalleryMedia) => {
+      const result: typeof testGalleryMedia = [];
+      const totalPairs = Math.min(videoItems.length, imageItems.length);
+
+      for (let index = 0; index < totalPairs; index += 1) {
+        result.push(videoItems[index]);
+        result.push(imageItems[index]);
+      }
+
+      return result;
+    };
+
+    const combinedMedia = interleaveMedia(selectedVideos, selectedImages);
+
+    const normalizedMedia = combinedMedia.filter((item, index) => {
+      return index === 0 || item.src !== combinedMedia[index - 1]?.src;
+    });
+
+    const duplicatedMedia: typeof testGalleryMedia = [];
+
+    for (let block = 0; block < 3; block += 1) {
+      const nextBlock = shuffleArray(normalizedMedia);
+
+      if (duplicatedMedia.length > 0 && duplicatedMedia[duplicatedMedia.length - 1]?.src === nextBlock[0]?.src) {
+        const swapIndex = nextBlock.findIndex(item => item.src !== duplicatedMedia[duplicatedMedia.length - 1]?.src);
+        if (swapIndex > 0) {
+          [nextBlock[0], nextBlock[swapIndex]] = [nextBlock[swapIndex], nextBlock[0]];
+        }
+      }
+
+      duplicatedMedia.push(...nextBlock);
+    }
+
+    return duplicatedMedia;
+  };
+
   useEffect(() => {
-    const videos = testGalleryMedia.filter(item => item.type === 'video');
-    const images = testGalleryMedia.filter(item => item.type === 'image');
-
-    const shuffleArray = (array: any[]) => array.sort(() => 0.5 - Math.random());
-
-    const randomVideos = shuffleArray(videos).slice(0, 3);
-    const randomImages = shuffleArray(images).slice(0, 13);
-
-    const combinedMedia = shuffleArray([...randomVideos, ...randomImages]);
-    const duplicatedMedia = [...combinedMedia, ...combinedMedia, ...combinedMedia, ...combinedMedia];
-
-    setShuffledMedia(duplicatedMedia);
+    setShuffledMedia(buildShuffledMedia());
     setMediaReady(true);
   }, []);
 

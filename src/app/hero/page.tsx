@@ -37,7 +37,7 @@ export default function Home() {
         </div>
         <Clients />
         <About />
-        <Expertise />
+        <Expertise items={[]} />
         <Testimonials />
         <Contact />
       </main>

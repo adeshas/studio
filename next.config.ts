@@ -1,9 +1,10 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  // output: 'export',
   trailingSlash: true,
+  env: {
+    NEXT_PUBLIC_STREAM_SUBDOMAIN: process.env.CLOUDFLARE_STREAM_CUSTOMER_SUBDOMAIN ?? 'customer-evsgrse8zm7f6r0v',
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -11,7 +12,6 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -45,7 +45,13 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'rmh.jsl.mybluehost.me',
+        hostname: 'pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'customer-evsgrse8zm7f6r0v.cloudflarestream.com',
         port: '',
         pathname: '/**',
       }

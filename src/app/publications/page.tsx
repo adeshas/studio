@@ -2,8 +2,10 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { publicationsData } from "@/lib/publications-data";
+import { getPublications } from "@/lib/data/publications";
 import Link from "next/link";
+
+export const revalidate = 3600
 
 import type { Metadata } from 'next';
 
@@ -12,7 +14,8 @@ export const metadata: Metadata = {
   description: 'Stay informed with the latest legal insights, articles, and publications from the experts at Oyewole & Adesina law firm.',
 }
 
-export default function PublicationsPage() {
+export default async function PublicationsPage() {
+  const publicationsData = await getPublications()
   return (
     <div className="flex flex-col min-h-screen bg-background font-body">
       <Header />

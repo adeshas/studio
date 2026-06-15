@@ -2,13 +2,11 @@
 "use client";
 
 import Link from "next/link";
-import React, { useCallback, useMemo, useState, useEffect } from "react";
-import { teamMembers } from "@/lib/team-data";
+import React, { useCallback, useMemo, useState } from "react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Contact from "@/components/contact";
-
-type TeamMember = (typeof teamMembers)[0];
+import type { TeamMember } from "@/db/schema";
 
 const formatDescription = (text: string | undefined) => {
   if (!text) return null;
@@ -55,28 +53,19 @@ const formatDescription = (text: string | undefined) => {
   return <>{content}</>;
 };
 
-export default function ProfileClientPage({ member }: { member: TeamMember }) {
+export default function ProfileClientPage({ member, otherMembers = [] }: { member: TeamMember; otherMembers?: TeamMember[] }) {
   const [showFullBio, setShowFullBio] = useState(false);
 
   const sections = ['Education', 'Expertise', 'Certifications', 'Associations', 'Awards'];
   const [openSections, setOpenSections] = useState(() => new Set([sections[0]]));
-  const [otherProfiles, setOtherProfiles] = useState<any[]>([]);
 
-  useEffect(() => {
-    const excludedSlugs = ['ademola-shasanya'];
-    const shuffled = teamMembers
-      .filter(p => p.slug !== member.slug && !excludedSlugs.includes(p.slug))
-      .sort(() => 0.5 - Math.random()) // Shuffle
-      .slice(0, 2)
-      .map(p => ({
-        name: p.name,
-        title: p.role,
-        experience: "",
-        href: `/our-people/${p.slug}`,
-        image: p.blackedImage || p.image || "https://placehold.co/260x320"
-      }));
-    setOtherProfiles(shuffled);
-  }, [member.slug]);
+  const otherProfiles = otherMembers.map(p => ({
+    name: p.name,
+    title: p.role,
+    experience: "",
+    href: `/our-people/${p.slug}`,
+    image: p.blackedImage || p.image || "https://placehold.co/260x320"
+  }));
 
   const bioText = useMemo(() => {
     if (!member.description) return '';
@@ -138,7 +127,7 @@ export default function ProfileClientPage({ member }: { member: TeamMember }) {
   const accordionSections = useMemo(() => {
     return sections.map(section => ({
       title: section,
-      items: extractSection(member.description, section)
+      items: extractSection(member.description ?? undefined, section)
     })).filter(section => section.items && section.items.length > 0);
   }, [member.description, extractSection, sections]);
 

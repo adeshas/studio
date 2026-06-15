@@ -1,4 +1,4 @@
-import { expertiseData } from "@/lib/expertise-data";
+import { getExpertise, getExpertiseBySlug } from "@/lib/data/expertise";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
@@ -8,43 +8,31 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import type { Metadata, ResolvingMetadata } from 'next';
 
+export const revalidate = 3600
+
 type Props = {
   params: Promise<{ slug: string }> // Changed: Promise wrapper
 }
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const { slug } = await params; // Changed: await params
-  const expertise = expertiseData.find((item) => item.slug === slug);
-
-  if (!expertise) {
-    return {
-      title: 'Expertise Not Found',
-      description: 'The requested practice area could not be found.',
-    }
-  }
-
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  const { slug } = await params
+  const item = await getExpertiseBySlug(slug)
+  if (!item) return { title: 'Expertise Not Found', description: 'The requested practice area could not be found.' }
   return {
-    title: expertise.title,
-    description: expertise.shortDescription,
-    openGraph: {
-      images: [expertise.image],
-    },
+    title: item.title,
+    description: item.shortDescription ?? undefined,
+    openGraph: { images: item.image ? [item.image] : [] },
   }
 }
 
 export async function generateStaticParams() {
-  return expertiseData.map((expertise) => ({
-    slug: expertise.slug,
-  }));
+  const items = await getExpertise()
+  return items.map(e => ({ slug: e.slug }))
 }
 
-// Changed: async function and Promise<{ slug: string }>
 export default async function ExpertiseDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params; // Changed: await params
-  const expertise = expertiseData.find((item) => item.slug === slug);
+  const { slug } = await params
+  const expertise = await getExpertiseBySlug(slug)
 
   if (!expertise) {
     notFound();
@@ -56,10 +44,10 @@ export default async function ExpertiseDetailPage({ params }: { params: Promise<
       <main className="flex-1">
         <section className="relative w-full h-64 md:h-80">
           <img
-            src={expertise.image}
+            src={expertise.image ?? ''}
             alt={expertise.title}
             className="object-cover w-full h-full absolute inset-0"
-            data-ai-hint={expertise.hint}
+            data-ai-hint={expertise.hint ?? ''}
             loading="eager"
             style={{ objectFit: 'cover', position: 'absolute', inset: 0 }}
           />
@@ -80,10 +68,11 @@ export default async function ExpertiseDetailPage({ params }: { params: Promise<
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <div className="text-lg text-muted-foreground space-y-6">
-                {expertise.longDescription.map((paragraph, index) => {
+                {(expertise.longDescription ?? []).map((paragraph, index) => {
+                  const desc = expertise.longDescription ?? []
                   if (paragraph.startsWith('-')) {
-                    const items = expertise.longDescription.slice(index).filter(p => p.startsWith('-')).map(p => p.substring(2));
-                    if (index > 0 && expertise.longDescription[index - 1].startsWith('-')) return null; // Avoid re-rendering list
+                    const items = desc.slice(index).filter(p => p.startsWith('-')).map(p => p.substring(2));
+                    if (index > 0 && desc[index - 1].startsWith('-')) return null;
                     return (
                       <ul key={index} className="list-disc list-inside space-y-2 pl-4">
                         {items.map((item, i) => <li key={i}>{item}</li>)}

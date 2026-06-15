@@ -4,12 +4,9 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { publicationsData } from "@/lib/publications-data";
+import type { Publication } from "@/db/schema";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
-
-const featuredPublications = publicationsData.slice(0, 3);
 
 const variants = {
   hidden: { opacity: 0, y: 90 },
@@ -29,7 +26,7 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 1.5, ease: "easeOut" } },
 };
 
-export default function PublicationsHighlight() {
+export default function PublicationsHighlight({ items }: { items: Publication[] }) {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
@@ -59,7 +56,7 @@ export default function PublicationsHighlight() {
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
           variants={variants}
         >
-          {featuredPublications.map((item, index) => (
+          {items.map((item, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Card className="flex flex-col h-full bg-transparent border-0 shadow-none rounded-none">
                 <div className="relative w-full h-64 mb-6">

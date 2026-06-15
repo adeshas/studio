@@ -3,14 +3,15 @@
 
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { expertiseData } from "@/lib/expertise-data";
+import type { Expertise as ExpertiseItem } from "@/db/schema";
 import Link from "next/link";
 
 import { ArrowRight } from "lucide-react";
 import ExpertiseListItem from "./expertise-list-item";
 import { useRef, useState } from "react";
 
-export default function Expertise() {
+export default function Expertise({ items }: { items: ExpertiseItem[] }) {
+  const expertiseData = items;
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,

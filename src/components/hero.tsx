@@ -1,6 +1,7 @@
 
 "use client";
 
+import Image from "next/image";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 
 import { useRef, useState, useEffect } from "react";
@@ -8,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-const slides = [
+const defaultSlides = [
   {
     heading: "Trusted Legal Partners",
     subheading: "Decades of collective experience guiding clients through Nigeria’s most complex commercial and regulatory challenges."
@@ -58,7 +59,10 @@ const subheadingAnimation = {
 }
 
 
-export default function Hero() {
+interface HeroSlide { heading: string; subheading: string }
+
+export default function Hero({ slides: slidesProp }: { slides?: HeroSlide[] }) {
+  const slides = (slidesProp && slidesProp.length > 0) ? slidesProp : defaultSlides;
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -80,13 +84,15 @@ export default function Hero() {
   return (
     <section ref={targetRef} className="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden -mt-20">
       <motion.div style={{ y }} className="absolute inset-0 z-0">
-        <img
+        <Image
           src="https://pub-dff2dcf3e9c045f2bd47bede1998375e.r2.dev/uploads/IMG_1162_v2.jpeg"
           alt="A premier law firm"
-          className="object-cover w-full h-full absolute inset-0"
+          fill
+          className="object-cover absolute inset-0"
           data-ai-hint="office building modern"
           style={{ objectFit: 'cover', position: 'absolute', inset: 0 }}
-          loading="eager"
+          priority
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-black/80"></div>
       </motion.div>

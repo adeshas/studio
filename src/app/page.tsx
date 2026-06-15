@@ -1,55 +1,40 @@
-
-"use client";
-
-import Header from '@/components/header';
-import Hero from '@/components/hero';
 import Clients from '@/components/clients';
 import Expertise from '@/components/services';
 import Contact from '@/components/contact';
-import Footer from '@/components/footer';
-import { motion, useScroll, useSpring } from 'framer-motion';
 import About from '@/components/about';
-import { useRef } from 'react';
 import Intro from '@/components/intro';
 import FirmIntroduction from '@/components/firm-introduction';
 import PeopleHighlight from '@/components/people-highlight';
 import PublicationsHighlight from '@/components/publications-highlight';
-import VideoWall from '@/components/video-wall';
+import Hero from '@/components/hero';
+import HomePageClient from '@/components/home-page-client';
+import VideoWallDynamic from '@/components/video-wall-dynamic';
+import { getExpertise } from '@/lib/data/expertise';
+import { getPublications } from '@/lib/data/publications';
+import { getGalleryItems } from '@/lib/data/gallery';
+import { getHeroSlides } from '@/lib/data/settings';
 
+export const revalidate = 3600;
 
-export default function Home() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll();
-  const { scrollYProgress: heroScrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"]
-  });
-
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+export default async function Home() {
+  const [expertiseItems, publications, galleryItems, heroSlides] = await Promise.all([
+    getExpertise(),
+    getPublications(),
+    getGalleryItems(),
+    getHeroSlides(),
+  ]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-background font-body text-foreground relative">
-      <motion.div className="progress-bar" style={{ scaleX }} />
-      <Header scrollYProgress={heroScrollYProgress} />
-      <main className="flex-1">
-        <div ref={heroRef} className="-mt-20">
-          <Hero />
-        </div>
-        <Intro />
-        <FirmIntroduction />
-        <Clients />
-        <About />
-        <Expertise />
-        <VideoWall />
-        <PeopleHighlight />
-        <PublicationsHighlight />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <HomePageClient hero={<Hero slides={heroSlides} />}>
+      <Intro />
+      <FirmIntroduction />
+      <Clients />
+      <About />
+      <Expertise items={expertiseItems} />
+      <VideoWallDynamic items={galleryItems} />
+      <PeopleHighlight />
+      <PublicationsHighlight items={publications.slice(0, 3)} />
+      <Contact />
+    </HomePageClient>
   );
 }

@@ -16,7 +16,7 @@ export default function Home2Page() {
       <Header />
       <main className="flex-1">
         <Hero />
-        <Expertise />
+        <Expertise items={[]} />
         <Contact />
       </main>
       <Footer />

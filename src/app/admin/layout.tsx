@@ -9,14 +9,16 @@ export default function AdminLayout({
   children: React.ReactNode
 }) {
   return (
-    <SidebarProvider>
-        <AdminSidebar />
-        <main className="min-h-screen lg:pl-72">
-            <div className="p-4 sm:p-6 lg:p-8">
-                {children}
-            </div>
-        </main>
-        <Toaster />
-    </SidebarProvider>
+    <div className="admin-theme">
+      <SidebarProvider>
+          <AdminSidebar />
+          <main className="min-h-screen flex-1 bg-[hsl(210,40%,96%)]">
+              <div className="p-6 sm:p-8 lg:p-10 max-w-7xl">
+                  {children}
+              </div>
+          </main>
+          <Toaster />
+      </SidebarProvider>
+    </div>
   )
 }

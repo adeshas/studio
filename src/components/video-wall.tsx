@@ -7,25 +7,25 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
-import { testGalleryMedia } from '@/lib/test-gallery-data';
+import type { GalleryItem } from '@/db/schema';
 
 const STREAM_HOST = 'https://customer-evsgrse8zm7f6r0v.cloudflarestream.com';
 
-const VideoWall = () => {
+const VideoWall = ({ items }: { items: GalleryItem[] }) => {
   const [mediaReady, setMediaReady] = useState(false);
-  const [shuffledMedia, setShuffledMedia] = useState<typeof testGalleryMedia>([]);
+  const [shuffledMedia, setShuffledMedia] = useState<GalleryItem[]>([]);
 
   const shuffleArray = <T,>(array: T[]) => [...array].sort(() => 0.5 - Math.random());
 
   const buildShuffledMedia = () => {
-    const videos = shuffleArray(testGalleryMedia.filter(item => item.type === 'video'));
-    const images = shuffleArray(testGalleryMedia.filter(item => item.type === 'image'));
+    const videos = shuffleArray(items.filter(item => item.type === 'video'));
+    const images = shuffleArray(items.filter(item => item.type === 'image'));
 
     const selectedVideos = videos.slice(0, Math.min(videos.length, 10));
     const selectedImages = images.slice(0, Math.min(images.length, 10));
 
-    const interleaveMedia = (videoItems: typeof testGalleryMedia, imageItems: typeof testGalleryMedia) => {
-      const result: typeof testGalleryMedia = [];
+    const interleaveMedia = (videoItems: GalleryItem[], imageItems: GalleryItem[]) => {
+      const result: GalleryItem[] = [];
       const totalPairs = Math.min(videoItems.length, imageItems.length);
 
       for (let index = 0; index < totalPairs; index += 1) {
@@ -42,7 +42,7 @@ const VideoWall = () => {
       return index === 0 || item.src !== combinedMedia[index - 1]?.src;
     });
 
-    const duplicatedMedia: typeof testGalleryMedia = [];
+    const duplicatedMedia: GalleryItem[] = [];
 
     for (let block = 0; block < 3; block += 1) {
       const nextBlock = shuffleArray(normalizedMedia);
@@ -78,7 +78,7 @@ const VideoWall = () => {
     },
   };
 
-  const renderMedia = (item: typeof testGalleryMedia[0], index: number) => {
+  const renderMedia = (item: GalleryItem, index: number) => {
     if (item.type === 'video') {
       if (!item.streamId) {
         return (
@@ -113,7 +113,7 @@ const VideoWall = () => {
       <Image
         key={`${item.src}-${index}`}
         src={item.src}
-        alt={item.alt}
+        alt={item.alt ?? ''}
         fill
         className="w-full h-full object-cover absolute inset-0"
         data-ai-hint={item.hint}

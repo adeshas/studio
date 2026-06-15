@@ -2,17 +2,21 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 import Link from "next/link";
-import { expertiseData } from "@/lib/expertise-data";
+import { getExpertise } from "@/lib/data/expertise";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from 'next';
+
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'Our Expertise',
   description: 'Explore the diverse practice areas at Oyewole & Adesina, including dispute resolution, corporate law, energy, real estate, and intellectual property.',
 }
 
-export default function OurExpertisePage() {
+export default async function OurExpertisePage() {
+  const expertiseData = await getExpertise()
+
   return (
     <div className="flex flex-col min-h-screen bg-background font-body">
       <Header />
@@ -29,7 +33,7 @@ export default function OurExpertisePage() {
               {expertiseData.map((item) => (
                 <Card key={item.slug} className="flex flex-col h-full bg-card border shadow-lg rounded-xl overflow-hidden">
                   <div className="relative w-full h-48">
-                    <img src={item.image} alt={item.title} className="object-cover w-full h-full absolute inset-0" data-ai-hint={item.hint} style={{ objectFit: 'cover', position: 'absolute', inset: 0 }} loading="lazy" />
+                    <img src={item.image ?? ''} alt={item.title} className="object-cover w-full h-full absolute inset-0" data-ai-hint={item.hint ?? ''} style={{ objectFit: 'cover', position: 'absolute', inset: 0 }} loading="lazy" />
                   </div>
                   <CardContent className="p-6 flex flex-col flex-grow">
                     <h3 className="text-2xl font-bold font-headline mb-4">{item.title}</h3>

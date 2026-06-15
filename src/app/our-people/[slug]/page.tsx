@@ -1,51 +1,43 @@
-import { teamMembers } from "@/lib/team-data";
-import { notFound } from 'next/navigation';
-import ProfileClientPage from "./profile-client-page";
-import type { Metadata, ResolvingMetadata } from 'next';
+import { getTeamMemberBySlug, getTeamMembers } from '@/lib/data/team'
+import { notFound } from 'next/navigation'
+import ProfileClientPage from './profile-client-page'
+import type { Metadata, ResolvingMetadata } from 'next'
 
-type Props = {
-  params: Promise<{ slug: string }> // Changed: Added Promise wrapper
-}
+export const revalidate = 3600
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
-  const { slug } = await params; // Changed: await params
-  const member = teamMembers.find((item) => item.slug === slug); // Changed: use slug variable
+type Props = { params: Promise<{ slug: string }> }
+
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  const { slug } = await params
+  const member = await getTeamMemberBySlug(slug)
 
   if (!member) {
-    return {
-      title: 'Team Member Not Found',
-      description: 'The requested team member could not be found.',
-    }
+    return { title: 'Team Member Not Found', description: 'The requested team member could not be found.' }
   }
 
-  const description = member.description?.split('\n\n')[0] || `Learn more about ${member.name}, ${member.role} at Oyewole & Adesina.`;
-
+  const description = member.description?.split('\n\n')[0] ?? `Learn more about ${member.name}, ${member.role} at Oyewole & Adesina.`
   return {
     title: member.name,
-    description: description,
-    openGraph: {
-      images: [member.image],
-    },
+    description,
+    openGraph: { images: member.image ? [member.image] : [] },
   }
-}
-
-// Changed: Added async and Promise wrapper
-export default async function TeamMemberPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params; // Changed: await params
-  const member = teamMembers.find((m) => m.slug === slug); // Changed: use slug variable
-
-  if (!member) {
-    notFound();
-  }
-
-  return <ProfileClientPage member={member} />;
 }
 
 export async function generateStaticParams() {
-  return teamMembers.map((member) => ({
-    slug: member.slug,
-  }));
+  const members = await getTeamMembers()
+  return members.map(m => ({ slug: m.slug }))
+}
+
+export default async function TeamMemberPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const [member, allMembers] = await Promise.all([getTeamMemberBySlug(slug), getTeamMembers()])
+  if (!member) notFound()
+
+  const excluded = ['ademola-shasanya']
+  const others = allMembers
+    .filter(m => m.slug !== slug && !excluded.includes(m.slug))
+    .sort(() => 0.5 - Math.random())
+    .slice(0, 2)
+
+  return <ProfileClientPage member={member} otherMembers={others} />
 }

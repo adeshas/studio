@@ -2,14 +2,14 @@ import { NextRequest, NextResponse } from 'next/server'
 import { AwsClient } from 'aws4fetch'
 import { verifySessionToken, COOKIE_NAME } from '@/lib/auth/session'
 
-const r2 = new AwsClient({
-  accessKeyId: process.env.CLOUDFLARE_R2_ACCESS_KEY_ID!,
-  secretAccessKey: process.env.CLOUDFLARE_R2_SECRET_ACCESS_KEY!,
-  region: 'auto',
-  service: 's3',
-})
-
 export async function POST(request: NextRequest) {
+  const r2 = new AwsClient({
+    accessKeyId: process.env.CLOUDFLARE_R2_ACCESS_KEY_ID!,
+    secretAccessKey: process.env.CLOUDFLARE_R2_SECRET_ACCESS_KEY!,
+    region: 'auto',
+    service: 's3',
+  })
+
   const token = request.cookies.get(COOKIE_NAME)?.value
   if (!token || !(await verifySessionToken(token))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
